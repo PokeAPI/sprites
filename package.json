@@ -1,0 +1,23 @@
+{
+  "name": "pokemon-sprites",
+  "version": "1.0.0",
+  "description": "pokemon sprites",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PokeAPI/sprites.git"
+  },
+  "keywords": [
+    "pokemon",
+    "pokeapi"
+  ],
+  "author": "PokeAPI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PokeAPI/sprites/issues"
+  },
+  "homepage": "https://github.com/PokeAPI/sprites#readme"
+}
