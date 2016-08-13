@@ -1,0 +1,21 @@
+{
+  "name": "pokemon-sprites",
+  "description": "pokemon sprites",
+  "main": "index.js",
+  "authors": [
+    "PokeAPI"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "pokemon",
+    "pokeapi"
+  ],
+  "homepage": "https://github.com/PokeAPI/sprites",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
