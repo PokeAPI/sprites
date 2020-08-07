@@ -106,21 +106,21 @@ sprites
 
 | Front | Back | Front shiny | Back shiny | Front transparent | Back transparent | Front shiny transparent | Back shiny transparent |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ |
+| PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ |
 | <img src="sprites/pokemon/versions/generation-ii/crystal/25.png" width="40" decoding="async" loading="lazy"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/back/25.png" width="40" decoding="async" loading="lazy"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/shiny/25.png" width="40" decoding="async" loading="lazy"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/back/shiny/25.png" width="40" decoding="async" loading="lazy"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/transparent/25.png" width="96" decoding="async" loading="lazy"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/transparent/back/25.png" width="96" decoding="async" loading="lazy"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/transparent/shiny/25.png" width="96" decoding="async" loading="lazy"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/transparent/back/shiny/25.png" width="96" decoding="async" loading="lazy"/> |
 
 ###### `gold`
 
 | Front | Back | Front shiny | Front transparent | Back shiny |
 | --- | --- | --- | --- | --- |
-| PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_107x107 80x80_ | PNG<br>_40x40_ |
+| PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_107x107, 80x80_ | PNG<br>_40x40_ |
 | <img src="sprites/pokemon/versions/generation-ii/gold/25.png" width="40" decoding="async" loading="lazy"/> | <img src="sprites/pokemon/versions/generation-ii/gold/back/25.png" width="40" decoding="async" loading="lazy"/> | <img src="sprites/pokemon/versions/generation-ii/gold/shiny/25.png" width="40" decoding="async" loading="lazy"/> | <img src="sprites/pokemon/versions/generation-ii/gold/transparent/25.png" width="80" decoding="async" loading="lazy"/> | <img src="sprites/pokemon/versions/generation-ii/gold/back/shiny/25.png" width="40" decoding="async" loading="lazy"/> |
 
 ###### `silver`
 
 | Front | Back | Front shiny | Front transparent | Back shiny |
 | --- | --- | --- | --- | --- |
-| PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_107x107 80x80_ | PNG<br>_40x40_ |
+| PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_107x107, 80x80_ | PNG<br>_40x40_ |
 | <img src="sprites/pokemon/versions/generation-ii/silver/25.png" width="40" decoding="async" loading="lazy"/> | <img src="sprites/pokemon/versions/generation-ii/silver/back/25.png" width="40" decoding="async" loading="lazy"/> | <img src="sprites/pokemon/versions/generation-ii/silver/shiny/25.png" width="40" decoding="async" loading="lazy"/> | <img src="sprites/pokemon/versions/generation-ii/silver/transparent/25.png" width="80" decoding="async" loading="lazy"/> | <img src="sprites/pokemon/versions/generation-ii/silver/back/shiny/25.png" width="40" decoding="async" loading="lazy"/> |
 
 ##### `generation iii`
