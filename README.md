@@ -56,6 +56,9 @@ sprites
             \- x and y (PNGs with female, shiny, shiny-female variants)
         \- generation vii
             \- ultra sun and ultra moon (PNGs with female, shiny, shiny-female variants)
+            \- icons (PNGs)
+        \- generation viii
+            \- icons (PNGs with female variants)
     \- default PokeAPI sprites (PNGs with back, female, shiny, back-female, back-shiny, shiny-female variants)
 \- items
     \- default PokeAPI items (PNGs)
@@ -210,6 +213,22 @@ Animated
 | --- | --- | --- | --- |
 | PNG<br>_128x128_ | PNG<br>_128x128_ | PNG<br>_128x128_ | PNG<br>_128x128_ |
 | <img src="sprites/pokemon/versions/generation-vii/ultra-sun-ultra-moon/25.png" width="100"/> | <img src="sprites/pokemon/versions/generation-vii/ultra-sun-ultra-moon/female/25.png" width="100"/> | <img src="sprites/pokemon/versions/generation-vii/ultra-sun-ultra-moon/shiny/25.png" width="100"/> | <img src="sprites/pokemon/versions/generation-vii/ultra-sun-ultra-moon/shiny/female/25.png" width="100"/> |
+
+###### `icons`
+
+| Front |
+| --- |
+| PNG<br>_40x30_ |
+| <img src="sprites/pokemon/versions/generation-vii/icons/25.png" width="40"/> |
+
+##### `generation vii`
+
+###### `icons`
+
+| Front |  Front female |
+| --- | --- |
+| PNG<br>_68x56_ | PNG<br>_68x56_ |
+| <img src="sprites/pokemon/versions/generation-viii/icons/25.png" width="68"/> | <img src="sprites/pokemon/versions/generation-viii/icons/female/25.png" width="68"/> |
 
 ### `items`
 
