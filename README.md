@@ -176,6 +176,10 @@ sprites
 
 ###### `black and white`
 
+This folder contains the official B&W sprites on top of custom sprites designed by the [Smogon community](https://www.smogon.com/)
+
+- The sprites with IDs ranging from 810 to 898 are thus not official. You can find the source of these sprites at this [Smogon thread](https://www.smogon.com/forums/threads/sword-shield-sprite-project.3647722/) and also at this [Google Sheet](https://docs.google.com/spreadsheets/d/1acgzAjh0dnFRQnjZu8kSjS177rKCzpFfEHRLtwuuXRU/edit#gid=0). We thank leParagon, Blaquaza, TheAetherPlayer, G.E.Z., KingOfThe-X-Roads, Spook, Cynda, Involuntary Twitch, mjco, Z-nogyroP, PumpkinPastel, RadicalCharizard and HM100 who are the spriters that created these custom B&W sprites
+
 | Front | Back | Front female | Front shiny | Back female | Back shiny | Shiny female |
 | --- | --- | --- | --- | --- | --- | --- |
 | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ |
@@ -236,3 +240,7 @@ Animated
 | --- |
 | PNG<br>_30x30_, _24x24_ |
 | <img src="sprites/items/ability-capsule.png" width="30"/> |
+
+## Thanks
+
+We would like to thank the [Smogon community](https://www.smogon.com/) for allowing us to use and serve their custom B&W-style sprites for the Pokemon 810-898. Check out their free and open-source Pokemon Battle Simulator at [Pokémon Showdown](https://github.com/smogon/pokemon-showdown)
