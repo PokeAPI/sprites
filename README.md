@@ -225,7 +225,7 @@ Animated
 | PNG<br>_40x30_ |
 | <img src="sprites/pokemon/versions/generation-vii/icons/25.png" width="40"/> |
 
-##### `generation vii`
+##### `generation viii`
 
 ###### `icons`
 
