@@ -1,6 +1,9 @@
 #!/bin/bash
-regex="^([0-9]+)_?([0-9]+)?([sbf]+)?.png$"
-files="../smogon/gen6/"
+# Usage: $0 <generationID>
+# If not submitted, generationID will be 6
+
+regex="^([0-9]+)_?([0-9]+)?([sbfg]+)?.png$"
+
 
 convert(){
     local id
@@ -8,10 +11,13 @@ convert(){
     local isFemale
     local isShiny
     local isBack
+    local isGmax
     local destination
+    local inputGeneration="${1:-6}"
+    local files="../smogon/gen$inputGeneration/"
 
     cd "$files" || exit
-    
+
     local destinationRoot='../../sprites/pokemon'
 
     for smogonName in *.png; do
@@ -20,6 +26,7 @@ convert(){
         isFemale=""
         isShiny=""
         isBack=""
+        isGmax=""
         destination="$destinationRoot"
         if [[ $smogonName =~ $regex ]]; then
             id="${BASH_REMATCH[1]}"
@@ -36,7 +43,10 @@ convert(){
                 isFemale="female"
                 destination="$destination/female"
             fi
-            if ! [ "$form" ]; then
+            if [[ "${BASH_REMATCH[3]}" == *g*  ]]; then
+                isGmax="gmax"
+            fi
+            if [ ! "$form" ] && ! [ "$isGmax" ]; then
                 echo "Copying $isBack $isFemale $isShiny $id $form" | tr -s " "
                 mkdir -p "$destination"
                 cp "$smogonName" "$destination/$id.png"
@@ -47,4 +57,4 @@ convert(){
     cd - || exit
 }
 
-convert
+convert "$1"
