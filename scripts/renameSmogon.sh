@@ -79,7 +79,7 @@ convert(){
                     echo "[-] Pkmn $speciesName-$isGmax wasn't found in PokeAPI"
                 else
                     echo "[+] Copying GMax $smogonName to $destination/$pokemonID.png"
-                    # TODO: copy
+                    cp "$smogonName" "$destination/$pokemonID.png"
                 fi
             fi
             if [ "$form" ]; then
@@ -92,14 +92,14 @@ convert(){
                         echo "[-] Pkmn $pokemonName wasn't found in PokeAPI"
                     else
                         echo "[+] Copying Form $smogonName to $destination/$pokemonID.png"
-                        # TODO: copy
+                        cp "$smogonName" "$destination/$pokemonID.png"
                     fi
                 fi
             fi
             if [ ! "$form" ] && [ ! "$isGmax" ]; then
                 echo "[+] Copying Pkmn $smogonName $destination/$id.png"
                 mkdir -p "$destination"
-                # cp "$smogonName" "$destination/$id.png"
+                cp "$smogonName" "$destination/$id.png"
             fi
         fi
     done
