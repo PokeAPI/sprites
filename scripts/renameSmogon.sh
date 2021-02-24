@@ -73,8 +73,8 @@ convert(){
                 isGmax="gmax"
             fi
             if [ "$isGmax" ]; then
-                speciesName=$(curl -sS "https://pokeapi.co/api/v2/pokemon-species/$id" | jq -r '.name')
-                pokemonID=$(curl -sS "https://pokeapi.co/api/v2/pokemon/$speciesName-$isGmax" | jq -r '.id' 2>/dev/null)
+                speciesName=$(curl -sS "https://pokeapi.co/api/v2/pokemon-species/$id/" | jq -r '.name')
+                pokemonID=$(curl -sS "https://pokeapi.co/api/v2/pokemon/$speciesName-$isGmax/" | jq -r '.id' 2>/dev/null)
                 if [ $? -ne 0 ]; then
                     echo "[-] Pkmn $speciesName-$isGmax wasn't found in PokeAPI"
                 else
@@ -87,7 +87,7 @@ convert(){
                 if [ $? -ne 0 ] || [ "$pokemonName" == 'null' ]; then
                     echo "[-] Form ${id}_${form} wasn't found in the JSON mapping"
                 else
-                    pokemonID=$(curl -sS "https://pokeapi.co/api/v2/pokemon/$pokemonName" | jq -r '.id' 2>/dev/null)
+                    pokemonID=$(curl -sS "https://pokeapi.co/api/v2/pokemon/$pokemonName/" | jq -r '.id' 2>/dev/null)
                     if [ $? -ne 0 ]; then
                         echo "[-] Pkmn $pokemonName wasn't found in PokeAPI"
                     else
