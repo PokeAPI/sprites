@@ -3,3 +3,11 @@ bower_components
 .DS_Store
 npm-debug.log
 test/
+desktop.ini
+
+# PhpStorm
+.idea/
+
+# Versioning
+.svn/
+.git/

@@ -77,6 +77,13 @@ sprites
 | SVG |
 | <img src="sprites/pokemon/other/dream-world/25.svg" width="100"/> |
 
+##### `home`
+
+| Front |
+| --- |
+| PNG<br>_512x512_ |
+| <img src="sprites/pokemon/other/home/25.png" width="100"/> |
+
 ##### `official-artwork`
 
 | Front |
