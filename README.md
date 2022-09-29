@@ -79,17 +79,19 @@ sprites
 
 ##### `home`
 
-| Front |
-| --- |
-| PNG<br>_512x512_ |
-| <img src="sprites/pokemon/other/home/25.png" width="100"/> |
+| Front | Front shiny|
+| --- | --- |
+| PNG<br>_512x512_ | PNG<br>_512x512_|
+| <img src="sprites/pokemon/other/home/25.png" width="100"/> | <img src="sprites/pokemon/other/home/shiny/25.png" width="100"/> |
 
 ##### `official-artwork`
 
-| Front |
-| --- |
-| PNG<br>_475x475_ |
-| <img src="sprites/pokemon/other/official-artwork/25.png" width="100"/> |
+| Front | Front shiny |
+| --- | --- |
+| PNG<br>_475x475_ | PNG<br>_475x475_|
+| <img src="sprites/pokemon/other/official-artwork/25.png" width="100"/> | <img src="sprites/pokemon/other/official-artwork/shiny/25.png" width="100"/> |
+
+- This folder contains the custom shiny sprites of the official artwork. We thank [@DevMike123](https://github.com/DevMike123) who is the spriter that created these custom shiny sprites.
 
 #### `versions`
 
