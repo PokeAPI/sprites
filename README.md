@@ -91,7 +91,7 @@ sprites
 | PNG<br>_475x475_ | PNG<br>_475x475_|
 | <img src="sprites/pokemon/other/official-artwork/25.png" width="100"/> | <img src="sprites/pokemon/other/official-artwork/shiny/25.png" width="100"/> |
 
-- This folder contains the custom shiny sprites of the official artwork. We thank [@DevMike123](https://github.com/DevMike123) who is the spriter that created these custom shiny sprites.
+- This folder contains the custom shiny sprites of the official artwork. We thank [@DevMike123](https://github.com/DevMike123) and Pokétwo who are the spriters that created these custom shiny sprites.
 
 #### `versions`
 
