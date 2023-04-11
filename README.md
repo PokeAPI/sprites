@@ -100,7 +100,7 @@ This folder contains the custom shiny sprites of the official artwork. We thank 
 | Front |
 | --- |
 | GIF<br>_varies_ |
-| <img src="sprites/pokemon/other/smogon/25.gif" width="100"/> |
+| <img src="sprites/pokemon/other/showdown/25.gif" width="100"/> |
 
 This folder contains sprites designed by the [Smogon community](https://www.smogon.com/)
 
