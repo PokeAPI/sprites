@@ -25,7 +25,7 @@ bower install --save PokeAPI/sprites
 
 ## Sprites
 
-The sprites are divided in the different subfolders you can see below. 
+The sprites are divided in the different subfolders you can see below.
 
 ```
 sprites
@@ -33,6 +33,8 @@ sprites
     \- other
         \- dream world (SVGs)
         \- official artwork (PNGs)
+        \- showdown (GIFs)
+        \- home (PNGs)
     \- versions
         \- generation i
             \- red and blue (PNGs with back, gray, transparent, back-gray variants)
@@ -64,7 +66,7 @@ sprites
     \- default PokeAPI items (PNGs)
 ```
 
-> All the following images are embedded at a maximum 100x100px size. All the smaller ones preserve their size while the bigger ones are embedded at 100x100px. 
+> All the following images are embedded at a maximum 100x100px size. All the smaller ones preserve their size while the bigger ones are embedded at 100x100px.
 
 ### `pokemon`
 
@@ -91,7 +93,16 @@ sprites
 | PNG<br>_475x475_ | PNG<br>_475x475_|
 | <img src="sprites/pokemon/other/official-artwork/25.png" width="100"/> | <img src="sprites/pokemon/other/official-artwork/shiny/25.png" width="100"/> |
 
-- This folder contains the custom shiny sprites of the official artwork. We thank [@DevMike123](https://github.com/DevMike123) and Pokétwo who are the spriters that created these custom shiny sprites.
+This folder contains the custom shiny sprites of the official artwork. We thank [@DevMike123](https://github.com/DevMike123) and Pokétwo who are the spriters that created these custom shiny sprites.
+
+##### `showdown`
+
+| Front |
+| --- |
+| GIF<br>_varies_ |
+| <img src="sprites/pokemon/other/smogon/25.gif" width="100"/> |
+
+This folder contains sprites designed by the [Smogon community](https://www.smogon.com/)
 
 #### `versions`
 
