@@ -269,10 +269,15 @@ Animated
 
 ###### `icons`
 
-| Front |
+| Front Big |
 | --- |
 | PNG<br>_256x256_ |
-| <img src="sprites/pokemon/versions/generation-ix/scarlet-violet/icons/pm0025_00_00_00_big.png" width="256"/> |
+| <img src="sprites/pokemon/versions/generation-ix/scarlet-violet/icons/Big/pm0025_00_00_00_big.png" width="256"/> |
+
+| Front Small |
+| --- |
+| PNG<br>_100x100_ |
+| <img src="sprites/pokemon/versions/generation-ix/scarlet-violet/icons/Small/pm0025_00_00_00.png" width="100"/> |
 
 ## Thanks
 
