@@ -1,6 +1,5 @@
 - Add SV item sprites /home/daniella/Desktop/Pokemon Sprite Artwork/sprites/sprites/items/gen9
 - Add gen9 (and other pending gens) badges /home/daniella/Desktop/Pokemon Sprite Artwork/sprites/sprites/badges
--? Add script to handle /home/daniella/Desktop/Pokemon Sprite Artwork/sprites/sprites/pokemon/versions/generation-ix/scarlet-violet/icons/Pokemon Sprite Artwork-20240106T055011Z-001.zip.weborigin and its resulting zip extraction
 - Complete /home/daniella/Desktop/Pokemon Sprite Artwork/sprites/sprites/pokemon/versions/generation-ix/scarlet-violet/icons/SVG
 - SVG for all gen9 badges (star, gym, titan) and items sprites/icons
 - SVG for all dreamworld PNGs that are still pending their vector counterparts https://github.com/PokeAPI/sprites/issues/126#issuecomment-1879563179
