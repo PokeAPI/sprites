@@ -1,0 +1,29 @@
+<pre><font color="#42E66C">     __  ,</font>
+<font color="#42E66C"> .--()°&apos;.&apos; </font>Welcome to <font color="#42E66C">Nushell</font>,
+<font color="#42E66C">&apos;|, . ,&apos;   </font>based on the <font color="#42E66C">nu</font> language,
+<font color="#42E66C"> !_-(_\    </font>where all data is structured!
+
+Our <font color="#42E66C">Documentation</font> is located at <font color="#42E66C">http://nushell.sh</font>
+<font color="#75D7EC">Tweet</font> us at <font color="#8BE9FD"><b>@nu_shell</b></font>
+
+It&apos;s been this long since <font color="#42E66C">Nushell</font>&apos;s first commit:
+4yr 8month 1day 12hr 55min 49sec 872ms 776µs 44ns
+
+Startup Time: 212ms 27µs 165ns
+
+<font color="#8BE9FD"><b>Desktop/Pokemon Sprite Artwork</b></font> on <font color="#FF5555"><b> main</b></font> <font color="#FF79C6"><b>[✘+?⇡]</b></font> 
+<font color="#50FA7B"><b>❯</b></font> <font color="#75D7EC">git</font> <font color="#50FA7B"><b>clone</b></font> <font color="#50FA7B"><b>https://github.com/danimesq/sprites</b></font>
+Cloning into &apos;sprites&apos;...
+remote: Enumerating objects: 60151, done.
+remote: Counting objects: 100% (57996/57996), done.
+remote: Compressing objects: 100% (50940/50940), done.
+remote: Total 60151 (delta 7044), reused 57927 (delta 7034), pack-reused 2155
+Receiving objects: 100% (60151/60151), 1.42 GiB | 21.34 MiB/s, done.
+Resolving deltas: 100% (7048/7048), done.
+Updating files: 100% (55442/55442), done.
+[<font color="#E4F34A">WARN</font>] - (starship::utils): Executing command &quot;/usr/bin/git&quot; timed out.
+[<font color="#E4F34A">WARN</font>] - (starship::utils): You can set command_timeout in your config to a higher value to allow longer-running commands to keep executing.
+
+<font color="#8BE9FD"><b>Desktop/Pokemon Sprite Artwork</b></font> on <font color="#FF5555"><b> main</b></font> took <font color="#F1FA8C"><b>1m44s</b></font> 
+<font color="#50FA7B"><b>❯</b></font> 
+</pre>
