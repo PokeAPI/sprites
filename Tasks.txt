@@ -1,0 +1,6 @@
+- Add SV item sprites /home/daniella/Desktop/Pokemon Sprite Artwork/sprites/sprites/items/gen9 | https://www.spriters-resource.com/nintendo_switch/pokemonscarletviolet/sheet/187089/ https://www.spriters-resource.com/nintendo_switch/pokemonscarletviolet/sheet/187101/
+- Add gen9 (and other pending gens) badges /home/daniella/Desktop/Pokemon Sprite Artwork/sprites/sprites/badges
+- Complete /home/daniella/Desktop/Pokemon Sprite Artwork/sprites/sprites/pokemon/versions/generation-ix/scarlet-violet/icons/SVG
+- SVG for all gen9 badges (star, gym, titan) and items sprites/icons
+- SVG for all dreamworld PNGs that are still pending their vector counterparts https://github.com/PokeAPI/sprites/issues/126#issuecomment-1879563179
+- add gen9 pokedex covers https://www.spriters-resource.com/nintendo_switch/pokemonscarletviolet/sheet/187088/ https://www.spriters-resource.com/nintendo_switch/pokemonscarletviolet/sheet/206164/ https://www.spriters-resource.com/nintendo_switch/pokemonscarletviolet/sheet/212257/
