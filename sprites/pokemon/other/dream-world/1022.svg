@@ -1,0 +1,1143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg version="1.1" viewBox="0 0 210 221.37" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="linearGradient118437-0-1" x2="1" gradientTransform="matrix(15.256 25.744 -25.744 15.256 132.11 43.065)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#dcdddd" offset="0"/>
+   <stop stop-color="#dcdddd" offset=".4"/>
+   <stop stop-color="#aaabab" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient118443-9-0" x2="1" gradientTransform="matrix(1.4446 28.17 -28.17 1.4446 31.474 165.83)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#dcdddd" offset="0"/>
+   <stop stop-color="#dcdddd" offset=".4"/>
+   <stop stop-color="#aaabab" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient118449-7-8" x2="1" gradientTransform="matrix(.27299 7.0977 -7.0977 .27299 149.67 170.7)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#dcdddd" offset="0"/>
+   <stop stop-color="#dcdddd" offset=".4"/>
+   <stop stop-color="#aaabab" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient118455-8-7" x2="1" gradientTransform="matrix(.054598 4.9684 -4.9684 .054598 184.76 153.16)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#dcdddd" offset="0"/>
+   <stop stop-color="#dcdddd" offset=".4"/>
+   <stop stop-color="#aaabab" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient118461-5-0" x2="1" gradientTransform="matrix(1.4446 28.17 -28.17 1.4446 31.396 165.83)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#dcdddd" offset="0"/>
+   <stop stop-color="#dcdddd" offset=".4"/>
+   <stop stop-color="#aaabab" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient118467-0-1" x2="1" gradientTransform="matrix(-6.5006 22.247 -22.247 -6.5006 163.68 84.668)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#dcdddd" offset="0"/>
+   <stop stop-color="#dcdddd" offset=".4"/>
+   <stop stop-color="#aaabab" offset="1"/>
+  </linearGradient>
+  <radialGradient id="radialGradient119413-4-5" cx="0" cy="0" r="1" gradientTransform="matrix(.78007 0 0 .78007 47.784 83.402)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119419-3-5" cx="0" cy="0" r="1" gradientTransform="matrix(.78007 0 0 .78007 56.085 71.028)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119425-6-4" cx="0" cy="0" r="1" gradientTransform="matrix(.78007 0 0 .78007 48.349 175.57)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119431-1-3" cx="0" cy="0" r="1" gradientTransform="matrix(.78007 0 0 .78007 15.222 181.22)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119437-5-3" cx="0" cy="0" r="1" gradientTransform="matrix(.85809 0 0 .85809 54.02 85.253)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119443-7-2" cx="0" cy="0" r="1" gradientTransform="matrix(.85809 0 0 .85809 16.118 60.7)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119449-8-5" cx="0" cy="0" r="1" gradientTransform="matrix(.85809 0 0 .85809 14.491 95.483)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119455-0-1" cx="0" cy="0" r="1" gradientTransform="matrix(.85809 0 0 .85809 48.31 91.878)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119461-5-8" cx="0" cy="0" r="1" gradientTransform="matrix(.77227 0 0 .77227 69.161 76.971)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119467-4-3" cx="0" cy="0" r="1" gradientTransform="matrix(.77227 0 0 .77227 17.151 65.084)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119473-7-7" cx="0" cy="0" r="1" gradientTransform="matrix(.69504 0 0 .69504 11.364 100.84)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119479-0-8" cx="0" cy="0" r="1" gradientTransform="matrix(.69504 0 0 .69504 15.904 107.37)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119485-9-6" cx="0" cy="0" r="1" gradientTransform="matrix(.77227 0 0 .77227 58.511 65.182)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119491-3-4" cx="0" cy="0" r="1" gradientTransform="matrix(.77227 0 0 .77227 8.3824 83.889)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119497-5-5" cx="0" cy="0" r="1" gradientTransform="matrix(.77227 0 0 .77227 21.984 112.24)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119503-8-9" cx="0" cy="0" r="1" gradientTransform="matrix(.77227 0 0 .77227 61.824 71.807)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119509-8-0" cx="0" cy="0" r="1" gradientTransform="matrix(.93609 0 0 .93609 67.368 65.864)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119515-9-3" cx="0" cy="0" r="1" gradientTransform="matrix(.93609 0 0 .93609 22.539 58.946)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119521-5-5" cx="0" cy="0" r="1" gradientTransform="matrix(.93609 0 0 .93609 21.575 177.42)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119527-6-9" cx="0" cy="0" r="1" gradientTransform="matrix(.93609 0 0 .93609 123.37 174.31)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119533-6-2" cx="0" cy="0" r="1" gradientTransform="matrix(.93609 0 0 .93609 135.89 205.39)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119539-8-8" cx="0" cy="0" r="1" gradientTransform="matrix(.93609 0 0 .93609 134.64 181.42)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119545-4-6" cx="0" cy="0" r="1" gradientTransform="matrix(.93609 0 0 .93609 158.53 183.76)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119551-8-6" cx="0" cy="0" r="1" gradientTransform="matrix(.93609 0 0 .93609 168.01 209.97)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119557-8-9" cx="0" cy="0" r="1" gradientTransform="matrix(.93609 0 0 .93609 197.76 161.93)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119563-9-4" cx="0" cy="0" r="1" gradientTransform="matrix(.93609 0 0 .93609 187.17 175.96)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119569-9-0" cx="0" cy="0" r="1" gradientTransform="matrix(.84248 0 0 .84248 125.61 164.08)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119575-0-5" cx="0" cy="0" r="1" gradientTransform="matrix(.84248 0 0 .84248 108.04 181.03)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119581-7-2" cx="0" cy="0" r="1" gradientTransform="matrix(.84248 0 0 .84248 150.26 192.92)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119587-2-5" cx="0" cy="0" r="1" gradientTransform="matrix(.84248 0 0 .84248 173.34 207.92)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119593-6-9" cx="0" cy="0" r="1" gradientTransform="matrix(.84248 0 0 .84248 199.34 185.61)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119599-7-2" cx="0" cy="0" r="1" gradientTransform="matrix(.75823 0 0 .75823 200.39 164.47)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119605-2-4" cx="0" cy="0" r="1" gradientTransform="matrix(.75823 0 0 .75823 170.15 180.54)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119611-6-0" cx="0" cy="0" r="1" gradientTransform="matrix(.75823 0 0 .75823 155.47 200.32)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119617-7-8" cx="0" cy="0" r="1" gradientTransform="matrix(.75823 0 0 .75823 133.32 208.7)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119623-2-4" cx="0" cy="0" r="1" gradientTransform="matrix(.75823 0 0 .75823 132.06 161.25)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119629-0-1" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 117.21 163.39)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119635-4-1" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 114.47 173.82)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119641-5-6" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 139.18 185.22)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119647-9-0" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 162.34 186.58)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119653-7-5" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 167.1 185.22)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119659-9-2" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 143.36 200.52)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119665-7-7" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 153.19 197.3)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119671-9-6" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 157.47 197.79)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119677-1-4" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 134.17 185.41)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119683-8-1" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 179.77 163.49)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119689-9-5" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 185.49 163)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119695-0-6" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 205.05 187.56)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119701-0-9" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 198.4 188.82)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119707-1-3" cx="0" cy="0" r="1" gradientTransform="matrix(.61416 0 0 .61416 189.42 181.03)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119713-7-5" cx="0" cy="0" r="1" gradientTransform="matrix(.61416 0 0 .61416 191.4 165.63)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119719-3-1" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 163.53 205.39)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119725-8-3" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 173.32 182.39)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119731-7-1" cx="0" cy="0" r="1" gradientTransform="matrix(.75823 0 0 .75823 110.1 160.18)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119737-5-4" cx="0" cy="0" r="1" gradientTransform="matrix(.93609 0 0 .93609 8.9085 178.69)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119743-9-1" cx="0" cy="0" r="1" gradientTransform="matrix(.84248 0 0 .84248 36.414 202.85)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119749-2-1" cx="0" cy="0" r="1" gradientTransform="matrix(.75823 0 0 .75823 43.058 179.96)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119755-4-8" cx="0" cy="0" r="1" gradientTransform="matrix(.75823 0 0 .75823 50.191 201.2)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119761-5-4" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 37.135 178.01)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119767-0-0" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 34.728 181.71)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119773-9-5" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 31.259 180.83)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119779-8-8" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 27.021 194.77)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119785-4-6" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 47.151 199.44)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119791-7-3" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 24.322 197.98)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119797-1-6" cx="0" cy="0" r="1" gradientTransform="matrix(.68241 0 0 .68241 10.312 190.09)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119803-7-1" cx="0" cy="0" r="1" gradientTransform="matrix(.93609 0 0 .93609 20.513 193.69)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119809-3-9" cx="0" cy="0" r="1" gradientTransform="matrix(.93609 0 0 .93609 7.7685 74.438)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119833-1-1" cx="0" cy="0" r="1" gradientTransform="matrix(.85809 0 0 .85809 108.12 69.079)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119839-6-8" cx="0" cy="0" r="1" gradientTransform="matrix(.85809 0 0 .85809 92.155 116.82)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119845-8-8" cx="0" cy="0" r="1" gradientTransform="matrix(.77227 0 0 .77227 86.718 121.79)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119851-0-6" cx="0" cy="0" r="1" gradientTransform="matrix(.77227 0 0 .77227 107.66 56.705)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119857-2-9" cx="0" cy="0" r="1" gradientTransform="matrix(.77227 0 0 .77227 113.43 87.786)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119863-5-6" cx="0" cy="0" r="1" gradientTransform="matrix(.69504 0 0 .69504 107.07 95.776)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119869-2-4" cx="0" cy="0" r="1" gradientTransform="matrix(.69504 0 0 .69504 93.567 112.83)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119875-6-4" cx="0" cy="0" r="1" gradientTransform="matrix(.93609 0 0 .93609 112.37 70.053)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient119881-2-2" cx="0" cy="0" r="1" gradientTransform="matrix(.93609 0 0 .93609 98.79 108.64)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" offset=".25"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </radialGradient>
+ </defs>
+ <path d="m182.54 82.11c1.5005-1.2569 2.3579-2.4846 3.1374-3.6635 0.98409-1.5005 0.19487-2.3287-2.163-1.8318-4.4333 0.93537-8.3014 1.062-13.631 0.85742-3.5076-0.13641-5.0276 3.9169 0.17538 6.0799 4.6866 1.9487 9.7727 0.83793 12.481-1.442" fill="#aaabab"/>
+ <path d="m129.88 170.17c-0.0195-2.3676 0.2923-3.3322 2.3092-5.4856 4.141-4.4333 6.8009-8.0676 7.366-10.016 0.58461-1.9779 0.76973-5.6414 0.58461-8.7301-0.0585-0.92562 0.0487-1.6077 0.34102-2.0753-2.923-1.7733-4.8815-5.2322-5.0179-7.9312-0.0974-2.1143-0.86716-4.141-2.163-4.4333-3.7512-0.83793-12.813 2.8451-16.817 5.5538-0.95485 0.65281-1.1887 1.5882-1.442 3.001-0.41897 2.241-1.8318 3.9851-4.3358 5.2712-2.5723 1.3154-3.1764 2.241-3.2933 4.3358-0.49691 8.9834-0.85742 18.844-1.0815 29.104l23.491-0.84768c0.0487-2.5723 0.078-5.164 0.0585-7.746" fill="#949595"/>
+ <path d="m129.88 170.61c-1.2082-1.1887-2.3482-2.3384-3.4687-3.6343 1.4615-0.0487 2.8646-0.12666 4.1604-0.25333 0.35077-0.60409 0.86717-1.2472 1.6174-2.0461 3.4199-3.6635 5.8266-6.7717 6.8789-8.847-9.568 1.5784-22.897 1.4615-30.341-0.34102-1.2277-0.29231-1.5395-1.0133-1.5005-2.582-2.0948 0.33128-2.8061 1.0133-2.8646 2.5723-0.10717 2.3482-0.17538 4.6671-0.19487 7.4635-0.01 1.4518 0.37025 1.9682 1.7636 2.3092 2.7379 0.67229 6.1773 1.1595 9.7922 1.4518-3.1374 3.2056-6.2845 6.6742-8.7399 9.6362-0.23384 0.28256-0.42871 0.5164-0.61383 0.72102-0.0195-0.68204-0.0292-1.2764-0.0292-1.9097-1.783 0.20461-3.001 1.4712-3.1471 3.4297-0.13641 1.8805-0.23384 4.1604-0.25333 6.2163-0.0195 1.5395 0.23385 1.9779 1.6564 2.7184 1.1887 0.62358 2.3482 1.1205 3.5758 1.6466 3.9753 1.6954 14.527 1.7441 21.338 0.89639 0.13641-6.304 0.40922-12.891 0.37025-19.448" fill="#f6ac1d"/>
+ <path d="m128.26 183.82c-2.8158-3.1861-6.9373-6.645-8.9542-6.684-2.7671-0.0487-11.965 9.2952-12.101 11.887-0.0585 1.14 2.6405 3.0789 6.0994 4.6963 1.14-0.61384 2.4066-1.3251 3.7512-2.1241-0.12666 0.83794-0.25333 1.6564-0.35076 2.4066 3.9363 0.43845 10.289-0.62358 13.719-2.163 1.5395-0.69179 1.2861-4.1117-2.163-8.0188" fill="#313037"/>
+ <path d="m192.16 125.95c-0.55538-1.9584-1.7928-3.6246-3.4297-4.5697-3.683-2.1143-12.627 6.8107-10.533 11.322 0.65281 1.3933 1.5979 2.6112 2.8451 3.3615 5.7194 3.42 12.92-3.7999 11.117-10.114" fill="#918f90"/>
+ <path d="m206.88 177.39c-0.54563-8.4963-1.5784-18.288-2.5236-26.804-0.18512-1.6856-0.60409-2.0948-2.1241-2.9035-7.863-4.1702-8.2917-11.488-5.203-20.52 1.101-3.2153 0.98408-5.2712-0.25333-5.8655-1.7928-0.87691-5.0471 1.4225-5.9532 4.8327-1.9974 7.5122-4.9204 9.3244-11.965 9.0906-1.8902-0.0682-2.1728 0.2241-2.241 1.6564-0.24359 5.3394-2.8061 8.4281-7.0348 10.708-1.2374 0.67229-1.403 0.9646-1.4518 2.0559-0.0682 1.7343-0.17538 5.4271-0.28256 9.9578 1.3348 1.6759 2.9523 3.2153 4.7938 4.5697 1.3738 1.0231 2.163 2.1728 2.3871 4.443 0.46768 4.8522 0.90614 10.25 1.2959 15.716 10.952-1.1108 23.793-2.7184 29.074-3.9753 1.0523-0.25333 1.6077-1.062 1.481-2.962" fill="#aaabab"/>
+ <path d="m176.45 179.27c-2.4261 1.179-3.3712 13.28 0.43845 16.993 0.1559 0.1559 0.41897 0.41897 0.6041 0.55538 0.76973-0.30205 1.442-0.54564 2.1825-0.80871 0 0.41897 0 0.83794 0.01 1.2472 4.2676-0.54563 11.38-2.8938 16.145-5.4563-3.9948-11.858-14.313-14.985-19.38-12.53" fill="#313037"/>
+ <path d="m184.25 92.93c5.9435 7.3465 7.0835 11.604 5.7291 17.236-1.0231 4.2968-0.76973 6.3722 0.81845 8.4768-2.2118 10.932-6.6937 14.693-10.981 15.024-3.4394 0.26307-7.785-1.7928-12.033-6.304-7.0542-7.5024 11.39-40.708 16.466-34.433" fill="#aaabab"/>
+ <path d="m180.53 98.57c1.2569 9.9675-4.6281 22.39-9.9383 23.199-1.6661 0.25333-2.4066-5.2225 2.0559-14.8 4.5989-9.8506 7.7363-9.5388 7.8824-8.3988" fill="#bfc0c0"/>
+ <path d="m47.324 123.65c-2.0364 5.505-5.5635 9.9383-9.1393 12.247-2.8743 1.8512-5.2712 1.3056-8.126-1.3056-4.1215-3.7707-6.7424-2.6502-8.4183-0.64307-5.9727-6.226-9.2465-17.996-9.1296-28.071 0.13641-11.76 10.24-27.847 18.337-27.282 9.1004 0.64306 20.412 34.385 16.476 45.054" fill="#aaabab"/>
+ <path d="m45.743 122.52c-1.2959 1.6661-2.7769 2.7769-4.5307 3.001-5.9727 0.7405-11.273-7.8727-12.618-18.668-0.9646-7.7265 0.63332-13.894 2.8158-17.743 2.0656-3.6343 16.71 30.361 14.333 33.41" fill="#bfc0c0"/>
+ <path d="m169.47 75.52c-4.3066-1.3446-9.0029-5.8071-10.065-9.948-5.3881-20.939-21.835-37.902-34.862-38.925-8.2819-0.65281-17.08 3.6928-21.601 8.9542-1.9682 2.2994-2.7964 1.7733-1.9487-1.2277 1.3738-4.8035 3.5564-9.6557 6.1773-14.108-28.422-6.8496-49.243 7.0835-52.576 19.36-0.63332 2.3579-1.7343 2.0754-1.9682-0.03897-0.18512-1.6661-0.30205-3.3907-0.37025-5.125-4.1117 4.102-8.1163 9.1393-9.9578 14.498-8.925 25.956-5.4076 68.993 19.341 84.758 14.693 9.3732 33.361 12.861 49.341 6.5281 13.651-5.3978 22.01-14.985 32.192-40.494l24.7-19.341c0.79896-0.76973 1.52-1.5297 2.241-2.3774 1.2569-1.481 1.0913-1.9682-0.64307-2.5138" fill="#aaabab"/>
+ <path d="m141.57 122.75c-2.0461-2.8158-3.0984-7.8532-2.6697-13.904 0.21436-2.9815 11.712-23.033 13.163-23.258 0.40922-0.0585 0.78921-0.0585 1.1497 0 2.6015 0.46769 3.8389 8.8958 0.87691 19.545-4.9107 17.626-10.542 20.344-12.52 17.616" fill="#bfc0c0"/>
+ <path d="m132.63 88.74c-0.50666 33.439-23.121 52.351-53.063 50.656-25.528-1.442-50.149-20.763-48.834-54.505 1.1984-30.507 25.128-52.049 53.17-50.948 33.547 1.3154 49.097 30.351 48.727 54.797" fill="#453935"/>
+ <path d="m55.63 115.95c10.016 7.8532 24.787 6.3625 30.341-1.9292 9.5486-14.274 10.406-28.09 6.304-41.117-1.5297-4.8522-4.7158-8.7788-8.847-11.575z" fill="#aaabab"/>
+ <path d="m39.877 91.51c0.70153 18.795 16.807 28.568 27.671 27.36 13.144-1.4712 27.934-21.816 14.605-39.987-4.1312-5.6317-42.627 3.3225-42.277 12.627" fill="#bfc0c0"/>
+ <path d="m52.645 59.85c-3.7512-4.2871-8.5742-10.065-12.325-14.976-3.5076 9.9188-4.024 25.84-2.0559 36.187-1.4128-0.75024-2.8743-1.6369-4.3553-2.6015 0.31179 7.2881 9.188 21.182 13.368 21.962 14.06-3.9266 30.244-16.135 35.846-39.276-8.3404-5.4856-20.383-6.4599-30.477-1.2959" fill="#453935"/>
+ <path d="m79.515 63.32c-7.8727-7.483-23.979-4.9302-30.526 3.6928-7.8629 10.348-5.9045 24.768-1.9974 33.361 12.813-2.0559 33.42-18.171 32.524-37.054" fill="#f6ac1d"/>
+ <path d="m87.016 47.516c-5.5245 9.1491-12.93 25.362-18.581 38.798-0.59435-1.8318-1.2666-3.4784-2.1143-5.0861-4.4722 7.7168-15.434 17.1-19.302 19.126 6.645 1.9487 33.079-14.664 35.866-21.387 2.9717-7.1614 5.2907-22.088 4.1312-31.452" fill="#453935"/>
+ <path d="m51.769 110.59c-0.76973-1.8707-1.4031-3.7512-1.8415-5.3589 1.861-2.0169 3.9753-4.3943 5.9727-6.8009-1.062 0.44819-2.0656 0.83793-3.0205 1.1497-1.14 1.442-2.6307 3.1276-3.8681 4.3358-1.0815-1.1692-1.9487-2.3676-2.6892-3.8486-0.72101-0.37999-1.52-1.0231-2.3579-1.861 0.79896 2.6697 2.6794 5.5245 4.4917 7.3953 0.39948 1.6369 1.062 3.5076 1.7343 5.1445 0.37999-0.0877 0.93537-0.14615 1.5784-0.15589" fill="#918f90"/>
+ <path d="m75.822 97.78c1.6759 2.7379 2.7087 5.3491 3.5076 8.6619 0.36051 1.5102 2.0559 1.2472 1.7343-0.26307-0.7405-3.5271-1.9779-6.4599-3.722-9.2173-0.83793-1.3251-2.2897-0.43845-1.52 0.81845" fill="#918f90"/>
+ <path d="m26.856 116.79c-0.63332-11.984-0.32153-22.381 1.7636-30.838 0.66255-2.6892 1.783-3.7999 6.4209-4.7645 7.4342 2.6112 7.444-6.9958 3.1082-7.5122-5.3297-0.64307-8.0968-3.5564-9.2952-14.459-8.9055 1.403-21.572 10.27-21.669 18.21-0.087691 7.9409 10.591 31.491 19.672 39.363" fill="#453935"/>
+ <path d="m26.856 116.79c0.2241 4.1897 0.55538 8.584 0.9646 13.144-16.174-16.681-27.155-49.039-26.142-55.469 0.64307-4.1312 18.123-19.789 26.356-25.859 0.16564 4.102 0.41897 6.9276 0.81845 10.611-8.0383 6.3624-16.885 14.956-17.285 18.21-0.48717 4.0533 7.9506 26.726 15.287 39.363" fill="#f6ac1d"/>
+ <path d="m148.18 36.592c-1.2959-14.878-8.2332-34.531-20.179-35.057-8.3111-0.37025-22.371 16.554-27.009 32.845-0.85742 3.001-0.0292 3.5271 1.9487 1.2277 4.5112-5.2614 13.319-9.607 21.591-8.964 9.3147 0.7405 20.364 9.607 27.886 22.254l-0.0195-0.039c-3.0594-4.9984-3.7317-6.645-4.2189-12.267" fill="#453935"/>
+ <path d="m62.083 1.055c-7.1224 1.783-11.263 22.342-9.4609 38.535 0.23384 2.1143 1.3348 2.3969 1.9682 0.03897 2.5138-9.2368 14.927-19.419 33.02-20.968-10.903-14.391-17.918-19.506-25.528-17.606" fill="#453935"/>
+ <path d="m159.32 137.13c-6.0702-6.1773-12.676-4.8327-14.518-1.7343-3.2543-1.9877-4.9204-5.505-5.7194-9.7629-0.37025-1.9389-0.0292-2.8451 1.783-4.1897 8.8957-6.6255 12.793-19.847 11.507-36.207-0.26307-3.381 0.10718-4.3066 1.5979-5.1445 3.3712-1.9 7.2296-2.5041 11.595-1.4615 10.679 2.5723 13.387 13.173 8.5255 35.281-1.6661 7.5804-4.6184 13.426-8.8373 17.957z" fill="#aaabab"/>
+ <path d="m147.65 91.94c-0.61384 6.3625-3.8389 14.001-8.8178 18.581-0.0292 0.83793-0.0195 1.6369 0.0195 2.4261 6.9373-5.3881 11.02-15.56 10.689-23.803z" fill="#918f90"/>
+ <path d="m177.2 198.17c-0.53589-9.6752-1.2959-20.549-2.1728-29.552-0.21436-2.2702-1.0036-3.42-2.3774-4.443-6.9763-5.164-10.922-12.822-7.0055-21.231 1.481-3.1764 2.241-5.5635 2.8158-8.3111 0.79896-3.7804-2.5041-5.6609-5.4953-3.2446-2.2312 1.8025-3.4297 3.4297-5.7778 7.2881-2.7574 4.5502-5.6317 4.9107-14.44 4.3748-1.9194-0.11692-2.7379 0.6723-2.6015 2.884 0.19487 3.0984 0 6.7522-0.57486 8.7301-0.57487 1.9487-3.2348 5.583-7.3758 10.016-2.0169 2.163-2.3287 3.1276-2.3092 5.4856 0.0877 9.8019-0.5846 19.682-0.40922 28.587 0.039 1.52 0.94511 2.3969 2.0754 2.582 10.289 1.7441 35.281 2.0266 44.274-0.53589 0.79896-0.23384 1.4712-0.95485 1.3738-2.6307" fill="#aaabab"/>
+ <path d="m179.9 200.4c-0.0877-1.7246-0.89639-2.6405-2.6989-3.1569 0.14615 2.1046-0.38974 2.4651-1.3154 2.7087-2.4651 0.64307-7.5024 0.84768-10.572 0.4482-2.7087-2.5333-7.5901-7.5024-10.425-10.961 8.6132-0.26307 16.866-1.3641 22.439-3.1666 1.822-0.58461 2.0851-0.93537 2.1046-2.4748 0.0195-3.1276-0.1559-5.924-0.57487-9.1101-0.17538-1.3056-1.4128-1.9292-3.4297-2.2897 0.2241 1.7538-0.35076 2.5138-1.3543 2.7379-14.43 3.2056-29.99 3.4005-42.472 0.28256-0.99383-0.24358-1.4713-0.81845-1.6369-2.0266-1.6954 0.17538-2.4456 1.0718-2.5041 2.4846-0.0877 2.163-0.13641 5.7486-0.11692 9.0906 0 1.5882 0.26307 1.9292 1.9292 2.3287 4.7256 1.1595 10.445 1.8415 16.379 2.0948-3.2348 3.8584-7.2783 8.0286-11.185 11.293-1.2374-0.0195-2.4456-0.0682-3.7415-0.19487-0.91588-0.0974-1.2861-0.38974-1.3056-2.2702-1.6954 0.13641-2.3676 0.9646-2.4261 2.543-0.10718 2.9425-0.10718 6.4989-0.0195 9.8214 0.039 1.559 0.32153 1.8415 1.9389 2.2215 12.657 3.001 38.204 3.9071 49.146 0.65281 1.4518-0.43846 2.0072-0.8964 2.0266-3.0887 0.0195-3.5466-0.039-7.2004-0.18513-9.9675" fill="#f6ac1d"/>
+ <path d="m145.98 143.21c6.3332 0.20461 8.8178-0.59435 11.205-4.5307 0.5164-0.84768 0.97434-1.5882 1.403-2.2507-5.8558-5.3686-12.023-4.0143-13.787-1.0328-1.2764 2.3092-0.93537 5.8168 1.179 7.8142" fill="#bfc0c0"/>
+ <path d="m149.59 132.81c-0.76973 0.0585-1.4907 0.2241-2.1338 0.47743-2.3384 2.7184-2.543 7.9701 0.24359 9.948 0.78921 0 1.52-0.0292 2.1825-0.0779-3.5174-1.9292-3.1861-7.444-0.2923-10.348" fill="#918f90"/>
+ <path d="m153.93 133.48c-1.5297 2.3676-1.5687 6.4307-0.43845 8.8275 0.5164-0.24358 0.99383-0.53589 1.4323-0.89639-0.86717-2.3189-0.72101-5.3394 0.53589-7.2296-0.5164-0.28256-1.0231-0.50666-1.5297-0.70153" fill="#918f90"/>
+ <path d="m49.419 164.2c-0.23384-2.7087-0.84768-3.6343-2.2118-4.7645-5.9143-4.901-7.9409-8.6424-7.6583-14.45 0.11692-2.4456-0.35076-3.2835-1.6369-3.4687-1.3543-0.19487-2.7964-0.27282-5.0081-0.33128l-10.698-6.7717c-1.9487-1.8318-3.761-4.5112-4.7743-6.5573-2.0851-1.7343-3.4979-1.9487-4.2579-1.3836-0.8964 0.65281-0.79896 3.1764 0.32153 5.6609 2.3092 5.125 4.9204 12.861 4.862 16.028-0.04872 3.001-2.7866 7.1322-5.8655 9.5388-2.1143 1.6661-2.5528 2.4456-2.8646 5.0568-0.99383 8.3306-1.9779 19.009-2.4359 28.022-0.13641 2.6307 25.801 9.7824 41.994 3.4199 1.1984-0.47743 1.8415-1.8415 1.783-3.5661-0.28256-8.2137-0.91588-19.126-1.5492-26.434" fill="#aaabab"/>
+ <path d="m30.062 134.6c-4.1215-3.7707-6.7522-2.66-8.4281-0.64307-1.6369 2.0754-1.0913 6.4307 1.5882 8.6911 0.27282 0.0974 0.56512 0.18512 0.86716 0.27281 1.1887 0.32154 4.862 0.30205 8.2332 0.12667 1.6369-1.2082 2.6502-3.2835 2.5235-6.0604-1.5687-0.0292-3.0887-0.84768-4.784-2.3871" fill="#bfc0c0"/>
+ <path d="m24.388 132.17c-1.1205 0.21436-2.0266 0.90614-2.7476 1.783-1.6369 2.0754-1.101 6.4307 1.5784 8.6911 0.28256 0.0974 0.56512 0.18513 0.86716 0.27282 0.37025 0.0974 0.9646 0.16563 1.7051 0.20461-3.4589-1.9877-4.862-7.3758-1.4031-10.952" fill="#918f90"/>
+ <path d="m29.93 143.14c-2.4164-2.3287-2.9328-6.9568-0.87691-9.3829-0.43845-0.33127-0.85742-0.62358-1.2666-0.84768-2.3871 2.2994-2.3092 7.8532 0.2923 10.26 0.59435 0 1.2179-0.01 1.8513-0.0292" fill="#918f90"/>
+ <path d="m53.728 194.17c-0.03897-1.5297-0.83793-2.4846-2.7574-3.2933 0 1.1692-0.28256 1.7636-1.3641 2.1143-4.5502 1.4712-10.055 2.1923-15.551 1.9779-3.4784-2.7574-7.4635-7.2101-10.084-10.805 10.562 0.45794 21.406-0.83793 27.194-3.722 1.1692-0.58461 1.5492-0.97435 1.5687-2.4066 0.03897-2.3774-0.0097-5.3784-0.13641-7.3368-0.08769-1.3056-0.90614-1.8318-2.7574-2.1533 0.03897 1.3446-0.24359 1.9097-0.82819 2.0753-5.2712 1.52-12.978 2.582-19.974 2.7574-6.2943 0.1559-13.475-0.75998-18.737-2.1241-0.92563-0.23385-1.52-0.78922-1.4031-2.5041-2.6794 0.52614-3.6148 1.3933-3.6148 3.0594 0 2.0072 0.11692 5.3199 0.24359 8.1065 0.05846 1.3446 0.2241 1.7928 1.6174 2.1436 1.7928 0.45795 3.5174 0.85743 5.6122 1.179-2.5625 2.4943-5.5927 5.242-8.847 8.0578-0.02923 2.5625 0.058461 5.4271 0.15589 8.8665 3.1374-3.3517 7.6876-6.5866 10.425-6.5573 1.9682 0 7.2491 6.4112 12.296 13.612 0.79896 1.14 1.2959 1.5784 2.7476 1.6661 6.226 0.36051 16.632-1.4907 22.917-4.3553 0.8964-0.40922 1.179-0.94511 1.2374-2.2215 0.12666-2.8548 0.09743-5.8071 0.03897-8.1358" fill="#f6ac1d"/>
+ <path d="m14.495 193.61c-4.482-0.0487-13.797 8.6132-13.836 12.247-0.009743 1.1302 1.481 3.0497 3.2056 4.0046 1.5005-0.45794 2.7282-0.88665 4.0143-1.442-0.2241 0.83794-0.37025 1.6369-0.39948 2.3482 7.2394 0.4482 15.443-0.76973 19.438-3.3615-0.04872-0.0585-0.08769-0.11692-0.13641-0.18513-5.0471-7.2004-10.328-13.612-12.286-13.612" fill="#3c3e44"/>
+ <path d="m209.27 180.03c-0.0974-1.6856-1.0523-2.6112-2.3676-2.7866 0.0195 1.1984-0.28256 1.6564-1.101 1.9195-1.8512 0.5846-4.9886 0.93536-7.405 1.0523-2.9815-2.8841-7.6583-7.7168-10.572-11.439 6.7327-0.01 13.787-0.54564 17.675-1.8805 1.5102-0.5164 1.6564-0.78921 1.6759-2.1436 0.0292-2.6405 0.0292-4.8522-0.01-7.2004-0.0195-1.8415-0.7405-2.7476-2.3676-3.0692 0.0779 1.179-0.26307 1.7733-0.87691 1.9877-6.8594 2.4359-27.759 2.1436-35.028-0.21435-0.78922-0.26308-1.0036-1.101-0.99383-2.2897-1.0523 0.0974-1.8318 1.0523-2.0071 2.6502 1.5102 2.8646 3.8681 5.4271 6.7522 7.5609 1.2277 0.90614 1.9779 1.9194 2.2897 3.7317 1.0133 0.18513 2.1728 0.34102 3.4589 0.46769-0.8087 1.101-1.9779 2.1825-3.0887 3.0594 0.24359 2.621 0.48718 5.3491 0.68204 8.3209 0.0877 1.3543 1.7148 2.0266 3.1764 1.1108 3.04-1.9 10.279 2.28 15.784 10.952 0.8087 1.2764 1.1497 1.5492 2.962 1.2764 3.2348-0.47743 7.366-1.6174 10.162-2.884 1.2277-0.55538 1.3543-0.94511 1.3641-2.6794 0-2.7476-0.0487-5.4466-0.16564-7.5024" fill="#f6ac1d"/>
+ <g fill="#7d7d7e">
+  <path d="m179.99 135.24c1.0328 0 1.9779-0.0585 2.8256-0.18513-0.63332-0.46768-1.1984-1.023-1.6272-1.6174-0.45794 0.11692-0.91588 0.19487-1.3641 0.23384-0.3605 0.0292-0.73075 0.0195-1.101 0 0.36051 0.5846 0.78922 1.1108 1.2666 1.5687"/>
+  <path d="m187.82 132.6c-0.38974-0.9646-0.54563-2.4456-0.45794-4.2968-0.63332 1.0523-1.3056 1.9292-2.0169 2.6502-0.0292 1.1984 0.23384 2.2897 0.70153 3.0789 0.66255-0.37999 1.2472-0.84767 1.7733-1.4323"/>
+  <path d="m128.25 135.01c0 4.5112-7.2686 6.1773-7.2686 7.9896 0 1.8025 4.5599 3.4687 4.8327 5.6414 0.27282 2.163 0.4482 6.7619 0.4482 8.3014 2.621-0.13641 12.813-1.1205 12.813-1.1205 1.0913-1.9097 1.1302-5.4661 1.1302-7.0542 0-1.5784-0.0877-4.4527 0.28256-4.9009-1.5882-1.2277-3.6635-2.7379-4.3456-5.3394-0.67229-2.6015-0.62358-5.2322-1.7148-6.6353z"/>
+  <path d="m130.58 166.73-3.9266 0.18513 3.1276 3.5174z"/>
+ </g>
+ <path d="m49.576 112.3c0.25333-0.4482 0.82819-0.66255 1.6856-0.68204 7.0932-0.16564 20.052 0.99383 26.025 2.8743l1.1205-0.92562c-6.0214-1.8805-20.032-3.2835-27.184-2.9425-1.3543 0.0682-2.0266 0.47743-2.4553 1.1108z" fill="#d3d2d2"/>
+ <g fill="#756b67">
+  <path d="m41.562 46.432c-3.0497 8.0286-4.1117 23.91-3.1082 34.326-2.5235-10.27-1.8902-26.522 1.861-35.885 0.47743 0.57486 0.82819 0.99383 1.2472 1.5589"/>
+  <path d="m35.373 79.42c0.63332 5.5927 5.8266 15.326 11.653 20.939-5.242-2.962-12.618-14.264-13.124-21.893 0.56512 0.38 0.93537 0.61384 1.4713 0.95486"/>
+  <path d="m67.091 82.7c-2.8841 5.3102-14.605 16.681-20.052 17.753 6.3235-4.4138 16.106-13.271 19.282-19.224 0.26307 0.48717 0.57486 1.0133 0.76973 1.4713"/>
+  <path d="m87.286 50c-4.8327 8.7398-13.719 26.726-18.415 36.119 3.5271-9.5875 14.031-32.757 18.142-38.603 0.14615 0.76973 0.21436 1.7441 0.27282 2.4846"/>
+  <path d="m54.171 40.484c-1.3933-20.227 2.7964-39.695 11.673-39.792-10.425-2.4261-15.054 19.964-13.222 38.896 0.18512 1.861 1.0815 2.2215 1.5492 0.8964"/>
+  <path d="m102.44 36.038c7.9409-23.55 23.91-38.789 32.368-31.744-2.6405-2.1241-4.6768-2.7379-6.8009-2.7574-8.6619-0.09743-23.258 17.986-27.009 32.835-0.90614 3.5856 0.32154 3.1861 1.442 1.6661"/>
+ </g>
+ <g fill="#392c27">
+  <path d="m152.42 48.9-0.0195-0.039c-3.0594-4.9984-3.722-6.645-4.2189-12.267-0.54563-6.2553-2.0948-13.358-4.5892-19.526-0.79896 5.8363-5.0081 10.62-11.79 11.604 7.3758 3.4102 14.985 10.757 20.617 20.227"/>
+  <path d="m77.722 7.171c1.0815 5.0276 0.17538 10.27-3.5953 14.508 4.0143-1.52 8.5352-2.5918 13.485-3.0205-3.683-4.862-6.9178-8.6522-9.8896-11.487"/>
+  <path d="m85.12 115.15c-5.6902 6.8106-18.181 8.1163-27.574 2.1436-3.1471-1.2472-6.2553-3.2056-8.9737-5.8168-5.9825-1.1595-11.556-3.5369-15.336-6.8691 6.8107 21.504 26.288 33.654 46.33 34.784 28.129 1.5979 49.789-14.995 52.731-44.732-8.9152 11.146-31.666 16.281-45.054 13.436-0.65281 2.0754-1.3836 4.6963-2.1241 7.0542"/>
+ </g>
+ <path d="m139.08 125.63c-0.36051-1.9194-0.0292-2.8256 1.7246-4.141-1.4908-2.8646-2.2312-7.1712-1.9195-12.228-5.1738 14.479-13.748 23.881-23.784 29.104 9.6362-1.5979 18.318-4.6574 24.446-10.718-0.17538-0.65281-0.34102-1.3251-0.46768-2.0169" fill="#918f90"/>
+ <path d="m136.69 114.65c-0.68204 1.4907-1.403 2.923-2.163 4.2871 0.0682 3.9851 1.6369 7.707 4.5599 9.1393 0.1559-0.14615 0.31179-0.28256 0.45794-0.42871-0.18512-0.65281-0.34102-1.3251-0.46768-2.0169-0.0974-0.53589-0.14615-0.99383-0.12667-1.3933-1.3933-1.2569-2.2994-4.8815-2.2605-9.5875" fill="#7d7d7e"/>
+ <path transform="matrix(9.7432 0 0 -9.7432 146.39 94.6)" d="m0 0c-0.301-0.709-0.328-1.916-0.108-2.289-0.104-0.162-0.299-0.352-0.465-0.476-0.174 0.313-0.24 0.81-0.205 1.322z" opacity=".137" style="mix-blend-mode:normal"/>
+ <path d="m145.27 117.18c3.9363 12.842 20.656 13.504 27.057 2.6015-0.90614 3.2251-3.2738 7.3466-5.8168 10.718-2.1143-0.87691-4.7938 1.179-7.9214 5.9338-4.5112-4.4235-11.517-4.8717-13.787-1.0426-2.7574-1.3641-5.3979-6.002-5.7291-9.7629-0.17538-1.9974-0.0585-2.7866 1.7343-4.141 1.5297-1.1497 3.1861-2.7379 4.4625-4.3066" fill="#949595"/>
+ <path d="m179.6 135.27c-0.0487 3.001 0.71127 5.0276 3.5564 6.2942 2.884 1.2861 3.0692 2.923 0.40922 4.1215-4.9691 2.2605-9.8311 3.5466-15.434 3.9656 0.01-0.77947 0.23384-1.4615 1.4518-2.0559 4.2481-2.0656 6.8399-5.544 7.0348-10.718 0.0585-1.5102 0.58461-1.861 2.9815-1.6077" fill="#949595"/>
+ <path transform="matrix(9.7432 0 0 -9.7432 27.608 127.34)" d="m0 0c0.406 0.292 0.633 0.954 0.622 2.171 0.23-0.7 0.793-1.553 1.324-2.012-0.234-0.482-0.506-0.823-0.86-1.042-0.299-0.185-0.507-0.153-0.834 0.133-0.378 0.33-0.656 0.341-0.865 0.067-0.144 0.152-0.263 0.326-0.37 0.53 0.317-0.055 0.596-0.043 0.828 0.063 0.041-0.043 0.116-0.118 0.17-0.166-4e-3 0.093-5e-3 0.167-0.015 0.256" opacity=".137" style="mix-blend-mode:normal"/>
+ <path transform="matrix(9.7432 0 0 -9.7432 26.344 143.2)" d="m0 0c0.17-6e-3 0.397-1e-3 0.613 0.01 0.168 0.124 0.272 0.337 0.259 0.622-0.16 3e-3 -0.317 0.087-0.491 0.245-0.404 0.37-0.668 0.282-0.84 0.094 0.765 0.083 1.094-0.713 0.459-0.971" opacity=".137" style="mix-blend-mode:normal"/>
+ <path d="m21.636 133.95c-1.5102-1.6856-3.3517-4.2189-4.2092-6.0994-1.4518-1.5882-3.3907-2.0948-4.2481-1.3836-0.86716 0.71127-0.66255 3.3615 0.32153 5.6609 1.2764 3.0107 5.6317 8.886 9.7239 10.523-2.2897-1.6856-3.5369-5.9727-1.5882-8.7009" fill="#949595"/>
+ <path d="m7.2834 210.6c5.2809 0.6723 14.976-0.30205 19.633-3.1958-1.6174-2.3092-3.5271-4.862-5.7876-7.6291-2.0753 4.365-8.0676 8.7496-13.845 10.825" fill="#313037"/>
+ <path d="m7.8758 208.42c0.8087-2.8451 3.1179-7.4635 4.9009-9.5291 1.2472-1.442-0.0097-2.4651-1.5687-1.1984-2.923 2.3774-6.645 7.9701-7.3465 12.17 1.3738-0.46769 2.5138-0.84768 4.0143-1.442" fill="#313037"/>
+ <path d="m176.4 116.9c1.4225 7.9117 6.002 12.014 10.503 11.975-1.8025 3.5466-6.0994 5.7778-9.8896 4.5307-2.962-0.97434-6.5378-3.0692-8.6327-5.6025 1.8025-2.5236 2.4651-4.063 3.3712-6.4891 1.3933-0.47743 2.962-1.7538 4.6476-4.4138" fill="#949595"/>
+ <path d="m200.16 149.55c0.89639 0.61384 1.1497 1.4323 1.3056 2.7087 0.16564 1.2959 0.35076 2.9035 0.55537 4.6963 2.1338-0.34102 2.8938-0.88665 2.8256-1.8805-0.0974-1.5297-0.32154-3.0205-0.48717-4.482-0.18513-1.6856-0.61384-2.0851-2.1338-2.9035-7.9604-4.2676-8.1552-11.351-5.1932-20.52 1.1692-3.644 0.91588-5.6512-0.55537-6.0214 0.49691 0.9646 0.25332 2.4456-0.90614 5.7486-4.1799 11.887-3.1764 17.295 4.5892 22.653" fill="#949595"/>
+ <path transform="matrix(9.7432 0 0 -9.7432 146.64 143.27)" d="m0 0c0.6-0.013 0.846 0.077 1.082 0.467 0.053 0.087 0.1 0.163 0.144 0.23-0.577 0.529-1.256 0.432-1.427 0.083 0.366 0.198 0.82 0.123 0.886-0.145 0.062-0.251-0.147-0.53-0.685-0.635" opacity=".137" style="mix-blend-mode:normal"/>
+ <g stroke-width="9.7432">
+  <path d="m131.66 49.69c3.7414 4.4332 7.551 9.8991 11.711 16.963 2.9035 4.9106 5.9141 3.7317 4.0629-1.7733-2.7768-8.2817-5.5926-13.504-9.3827-19.165-1.4615-2.1825-3.3224-3.0983-4.8911-3.0983-2.9132 0-4.8521 3.1081-1.5005 7.0736" fill="url(#linearGradient118437-0-1)" opacity=".5"/>
+  <path d="m29.009 168.27c0.05846 1.6076 0.1364 3.3614 0.21435 5.2029 1.7148-0.039 3.4686-0.14615 5.2321-0.2923-0.07794-1.7635-0.14615-3.4588-0.20461-4.9983-0.09743-2.3676-1.3641-3.4588-2.6209-3.4588-1.3543 0-2.7086 1.2569-2.6209 3.5465" fill="url(#linearGradient118443-9-0)" opacity=".5"/>
+  <path d="m147.22 173.72c0.01 1.2374 0.0292 2.5527 0.039 3.9168 1.7343 0.0877 3.4783 0.10717 5.2419 0.0877-0.01-1.3835-0.0292-2.6989-0.039-3.9265-0.0195-2.4163-1.2861-3.5368-2.5722-3.5368-1.3348 0-2.6794 1.2179-2.6696 3.4588" fill="url(#linearGradient118449-7-8)" opacity=".5"/>
+  <path d="m182.19 156.48c0 0.52613 0 1.0718 0.01 1.6271 1.7246 0.0779 3.4881 0.12666 5.2418 0.12666 0-0.5846-0.01-1.14-0.0195-1.6856-0.0292-2.4163-1.2958-3.5368-2.5722-3.5368-1.3348 0-2.6794 1.2082-2.6599 3.4686" fill="url(#linearGradient118455-8-7)" opacity=".5"/>
+  <path d="m29.739 184.34c0.12666 2.4066 0.25332 4.8034 0.38973 7.1613 1.3153 1.3251 2.6404 2.5625 3.9168 3.5758 0.48716 0.0195 0.98407 0.0195 1.4615 0.0292-0.20461-3.4101-0.38973-7.2002-0.56511-11-1.7051 0.12666-3.4394 0.20461-5.2029 0.23383" fill="url(#linearGradient118461-5-0)" opacity=".5"/>
+  <path d="m160.28 87.494c-1.0328 6.0603-2.0266 11.361-3.8973 17.284-0.83792 2.6112 0.7892 3.6732 2.3091 0.62356 2.6404-5.2906 4.9593-10.591 6.45-17.041 0.5651-2.4358-0.75997-3.8973-2.1825-3.8973-1.1302 0-2.3189 0.92561-2.6794 3.0301" fill="url(#linearGradient118467-0-1)" opacity=".5"/>
+ </g>
+ <path d="m84.669 80.86c-0.46768-0.11692-0.84768-0.20461-1.4128-0.37025 11.351 17.733-2.9523 36.947-15.706 38.37-2.6892 0.30205-5.7096-0.0779-8.7399-1.0913 1.3738 0.75999 2.6015 1.481 3.8681 2.0169 9.607 2.0266 19.711-5.544 23.725-15.56 3.644-9.1101 1.9487-17.45-1.7343-23.365" fill="#d3d2d2"/>
+ <path transform="matrix(9.7432 0 0 -9.7432 52.812 114.92)" d="m0 0c1.068-0.311 2.662-0.041 3.506 0.623-0.054-0.188-0.135-0.48-0.2-0.687-0.703-0.715-1.905-0.759-2.715-0.22-0.203 0.069-0.435 0.185-0.591 0.284" opacity=".137" style="mix-blend-mode:normal"/>
+ <path d="m102.13 36.446c-1.0328 0.93537-1.5687 0.73076-1.4518-0.52614-7.9604-2.7184-16.798-3.381-25.947-1.52 31.871-4.4625 58.422 19.497 57.895 54.339-0.29231 19.409-8.0286 33.917-20.325 42.345 16.496-9.3829 21.816-23.033 22.205-42.247 0.4482-22.449-11.234-44.391-32.377-52.39" fill="#c7c7c8"/>
+ <path transform="matrix(9.7432 0 0 -9.7432 132.23 95.842)" d="m0 0c0.291-0.066 1.135 0.015 1.431 0.149-0.223-0.391-0.571-1.118-0.749-1.531-1.368-3.869-5.075-3.998-7.126-2.93 3.287-0.747 6.139 1.047 6.444 4.312" opacity=".137" style="mix-blend-mode:normal"/>
+ <path d="m169.98 78.18c3.722 0.72101 11.195 0.5164 15.989-1.1205-0.14615-0.48717-0.91588-0.75999-2.4553-0.4482-4.2384 0.83793-9.2952 1.2764-12.959 0.75024z" fill="#c7c7c8"/>
+ <path d="m27.389 60.48c0.86716 7.6291 3.683 12.861 8.9055 13.027-4.7061-1.5687-6.5963-5.7584-7.444-14.294z" fill="#756b67"/>
+ <path d="m174.15 90.62 1.3446-2.2507c-1.481-5.3784-4.7743-8.4963-9.9286-9.7434-4.365-1.0523-8.2332-0.43846-11.604 1.4518-0.81845 0.46768-1.2959 0.95485-1.52 1.861 7.4148-4.2968 20.101 0.5846 21.708 8.6814" fill="#c7c7c8"/>
+ <path d="m52.447 36.712c-3.1179 2.7964-6.6158 7.2199-9.0322 11.829l-0.70153-0.73076c1.4615-3.2738 5.8168-10.182 9.5388-13.339z" fill="#c7c7c8"/>
+ <g fill="#949595">
+  <path d="m45.895 171.33c-0.13641-2.3676-0.28256-4.5502-0.40922-6.3625-0.12666-1.6661-0.76973-2.8451-2.28-3.8974-3.8876-2.7184-6.2455-7.444-7.0445-12.335-0.32153-1.9292-0.76973-2.3189-2.7574-2.3969-5.7194-0.23384-10.503-1.5687-13.436-4.9886 1.1302 0.68204 3.001 1.3933 4.1215 1.5687 1.4031 0.21435 5.6317 0.31179 8.2234 0.1364 0.69178-0.47742 1.2179-1.1692 1.6272-1.8902 1.3738 0.0682 2.4261 0.16564 3.9753 0.36051 1.1497 0.14615 1.6564 1.2959 1.6369 3.4687-0.07795 7.0542 2.3287 10.201 7.6486 14.44 1.5492 1.2277 2.0266 2.1436 2.2215 4.7743 0.12666 1.6954 0.26307 3.7804 0.40922 6.0409-1.0133 0.40922-2.4261 0.76973-3.9363 1.0815"/>
+  <path d="m46.448 182.23c0.19487 4.4235 0.33128 8.6034 0.37025 11.536 3.1471-0.67229 4.2189-1.0425 4.1507-3.1374-0.0682-1.9584-0.25333-5.6512-0.49692-9.8214-1.1692 0.45794-2.7087 1.0426-4.024 1.4225"/>
+  <path d="m202.73 167.71c0.39948 3.1082 0.88665 8.5255 1.101 11.877 2.1728-0.2241 3.1179-0.76973 3.0497-2.202-0.14615-3.2446-0.55538-7.9896-0.81845-10.611-1.1984 0.40923-2.1436 0.69178-3.3322 0.93537"/>
+  <path d="m165.37 130.28c1.7246 1.0133 1.9194 2.2118 1.0231 4.862-0.92563 2.7574-2.0266 4.9984-3.2933 7.3563-4.2189 7.8532-1.3348 17.918 6.4891 23.647 1.14 0.83794 1.6369 1.8123 1.822 3.8292 0.1559 1.6661 0.26308 3.6538 0.40923 5.6122 2.4553-0.27281 3.722-0.83793 3.6246-2.2605-0.15589-2.2215-0.25333-3.8097-0.5164-5.4174-0.27282-1.6077-0.88665-2.7769-2.2897-3.7415-8.7496-6.0214-10.114-15.346-7.0055-21.231 1.3836-2.6307 2.5333-6.002 2.8158-8.3111 0.34102-2.7769-0.86716-4.4138-3.0789-4.3456"/>
+  <path d="m172.52 187.55c0.40922 3.7804 0.75024 9.1978 0.98409 12.861 2.5528-0.30205 3.7512-0.6723 3.6928-2.2507-0.14615-3.722-0.43845-8.5352-0.75024-11.692-1.3738 0.4482-2.582 0.7405-3.9266 1.0815"/>
+ </g>
+ <path d="m183.64 95.84c3.7512 3.5271 6.5184 9.8993 5.6317 16.437 2.3579-5.2809 1.7441-11.478-4.482-18.649-0.33127 0.71127-0.5846 1.3056-1.1497 2.2118" fill="#c7c7c8"/>
+ <g fill="#3a3838">
+  <path d="m65.573 93.35c-0.90614 2.6989-1.783 7.0445-1.4518 7.3368 0.39948 0.3605 9.9285-4.1897 11.341-5.6999 1.3738-1.4908 3.3323-7.5609 4.0338-11.975-3.5564 3.3128-9.4998 7.6681-13.923 10.338"/>
+  <path d="m65.19 94.95c0-0.0585-0.01949-0.11692-0.05846-0.16564-0.03897 0.14615-0.07795 0.28256-0.11692 0.42871 0.10718-0.039 0.17538-0.14615 0.17538-0.26307"/>
+  <path d="m65.772 94.95c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m65.481 94.66c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231-0.05846 0-0.10718 0.0195-0.1559 0.0487-0.03897 0.12667-0.0682 0.24359-0.10718 0.37025 0.04872 0.0974 0.14615 0.16564 0.26307 0.16564"/>
+  <path d="m65.772 93.79c0-0.14615-0.10718-0.26307-0.25333-0.28256-0.05846 0.17538-0.10718 0.35076-0.16564 0.53589 0.03897 0.0195 0.07795 0.039 0.12666 0.039 0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m65.768 93.23c-0.0682 0.039-0.12666 0.0779-0.19487 0.11692-0.01949 0.0487-0.02923 0.0974-0.04872 0.14615 0.13641-0.0195 0.23384-0.12666 0.24359-0.26307"/>
+  <path d="m66.355 94.95c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m66.064 94.66c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m66.064 94.08c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m66.064 93.5c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.10718-0.05846-0.19487-0.14615-0.24359-0.14615 0.0877-0.2923 0.17538-0.43845 0.26307 0.0097 0.14616 0.13641 0.27282 0.2923 0.27282"/>
+  <path d="m66.937 94.95c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m66.646 94.66c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m66.646 94.08c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m66.646 93.5c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m66.646 92.92c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.039-0.0097-0.0779-0.01949-0.10718-0.16564 0.0974-0.33128 0.20461-0.48717 0.30205 0.05846 0.0585 0.12666 0.0974 0.21436 0.0974"/>
+  <path d="m67.52 94.95c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m67.229 94.66c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+ </g>
+ <g fill="#4e433a">
+  <path d="m66.937 93.79c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m66.937 93.21c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m67.229 92.92c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231-0.01949 0-0.02923 0.01-0.03897 0.01-0.0682 0.039-0.13641 0.0779-0.19487 0.12666-0.03897 0.039-0.05846 0.0974-0.05846 0.1559 0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m67.501 92.14c-0.09743 0.0682-0.19487 0.12666-0.2923 0.19487h0.01949c0.12666 0 0.23384-0.078 0.27282-0.19487"/>
+ </g>
+ <path d="m68.103 94.95c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923" fill="#665134"/>
+ <path d="m67.811 94.66c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923" fill="#665134"/>
+ <g fill="#9c692a">
+  <path d="m67.811 94.08c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m67.811 93.5c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m67.811 92.92c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+ </g>
+ <path d="m67.811 92.33c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.0877-0.04872-0.16564-0.10718-0.2241-0.1559 0.10718-0.31179 0.20461-0.45794 0.30204 0.02923 0.11693 0.13641 0.21436 0.27282 0.21436" fill="#665134"/>
+ <g fill="#f6ac1d">
+  <path d="m68.685 94.95c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m68.394 94.66c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m68.394 94.08c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m68.394 93.5c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m68.394 92.92c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m68.394 92.33c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m68.685 91.46c0-0.0292-0.0097-0.0585-0.01949-0.0877-0.1559 0.0974-0.30205 0.20461-0.45794 0.30205 0.04872 0.0487 0.11692 0.0779 0.18512 0.0779 0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m69.268 94.95c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+ </g>
+ <g fill="#d49640">
+  <path d="m68.685 94.37c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m68.685 93.79c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m68.685 93.21c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m68.685 92.62c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m68.685 92.04c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+ </g>
+ <path d="m68.977 91.75c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231h-0.0097c-0.08769 0.0585-0.16564 0.11693-0.25333 0.17539-0.01949 0.039-0.02923 0.0779-0.02923 0.11692 0 0.16564 0.12666 0.2923 0.2923 0.2923" fill="#665134"/>
+ <path d="m69.247 90.98c-0.08769 0.0585-0.18512 0.12666-0.27282 0.18513 0.12666 0 0.23384-0.0779 0.27282-0.18513" fill="#665134"/>
+ <path d="m69.559 94.66c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#9c692a"/>
+ <path d="m69.559 94.66c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923" fill="#9c692a"/>
+ <path d="m69.559 94.08c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923" fill="#665134"/>
+ <path d="m69.559 93.5c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923" fill="#665134"/>
+ <path d="m69.559 92.92c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923" fill="#4e433a"/>
+ <path d="m69.559 92.33c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923" fill="#4e433a"/>
+ <path d="m69.559 91.75c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923" fill="#665134"/>
+ <path d="m69.559 91.17c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.0974-0.04872-0.17538-0.11692-0.2241-0.1559 0.0974-0.30205 0.20461-0.4482 0.30204 0.02923 0.12667 0.13641 0.21436 0.27282 0.21436" fill="#9c692a"/>
+ <path d="m70.433 94.95c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923" fill="#4e433a"/>
+ <g fill="#3a3838">
+  <path d="m70.433 94.37c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m70.142 94.08c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m70.142 93.5c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m70.142 92.92c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m70.142 92.33c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m70.142 91.75c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m70.142 91.17c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m70.433 90.29c0-0.039-0.0097-0.0779-0.01949-0.11692-0.1559 0.10718-0.31179 0.2241-0.46768 0.33128 0.04872 0.0487 0.11692 0.0779 0.19487 0.0779 0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+ </g>
+ <path d="m70.725 94.66c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#9c692a"/>
+ <path d="m70.725 94.08c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#9c692a"/>
+ <path d="m70.433 93.79c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923" fill="#665134"/>
+ <path d="m70.433 93.21c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923" fill="#665134"/>
+ <path d="m70.433 92.62c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923" fill="#4e433a"/>
+ <path d="m70.433 92.04c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923" fill="#4e433a"/>
+ <path d="m70.433 91.46c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923" fill="#665134"/>
+ <path d="m70.433 90.88c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923" fill="#665134"/>
+ <path d="m70.725 90.58c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231-0.02923 0-0.05846 0.01-0.08769 0.0195-0.04872 0.0292-0.08769 0.0682-0.13641 0.0974-0.03897 0.0487-0.0682 0.10717-0.0682 0.17538 0 0.16564 0.12666 0.2923 0.2923 0.2923" fill="#9c692a"/>
+ <path d="m71.005 89.76c-0.10718 0.0779-0.2241 0.15589-0.33128 0.23384 0.01949 0 0.02923 0.01 0.04872 0.01 0.14615 0 0.25333-0.10718 0.28256-0.24359" fill="#9c692a"/>
+ <path d="m71.599 94.95c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923" fill="#f6ac1d"/>
+ <g fill="#d49640">
+  <path d="m71.599 94.37c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m71.599 93.79c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m71.307 93.5c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m71.307 92.92c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m71.307 92.33c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m71.307 91.75c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m71.307 91.17c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m71.307 90.58c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m71.307 90c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.11692-0.0682-0.20461-0.16564-0.25333-0.13641 0.0974-0.27282 0.19487-0.40922 0.2923 0.01949 0.14615 0.13641 0.25333 0.28256 0.25333"/>
+ </g>
+ <g fill="#f6ac1d">
+  <path d="m71.89 94.66c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m71.89 94.08c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m71.89 93.5c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m71.89 92.92c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m71.89 92.92c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m71.89 92.33c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m71.89 91.75c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m71.89 91.17c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m71.89 90.58c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m71.89 90c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m71.89 89.42c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.0585-0.02923-0.11692-0.05846-0.16564-0.1559 0.10718-0.31179 0.2241-0.46768 0.33128 0.05846 0.0779 0.13641 0.12666 0.23384 0.12666"/>
+ </g>
+ <path d="m72.764 94.95c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923" fill="#4e433a"/>
+ <path d="m72.764 94.37c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923" fill="#9c692a"/>
+ <path d="m72.764 93.79c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923" fill="#9c692a"/>
+ <g fill="#d49640">
+  <path d="m72.764 93.21c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m72.764 92.62c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m72.473 92.33c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m72.473 91.75c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m72.473 91.17c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m72.473 90.58c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m72.473 90c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m72.473 89.42c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m72.764 88.54c0-0.0195-0.0097-0.0292-0.0097-0.0487-0.13641 0.0974-0.27282 0.20461-0.41897 0.30205 0.04872 0.0195 0.08769 0.039 0.13641 0.039 0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+ </g>
+ <path d="m73.055 94.66c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#3a3838"/>
+ <path d="m73.055 94.08c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#3a3838"/>
+ <path d="m73.055 93.5c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#4e433a"/>
+ <path d="m73.055 92.92c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#665134"/>
+ <path d="m73.055 92.33c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#665134"/>
+ <g fill="#9c692a">
+  <path d="m72.764 92.04c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m72.764 91.46c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m72.764 90.88c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m72.764 90.29c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m72.764 89.71c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m72.764 89.13c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+ </g>
+ <path d="m73.055 88.84c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.11692-0.27282-0.27282-0.28256-0.09743 0.0682-0.19487 0.14615-0.30205 0.21435 0 0.0292-0.0097 0.0487-0.0097 0.0682 0 0.16564 0.12666 0.2923 0.2923 0.2923" fill="#665134"/>
+ <path d="m73.324 88.07c-0.07795 0.0585-0.1559 0.11692-0.23384 0.17538 0.10718-0.0195 0.19487-0.0779 0.23384-0.17538" fill="#665134"/>
+ <g fill="#3a3838">
+  <path d="m73.638 94.66c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m73.638 94.08c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m73.638 93.5c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m73.638 92.92c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m73.638 92.33c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m73.638 91.75c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+ </g>
+ <g fill="#4e433a">
+  <path d="m73.638 91.75c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m73.638 91.17c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m73.638 90.58c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m73.638 90c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m73.638 89.42c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m73.638 88.84c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m73.638 88.25c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.0974-0.05846-0.18513-0.13641-0.24359-0.14615 0.10718-0.2923 0.21436-0.42871 0.32153 0.02923 0.12667 0.13641 0.21436 0.27282 0.21436"/>
+ </g>
+ <g fill="#3a3838">
+  <path d="m74.221 94.66c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.221 94.08c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.221 93.5c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.221 92.92c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.221 92.33c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.221 91.75c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.221 91.17c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.221 91.17c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m74.221 90.58c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m74.221 90c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m74.221 89.42c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m74.221 88.84c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m74.221 88.25c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m74.221 87.67c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.0585-0.02923-0.11692-0.05846-0.16564-0.14615 0.11692-0.30205 0.23384-0.45794 0.35076 0.05846 0.0682 0.13641 0.10718 0.2241 0.10718"/>
+  <path d="m74.803 94.66c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.803 94.08c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.803 93.5c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.803 92.92c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.803 92.33c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.803 91.75c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.803 91.17c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.512 90.88c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m74.803 90c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.803 90c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m74.803 89.42c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m74.803 88.84c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m74.803 88.25c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m74.803 87.67c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m75.095 86.8c0-0.0195-0.0097-0.0487-0.0097-0.0682-0.13641 0.10717-0.27282 0.21435-0.41897 0.32153 0.04872 0.0195 0.08769 0.039 0.13641 0.039 0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m75.386 94.66c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.0974 0.05846 0.18513 0.13641 0.23384 0.08769-0.0682 0.16564-0.14615 0.2241-0.21435 0.05846-0.0487 0.10718-0.12666 0.1559-0.19487-0.04872-0.0682-0.12666-0.11692-0.2241-0.11692"/>
+  <path d="m75.677 94.37c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m75.386 93.5c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m75.386 92.92c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m75.386 92.33c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m75.386 91.75c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m75.386 91.17c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m75.095 90.88c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m75.386 90c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m75.386 89.42c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m75.095 89.13c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m75.095 88.54c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m75.095 87.96c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m75.095 87.38c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m75.386 87.09c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231-0.0097 0-0.01949 0.01-0.01949 0.01-0.08769 0.0585-0.16564 0.12666-0.25333 0.19487-0.0097 0.0292-0.01949 0.0585-0.01949 0.0877 0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m75.666 86.27c-0.09743 0.0779-0.19487 0.15589-0.2923 0.23384h0.0097c0.14615 0 0.25333-0.0974 0.28256-0.23384"/>
+ </g>
+ <g fill="#665134">
+  <path d="m75.677 94.37c0 0.078 0.03897 0.15589 0.08769 0.20461 0.09743-0.13641 0.19487-0.30204 0.30205-0.47743-0.02923-0.01-0.0682-0.0195-0.09743-0.0195-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m75.969 93.5c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231 0.03897 0 0.08769-0.01 0.11692-0.0292 0.05846-0.0974 0.11692-0.19487 0.16564-0.30205-0.01949-0.13641-0.13641-0.25333-0.28256-0.25333"/>
+  <path d="m75.969 92.92c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m75.969 92.33c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m75.969 91.75c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m75.969 91.17c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m75.677 90.88c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+ </g>
+ <g fill="#4e433a">
+  <path d="m75.969 90c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m75.969 89.42c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m75.677 89.13c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m75.969 88.84c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m75.969 88.25c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m75.969 87.67c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m75.969 87.09c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m75.969 86.51c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.12667-0.07795-0.2241-0.18512-0.27282-0.12666 0.10718-0.26307 0.21436-0.38974 0.31179 0.01949 0.14615 0.13641 0.25333 0.28256 0.25333"/>
+ </g>
+ <g fill="#9c692a">
+  <path d="m76.323 93.61c-0.01949 0.0292-0.03897 0.0585-0.04872 0.0974 0.01949-0.0292 0.02923-0.0682 0.04872-0.0974"/>
+  <path d="m76.26 93.21c0 0.10718 0.05846 0.19487 0.14615 0.24359 0.07795-0.16564 0.1559-0.33128 0.24359-0.51641-0.03897-0.01-0.0682-0.0195-0.09743-0.0195-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m76.551 92.33c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231 0.03897 0 0.07795-0.01 0.11692-0.0292 0.04872-0.11693 0.09743-0.23385 0.1559-0.36051-0.03897-0.11692-0.14615-0.19487-0.27282-0.19487"/>
+  <path d="m76.551 91.75c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m76.551 91.17c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m76.26 90.88c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m76.551 90c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m76.551 89.42c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m76.26 89.13c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m76.26 88.54c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m76.551 87.67c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m76.551 87.67c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m76.551 87.09c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m76.551 86.51c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m76.551 85.92c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.0877-0.04872-0.16564-0.10718-0.2241-0.14615 0.11692-0.2923 0.24358-0.43845 0.36051 0.04872 0.0877 0.14615 0.15589 0.25333 0.15589"/>
+ </g>
+ <g fill="#f6ac1d">
+  <path d="m76.843 92.04c0 0.0877 0.03897 0.15589 0.09743 0.21436 0.05846-0.16564 0.12666-0.33128 0.19487-0.50666-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m76.843 91.46c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.0682-0.16564 0.12666-0.34102 0.19487-0.50666-0.05846-0.0487-0.11692-0.0779-0.19487-0.0779-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m76.843 90.88c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m77.134 90c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m77.134 89.42c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m76.843 89.13c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m76.843 88.54c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m77.134 87.67c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m77.134 87.09c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m77.134 87.09c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m77.134 86.51c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m77.134 85.92c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m77.134 85.34c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.0585-0.02923-0.11692-0.05846-0.16564-0.14615 0.12666-0.2923 0.24358-0.43845 0.37025 0.04872 0.0487 0.12666 0.0877 0.20461 0.0877"/>
+  <path d="m77.425 90.88c0 0.0195 0.0097 0.039 0.0097 0.0682 0.03897-0.0974 0.0682-0.19486 0.10718-0.2923-0.0682 0.0487-0.11692 0.13641-0.11692 0.2241"/>
+  <path d="m77.425 90.29c0 0.10718 0.05846 0.19487 0.14615 0.25333 0.0682-0.17538 0.12666-0.35076 0.18512-0.53589-0.0097 0-0.02923-0.01-0.03897-0.01-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m77.425 89.71c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.01949 0 0.02923-0.01 0.04872-0.01 0.04872-0.16564 0.09743-0.32153 0.1559-0.48717-0.05846-0.0585-0.12666-0.0877-0.20461-0.0877-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m77.425 89.13c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m77.425 88.54c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m77.717 87.67c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m77.717 87.09c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m77.425 86.8c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m77.717 85.92c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m77.717 85.92c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m77.717 85.34c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m78.008 84.47c0-0.039-0.0097-0.0779-0.01949-0.10718-0.13641 0.11692-0.28256 0.23384-0.41897 0.35077 0.03897 0.0292 0.08769 0.0487 0.14615 0.0487 0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m78.008 89.13c0 0.0195 0.0097 0.039 0.0097 0.0585 0.02923-0.0877 0.05846-0.17538 0.08769-0.27282-0.05846 0.0585-0.09743 0.12667-0.09743 0.21436"/>
+  <path d="m78.008 88.54c0 0.0974 0.05846 0.18513 0.13641 0.23384 0.04872-0.17538 0.10718-0.35076 0.1559-0.52614-0.16564 0-0.2923 0.13641-0.2923 0.2923"/>
+  <path d="m78.008 87.96c0 0.15589 0.12666 0.2923 0.2923 0.2923 0.04872-0.17538 0.09743-0.3605 0.14615-0.53589-0.03897-0.0292-0.08769-0.0487-0.14615-0.0487-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m78.299 87.09c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231 0.0682 0 0.13641-0.0292 0.18512-0.0682 0.02923-0.10718 0.05846-0.2241 0.08769-0.33127-0.04872-0.10718-0.14615-0.18513-0.27282-0.18513"/>
+  <path d="m78.008 86.8c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m78.299 85.92c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m78.299 85.34c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m78.008 85.05c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.15589 0 0.2923-0.12666 0.2923-0.2923s-0.13641-0.2923-0.2923-0.2923c-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m78.299 84.76c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231-0.0682 0-0.12666 0.0292-0.17538 0.0682-0.0097 0.01-0.02923 0.0195-0.03897 0.0292-0.04872 0.0585-0.07795 0.12666-0.07795 0.19487 0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m78.591 83.88c0-0.0195-0.0097-0.0292-0.0097-0.0487-0.11692 0.10718-0.24359 0.21436-0.36051 0.32154 0.01949 0.01 0.04872 0.0195 0.07795 0.0195 0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m78.591 86.8c0 0.0682 0.02923 0.11692 0.05846 0.16564 0.03897-0.14615 0.07795-0.28256 0.11692-0.42871-0.10718 0.0487-0.17538 0.14615-0.17538 0.26307"/>
+  <path d="m78.591 86.21c0 0.12666 0.07795 0.2241 0.18512 0.27282 0.04872-0.18513 0.08769-0.37025 0.13641-0.55538-0.0097 0-0.01949-0.01-0.02923-0.01-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m78.591 85.63c0 0.16564 0.12666 0.2923 0.2923 0.2923 0.0097 0 0.01949-0.01 0.02923-0.01 0.03897-0.17538 0.07795-0.35076 0.11692-0.52615-0.03897-0.0292-0.08769-0.0487-0.14615-0.0487-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m78.882 84.76c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231 0.0682 0 0.12666-0.0292 0.17538-0.0682 0.02923-0.11692 0.05846-0.24358 0.07795-0.36051-0.04872-0.0877-0.13641-0.15589-0.25333-0.15589"/>
+  <path d="m78.882 84.76c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m78.882 84.17c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231-0.0097 0-0.01949 0.01-0.02923 0.01-0.07795 0.0682-0.16564 0.14615-0.25333 0.21435 0 0.0292-0.0097 0.0487-0.0097 0.0682 0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+ </g>
+ <g fill="#3a3838">
+  <path d="m65.19 95.54c0-0.12666-0.07795-0.2241-0.18512-0.27282-0.04872 0.18513-0.09743 0.37025-0.14615 0.55538 0.0097 0 0.02923 0.01 0.03897 0.01 0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m65.481 95.83c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m66.064 95.83c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m66.646 95.83c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m67.229 95.83c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+ </g>
+ <path d="m67.811 95.83c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923" fill="#4e433a"/>
+ <path d="m68.394 95.25c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#d49640"/>
+ <path d="m69.268 95.54c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923" fill="#f6ac1d"/>
+ <path d="m69.559 95.25c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#d49640"/>
+ <path d="m70.433 95.54c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923" fill="#9c692a"/>
+ <path d="m70.725 95.25c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#d49640"/>
+ <path d="m71.599 95.54c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923" fill="#f6ac1d"/>
+ <path d="m71.89 95.25c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#d49640"/>
+ <path d="m72.764 95.54c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923" fill="#4e433a"/>
+ <g fill="#3a3838">
+  <path d="m73.055 95.25c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m73.638 95.25c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.221 95.25c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m74.803 95.25c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.0585 0.01949 0.10718 0.04872 0.14615 0.17538-0.11692 0.33128-0.22409 0.46768-0.33127-0.05846-0.0585-0.13641-0.10718-0.2241-0.10718"/>
+  <path d="m65.19 96.12c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.0097 0-0.02923 0.01-0.03897 0.01-0.04872 0.17538-0.08769 0.34102-0.12666 0.5164 0.04872 0.0292 0.09743 0.0585 0.16564 0.0585 0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m65.481 96.41c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m66.064 96.41c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m66.646 96.41c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m67.229 96.41c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m68.103 96.12c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+ </g>
+ <path d="m68.394 95.83c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#9c692a"/>
+ <path d="m69.268 96.12c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923" fill="#d49640"/>
+ <g fill="#f6ac1d">
+  <path d="m69.559 95.83c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m70.433 96.12c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m70.725 95.83c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+ </g>
+ <path d="m71.599 96.12c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923" fill="#d49640"/>
+ <path d="m71.89 95.83c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#9c692a"/>
+ <g fill="#3a3838">
+  <path d="m72.764 96.12c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m73.055 95.83c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m73.638 95.83c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.10718 0.05846 0.18513 0.13641 0.24359 0.1559-0.0877 0.30205-0.18513 0.43845-0.26307-0.0097-0.1559-0.12666-0.27282-0.28256-0.27282"/>
+  <path d="m73.935 96.09c0.13641-0.0877 0.26307-0.16564 0.37999-0.24359-0.02923-0.01-0.05846-0.0195-0.09744-0.0195-0.14615 0-0.26307 0.11692-0.28256 0.26307"/>
+  <path d="m68.753 98.85c0.07795-0.039 0.1559-0.078 0.23384-0.10718h-0.0097c-0.08769 0-0.17538 0.039-0.2241 0.10718"/>
+  <path d="m67.708 99.35c-0.0097 0-0.01949 0.01-0.01949 0.01s0.0097-0.01 0.01949-0.01"/>
+  <path d="m64.675 100.6c0.08769-0.0292 0.18512-0.0585 0.2923-0.0974-0.02923-0.01-0.04872-0.01-0.0682-0.01-0.08769 0-0.17538 0.039-0.2241 0.10718"/>
+  <path d="m71.084 97.69c0.0682-0.039 0.13641-0.0682 0.20461-0.10718-0.08769 0.01-0.1559 0.0487-0.20461 0.10718"/>
+  <path d="m69.906 98.29c0.08769-0.039 0.16564-0.0877 0.25333-0.12666h-0.01949c-0.09743 0-0.18512 0.0487-0.23384 0.12666"/>
+  <path d="m64.898 96.99c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231-0.07795 0-0.1559 0.039-0.20461 0.0877-0.01949 0.0974-0.04872 0.19486-0.0682 0.2923 0.03897 0.11692 0.14615 0.20461 0.27282 0.20461"/>
+  <path d="m65.481 96.99c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m66.064 96.99c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m66.646 96.99c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m67.229 96.99c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m68.103 96.7c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+ </g>
+ <path d="m68.394 96.41c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#4e433a"/>
+ <path d="m69.268 96.7c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923" fill="#9c692a"/>
+ <path d="m69.559 96.41c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#d49640"/>
+ <path d="m70.433 96.7c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923" fill="#f6ac1d"/>
+ <path d="m70.725 96.41c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923" fill="#d49640"/>
+ <path d="m71.599 96.7c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923" fill="#9c692a"/>
+ <g fill="#3a3838">
+  <path d="m71.89 96.41c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m72.473 96.41c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.13641 0.09744 0.24359 0.2241 0.27282 0.11692-0.0585 0.23384-0.12667 0.34102-0.18513 0.0097-0.0292 0.01949-0.0585 0.01949-0.0877 0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m72.764 96.7c0 0.0292 0.0097 0.0487 0.0097 0.0682 0.16564-0.0974 0.33128-0.18512 0.48717-0.27281-0.05846-0.0585-0.12666-0.0877-0.20461-0.0877-0.16564 0-0.2923 0.12666-0.2923 0.2923"/>
+  <path d="m65.19 97.29c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m65.772 97.29c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m66.355 97.29c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m66.937 97.29c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m67.229 96.99c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m68.103 97.29c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m68.394 96.99c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+ </g>
+ <path d="m69.268 97.29c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923" fill="#4e433a"/>
+ <g fill="#9c692a">
+  <path d="m69.559 96.99c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m70.433 97.29c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m70.725 96.99c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+ </g>
+ <g fill="#3a3838">
+  <path d="m71.307 96.99c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.28256 0.28256 0.29231 0.08769-0.0487 0.16564-0.0877 0.24358-0.13641 0.03897-0.039 0.05846-0.0974 0.05846-0.1559 0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m71.89 96.99c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.039 0.0097 0.0779 0.02923 0.11692 0.16564-0.0877 0.34102-0.18512 0.50666-0.27281-0.05846-0.078-0.13641-0.13641-0.24359-0.13641"/>
+  <path d="m65.19 97.87c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m65.772 97.87c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m66.355 97.87c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m66.937 97.87c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m67.229 97.58c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m68.103 97.87c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m68.394 97.58c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m69.268 97.87c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m69.559 97.58c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m70.142 97.58c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231 0.0097 0 0.01949-0.01 0.03897-0.01 0.05846-0.0292 0.11692-0.0585 0.17538-0.0877 0.04872-0.0487 0.07795-0.11692 0.07795-0.19487 0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m70.725 97.58c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.0487 0.01949 0.0974 0.03897 0.13641 0.17538-0.0877 0.34102-0.17538 0.5164-0.26307-0.04872-0.0974-0.14615-0.16564-0.26307-0.16564"/>
+  <path d="m64.607 98.45c0-0.15589-0.11692-0.27282-0.27282-0.28256-0.03897 0.18513-0.0682 0.37999-0.09743 0.55538 0.01949 0.01 0.04872 0.0195 0.07795 0.0195 0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m64.898 98.74c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m65.481 98.74c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m66.064 98.16c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m66.937 98.45c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m67.229 98.16c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m68.103 98.45c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m68.394 98.16c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m68.977 98.16c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231h0.0097c0.0682-0.039 0.13641-0.0682 0.20461-0.10718 0.04872-0.0487 0.07795-0.11692 0.07795-0.18513 0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m69.559 98.16c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.0487 0.01949 0.0974 0.03897 0.13641 0.17538-0.0877 0.34102-0.17538 0.5164-0.25333-0.04872-0.10718-0.14615-0.17538-0.26307-0.17538"/>
+  <path d="m64.607 99.03c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.02923 0-0.05846 0.01-0.08769 0.0195-0.02923 0.17539-0.05846 0.34102-0.07795 0.50666 0.04872 0.0292 0.09743 0.0585 0.16564 0.0585 0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m64.898 99.32c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m65.481 98.74c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m66.064 98.74c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m66.937 99.03c0-0.16564-0.12666-0.2923-0.2923-0.2923-0.15589 0-0.2923 0.12666-0.2923 0.2923s0.13641 0.2923 0.2923 0.2923c0.16564 0 0.2923-0.12666 0.2923-0.2923"/>
+  <path d="m67.229 98.74c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m67.811 98.74c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.14615 0.10718 0.26308 0.25333 0.28256 0.08769-0.039 0.18512-0.0877 0.28256-0.13641 0.02923-0.039 0.04872-0.0877 0.04872-0.14615 0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m68.394 98.74c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.039 0.0097 0.078 0.02923 0.11692 0.16564-0.0779 0.34102-0.16563 0.5164-0.25333-0.04872-0.0877-0.13641-0.15589-0.25333-0.15589"/>
+  <path d="m64.315 99.91c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231-0.07795 0-0.13641 0.0292-0.18512 0.078-0.01949 0.13641-0.03897 0.26307-0.04872 0.38 0.04872 0.0779 0.13641 0.12666 0.23384 0.12666"/>
+  <path d="m64.898 99.91c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231s-0.2923 0.13641-0.2923 0.29231c0 0.16564 0.12666 0.2923 0.2923 0.2923"/>
+  <path d="m65.481 99.32c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m66.064 99.32c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m66.646 99.32c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.11692 0.0682 0.21436 0.16564 0.26308 0.13641-0.0585 0.26307-0.11693 0.39948-0.17539 0.0097-0.0292 0.01949-0.0585 0.01949-0.0877 0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m67.229 99.32c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.0292 0.0097 0.0487 0.01949 0.0682 0.16564-0.0682 0.33128-0.14615 0.50666-0.2241-0.04872-0.0779-0.13641-0.13641-0.23384-0.13641"/>
+  <path d="m64.315 100.49c0.16564 0 0.2923-0.12666 0.2923-0.2923 0-0.1559-0.12666-0.29231-0.2923-0.29231-0.11692 0-0.21436 0.0682-0.26307 0.16564v0.24359c0.03897 0.10718 0.14615 0.17538 0.26307 0.17538"/>
+  <path d="m64.898 99.91c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.1559 0.12666 0.29231 0.2923 0.29231s0.2923-0.13641 0.2923-0.29231c0-0.16564-0.12666-0.2923-0.2923-0.2923"/>
+  <path d="m65.481 99.91c-0.16564 0-0.2923 0.12666-0.2923 0.2923 0 0.0779 0.02923 0.13641 0.07795 0.19487 0.15589-0.0585 0.32153-0.12666 0.50666-0.20461 0-0.1559-0.13641-0.28256-0.2923-0.28256"/>
+  <path d="m65.773 100.19c0.1559-0.0682 0.32153-0.12666 0.48717-0.20461-0.04872-0.0487-0.11692-0.0779-0.19487-0.0779-0.16564 0-0.2923 0.12667-0.2923 0.28256"/>
+  <path d="m64.315 100.49c-0.09743 0-0.17538 0.0487-0.23384 0.12666 0.0097 0.0292 0.01949 0.0585 0.03897 0.0682 0.03897 0.039 0.20461 0.0195 0.43845-0.0487-0.04872-0.0877-0.13641-0.14615-0.24359-0.14615"/>
+ </g>
+ <g fill="#f6ac1d">
+  <path d="m79.173 83.88c0 0.0974 0.04872 0.18513 0.12666 0.23384 0.02923-0.17538 0.0682-0.34102 0.09743-0.50666-0.12666 0.0292-0.2241 0.13641-0.2241 0.27282"/>
+  <path d="m79.173 84.47c0 0.0487 0.0097 0.0877 0.02923 0.12666 0.02923-0.11692 0.04872-0.22409 0.0682-0.34102-0.05846 0.0487-0.09743 0.12667-0.09743 0.21436"/>
+  <path d="m79.172 83.31c-0.10718 0.0974-0.20461 0.18513-0.31179 0.28256h0.01949c0.16564 0 0.2923-0.12667 0.2923-0.28256"/>
+  <path d="m79.398 83.58c0.02923-0.18513 0.0682-0.37999 0.09743-0.56512-0.10718 0.0974-0.21436 0.19487-0.32153 0.2923 0 0.13641 0.09743 0.24359 0.2241 0.27282"/>
+ </g>
+ <path d="m64.607 97.87c0-0.11692-0.0682-0.20461-0.16564-0.25333-0.03897 0.18513-0.0682 0.36051-0.10718 0.53589 0.1559-0.01 0.27282-0.12667 0.27282-0.28256" fill="#3a3838"/>
+ <path d="m64.607 97.29c0-0.0585-0.01949-0.11692-0.05846-0.16564l-0.08769 0.40923c0.08769-0.0487 0.14615-0.13641 0.14615-0.24359" fill="#3a3838"/>
+ <path d="m27.291 207.88c-3.9071 2.5333-12.296 3.7902-19.497 3.3615-0.71127-0.039-0.79896-0.23384-0.75024-0.79896 0.31179-3.5856 2.962-8.6424 5.4466-11.838 0.75999-0.9646 0.13641-1.4225-0.9646-0.59435-2.5528 1.9195-6.2748 7.7363-7.1517 11.751h-0.95486c0.8964-4.4333 4.8133-10.357 7.5901-12.423 1.9779-1.4713 3.5369 0.0585 2.1436 1.7928-2.4651 3.0399-4.9594 8.204-5.1932 11.215 7.025 0.32153 15.024-0.97435 18.62-3.4005z" fill="#0f141b"/>
+ <path d="m177.02 196.56c0.0974-2.6502 0.46768-6.7132 1.2374-9.305 0.66256-2.2215 2.8451-1.8025 2.4748 0.35076-0.46768 2.7769-0.67229 6.1091-0.61383 9.1491 3.761-0.56512 10.494-2.7476 14.722-5.1056l0.63332 0.9646c-4.4917 2.2702-10.981 4.4235-15.443 5.0471-0.62358 0.0877-0.78922-0.0682-0.79896-0.64307-0.0292-3.5953 0.15589-6.8886 0.67229-9.5583 0.21436-1.0718-0.52614-1.2179-0.83793 0.01-0.66255 2.6405-1.0523 6.5086-1.1205 9.227z" fill="#0f141b"/>
+ <path d="m179.35 180.16c3.4102-1.5784 10.64 2.7379 16.096 11.332 0.71127 1.1205 0.9646 1.179 2.3579 0.9646 3.3712-0.5164 7.3466-1.559 10.016-2.7671 0.99383-0.45794 1.0133-0.58461 1.0133-2.163 0.01-2.8256-0.0292-5.4466-0.13641-7.444-0.0779-1.3348-0.67229-2.1436-1.8123-2.3482l-0.0682-0.98409c1.5687 0.0487 2.8743 1.1887 2.9912 3.2835 0.11692 2.0071 0.20462 4.6768 0.19487 7.5219 0 2.0948-0.35076 2.621-1.7148 3.2251-2.8548 1.2569-6.8496 2.4066-10.299 2.9523-1.9194 0.31179-2.5528 0-3.5953-1.6077-5.3102-8.2332-12.101-12.55-14.985-10.815z" fill="#ea831e"/>
+ <path d="m205.57 178.63c0.75024-0.24359 0.83793-0.4482 0.77947-1.2277-0.26307-3.5076-0.54563-7.0445-0.92562-10.455l1.1497-0.48717c0.33128 3.6928 0.56512 7.3855 0.81845 10.913 0.0682 0.98408-0.75024 1.3933-1.822 1.2569" fill="#0f141b"/>
+ <path d="m207.39 177.38c0.0877 1.4713-0.12666 1.9097-1.4615 2.3287-1.861 0.59435-5.0471 0.95485-7.2686 1.0718-0.40922 0.0195-0.52614-0.0292-0.77947-0.28255-3.2056-3.1082-7.8532-7.9799-10.708-11.751l1.2277 0.0292c2.543 3.2153 7.1614 7.9311 10.211 10.864 2.1923-0.0974 5.1348-0.44819 6.9568-1.0036 1.0815-0.33127 1.861-0.70152 1.822-1.2569" fill="#ea831e"/>
+ <path d="m107.14 189.37c-0.94511-0.39948-1.9584-0.84768-2.8743-1.3348-1.52-0.79896-1.9682-1.4713-1.9487-3.2348 0.0292-2.0948 0.18512-4.2286 0.32153-6.2455 0.14615-2.1533 1.5784-3.7804 3.7999-3.9071l-0.0292 0.95485c-1.5102 0.16564-2.5625 1.2374-2.6989 3.04-0.1364 1.9097-0.18512 4.141-0.20461 6.1676-0.0195 1.2959 0.078 1.5395 1.3446 2.202 0.86716 0.45794 1.7148 0.79896 2.6307 1.2179z" fill="#ea831e"/>
+ <path d="m107.29 165.58c-0.15589 3.8097-0.2923 7.5999-0.41897 10.981l-1.0523 0.97434c0.0292-4.2774 0.17538-8.2916 0.31179-12.209z" fill="#0f141b"/>
+ <path d="m177.7 198.13c-0.17538-3.9363-0.39948-7.8922-0.65281-11.76l-1.1595 0.38973c0.28256 3.7707 0.55538 7.6096 0.77948 11.439 0.0487 0.75025-0.0974 0.97435-0.9646 1.1984 1.0815 0.37999 2.0461-0.17539 1.9974-1.2666" fill="#0f141b"/>
+ <path d="m107.23 153.39c-1.8318 0.32153-2.2605 0.99383-2.3092 2.1533-0.11692 2.6015-0.14615 4.8814-0.16564 7.4342-0.01 1.1302 0.16564 1.442 1.3348 1.7343 2.7769 0.67229 5.7876 1.1497 9.3634 1.5005 0.90614 0.0877 1.101 0.3605 0.37999 1.0913-3.1666 3.264-6.0896 6.3819-8.5547 9.2952-1.1984 1.4225-1.559 1.6369-2.1923 1.6759-0.8964 0.039-0.93537-0.54563-0.0195-0.69178 0.33128-0.0487 0.53589-0.20461 1.6174-1.5492 2.4651-3.0594 5.3784-6.3137 8.0188-8.9445-2.8548-0.16563-5.7389-0.62358-8.8958-1.2277-1.5979-0.31179-2.241-0.91588-2.2312-2.9035 0.0195-2.5625 0.10717-4.8717 0.21435-7.483 0.078-1.7246 1.0036-2.7866 3.4882-3.0497z" fill="#ea831e"/>
+ <path d="m108.92 154.93c-0.95486-0.2241-1.1497-0.64307-1.0815-1.9487 0.0585-1.1108 0.13641-2.1825 0.19487-3.2738 0.0877-1.5589 0.41897-2.5723 2.9133-3.8486 2.7476-1.4225 4.102-3.1471 4.5697-5.6902 0.14615-0.78921 0.31179-1.4907 0.55537-1.9779l-1.0913 0.12666c-0.19487 0.45794-0.34102 1.062-0.45794 1.7148-0.37999 2.0559-1.783 3.6246-4.0922 4.8133-2.9425 1.5102-3.5174 2.4943-3.644 4.7645-0.0585 1.0815-0.16564 2.202-0.20461 3.3128-0.0682 1.52 0.64306 2.1728 2.3384 2.0072" fill="#0f141b"/>
+ <path d="m108.92 154.93c7.5122 1.7051 21.056 1.9 30.438 0.23384l-0.59435 1.3348c-9.1686 1.4615-22.537 1.3933-30.195-0.45794-1.8512-0.4482-2.0948-1.1595-1.9877-3.1179-0.0487 1.0231 0.75024 1.6466 2.3384 2.0072" fill="#ea831e"/>
+ <path d="m8.3493 182.35c-0.21436 1.9389-0.35076 3.7804-0.46768 5.4758l-1.1108 0.85743c0.10718-2.2994 0.27282-4.4625 0.47743-6.5671z" fill="#0f141b"/>
+ <path d="m8.9339 169.21c-2.4359 0.43845-3.1179 1.3056-3.0984 2.6112 0.02923 2.4066 0.15589 5.7681 0.26307 8.0773 0.058461 1.1984 0.2241 1.3348 1.2472 1.6272 1.4518 0.42871 3.0497 0.75998 4.9594 1.1205 1.179 0.2241 1.2861 0.47743 0.41897 1.3251-2.5333 2.4651-5.2517 4.9399-8.2819 7.6096-0.02923 2.3969 0.068204 5.6707 0.14615 8.0676l-1.1108 1.101c-0.087691-3.0205-0.16564-6.3917-0.13641-9.2075 0.00974-0.47743 0.077947-0.58461 0.38974-0.84768 3.2153-2.7379 6.0896-5.2809 7.9896-7.1224-1.2179-0.17538-3.001-0.49692-4.7743-0.92563-1.5687-0.37025-1.9195-0.86716-2.0169-2.7087-0.12666-2.3676-0.2241-5.7876-0.2241-8.1065 0-1.8902 1.1302-3.1374 4.3358-3.6148z" fill="#ea831e"/>
+ <path d="m15.132 194.35c-0.27282-0.14615-0.50666-0.2241-0.70153-0.21436-4.4527 0.078-13.124 8.6522-13.154 11.673-0.00974 0.75024 1.0718 2.5723 2.6405 3.5564 1.1887-0.35077 2.5528-0.81845 4.102-1.4713l-0.2923 1.0523c-0.95486 0.40922-2.163 0.85742-3.3907 1.2472-0.43845 0.14615-0.58461 0.15589-1.0815-0.13641-1.7538-1.0133-3.2738-3.0594-3.2543-4.1702 0.02923-3.6051 8.204-11.195 13.163-12.569 0.87691-0.21436 2.1143 0.32153 1.9682 1.0328" fill="#0f141b"/>
+ <path d="m13.166 193.33c0.47743-0.12666 0.91588-0.20461 1.3251-0.21436 2.1338-0.039 7.6681 6.4696 12.754 13.748 0.73076 1.0523 1.2082 1.3154 2.3482 1.3933 6.0312 0.39948 16.086-1.3348 22.566-4.2286 0.77947-0.35076 0.86716-0.57486 0.92563-1.7441 0.10718-2.3677 0.14615-5.0666 0.0682-8.087-0.02923-1.2861-0.52614-2.0559-2.2118-2.7964l0.0097-1.0133c2.0656 0.72101 3.264 1.9584 3.3128 3.7902 0.07795 3.04 0.09743 5.8168-0.01949 8.1942-0.05846 1.403-0.61384 2.2897-1.6077 2.7476-6.2358 2.8451-16.613 4.8035-23.131 4.4235-1.7051-0.0974-2.2312-0.50666-3.2738-1.9877-4.3651-6.2066-8.9152-12.014-11.098-13.193-0.53589-0.48717-1.2374-0.90614-1.9682-1.0328" fill="#ea831e"/>
+ <path d="m49.363 192.49c0.9646-0.26307 1.0913-0.66255 1.0718-1.8318-0.12666-3.2446-0.25333-6.3235-0.49692-9.6752l1.14-0.48717c0.18512 3.8681 0.27282 6.9081 0.37999 10.143 0.04872 1.4225-1.179 2.0754-2.0948 1.8512" fill="#0f141b"/>
+ <path d="m46.38 100.14c-4.141-9.3439-5.4368-23.462 2.1533-33.459 6.7814-8.9347 22.653-11.01 30.653-4.2968l-0.42871 0.88665c-8.087-6.9081-23.258-3.9266-29.328 4.063-7.3076 9.6265-6.2163 23.901-1.8902 33.167z" fill="#ea831e"/>
+ <g fill="#0f141b">
+  <path d="m86.629 63.23c2.28 2.1143 4.1117 4.6476 5.3394 7.5317l-0.71127 0.72101c-1.1302-2.66-2.8743-5.203-4.8133-6.9763z"/>
+  <path d="m39.518 92.47c0.83793 17.996 16.457 28.149 28.1 26.892 13.163-1.4323 27.213-20.9 16.203-38.711l-1.1887-0.31179c11.312 17.928-2.9425 36.684-15.132 38.038-9.9383 1.1108-25.011-7.5122-27.057-24.534z"/>
+  <path d="m78.094 113.88c-7.7753-2.1143-19.955-3.04-27.135-2.8256-1.101 0.0292-1.5492 0.44819-1.7051 1.0913l-0.63332-0.56512c0.30205-0.70152 0.91588-1.2569 2.2994-1.3154 7.3465-0.31179 19.467 0.66255 28.012 2.8743z"/>
+  <path d="m44.526 98.71c0.68204 1.9389 2.2215 4.5404 3.9851 6.4502 0.20461 0.21435 0.26307 0.2923 0.36051 0.66255 0.4482 1.6954 1.101 3.4882 1.6954 4.862l-0.7405 0.18512c-0.58461-1.403-1.1984-3.1958-1.6856-5.0958-1.7148-1.7441-3.8389-4.6574-4.6476-7.8142z"/>
+  <path d="m51.375 110.62c-0.69178-1.6369-1.2277-3.3322-1.7051-5.0374-0.11692-0.41897-0.09743-0.46768 0.21436-0.8087 1.8805-2.0364 3.8389-4.2968 5.242-6.002l1.4225-0.55538c-2.1728 2.7184-4.2384 4.9692-6.226 7.103 0.46768 1.6661 1.0328 3.4199 1.861 5.3004z"/>
+  <path d="m53.465 99.45c-1.3738 1.7246-2.6892 3.2056-3.9851 4.482-0.40922 0.39949-0.58461 0.37026-0.93537 0-1.14-1.2082-1.9779-2.4943-2.7769-4.1215l1.1205 0.50665c0.48717 0.92563 1.2472 2.0948 2.1436 3.0984 1.0718-1.062 2.3774-2.5723 3.1764-3.6246z"/>
+  <path d="m76.12 97.6c1.6759 2.7476 2.7087 5.3394 3.5369 8.7593 0.26307 1.101 1.2861 0.86716 1.0718-0.12667-0.71127-3.3712-1.9487-6.2553-3.683-9.0906-0.56512-0.91588-1.442-0.39948-0.92562 0.45794m-0.59435 0.35076c-1.0523-1.7148 0.98409-2.923 2.1143-1.1692 1.8513 2.8451 3.0205 5.8461 3.761 9.3147 0.43845 2.0559-1.9195 2.3774-2.4066 0.41896-0.83793-3.303-1.8512-5.9143-3.4687-8.5645"/>
+  <path d="m26.305 116.18c-0.68204-12.93-0.18512-22.624 1.7928-30.312 0.7405-2.8646 2.0753-4.141 6.1578-4.9692l0.20461 0.86717c-3.7804 0.8769-4.8522 2.1923-5.3589 4.3358-1.8025 7.6388-2.4846 17.86-1.7441 31.12z"/>
+  <path d="m29.307 58.77c0.8964 9.0516 3.0399 13.485 7.9994 14.323l0.04872 0.93537c-5.3102-0.5846-7.8629-4.3943-9.0029-14.547z"/>
+  <path d="m85.02 116.04c-5.7194 6.7035-19.039 7.8337-28.538 1.1108l2.241 0.34102c9.4511 5.3199 21.27 3.7122 26.463-3.1179z"/>
+  <path d="m32.306 70.83c1.2764-4.3066 3.0399-8.3696 5.242-12.131l-0.32153 3.3615c-1.5589 3.0692-2.8451 6.3527-3.8097 9.8409z"/>
+  <path d="m31.588 82.16c-2.8451 32.884 20.149 55.002 48.016 56.57 27.252 1.5395 51.699-14.791 52.234-50.023 0.40922-26.999-17.334-52.965-47.996-54.164-14.849-0.5846-28.987 5.4563-38.837 16.242l-0.84768-1.0426c9.7044-10.581 23.686-16.963 39.724-16.34 32.923 1.2959 49.857 29.045 49.458 55.372-0.54563 35.758-25.245 52.917-53.813 51.299-28.1-1.5882-51.767-23.024-49.438-56.902z"/>
+  <path d="m42.336 47.53c2.0266-4.5015 5.622-9.5973 9.8603-13.865l0.08769 1.6077c-3.4784 3.2543-7.1809 8.5352-9.2368 13.144z"/>
+  <path d="m30.803 91.04c-1.5297 3.2446-2.5333 8.8568-1.6661 15.775 1.3738 11.059 6.7912 18.902 12.033 18.259 1.1595-0.14615 2.1241-0.66255 3.1569-1.6272l0.63332 0.67229c-1.1205 1.0426-2.3871 1.6856-3.683 1.8415-6.0994 0.75999-11.731-6.8886-13.251-19.068-0.85742-6.9081 0.35076-13.602 2.66-17.48z"/>
+  <path d="m13.137 108.36c0.45794 8.4281 3.0594 18.707 8.4865 24.894 1.9779-2.1728 5.0666-2.4066 8.7593 0.97434 2.7574 2.5138 4.8522 2.9815 7.5317 1.2764 3.2543-2.0754 6.4599-6.0507 8.1747-10.25l0.92562 0.83793c-2.0461 4.443-5.0081 7.9701-8.6034 10.231-3.1666 2.0071-5.583 1.4712-8.7204-1.3933-3.1179-2.8548-5.5538-3.0692-7.6194-0.78922-0.34102 0.37999-0.5164 0.39948-0.86716 0.0292-6.2066-6.4599-9.0614-17.636-9.3342-27.652z"/>
+  <path d="m22.476 142.54c-2.5528-2.3189-2.8841-6.6645-1.1887-8.8275l0.78922 0.43845c-1.6077 2.0072-1.0523 6.6742 2.0461 8.6911z"/>
+  <path d="m31.522 143.09c1.9389-1.1302 2.9717-3.4297 2.8646-6.1286l0.8964 0.0195c0.13641 2.66-0.71127 4.745-2.2702 6.0409z"/>
+  <path d="m23.921 143.44c-2.8841-0.78922-4.4625-2.0266-6.4307-4.7938-0.91588-1.2861-0.50666-1.5979 0.54563-0.40923 2.1436 2.4359 3.6246 3.4199 6.2358 4.1702 1.5979 0.45794 6.3137 0.37999 10.533 0.14615 1.7343-0.0974 1.783 0.47743 0.05846 0.67229-3.8876 0.45795-9.3537 0.65281-10.942 0.21436"/>
+  <path d="m24.957 132.1c-3.7902 3.6246-2.1533 9.4901 1.8123 11.098l-1.5297-0.01c-3.303-2.0461-4.6184-7.3076-1.4518-10.883z"/>
+  <path d="m27.555 143.16c-2.4748-2.4359-2.6015-8.0286-0.09743-10.435l0.66255 0.34102c-2.4261 2.2312-2.1436 7.9799 0.48717 10.114z"/>
+  <path d="m29.323 133.96c-1.9097 2.3774-1.3836 6.9276 1.0523 9.1296l-0.93537 0.0682c-2.4651-2.4456-2.8451-7.1712-0.6723-9.6265z"/>
+  <path d="m183.27 80.71c0.88665-0.94511 1.4323-1.5979 2.0364-2.5236 0.64306-0.99383 0.35076-1.5784-1.7051-1.1302-3.9656 0.85742-7.8337 1.2082-13.495 0.92562l0.69179-0.9646c4.7158 0.21436 8.6814-0.0585 12.588-0.85742 2.8548-0.5846 3.7902 0.75024 2.6307 2.5236-0.65281 0.99383-1.2861 1.8318-2.2702 2.8158z"/>
+  <path d="m158.29 136.83c-5.2712-4.823-11.049-4.1507-12.988-1.3836-0.32154 0.45794-0.61384 0.45794-1.1887 0.0779-2.8061-1.8805-4.6963-5.0861-5.583-9.7824-0.40923-2.1923-0.039-3.2446 1.9584-4.7353 8.7593-6.5184 12.579-19.818 11.322-35.749-0.28256-3.6051 0.0877-4.6476 1.8707-5.6414 3.5466-1.9974 7.6778-2.5723 12.033-1.52 10.425 2.5041 14.157 12.247 8.9542 35.905-1.5492 7.0153-4.0922 12.199-7.6973 16.603l-1.0133-0.28256c3.6343-4.365 6.002-9.7921 7.483-16.505 4.6866-21.289 2.5625-32.095-8.0286-34.648-3.9656-0.95486-7.7947-0.53589-11.185 1.3738-1.2374 0.69178-1.5882 1.52-1.3348 4.6379 1.3543 17.217-2.7866 30.029-11.702 36.664-1.6466 1.2277-1.9389 1.9682-1.6077 3.6928 0.82819 4.4333 2.5138 7.5219 5.0666 9.1978 2.202-2.9328 8.3793-3.9461 14.216 1.2277z"/>
+  <path d="m139.62 107.58c-0.59435 5.5148-0.01 10.386 1.5882 13.582l-0.90614 0.63333c-1.5005-2.6112-2.28-6.6255-2.1436-11.361z"/>
+  <path d="m148.11 91.21c-0.37999 6.7522-3.7025 15.015-9.305 19.838l-0.01-1.0523c4.7353-4.5892 7.6388-11.663 8.3598-17.665z"/>
+  <path d="m149.89 88.42c0.63332 8.5158-3.3712 19.253-11.059 25.021l-0.0195-0.98408c6.8788-5.5635 10.425-15.414 10.299-23.072z"/>
+  <path d="m115.68 137.66c9.5778-1.7246 18.025-4.7548 23.706-10.679l0.37025 1.4518c-5.3589 5.4758-13.806 8.9834-25.557 10.786z"/>
+  <path d="m138.83 128.36c-2.7574-1.2179-4.5404-4.7743-4.6574-8.886l0.71127-1.1108c-0.0292 4.1897 1.6661 8.1552 4.5307 9.4804z"/>
+  <path d="m137.07 113.87c-0.0682 5.3881 0.83793 8.6619 1.9194 9.8798l-0.0585 0.92563c-1.7441-1.1692-2.6112-4.8717-2.6015-9.3927z"/>
+  <path d="m145.37 143.18c-1.9877-1.9877-2.3969-5.5245-0.94511-7.9799l0.87691 0.25332c-1.4128 2.4066-0.90614 5.9338 1.2764 7.746z"/>
+  <path d="m148.11 133.11c-2.6112 2.5333-2.962 8.3599 0.17538 10.114l-1.1108 0.039c-2.5236-2.0266-2.4748-6.9081-0.35076-9.7532z"/>
+  <path d="m150.08 132.82c-2.9425 2.7476-3.4589 8.5352 0.37025 10.24l-1.1887 0.12666c-3.264-2.0754-2.9133-7.3953-0.19487-10.357z"/>
+  <path d="m153.16 142.44c-1.1887-2.5138-1.2082-6.5768 0.43845-9.1101l0.68204 0.26307c-1.4712 2.4066-1.5297 6.1578-0.46768 8.5547z"/>
+  <path d="m154.61 141.62c-0.99383-2.5333-0.85742-5.6317 0.53589-7.6194l0.63332 0.33128c-1.14 1.861-1.3641 4.6086-0.57486 6.8204z"/>
+ </g>
+ <g fill="#ea831e">
+  <path d="m24.948 176.19c-1.5882-0.078-1.5687-0.7405 0.0097-0.71127 8.8081 0.15589 17.928-1.0815 24.066-3.1374 1.2666-0.42871 1.4615 0.0877 0.21436 0.57486-5.6512 2.2118-15.57 3.683-24.29 3.2738"/>
+  <path d="m18.911 175.78c-4.2384-0.38974-8.2624-1.4225-10.874-2.8451-1.0913-0.59435-0.86716-1.0426 0.27282-0.54563 2.8256 1.2277 6.5476 2.2215 10.679 2.6892 1.7051 0.18513 1.6174 0.85742-0.07795 0.70153"/>
+  <path d="m175.34 171.91c2.66 0.39948 3.8779 1.3348 4.0533 2.7282 0.41897 3.3907 0.64307 6.1091 0.62358 9.1783-0.0195 1.9584-0.42871 2.3579-2.5625 3.04-5.8753 1.9-14.868 3.0107-24.076 3.0887 1.9877 3.1471 5.6707 7.1809 8.925 10.357 1.101 1.0718 0.59435 1.4907-0.47743 0.52614-3.2933-2.9425-7.0445-6.8691-9.3537-10.513-0.70152-1.1205-0.62358-1.2861 0.75999-1.3251 9.4804-0.23384 18.181-1.4128 23.91-3.2835 1.559-0.50666 1.6759-0.66255 1.6954-1.9097 0.0195-3.0789-0.1559-5.8168-0.57486-9.0127-0.12667-0.94511-0.64307-1.4713-2.8353-1.9z"/>
+ </g>
+ <g fill="#0f141b">
+  <path d="m181.11 99.5c0.82819 10.094-4.4625 20.929-9.607 22.614l0.4482-1.3056c4.3261-2.28 8.6132-12.247 8.2624-20.539z"/>
+  <path d="m183.21 96.61c0.32153 3.001 0.28256 5.8753-0.0585 8.4768-0.17538 1.4128-0.79896 1.3836-0.69178-0.0487 0.17538-2.5723 0.17538-5.3881-0.0195-7.2588z"/>
+  <path d="m170.46 124.3c3.4979-0.86716 6.8691-4.3163 9.3829-9.3634 0.73075-1.4713 1.2959-1.2277 0.63332 0.27282-2.4651 5.6707-6.3332 9.5291-10.581 10.094z"/>
+  <path d="m168.63 127.51c3.9558 3.8876 8.0481 5.9435 11.146 5.7096 3.2446-0.25333 8.1552-3.0887 10.494-14.479-1.6272-2.2118-1.8805-4.1994-0.78921-8.6814 1.3056-5.3491-0.0682-9.344-4.9692-15.94l0.46769-1.0815c5.6512 6.9373 6.986 11.127 5.4855 17.246-0.95485 3.9168-0.71127 6.0507 0.57486 7.8824 0.23385 0.33127 0.26308 0.42871 0.17539 0.84767-2.5041 11.984-7.5706 14.82-11.38 15.112-3.4589 0.26308-7.3758-1.3836-11.76-5.7778z"/>
+  <path d="m179.28 133.66c0.37025 0.56512 0.87691 1.101 1.4225 1.559l-1.3251 0.0585c-0.46768-0.46769-0.90613-1.0815-1.2374-1.6856z"/>
+  <path d="m191.27 124.91c-0.36051-0.76973-0.93537-1.5979-1.5395-2.163l0.2923-0.99383c0.68204 0.59435 1.3251 1.4128 1.783 2.202z"/>
+  <path d="m182.31 135.13c-0.54563-0.40922-1.0913-1.0036-1.5102-1.6077l0.75999-0.17539c0.45794 0.59435 1.0815 1.2082 1.7343 1.6369z"/>
+  <path d="m185.72 130.52c-0.0877 1.3056 0.14615 2.5333 0.62358 3.3322l-0.63332 0.34102c-0.47743-0.79896-0.75999-1.8707-0.72102-2.9328z"/>
+  <path d="m187.75 127.77c-0.15589 2.4164 0.0585 3.7902 0.35076 4.5404l-0.54563 0.5846c-0.5164-0.98408-0.71127-2.6502-0.56512-4.024z"/>
+ </g>
+ <g fill="#ea831e">
+  <path d="m175.24 170.87c0.76973-0.61384 1.7051-1.442 2.2215-2.1241-0.65281-0.0585-1.6272-0.16563-2.4748-0.32153l-0.16564-1.0231c0.8964 0.17538 2.0266 0.34102 3.1276 0.45794 1.0523 0.11692 1.2179 0.32154 0.46769 1.2472-0.94512 1.1497-1.9584 2.0461-3.0789 2.9328z"/>
+  <path d="m178.29 160.2c-1.5297-0.15589-1.481-0.79896 0.0585-0.70153 9.6655 0.63333 20.5 0.25333 25.888-1.2764 1.2472-0.35076 1.4128 0.20462 0.17538 0.59435-5.3686 1.6954-16.457 2.3871-26.122 1.3836"/>
+  <path d="m165.88 156.42c2.0559 1.2569 4.8912 2.0559 8.0091 2.5625 1.6272 0.26307 1.559 0.86717-0.11692 0.69178-3.0887-0.33127-5.9142-1.062-7.4732-1.9584z"/>
+ </g>
+ <path d="m179.7 196.47c-0.65281 0.21436-1.2082 0.4482-1.8512 0.6723-0.39948 0.14615-0.54563 0.12666-0.77947-0.0585l0.0779-1.1984c0.0877 0.10718 0.28256 0.27282 0.43846 0.38974 0.5164-0.19487 1.3738-0.50666 2.0851-0.73076z" fill="#0f141b"/>
+ <path d="m140.21 144.43c-3.0692-1.8707-5.1348-5.505-5.2809-8.467-0.0877-1.9194-0.57486-3.1569-1.2082-3.7122l0.81845-0.49691c0.82819 0.76973 1.3348 2.2507 1.4225 4.1604 0.11692 2.3676 2.0266 5.924 4.8814 7.5024z" fill="#0f141b"/>
+ <g fill="#ea831e">
+  <path d="m129.9 173.65c-2.2994-1.9292-4.2968-3.8389-6.4696-6.1286-0.76973-0.81845-0.46769-0.94512 0.48717-0.9646 2.2507-0.0292 4.5599-0.14615 6.9958-0.39948l-0.56512 1.0718c-1.7441 0.1559-4.1215 0.28256-5.6512 0.26308 1.3251 1.4518 3.4297 3.5271 5.2322 5.0276z"/>
+  <path d="m137.29 158.63c-8.165 1.2472-24.748 1.2959-30.789-1.5882-1.101-0.52614-0.82819-1.14 0.28256-0.63332 6.0507 2.7087 22.283 2.6892 31.14 1.3836z"/>
+  <path d="m129.87 171.27c-1.4225-1.3251-2.8548-2.7866-4.1215-4.2871l1.2374-0.039c0.88665 1.0426 1.8902 2.0364 2.923 3.0205z"/>
+ </g>
+ <path d="m129.67 192.76c-3.1861 1.3056-8.4573 2.1046-12.666 1.7343-0.71127-0.0682-0.78922-0.25333-0.70153-0.86717 0.52615-3.6538 1.2082-7.5317 2.5333-11.702 0.49692-1.5687-0.2923-1.7538-1.1887-0.14615-1.5297 2.7087-3.2543 8.3599-3.8486 11.78l-0.93537 0.0585c0.55538-3.4492 2.4456-9.3927 4.0435-12.228 1.3348-2.3676 3.5466-1.9097 2.6892 0.79897-1.3641 4.2676-1.9584 8.3014-2.3871 11.41 3.8584 0.2241 9.227-0.54563 12.481-2.0169z" fill="#0f141b"/>
+ <path d="m106.86 20.829c-28.655-6.8886-48.269 7.2686-51.825 18.902-0.82819 2.7282-2.5625 2.7671-2.9035-0.10718-1.8805-15.862 1.8415-36.967 9.7921-39.188 7.1712-1.9974 14.976 2.6697 26.395 18.22l-1.4031 0.0682c-11.098-14.537-18.006-18.805-24.67-17.07-6.5476 1.7051-10.766 22.137-9.1686 37.892 0.16564 1.7051 0.58461 1.7051 1.062-0.04872 3.5856-12.998 25.08-26.629 53.345-19.789z" fill="#0f141b"/>
+ <g fill="#ea831e">
+  <path d="m198.97 182.48c-1.2082 0.0877-1.2374-0.63332-0.0195-0.71127 3.6051-0.23384 5.8071-0.6723 8.0383-1.1692 1.062-0.24359 1.1984 0.33128 0.14615 0.59435-2.1728 0.54563-4.4722 1.0328-8.165 1.2861"/>
+  <path d="m204.73 153.98c1.7148 0.12666 2.962 1.1692 3.001 3.5953 0.0292 2.3677 0.039 4.5892 0.01 7.2004-0.0195 1.5979-0.42871 2.163-2.0948 2.7087-3.6343 1.1887-11.059 1.9487-18.649 1.7636 2.4748 3.7999 6.1481 8.0676 9.3634 11.458 0.97434 1.0328 0.4482 1.4128-0.49692 0.48717-3.3907-3.3128-7.064-7.3563-9.9383-11.877-0.53589-0.82819-0.31179-1.0133 0.75999-1.0133 8.2527 0 14.8-0.64306 18.62-1.9584 1.2082-0.41896 1.2472-0.61383 1.2569-1.6174 0.0292-2.6112 0.0585-4.8132 0.0292-7.1712-0.0195-1.6077-0.72101-2.3774-1.7636-2.582z"/>
+  <path d="m169.12 178.35c2.7671-0.59435 4.6768-1.1595 6.5573-1.8902 1.1497-0.4482 1.3641 0.0487 0.25333 0.56511-1.8025 0.8282-3.8681 1.4615-6.6548 2.0364-1.5005 0.30205-1.6466-0.38974-0.15589-0.71127"/>
+  <path d="m141.06 180.29c-1.6466-0.19487-1.5492-0.89639 0.0877-0.7405 6.1578 0.57486 12.842 0.57486 19.886-0.039 1.7246-0.14616 1.783 0.5846 0.0585 0.75998-6.8691 0.70153-13.621 0.78922-20.032 0.0195"/>
+  <path d="m134.68 179.27c-1.559-0.2923-2.8158-0.66255-4.0533-1.179-1.3446-0.55538-1.1692-1.0523 0.20461-0.57487 1.2666 0.42871 2.5333 0.75025 3.9948 1.062 1.403 0.30204 1.2666 0.95485-0.14615 0.69178"/>
+  <path d="m165.65 203.17c-1.6466-0.23384-1.5687-0.91588 0.078-0.7405 3.5856 0.37999 8.9152 0.039 11.575-0.91588 1.1984-0.42871 1.3933 0.0682 0.2241 0.57486-2.6989 1.1595-8.2624 1.5979-11.877 1.0815"/>
+ </g>
+ <path d="m168.13 79.45c0.64307-0.59435 1.1595-1.0718 1.6466-1.6856 0.94511-1.2082 0.90614-1.4128-0.4482-1.8415-5.1348-1.5882-9.4706-6.0896-10.533-10.221-5.242-20.364-21.699-37.454-34.336-38.448-8.808-0.69178-17.295 4.1215-21.182 8.6522-2.4359 2.8451-3.7317 1.8707-2.7476-1.6759 4.4528-16.057 18.376-33.732 27.496-33.323 12.511 0.55538 19.438 20.685 20.744 35.651 0.45794 5.2225 1.101 7.2296 4.0143 11.819l-3.0205-3.4784c-1.0718-1.6369-1.8512-3.7025-2.2215-8.2722-1.3056-16.008-8.9445-33.985-19.536-34.453-7.5122-0.33128-21.65 15.726-26.57 32.329-0.75998 2.5723-0.38973 2.582 1.1595 0.76973 4.2871-4.9886 13.232-9.9383 22.02-9.2465 12.793 1.0036 29.639 17.295 35.33 39.412 1.0231 3.9461 5.1445 8.2332 9.6265 9.6655 2.2507 0.73076 2.1825 1.5297 0.84767 3.2056-0.44819 0.57486-0.85742 1.062-1.403 1.6077z" fill="#0f141b"/>
+ <path d="m165.38 156.14c0.2923-1.6174 1.3446-2.6794 2.543-2.6502v0.95485c-0.98408 0.1559-1.481 1.2569-1.52 2.7866z" fill="#ea831e"/>
+ <g fill="#0f141b">
+  <path d="m128.95 198.76c0.039-2.8256 0.16564-7.5414 0.2241-11.468l1.1497 0.21436c-0.0974 3.4979-0.26307 7.8045-0.35076 11.643 0 0.30204 0.17538 0.70152 0.79896 0.75998-1.4128 0.35077-1.8318-0.18512-1.822-1.1497"/>
+  <path d="m10.46 170.76c-0.81845-0.19487-1.062-0.47743-1.0133-0.92563 0.24359-2.5138 0.50666-4.862 0.75999-6.9665 0.28256-2.3384 0.60409-3.0594 2.6697-4.6768 3.4492-2.7087 6.0409-6.8886 6.0896-9.987 0.05846-3.1569-2.5918-10.981-4.9886-16.301-1.1108-2.4748-1.1887-4.5307-0.49692-5.0374 0.7405-0.53589 2.1143 0.01 4.3066 1.9876l-0.62358-1.8707c-1.9097-1.442-3.4199-1.5687-4.3261-0.90614-1.0425 0.76973-1.0231 3.6538 0.1559 6.265 2.3677 5.2517 4.7548 12.725 4.7061 15.794-0.04872 2.8938-2.4359 6.5963-5.6414 9.1198-2.2702 1.783-2.7476 2.7866-3.0692 5.4661-0.2241 1.861-0.4482 3.9363-0.68204 6.1189-0.14615 1.3933 0.37025 1.9974 2.1533 1.9194"/>
+  <path d="m205.38 154.5c-0.13641-1.403-0.28256-2.7379-0.41897-3.9656-0.20461-1.8805-0.76973-2.5041-2.4261-3.381-6.9373-3.683-8.3891-9.9286-5.0081-19.799 1.3641-4.0046 0.69178-5.9143-0.57486-6.5281-2.0559-0.99383-5.6512 1.3446-6.6645 5.1835-1.9 7.1419-4.6768 8.9542-11.41 8.7301-2.28-0.078-2.66 0.39948-2.7379 2.0851-0.21435 4.482-2.3287 7.746-6.8788 10.201-1.4908 0.80871-1.6564 1.2374-1.7636 2.5333-0.13641 1.5395-0.2241 3.1276-0.24359 4.3066-0.0195 1.5687 0.92563 2.2994 1.8415 1.8902-0.48717-0.15589-0.61384-0.55537-0.58461-1.9 0.0195-1.1595 0.0974-2.6015 0.2241-4.1215 0.078-0.86717 0.20461-1.101 1.1595-1.6174 4.7743-2.582 6.9471-5.9727 7.2004-11.195 0.0487-1.1692 0.2241-1.2861 1.7538-1.2374 7.5901 0.26307 10.494-1.9584 12.462-9.3927 0.93536-3.5174 4.0045-5.1543 5.203-4.5697 0.97435 0.46769 1.0328 2.2312-0.0195 5.3004-3.6733 10.747-1.8123 17.382 5.3394 21.172 1.4713 0.77948 1.7538 1.1205 1.9 2.4359 0.13641 1.2277 0.27282 2.543 0.42871 3.9461 0.10718 1.0523 0.0292 1.1887-0.48717 1.3641 1.0328 0.10717 1.822-0.21436 1.7051-1.442"/>
+ </g>
+ <g fill="#ea831e">
+  <path d="m27.582 49.58c-7.6583 5.6804-24.622 21.192-25.226 25.031-0.99383 6.3332 10.192 38.311 24.817 53.881-0.34102-3.683-0.64307-7.9019-0.83793-11.575-7.366-12.598-16.008-35.291-15.492-39.558 0.39948-3.3517 9.4706-12.043 17.441-18.376-0.37025-3.3225-0.54563-6.1871-0.70153-9.4024m-0.50666 80.344c-15.726-16.067-27.184-48.717-26.103-55.586 0.64307-4.1312 17.645-19.37 26.239-25.781 0.98409-0.7405 1.3056-0.65281 1.3543 0.58461 0.16564 3.7317 0.38974 6.3137 0.7405 9.6265 0.05846 0.56512-0.02923 0.75999-0.32153 0.99383-8.0383 6.4794-16.388 14.742-16.749 17.762-0.46768 3.8974 7.5901 25.937 14.878 38.691 0.19487 0.34102 0.21436 0.45794 0.24358 1.0036 0.19487 3.6246 0.49692 7.5414 0.90614 12.16 0.12666 1.3738-0.23384 1.5297-1.1887 0.54563"/>
+  <path d="m35.172 197.98c-1.2861 0.0292-1.2764-0.70153 0.0097-0.7405 6.4404-0.19487 12.306-1.3154 16.223-3.0302 1.3348-0.5846 1.5589-0.12666 0.26307 0.55538-3.6733 1.9292-9.9188 3.0692-16.496 3.2153"/>
+  <path d="m53.155 170.7c-0.10718-1.6369-1.2179-2.4456-3.4394-2.66l0.05846 0.98408c1.7051 0.19487 2.1923 0.78922 2.2507 1.7441 0.11692 1.8805 0.14615 4.7645 0.10718 7.2588-0.01949 1.2082-0.18512 1.3738-1.2959 1.9292-6.0994 3.04-19.175 4.3261-30.409 3.6246-0.63332-0.039-0.82819 0.27281-0.35076 0.9646 3.1861 4.6086 7.444 9.7142 11.156 12.325 1.0231 0.72101 1.481 0.25333 0.41897-0.58461-3.5271-2.7769-7.707-7.7947-10.542-11.897 10.874 1.101 23.852-0.2241 30.302-3.381 1.3933-0.68204 1.861-1.1595 1.8902-2.9522 0.03897-2.5041-0.01949-5.4563-0.14615-7.3563"/>
+  <path d="m49.363 192.49c-4.4625 1.4713-9.6655 2.1338-15.093 1.9292-3.4784-2.7282-7.4829-7.2101-9.7044-10.231l-1.2374-0.0779c2.4456 3.4784 6.3917 8.0578 10.036 11.049 0.37025 0.30204 0.61384 0.37025 1.1302 0.38974 5.3686 0.16563 10.922-0.62358 15.239-1.9779 1.2764-0.39948 1.7928-1.0815 1.7246-2.9328 0.03897 0.87691-0.88665 1.4518-2.0948 1.8512"/>
+ </g>
+ <path d="m117.49 177.25c-3.9558 2.1436-10.844 9.3439-10.971 11.731-0.0682 1.4031 2.4748 3.2446 6.3137 5.0081 0.38974 0.18513 0.56512 0.18513 0.93537-0.01 1.179-0.61384 2.1728-1.1984 3.2153-1.8415l0.16564-1.0913c-1.52 0.88665-2.6307 1.4907-3.8681 2.163-3.9169-1.8415-5.5148-3.5369-5.4758-4.1604 0.1364-2.4846 9.1393-11.419 11.487-11.4 0.23385 0.01 0.50666 0.0585 0.79896 0.1559-0.38973-0.6041-1.7051-1.0523-2.6015-0.55538" fill="#0f141b"/>
+ <path d="m117.49 177.25c0.72101-0.38974 1.3446-0.61384 1.8123-0.61384 1.7343 0.0195 5.1445 2.3969 8.0578 5.4466l-0.0292 1.4615c-2.8353-3.0107-5.5148-5.164-7.2394-5.7389-0.75024-0.38974-1.8123-0.63333-2.6015-0.55538" fill="#ea831e"/>
+ <path d="m128.95 198.76c-0.0585 1.559 0.2241 2.1728 1.6954 2.3287 1.062 0.10718 2.202 0.14615 3.4102 0.15589 0.50666 0.01 0.75999-0.0877 1.062-0.35076 3.4589-2.9523 7.3465-6.9568 10.601-10.825 0.68204-0.80871 0.47743-1.1302-0.46768-1.179-5.8948-0.2923-11.517-1.101-15.814-2.1533-1.3933-0.34101-1.52-0.50665-1.52-1.7928-0.0195-3.5563-0.0195-6.8399 0.0682-9.0322 0.0487-1.2569 0.83794-1.9292 1.9292-2.0656v-0.9646c-1.8512 0.19486-2.9912 1.2277-3.0692 2.9912-0.078 2.0461-0.12666 5.5245-0.10718 9.1004 0 1.9876 0.46769 2.4456 2.3676 2.9133 4.3651 1.0718 10.728 1.7538 15.56 1.9194-2.7184 3.1958-6.9763 7.4148-10.435 10.309-1.3056-0.0195-2.28-0.0779-3.4589-0.20462-1.0815-0.10717-1.822-0.41896-1.822-1.1497" fill="#ea831e"/>
+ <path d="m175.99 172.69c-0.12666-1.3933-0.25333-2.7574-0.37999-4.0825-0.24359-2.4943-0.9646-3.683-2.6405-4.9204-7.8922-5.8461-10.036-13.3-6.8009-20.5 1.403-3.1179 2.1436-5.3784 2.7964-8.3891 0.9646-4.5015-3.1471-6.4112-6.3624-3.8097-2.3482 1.8902-3.6246 3.6538-5.924 7.4342-2.5528 4.1994-5.1153 4.6281-13.894 4.1702-2.4358-0.12666-3.264 0.86717-3.1179 3.3712 0.19486 3.3322-0.11693 6.7619-0.64307 8.584-0.56512 1.9292-3.2348 5.3881-7.3368 9.7239-2.1241 2.241-2.4943 3.5076-2.4748 5.9143 0 0.69178 0 1.3836 0.01 2.0851 0.0585 1.6369 0.94511 2.6697 2.582 2.6405-0.98408-0.23384-1.3056-1.179-1.3251-2.5333-0.01-0.73076-0.01-1.4615-0.01-2.1825-0.0195-2.2507 0.19487-2.9425 2.1436-5.0763 4.1799-4.5502 6.8788-8.2819 7.4732-10.299 0.54563-1.8902 0.81845-5.3394 0.52615-8.886-0.14615-1.9097 0.53589-2.5138 2.1143-2.4066 8.9834 0.61384 12.101 0.13641 14.956-4.5502 2.2994-3.7902 3.6148-5.622 5.5635-7.1614 2.7087-2.1436 5.3784-0.6723 4.6671 2.7184-0.61383 2.9523-1.4323 5.2907-2.8061 8.2429-3.7512 8.0481-1.0133 15.892 7.064 21.874 1.3154 0.97434 2.0169 2.0266 2.2118 4.024 0.12666 1.3348 0.26307 2.6989 0.37999 4.102 0.0974 1.2277-0.12667 1.6369-0.85742 1.7733 0.87691 0.17539 2.241-0.23384 2.0851-1.861" fill="#0f141b"/>
+ <path d="m131.8 174.91c12.462 3.04 27.476 2.7964 42.101-0.36051 1.14-0.25333 1.7928-0.65281 2.0851-1.861 0.18512 2.0754-0.36051 2.6892-1.7928 3.0107-14.771 3.2835-29.669 3.5076-42.754 0.24358-1.822-0.45794-2.2118-1.6564-2.2118-3.6733 0.24358 1.2666 0.91588 2.241 2.5723 2.6405" fill="#ea831e"/>
+ <path d="m169.1 155.76c7.444 2.28 27.934 2.3871 34.579 0.18513 1.2569-0.41897 1.7733-0.76974 1.7051-1.442 0.1559 1.5005-0.26307 2.1728-1.3543 2.5625-6.9081 2.4456-27.73 2.2994-35.339-0.28256-1.3154-0.4482-1.4615-1.2277-1.4323-2.9133-0.01 0.99383 0.87691 1.6174 1.8415 1.8902" fill="#ea831e"/>
+ <path d="m152.39 84.84c-2.8451 3.001-10.231 13.69-14.576 25.167-5.1835 13.007-14.089 24.466-27.145 29.63-13.992 5.544-29.61 3.1861-40.591-2.0169l-3.4687-0.10718c13.046 6.7035 29.766 9.227 44.615 3.3517 10.835-4.2871 21.017-12.813 27.788-29.893 4.3066-10.893 8.9834-19.438 13.241-24.719 0.17538-0.21436 0.37025-1.6564 0.13641-1.4128" fill="#0f141b"/>
+ <path d="m50.389 168.7c-0.12666-1.822-0.2241-2.9912-0.36051-4.5404-0.25333-2.8256-0.99383-4.0045-2.4164-5.1738-6.1773-5.125-7.8532-8.7398-7.6096-13.992 0.13641-2.6892-0.40922-3.7317-2.0169-3.9363-1.3446-0.16564-2.5723-0.25333-3.8194-0.32154l-0.5164 0.91589c1.6759 0.0779 2.9133 0.14615 4.1799 0.31178 0.88665 0.11693 1.3348 0.73076 1.2277 3.0205-0.27282 5.8655 1.6661 9.9091 7.6778 14.898 1.3056 1.0815 1.8123 1.7636 2.0364 4.3748 0.13641 1.5492 0.27282 3.2543 0.40922 5.0666 0.02923 0.48717-0.04872 0.64307-0.37025 0.7405 0.77947 0.20461 1.6661-0.0877 1.5784-1.3641" fill="#0f141b"/>
+ <path d="m50.389 168.7c-0.11692 0.69178-0.42871 1.0426-1.5784 1.3641-11.965 3.303-25.226 3.7902-38.35 0.69178-1.1984-0.28256-2.2507-0.8087-2.1533-1.9194-0.02923 0.2923-0.058461 0.5846-0.087691 0.88665-0.10718 1.1205 0.37025 1.6661 1.9 2.0559 13.105 3.2933 26.453 2.4651 39.003-0.57486 0.85742-0.20461 1.4031-0.64307 1.2666-2.5041" fill="#ea831e"/>
+ <g stroke-width="9.7432">
+  <path d="m47.004 83.402c0 0.4287 0.34101 0.77946 0.77946 0.77946 0.4287 0 0.77946-0.35076 0.77946-0.77946 0-0.4287-0.35076-0.77946-0.77946-0.77946-0.43845 0-0.77946 0.35076-0.77946 0.77946" fill="url(#radialGradient119413-4-5)"/>
+  <path d="m55.306 71.028c0 0.4287 0.35076 0.77946 0.7892 0.77946 0.4287 0 0.77946-0.35076 0.77946-0.77946s-0.35076-0.77946-0.77946-0.77946c-0.43844 0-0.7892 0.35076-0.7892 0.77946" fill="url(#radialGradient119419-3-5)"/>
+  <path d="m47.57 175.57c0 0.42871 0.35076 0.77946 0.77946 0.77946 0.4287 0 0.77946-0.35075 0.77946-0.77946 0-0.4287-0.35076-0.77945-0.77946-0.77945-0.4287 0-0.77946 0.35075-0.77946 0.77945" fill="url(#radialGradient119425-6-4)"/>
+  <path d="m14.433 181.22c0 0.42871 0.3605 0.77946 0.7892 0.77946s0.77946-0.35075 0.77946-0.77946c0-0.4287-0.35076-0.77945-0.77946-0.77945s-0.7892 0.35075-0.7892 0.77945" fill="url(#radialGradient119431-1-3)"/>
+  <path d="m53.162 85.253c0 0.47742 0.38973 0.86715 0.8574 0.86715 0.47742 0 0.8574-0.38973 0.8574-0.86715 0-0.46768-0.37999-0.8574-0.8574-0.8574-0.46767 0-0.8574 0.38973-0.8574 0.8574" fill="url(#radialGradient119437-5-3)"/>
+  <path d="m15.261 60.7c0 0.47742 0.38973 0.86715 0.8574 0.86715 0.47742 0 0.8574-0.38973 0.8574-0.86715 0-0.46768-0.37999-0.8574-0.8574-0.8574-0.46767 0-0.8574 0.38973-0.8574 0.8574" fill="url(#radialGradient119443-7-2)"/>
+  <path d="m13.634 95.483c0 0.46768 0.37998 0.8574 0.8574 0.8574 0.46768 0 0.8574-0.38973 0.8574-0.8574 0-0.47742-0.38973-0.86715-0.8574-0.86715-0.47742 0-0.8574 0.38973-0.8574 0.86715" fill="url(#radialGradient119449-8-5)"/>
+  <path d="m47.453 91.878c0 0.47742 0.38973 0.8574 0.8574 0.8574 0.47742 0 0.8574-0.37998 0.8574-0.8574s-0.37998-0.84766-0.8574-0.84766c-0.46768 0-0.8574 0.37024-0.8574 0.84766" fill="url(#radialGradient119455-0-1)"/>
+  <path d="m68.391 76.971c0 0.4287 0.34101 0.76972 0.76972 0.76972s0.77946-0.34101 0.77946-0.76972c0-0.4287-0.35076-0.77946-0.77946-0.77946s-0.76972 0.35076-0.76972 0.77946" fill="url(#radialGradient119461-5-8)"/>
+  <path d="m16.372 65.084c0 0.41896 0.35076 0.76972 0.77946 0.76972s0.76972-0.35076 0.76972-0.76972c0-0.43844-0.34101-0.77946-0.76972-0.77946s-0.77946 0.34101-0.77946 0.77946" fill="url(#radialGradient119467-4-3)"/>
+  <path d="m10.672 100.84c0 0.37025 0.31178 0.69177 0.70151 0.69177 0.37024 0 0.69177-0.32152 0.69177-0.69177 0-0.38973-0.32153-0.70151-0.69177-0.70151-0.38973 0-0.70151 0.31178-0.70151 0.70151" fill="url(#radialGradient119473-7-7)"/>
+  <path d="m15.203 107.37c0 0.38973 0.31178 0.69177 0.70151 0.69177 0.37998 0 0.69177-0.30204 0.69177-0.69177s-0.31178-0.69177-0.69177-0.69177c-0.38973 0-0.70151 0.30204-0.70151 0.69177" fill="url(#radialGradient119479-0-8)"/>
+  <path d="m57.742 65.182c0 0.43844 0.35076 0.77946 0.76971 0.77946 0.4287 0 0.77946-0.34101 0.77946-0.77946 0-0.41896-0.35076-0.76971-0.77946-0.76971-0.41896 0-0.76971 0.35076-0.76971 0.76971" fill="url(#radialGradient119485-9-6)"/>
+  <path d="m7.6126 83.889c0 0.4287 0.34101 0.76971 0.76971 0.76971 0.43845 0 0.77946-0.34101 0.77946-0.76971s-0.34101-0.77946-0.77946-0.77946c-0.4287 0-0.76971 0.35076-0.76971 0.77946" fill="url(#radialGradient119491-3-4)"/>
+  <path d="m21.214 112.24c0 0.42871 0.34101 0.76972 0.76972 0.76972s0.77946-0.34101 0.77946-0.76972c0-0.4287-0.35076-0.77945-0.77946-0.77945s-0.76972 0.35075-0.76972 0.77945" fill="url(#radialGradient119497-5-5)"/>
+  <path d="m61.054 71.807c0 0.4287 0.34101 0.77946 0.76972 0.77946s0.76972-0.35076 0.76972-0.77946c0-0.41896-0.34101-0.76972-0.76972-0.76972s-0.76972 0.35076-0.76972 0.76972" fill="url(#radialGradient119503-8-9)"/>
+  <path d="m66.442 65.864c0 0.52613 0.40922 0.94509 0.92561 0.94509s0.93535-0.41896 0.93535-0.94509c0-0.51639-0.41896-0.92561-0.93535-0.92561s-0.92561 0.40922-0.92561 0.92561" fill="url(#radialGradient119509-8-0)"/>
+  <path d="m21.604 58.946c0 0.51639 0.41896 0.93535 0.93535 0.93535 0.51639 0 0.93535-0.41896 0.93535-0.93535 0-0.51639-0.41896-0.93535-0.93535-0.93535-0.51639 0-0.93535 0.41896-0.93535 0.93535" fill="url(#radialGradient119515-9-3)"/>
+  <path d="m20.639 177.42c0 0.51639 0.41896 0.93535 0.93535 0.93535 0.51639 0 0.93535-0.41896 0.93535-0.93535 0-0.52614-0.41896-0.9451-0.93535-0.9451-0.51639 0-0.93535 0.41896-0.93535 0.9451" fill="url(#radialGradient119521-5-5)"/>
+  <path d="m122.44 174.31c0 0.51639 0.41896 0.93534 0.93535 0.93534 0.50665 0 0.93535-0.41895 0.93535-0.93534 0-0.5164-0.4287-0.9451-0.93535-0.9451-0.51639 0-0.93535 0.4287-0.93535 0.9451" fill="url(#radialGradient119527-6-9)"/>
+  <path d="m134.96 205.39c0 0.51639 0.40922 0.93535 0.93535 0.93535 0.51639 0 0.93535-0.41896 0.93535-0.93535s-0.41896-0.93535-0.93535-0.93535c-0.52613 0-0.93535 0.41896-0.93535 0.93535" fill="url(#radialGradient119533-6-2)"/>
+  <path d="m133.7 181.42c0 0.51639 0.4287 0.93535 0.93535 0.93535 0.51639 0 0.93534-0.41896 0.93534-0.93535s-0.41895-0.93535-0.93534-0.93535c-0.50665 0-0.93535 0.41896-0.93535 0.93535" fill="url(#radialGradient119539-8-8)"/>
+  <path d="m157.58 183.76c0 0.51639 0.41895 0.92561 0.93535 0.92561 0.51639 0 0.94509-0.40922 0.94509-0.92561s-0.4287-0.94509-0.94509-0.94509c-0.5164 0-0.93535 0.4287-0.93535 0.94509" fill="url(#radialGradient119545-4-6)"/>
+  <path d="m167.07 209.97c0 0.51639 0.41896 0.93535 0.93535 0.93535 0.5164 0 0.93535-0.41896 0.93535-0.93535s-0.41895-0.93535-0.93535-0.93535c-0.51639 0-0.93535 0.41896-0.93535 0.93535" fill="url(#radialGradient119551-8-6)"/>
+  <path d="m196.83 161.93c0 0.50665 0.4287 0.92561 0.94509 0.92561s0.92561-0.41896 0.92561-0.92561c0-0.51639-0.40922-0.93535-0.92561-0.93535s-0.94509 0.41896-0.94509 0.93535" fill="url(#radialGradient119557-8-9)"/>
+  <path d="m186.24 175.96c0 0.51639 0.42871 0.93535 0.93535 0.93535 0.5164 0 0.93535-0.41896 0.93535-0.93535 0-0.50664-0.41895-0.9256-0.93535-0.9256-0.50664 0-0.93535 0.41896-0.93535 0.9256" fill="url(#radialGradient119563-9-4)"/>
+  <path d="m124.77 164.08c0 0.45793 0.37999 0.83792 0.84766 0.83792 0.45793 0 0.83792-0.37999 0.83792-0.83792 0-0.47742-0.37999-0.8574-0.83792-0.8574-0.46767 0-0.84766 0.37998-0.84766 0.8574" fill="url(#radialGradient119569-9-0)"/>
+  <path d="m107.2 181.03c0 0.47742 0.37024 0.8574 0.83792 0.8574 0.46767 0 0.84766-0.37998 0.84766-0.8574 0-0.45793-0.37999-0.83792-0.84766-0.83792-0.46768 0-0.83792 0.37999-0.83792 0.83792" fill="url(#radialGradient119575-0-5)"/>
+  <path d="m149.43 192.92c0 0.46768 0.37998 0.84766 0.84766 0.84766 0.45793 0 0.83792-0.37998 0.83792-0.84766 0-0.45793-0.37999-0.83792-0.83792-0.83792-0.46768 0-0.84766 0.37999-0.84766 0.83792" fill="url(#radialGradient119581-7-2)"/>
+  <path d="m172.49 207.92c0 0.46768 0.37998 0.84767 0.83791 0.84767 0.46768 0 0.84766-0.37999 0.84766-0.84767 0-0.45793-0.37998-0.83791-0.84766-0.83791-0.45793 0-0.83791 0.37998-0.83791 0.83791" fill="url(#radialGradient119587-2-5)"/>
+  <path d="m198.5 185.61c0 0.46768 0.37025 0.84766 0.83792 0.84766s0.83792-0.37998 0.83792-0.84766c0-0.45793-0.37025-0.83791-0.83792-0.83791s-0.83792 0.37998-0.83792 0.83791" fill="url(#radialGradient119593-6-9)"/>
+  <path d="m199.64 164.47c0 0.41896 0.33127 0.76971 0.75023 0.76971s0.75997-0.35075 0.75997-0.76971-0.34101-0.75023-0.75997-0.75023-0.75023 0.33127-0.75023 0.75023" fill="url(#radialGradient119599-7-2)"/>
+  <path d="m169.39 180.54c0 0.41896 0.35076 0.75997 0.76972 0.75997 0.40921 0 0.75022-0.34101 0.75022-0.75997s-0.34101-0.75997-0.75022-0.75997c-0.41896 0-0.76972 0.34101-0.76972 0.75997" fill="url(#radialGradient119605-2-4)"/>
+  <path d="m154.71 200.32c0 0.41896 0.34102 0.75997 0.75998 0.75997 0.40921 0 0.75997-0.34101 0.75997-0.75997s-0.35076-0.75997-0.75997-0.75997c-0.41896 0-0.75998 0.34101-0.75998 0.75997" fill="url(#radialGradient119611-6-0)"/>
+  <path d="m132.55 208.7c0 0.41896 0.35075 0.75997 0.76971 0.75997 0.40922 0 0.75023-0.34101 0.75023-0.75997s-0.34101-0.75023-0.75023-0.75023c-0.41896 0-0.76971 0.33127-0.76971 0.75023" fill="url(#radialGradient119617-7-8)"/>
+  <path d="m131.3 161.25c0 0.4287 0.34102 0.75997 0.75997 0.75997 0.41896 0 0.75998-0.33127 0.75998-0.75997 0-0.41896-0.34102-0.75998-0.75998-0.75998-0.41895 0-0.75997 0.34102-0.75997 0.75998" fill="url(#radialGradient119623-2-4)"/>
+  <path d="m116.53 163.39c0 0.37998 0.31178 0.68202 0.68202 0.68202 0.37999 0 0.68203-0.30204 0.68203-0.68202 0-0.37999-0.30204-0.68203-0.68203-0.68203-0.37024 0-0.68202 0.30204-0.68202 0.68203" fill="url(#radialGradient119629-0-1)"/>
+  <path d="m113.79 173.82c0 0.37999 0.30204 0.68203 0.68203 0.68203 0.37024 0 0.67228-0.30204 0.67228-0.68203 0-0.37024-0.30204-0.68202-0.67228-0.68202-0.37999 0-0.68203 0.31178-0.68203 0.68202" fill="url(#radialGradient119635-4-1)"/>
+  <path d="m138.49 185.22c0 0.37999 0.30204 0.68203 0.68203 0.68203 0.37998 0 0.68202-0.30204 0.68202-0.68203 0-0.37998-0.30204-0.68202-0.68202-0.68202-0.37999 0-0.68203 0.30204-0.68203 0.68202" fill="url(#radialGradient119641-5-6)"/>
+  <path d="m161.65 186.58c0 0.37998 0.30204 0.67228 0.68203 0.67228 0.37998 0 0.68202-0.2923 0.68202-0.67228 0-0.37025-0.30204-0.68203-0.68202-0.68203-0.37999 0-0.68203 0.31178-0.68203 0.68203" fill="url(#radialGradient119647-9-0)"/>
+  <path d="m166.42 185.22c0 0.37999 0.31178 0.68203 0.69177 0.68203 0.37024 0 0.67228-0.30204 0.67228-0.68203 0-0.37998-0.30204-0.68202-0.67228-0.68202-0.37999 0-0.69177 0.30204-0.69177 0.68202" fill="url(#radialGradient119653-7-5)"/>
+  <path d="m142.68 200.52c0 0.37024 0.30204 0.67228 0.67228 0.67228 0.37999 0 0.68203-0.30204 0.68203-0.67228 0-0.37999-0.30204-0.69177-0.68203-0.69177-0.37024 0-0.67228 0.31178-0.67228 0.69177" fill="url(#radialGradient119659-9-2)"/>
+  <path d="m152.5 197.3c0 0.37999 0.31178 0.68203 0.68202 0.68203 0.37999 0 0.68203-0.30204 0.68203-0.68203 0-0.37024-0.30204-0.68202-0.68203-0.68202-0.37024 0-0.68202 0.31178-0.68202 0.68202" fill="url(#radialGradient119665-7-7)"/>
+  <path d="m156.79 197.79c0 0.37999 0.30204 0.67229 0.67229 0.67229 0.37998 0 0.69177-0.2923 0.69177-0.67229 0-0.37998-0.31179-0.68202-0.69177-0.68202-0.37025 0-0.67229 0.30204-0.67229 0.68202" fill="url(#radialGradient119671-9-6)"/>
+  <path d="m133.49 185.41c0 0.37999 0.30204 0.68203 0.68203 0.68203s0.67228-0.30204 0.67228-0.68203-0.29229-0.68203-0.67228-0.68203-0.68203 0.30204-0.68203 0.68203" fill="url(#radialGradient119677-1-4)"/>
+  <path d="m179.08 163.49c0 0.37024 0.30204 0.68202 0.68202 0.68202 0.37999 0 0.68203-0.31178 0.68203-0.68202 0-0.37999-0.30204-0.68203-0.68203-0.68203-0.37998 0-0.68202 0.30204-0.68202 0.68203" fill="url(#radialGradient119683-8-1)"/>
+  <path d="m184.81 163c0 0.37998 0.30204 0.68202 0.68203 0.68202 0.37024 0 0.68203-0.30204 0.68203-0.68202 0-0.37999-0.31179-0.67229-0.68203-0.67229-0.37999 0-0.68203 0.2923-0.68203 0.67229" fill="url(#radialGradient119689-9-5)"/>
+  <path d="m204.37 187.56c0 0.37024 0.30204 0.68202 0.68203 0.68202 0.37998 0 0.68202-0.31178 0.68202-0.68202 0-0.37999-0.30204-0.68203-0.68202-0.68203-0.37999 0-0.68203 0.30204-0.68203 0.68203" fill="url(#radialGradient119695-0-6)"/>
+  <path d="m197.71 188.82c0 0.37998 0.31178 0.68202 0.69177 0.68202 0.37024 0 0.68203-0.30204 0.68203-0.68202 0-0.37024-0.31179-0.68203-0.68203-0.68203-0.37999 0-0.69177 0.31179-0.69177 0.68203" fill="url(#radialGradient119701-0-9)"/>
+  <path d="m188.81 181.03c0 0.33127 0.28255 0.61382 0.61382 0.61382 0.34101 0 0.61382-0.28255 0.61382-0.61382 0-0.34101-0.27281-0.61382-0.61382-0.61382-0.33127 0-0.61382 0.27281-0.61382 0.61382" fill="url(#radialGradient119707-1-3)"/>
+  <path d="m190.78 165.63c0 0.33127 0.28255 0.61382 0.61382 0.61382 0.35076 0 0.62357-0.28255 0.62357-0.61382 0-0.34102-0.27281-0.61383-0.62357-0.61383-0.33127 0-0.61382 0.27281-0.61382 0.61383" fill="url(#radialGradient119713-7-5)"/>
+  <path d="m162.85 205.39c0 0.37998 0.31178 0.68202 0.68202 0.68202 0.37999 0 0.68203-0.30204 0.68203-0.68202 0-0.37999-0.30204-0.68203-0.68203-0.68203-0.37024 0-0.68202 0.30204-0.68202 0.68203" fill="url(#radialGradient119719-3-1)"/>
+  <path d="m172.63 182.39c0 0.37999 0.30204 0.68203 0.68202 0.68203 0.37024 0 0.68203-0.30204 0.68203-0.68203s-0.31179-0.68203-0.68203-0.68203c-0.37998 0-0.68202 0.30204-0.68202 0.68203" fill="url(#radialGradient119725-8-3)"/>
+  <path d="m109.34 160.18c0 0.41896 0.34101 0.75997 0.75997 0.75997 0.4287 0 0.75997-0.34101 0.75997-0.75997 0-0.40921-0.33127-0.75023-0.75997-0.75023-0.41896 0-0.75997 0.34102-0.75997 0.75023" fill="url(#radialGradient119731-7-1)"/>
+  <path d="m7.9731 178.69c0 0.51639 0.41896 0.94509 0.93535 0.94509 0.52613 0 0.93535-0.4287 0.93535-0.94509 0-0.5164-0.40922-0.93535-0.93535-0.93535-0.51639 0-0.93535 0.41895-0.93535 0.93535" fill="url(#radialGradient119737-5-4)"/>
+  <path d="m35.576 202.85c0 0.46767 0.37024 0.84766 0.83792 0.84766s0.83792-0.37999 0.83792-0.84766c0-0.45793-0.37024-0.83792-0.83792-0.83792s-0.83792 0.37999-0.83792 0.83792" fill="url(#radialGradient119743-9-1)"/>
+  <path d="m42.308 179.96c0 0.41896 0.33127 0.75998 0.75023 0.75998 0.41896 0 0.75997-0.34102 0.75997-0.75998 0-0.41895-0.34101-0.75997-0.75997-0.75997-0.41896 0-0.75023 0.34102-0.75023 0.75997" fill="url(#radialGradient119749-2-1)"/>
+  <path d="m49.421 201.2c0 0.40922 0.35076 0.75023 0.76972 0.75023 0.40922 0 0.75023-0.34101 0.75023-0.75023 0-0.41896-0.34101-0.75997-0.75023-0.75997-0.41896 0-0.76972 0.34101-0.76972 0.75997" fill="url(#radialGradient119755-4-8)"/>
+  <path d="m36.443 178.01c0 0.37999 0.31178 0.67228 0.69177 0.67228 0.37024 0 0.68202-0.29229 0.68202-0.67228s-0.31178-0.68203-0.68202-0.68203c-0.37999 0-0.69177 0.30204-0.69177 0.68203" fill="url(#radialGradient119761-5-4)"/>
+  <path d="m34.046 181.71c0 0.37999 0.2923 0.68203 0.67228 0.68203 0.37999 0 0.68203-0.30204 0.68203-0.68203 0-0.37998-0.30204-0.68202-0.68203-0.68202-0.37998 0-0.67228 0.30204-0.67228 0.68202" fill="url(#radialGradient119767-0-0)"/>
+  <path d="m30.577 180.83c0 0.37999 0.30204 0.68203 0.68202 0.68203 0.37024 0 0.68203-0.30204 0.68203-0.68203 0-0.37998-0.31178-0.68202-0.68203-0.68202-0.37999 0-0.68202 0.30204-0.68202 0.68202" fill="url(#radialGradient119773-9-5)"/>
+  <path d="m26.339 194.77c0 0.37999 0.30204 0.69177 0.68203 0.69177s0.68203-0.31178 0.68203-0.69177c0-0.37024-0.30204-0.68202-0.68203-0.68202s-0.68203 0.31178-0.68203 0.68202" fill="url(#radialGradient119779-8-8)"/>
+  <path d="m46.459 199.44c0 0.37999 0.31178 0.68203 0.69177 0.68203 0.37024 0 0.68203-0.30204 0.68203-0.68203 0-0.37998-0.31178-0.68202-0.68203-0.68202-0.37999 0-0.69177 0.30204-0.69177 0.68202" fill="url(#radialGradient119785-4-6)"/>
+  <path d="m23.64 197.88c0 0.37998 0.30204 0.68202 0.68202 0.68202 0.37999 0 0.68203-0.30204 0.68203-0.68202 0-0.37025-0.30204-0.67229-0.68203-0.67229-0.37998 0-0.68202 0.30204-0.68202 0.67229" fill="url(#radialGradient119791-7-3)"/>
+  <path d="m9.6197 190.09c0 0.37024 0.31178 0.68202 0.69177 0.68202 0.37024 0 0.68203-0.31178 0.68203-0.68202 0-0.37999-0.31178-0.68203-0.68203-0.68203-0.37999 0-0.69177 0.30204-0.69177 0.68203" fill="url(#radialGradient119797-1-6)"/>
+  <path d="m19.577 193.69c0 0.51639 0.41896 0.93535 0.93535 0.93535s0.93535-0.41896 0.93535-0.93535c0-0.52613-0.41896-0.94509-0.93535-0.94509s-0.93535 0.41896-0.93535 0.94509" fill="url(#radialGradient119803-7-1)"/>
+  <path d="m6.8234 74.438c0 0.51639 0.4287 0.94509 0.94509 0.94509 0.51639 0 0.93535-0.4287 0.93535-0.94509 0-0.51639-0.41896-0.93535-0.93535-0.93535-0.51639 0-0.94509 0.41896-0.94509 0.93535" fill="url(#radialGradient119809-3-9)"/>
+ </g>
+ <path d="m83.734 119.47c3.6538-11.166 6.5573-21.562 7.0055-29.045 0.32153-5.4368-1.5297-8.7788-6.8691-9.7434-3.9948-0.73076-5.164-3.9558-1.3446-4.9204 4.2384-1.062 6.8789-2.0851 9.1491-4.6866 3.2835-3.7707 6.9958-8.6619 10.104-13.465 3.9266-1.0133 11.565 19.321 11.565 26.687 0 10.757-28.051 42.355-29.61 35.174" fill="#453935"/>
+ <path d="m83.734 119.47c-1.2179 3.722-2.5138 7.5219-3.8292 11.332 17.48-11.117 36.908-32.358 39.87-44.635 0.97434-4.0533-2.962-26.288-12.861-37.707-1.2374 2.7769-3.0497 5.9435-5.1348 9.1491 4.482 9.8506 7.2199 22.098 6.8009 26.609-0.50666 5.3491-12.209 22.683-24.846 35.252" fill="#f6ac1d"/>
+ <path d="m186.56 88.03c-0.86716-2.66-2.1436-5.5732-3.6051-7.7363-3.3517 0.81845-6.5476 1.861-9.7434 3.1276 2.5918 4.1897-2.8061 18.016-13.202 26.794 0.88665 3.4687 1.9974 6.8399 3.1958 10.162 7.0835-2.0266 13.154-6.1189 18.259-11.653-0.88665-2.582-1.7246-5.1056-2.5041-7.5219 3.1569-1.7343 6.1968-6.9178 7.5999-13.173" fill="#ee781e"/>
+ <path d="m147.88 202.05c-3.0887-0.14615-13.28 9.2173-13.553 11.283-0.36051 2.6405 4.024 6.3722 8.6132 7.5414 1.1887-0.68203 2.4456-1.5297 3.5856-2.4456-0.0487 0.8087-0.0779 1.6272-0.0779 2.4456 6.723 0.55538 16.915-3.7415 16.954-5.8266 0.0292-2.0656-13.348-12.891-15.521-12.998" fill="#3c3e44"/>
+ <path d="m102.41 59.13c-3.1861 4.4333-6.2845 8.8081-9.987 12.813-2.4748 2.66-4.9789 3.683-9.6362 4.6476-1.5395 0.31179-2.2118 0.90613-2.4553 1.9-0.30205-1.1108 0.13641-2.1825 2.1923-2.7282 4.5502-1.1984 7.1322-2.3092 9.1491-4.6866 0.83793-0.99383 7.4927-9.4706 10.104-13.465z" fill="#756b67"/>
+ <path d="m83.172 80.23c10.094 0.30205 12.15 5.9338 4.823 25.421 5.1056-20.042 2.9425-23.579-4.823-25.421" fill="#392c27"/>
+ <path d="m182.95 80.29c-0.50666 6.7327-5.1056 13.446-11.146 18.756 1.5979 0.0195 4.2968-0.21435 6.1286-0.69178-3.1276 4.7645-13.007 10.689-17.928 11.867 0.94511 3.6733 2.1143 7.3465 3.2056 10.153 6.3527-1.8902 13.465-6.0702 18.249-11.653-0.82819-2.28-1.7733-5.1932-2.5041-7.5219 4.2871-2.6502 6.9081-9.3829 7.5999-13.173-0.83794-2.4066-2.2118-5.622-3.6051-7.7363" fill="#ce6719"/>
+ <path d="m146.52 218.43c0.18513-3.4102 0.73076-7.4245 1.6856-10.386 0.80871-2.5138-1.2472-2.9328-2.163-0.91588-1.8318 4.0143-2.8353 9.9675-3.1082 13.748 1.14-0.75024 2.1825-1.4518 3.5856-2.4456" fill="#313037"/>
+ <path d="m146.47 220.73c4.9399-3.3128 8.584-8.4281 8.6911-13.865 4.0922 3.1082 8.2332 6.9958 8.2332 8.1747 0.0195 2.0851-10.991 6.7912-16.924 5.6902" fill="#313037"/>
+ <g stroke-width="9.7432">
+  <path d="m107.27 69.079c0 0.46767 0.37999 0.8574 0.84766 0.8574 0.47742 0 0.85741-0.38973 0.85741-0.8574 0-0.47742-0.37999-0.8574-0.85741-0.8574-0.46767 0-0.84766 0.37999-0.84766 0.8574" fill="url(#radialGradient119833-1-1)"/>
+  <path d="m91.297 116.82c0 0.47742 0.38973 0.8574 0.8574 0.8574 0.47742 0 0.8574-0.37998 0.8574-0.8574 0-0.46768-0.37999-0.8574-0.8574-0.8574-0.46768 0-0.8574 0.38972-0.8574 0.8574" fill="url(#radialGradient119839-6-8)"/>
+  <path d="m85.938 121.79c0 0.4287 0.35076 0.76972 0.76972 0.76972 0.4287 0 0.77946-0.34102 0.77946-0.76972s-0.35076-0.76971-0.77946-0.76971c-0.41896 0-0.76972 0.34101-0.76972 0.76971" fill="url(#radialGradient119845-8-8)"/>
+  <path d="m106.89 56.705c0 0.4287 0.34101 0.76972 0.76971 0.76972s0.77946-0.34101 0.77946-0.76972c0-0.41896-0.35076-0.76971-0.77946-0.76971s-0.76971 0.35076-0.76971 0.76971" fill="url(#radialGradient119851-0-6)"/>
+  <path d="m112.66 87.786c0 0.41896 0.34101 0.76972 0.77946 0.76972 0.4287 0 0.76971-0.35076 0.76971-0.76972 0-0.4287-0.34101-0.77946-0.76971-0.77946-0.43845 0-0.77946 0.35076-0.77946 0.77946" fill="url(#radialGradient119857-2-9)"/>
+  <path d="m106.37 95.776c0 0.38973 0.31178 0.70151 0.70151 0.70151 0.37998 0 0.69177-0.31178 0.69177-0.70151 0-0.37999-0.31179-0.69177-0.69177-0.69177-0.38973 0-0.70151 0.31178-0.70151 0.69177" fill="url(#radialGradient119863-5-6)"/>
+  <path d="m92.866 112.83c0 0.38973 0.31178 0.69177 0.69177 0.69177 0.38973 0 0.70151-0.30204 0.70151-0.69177 0-0.37999-0.31178-0.69177-0.70151-0.69177-0.37999 0-0.69177 0.31178-0.69177 0.69177" fill="url(#radialGradient119869-2-4)"/>
+  <path d="m111.43 70.053c0 0.51639 0.4287 0.93535 0.94509 0.93535s0.93535-0.41896 0.93535-0.93535-0.41896-0.94509-0.93535-0.94509-0.94509 0.4287-0.94509 0.94509" fill="url(#radialGradient119875-6-4)"/>
+  <path d="m97.854 108.64c0 0.51639 0.40922 0.93535 0.93535 0.93535 0.51639 0 0.93535-0.41896 0.93535-0.93535s-0.41896-0.93535-0.93535-0.93535c-0.52613 0-0.93535 0.41896-0.93535 0.93535" fill="url(#radialGradient119881-2-2)"/>
+ </g>
+ <g fill="#0f141b">
+  <path d="m83.153 119.65c4.1604-12.949 6.6742-22.176 7.0932-29.24 0.31179-5.1738-1.4518-8.3891-6.4404-9.2952-4.6281-0.84768-5.7486-4.6768-1.3836-5.7778 4.4625-1.1205 6.9373-2.3384 8.9152-4.6086 3.4297-3.9363 7.0055-8.9152 10.114-13.573l0.61383 0.93537c-2.9815 4.5989-6.6548 9.3829-10.065 13.3-2.4456 2.8158-4.7353 3.6148-9.3732 4.784-3.303 0.82819-2.0461 3.4492 1.3251 4.063 5.0374 0.91588 7.6291 3.8779 7.2491 10.27-0.4482 7.405-2.8646 16.155-6.7717 28.441z"/>
+  <path d="m160.25 109.93c4.102-1.3933 13.816-7.025 17.197-11.449l0.78922 0.50665c-3.303 4.784-13.923 10.679-18.162 11.897z"/>
+  <path d="m178.8 100.74c3.2251-1.9 5.9143-7.1127 7.2394-12.686-0.94511-2.8061-2.1338-5.3004-3.2933-7.2394-3.04 0.75024-5.9922 1.7636-8.847 2.884 2.2605 4.7743-3.2543 18.415-13.319 26.687 0.82819 3.1276 1.822 6.3527 2.9133 9.4316 6.4794-2.0266 12.501-5.8655 17.392-11.234-1.2277-3.4394-2.3482-6.9763-3.1569-9.646-1.5979 0.34102-3.264 0.5164-5.4173 0.60409-1.2861 0.0585-1.3641-0.2241-0.41897-1.1108 5.8558-5.4271 10.348-12.384 10.601-18.113l0.87691 0.4482c-0.12667 5.8461-5.0374 13.007-10.396 17.85 1.14-0.039 2.8353-0.26307 4.784-0.70152 0.54564-0.11692 0.65281-0.0487 0.82819 0.5164 0.90614 2.9523 1.939 6.2553 3.2543 9.8896 0.16564 0.46769 0.12666 0.59435-0.18513 0.92563-5.1932 5.622-11.137 9.4316-17.996 11.449-0.65281 0.19487-0.76973 0.0974-0.97434-0.4482-1.2277-3.3225-2.1923-6.3332-3.1276-9.685-0.12667-0.45794-0.0682-0.5846 0.2923-0.89639 9.8701-8.5547 14.839-21.28 13.007-25.791-0.25333-0.62358-0.2241-0.79896 0.32153-1.0133 3.0984-1.2082 6.1871-2.1338 9.4122-2.962 0.46769-0.11692 0.59435-0.0974 0.87691 0.34102 1.3836 2.163 2.5138 4.5794 3.4979 7.4342 0.078 0.2241 0.0974 0.42871 0.039 0.69178-1.2959 5.7584-4.2774 11.38-7.8922 13.3z"/>
+  <path d="m134.97 213.17c-0.33128 2.4164 3.7317 6.1091 7.8824 7.2101 1.0036-0.57486 2.4456-1.5395 3.6635-2.4651l-0.0292 1.0913c-0.93537 0.73076-2.0072 1.4615-3.0205 2.0754-0.38974 0.23384-0.55538 0.26307-0.99383 0.13641-4.6184-1.3154-9.1393-5.0081-8.8081-7.9409z"/>
+  <path d="m164.03 215.08c-0.0779 2.4066-10.006 6.723-17.373 6.2553-0.6041-0.039-0.68204-0.1559-0.6723-0.71127 0.0779-4.8132 0.72101-9.1588 1.822-12.676 0.5846-1.8902-0.69178-2.3092-1.4323-0.53588-1.5102 3.6051-2.6892 8.8178-2.9815 13.271l-0.92563 0.078c0.27282-4.745 1.5395-9.948 3.1082-13.699 1.1108-2.6307 3.9461-1.822 3.0497 1.1108-1.0815 3.5466-1.6564 7.8435-1.7343 12.286 6.684 0.40922 15.843-4.0825 15.872-5.5635z"/>
+ </g>
+ <path d="m180.44 200.38c-0.10718-1.9779-1.1595-3.1179-3.2446-3.6343l-0.0487 0.98409c1.442 0.39948 2.1241 1.2666 2.202 2.7087 0.1364 2.6307 0.15589 6.2455 0.1364 9.9286-0.0195 1.8707-0.2923 2.1241-1.6272 2.5138-3.4102 1.0231-8.3501 1.6174-13.894 1.8707-2.5723-4.2968-14.031-13.124-16.057-13.212-2.2994-0.0974-11.848 6.9958-14.216 11.604-1.6856-0.27282-3.2446-0.57487-4.6281-0.90614-1.4031-0.33128-1.5005-0.54563-1.5297-1.6856-0.0877-3.3322-0.10718-6.6937-0.0195-9.7532 0.0487-1.5102 0.60409-2.0169 1.9682-2.1143l0.0292-0.96459c-1.9389 0.0877-3.0205 1.1302-3.0789 3.0302-0.0974 3.0205-0.14615 6.4891-0.0682 9.8409 0.039 1.8415 0.43845 2.3287 2.3871 2.7866 1.4323 0.34102 2.962 0.65281 4.5697 0.93537 0.75999 0.12666 0.99383 0.0585 1.5882-0.98409 2.3384-4.1312 11.166-10.874 12.93-10.776 1.52 0.0877 11.965 8.0188 15.18 12.803 0.37999 0.57486 0.50666 0.70153 1.2179 0.66256 5.544-0.30205 10.464-0.95486 13.962-1.9974 1.6759-0.49691 2.4359-1.062 2.4456-3.644 0.0292-3.6928-0.0682-7.3465-0.20461-9.9968" fill="#ea831e"/>
+ <path d="m84.16 119.77c-1.0523 3.2446-2.0753 6.4599-3.264 9.7239 16.798-11.108 35.359-31.764 38.175-43.446 0.85742-3.5758-2.621-25.187-12.043-36.664-1.0426 2.241-2.6697 5.2225-4.6866 8.2819 4.4333 9.5486 7.3173 21.552 6.9081 26.629-0.45794 5.622-12.491 23.024-25.089 35.476m-4.5209 10.24c1.4615-4.141 2.5041-7.2491 3.5174-10.357 0.08769-0.2923 0.16564-0.41897 0.37999-0.64307 12.433-12.676 23.881-29.747 24.329-34.901 0.38974-4.5989-2.1728-16.262-6.4891-26.122-0.14615-0.34102-0.11692-0.52615 0.078-0.82819 1.9974-3.1764 3.5758-5.9143 4.784-8.4183 0.4482-0.93537 0.71127-0.9646 1.4128-0.16564 9.7824 11.341 13.767 33.576 12.803 37.766-2.7574 11.926-21.777 33.108-39.753 44.547-1.3348 0.85742-1.5882 0.63332-1.062-0.87691" fill="#ea831e"/>
+ <g fill="#0f141b">
+  <path d="m81.631 79.87c-4.6768 6.4599-27.116 21.465-34.258 20.12-3.8974-0.73076-12.189-14.216-12.861-20.539 0.66255 0.47743 1.4128 0.93537 2.202 1.3641 1.6174 0.88665 1.9974 1.1692 1.6661-1.1692-1.3738-9.8409-0.87691-24.475 2.1241-33.722 4.0533 5.3394 7.9311 9.9383 11.624 14.06 0.34102 0.38 0.46768 0.39948 0.98409 0.1559 8.8568-4.3066 19.185-3.9948 27.106-0.0195l0.47743-0.99383c-8.1065-4.102-18.737-4.5015-27.934 0.13641-3.5661-4.1215-7.4147-8.7204-11.624-14.177-0.78922-1.0231-1.14-1.0036-1.5395 0.16564-3.4394 10.153-3.761 25.255-1.8512 34.979-0.88665-0.45794-1.9097-1.062-3.1764-1.9292-0.9646-0.6723-1.2472-0.53589-1.14 0.72101 0.68204 7.6583 9.3147 21.104 13.767 21.845 7.9409 1.3348 30.721-13.894 35.486-20.451z"/>
+  <path d="m87.619 48.343c-0.16564-1.8318-0.53589-1.9779-1.4615-0.41897-5.3686 8.9834-12.14 23.764-17.626 37.171-0.35076-1.0231-0.81845-2.163-1.5589-3.6246-0.48717-0.95486-0.76973-0.98409-1.3251-0.0779-4.745 7.6973-14.849 16.418-19.097 18.746l1.0425 0.35076c4.3066-2.4066 14.177-10.796 18.707-18.259 0.46768 0.94512 0.88665 1.9195 1.2861 3.04 0.66255 1.8512 0.93537 1.783 1.6174 0.19487 5.8753-13.485 13.017-28.422 17.47-36.401 0.65281 6.7912-0.8964 18.785-3.2251 26.434l1.3543-0.38974c2.163-7.5122 3.5661-18.61 2.8158-26.765"/>
+  <path d="m64.371 100.52m15.638-17.908c-0.61384 4.6184-2.6307 11.156-4.1897 12.744-1.5297 1.5687-11.565 6.4014-12.121 5.7681-0.40922-0.45794 0.52614-5.0081 1.3251-7.483l1.1302-0.61383c-1.1108 3.3615-1.8415 7.0445-1.6564 7.1712 0.18512 0.11692 8.9542-3.8876 10.572-5.5927 1.3836-1.4615 3.2933-7.7558 3.8876-11.108z"/>
+  <path d="m13.12 160.42c9.1783 1.3933 20.549 1.2374 30.01-0.38974 2.4359-0.42871 2.5918 0.39948 0.13641 0.83794-9.0516 1.6174-20.705 1.8123-30.224 0.2923-1.5979-0.26307-1.52-0.98409 0.07795-0.7405"/>
+  <path d="m134.3 167.35c-1.8123-0.28256-1.7246-1.0523 0.0682-0.76973 8.0968 1.2569 26.658 0.77947 36.099-0.55538 1.6759-0.23384 1.7343 0.52615 0.039 0.75999-9.4609 1.3348-27.623 1.9-36.207 0.56512"/>
+  <path d="m170.89 150.28c-1.442-0.24359-1.3446-0.9646 0.0877-0.72101 5.8655 1.0133 25.138 0.78921 29.747-0.0877 1.5005-0.28256 1.6466 0.45794 0.11693 0.7405-5.8656 1.0718-24.32 1.0328-29.951 0.0682"/>
+  <path d="m111.22 148.46c-1.9877-0.36051-1.8805-1.1302 0.0877-0.77947 6.4891 1.14 18.396 0.79896 25.011 0.0779 1.7148-0.18512 1.783 0.56512 0.0585 0.78922-8.4573 1.1108-19.36 0.97434-25.158-0.0877"/>
+  <path d="m177.7 198.13c-0.15589-3.4102-0.34102-6.8301-0.55538-10.192-0.0292-0.52615-1.1887-0.23384-1.1497 0.24358 0.23384 3.303 0.47743 6.6645 0.6723 10.016 0.0487 0.75025-0.0974 0.97435-0.9646 1.1984 1.0815 0.37999 2.0461-0.17539 1.9974-1.2666"/>
+  <path d="m128.95 198.76c0.01-0.50666 0.0195-1.0815 0.0292-1.7051 0.039-2.1338 0.10718-4.8132 0.1559-7.3953 0.0195-0.8087 1.14-0.71127 1.1205 0.0487-0.0779 2.3579-0.16564 4.9204-0.23384 7.3953-0.01 0.69178-0.0292 1.3836-0.0487 2.0461 0 0.30204-1.0328 0.57486-1.0231-0.38974"/>
+ </g>
+ <path d="m175.71 199.39c-2.5625 0.64307-7.0348 0.86716-10.123 0.48717-2.6892-2.4066-7.7655-7.5219-10.104-10.464l-1.2179 0.0195c2.8841 3.5661 7.7265 8.6229 10.435 11.195 0.31179 0.29231 0.38974 0.33128 0.83794 0.38 3.5174 0.37999 7.8434 0.0877 10.416-0.50666 1.3446-0.31179 1.8415-0.79896 1.7538-2.3774 0.0292 0.59435-0.42871 0.86717-1.9974 1.2666" fill="#ea831e"/>
+</svg>
