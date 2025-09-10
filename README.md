@@ -263,6 +263,22 @@ Animated
 | PNG<br>_30x30_, _24x24_ |
 | <img src="sprites/items/ability-capsule.png" width="30"/> |
 
+##### `generation ix`
+
+###### `scarlet and violet`
+
+###### `icons`
+
+| Front Big |
+| --- |
+| PNG<br>_256x256_ |
+| <img src="sprites/pokemon/versions/generation-ix/scarlet-violet/icons/Big/pm0025_00_00_00_big.png" width="256"/> |
+
+| Front Small |
+| --- |
+| PNG<br>_100x100_ |
+| <img src="sprites/pokemon/versions/generation-ix/scarlet-violet/icons/Small/pm0025_00_00_00.png" width="100"/> |
+
 ## Thanks
 
 We would like to thank the [Smogon community](https://www.smogon.com/) for allowing us to use and serve their custom B&W-style sprites for the Pokemon with IDs greater than 650. Check out their free and open-source Pokemon Battle Simulator at [Pokémon Showdown](https://github.com/smogon/pokemon-showdown)
