@@ -41,6 +41,7 @@ sprites
             \- yellow (PNGs with back, gbc, gray, transparent, back-gbc, back-gray, back-transparent variants)
         \- generation ii
             \- crystal (PNGs with back, shiny, back-shiny, transparent, transparent-shiny, back-transparent, back-transparent-shiny variants)
+				\- animated (GIFs of front facing sprites with shiny variants)
             \- gold (PNGs with back, shiny, transparent, back-shiny variants)
             \- silver (PNGs with back, shiny, transparent, back-shiny variants)
         \- generation iii
@@ -127,10 +128,10 @@ This folder contains sprites designed by the [Smogon community](https://www.smog
 
 ###### `crystal`
 
-| Front | Back | Front shiny | Back shiny | Front transparent | Back transparent | Front shiny transparent | Back shiny transparent |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ |
-| <img src="sprites/pokemon/versions/generation-ii/crystal/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/back/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/shiny/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/back/shiny/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/transparent/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/transparent/back/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/transparent/shiny/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/transparent/back/shiny/25.png" width="96"/> |
+| Front | Back | Front shiny | Back shiny | Front transparent | Back transparent | Front shiny transparent | Back shiny transparent | Front animated | Front shiny animated |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ | GIF<br>_56x56_ | GIF<br>_56x56_ |
+| <img src="sprites/pokemon/versions/generation-ii/crystal/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/back/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/shiny/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/back/shiny/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/transparent/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/transparent/back/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/transparent/shiny/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/transparent/back/shiny/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/animated/25.gif" width="56"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/animated/shiny/25.gif" width="56"/> |
 
 ###### `gold`
 
@@ -143,8 +144,8 @@ This folder contains sprites designed by the [Smogon community](https://www.smog
 
 | Front | Back | Front shiny | Front transparent | Back shiny |
 | --- | --- | --- | --- | --- |
-| PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_107x107, 80x80_ | PNG<br>_40x40_ |
 | <img src="sprites/pokemon/versions/generation-ii/silver/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-ii/silver/back/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-ii/silver/shiny/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-ii/silver/transparent/25.png" width="80"/> | <img src="sprites/pokemon/versions/generation-ii/silver/back/shiny/25.png" width="40"/> |
+| PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_107x107, 80x80_ | PNG<br>_40x40_ |
 
 ##### `generation iii`
 
