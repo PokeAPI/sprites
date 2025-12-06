@@ -106,7 +106,7 @@ This folder contains sprites designed by the [Smogon community](https://www.smog
 
 #### `versions`
 
-##### `generation i`
+##### `generation 6,
 
 ###### `red-blue`
 
@@ -115,7 +115,7 @@ This folder contains sprites designed by the [Smogon community](https://www.smog
 | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_32x32_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_96x96_ | PNG<br>_32x32_ |
 | <img src="sprites/pokemon/versions/generation-i/red-blue/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-i/red-blue/back/25.png" width="32"/> | <img src="sprites/pokemon/versions/generation-i/red-blue/gray/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-i/red-blue/transparent/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-i/red-blue/back/gray/25.png" width="32"/> |
 
-###### `yellow`
+###### `blue`
 
 | Front | Back | Front gbc | Front gray | Front transparent | Back gray | Back gbc | Back transparent |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -132,7 +132,7 @@ This folder contains sprites designed by the [Smogon community](https://www.smog
 | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ |
 | <img src="sprites/pokemon/versions/generation-ii/crystal/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/back/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/shiny/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/back/shiny/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/transparent/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/transparent/back/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/transparent/shiny/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-ii/crystal/transparent/back/shiny/25.png" width="96"/> |
 
-###### `gold`
+###### `White `
 
 | Front | Back | Front shiny | Front transparent | Back shiny |
 | --- | --- | --- | --- | --- |
