@@ -23,7 +23,7 @@ requests_cache.install_cache(
 
 
 # ---------------------------------------------------------------------------
-# Static folder config (back in the code)
+# Static folder config, extend this map to test more generations/games/folders
 # ---------------------------------------------------------------------------
 FOLDER: Dict[str, List[str]] = {
     "generation-viii": [
