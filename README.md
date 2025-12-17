@@ -62,6 +62,9 @@ sprites
             \- icons (PNGs)
         \- generation viii
             \- icons (PNGs with female variants)
+            \- brilliant-diamond-shining-pearl (PNGs)
+        \- generation xi
+            \- scarlet-violet (PNGs with female)
     \- default PokeAPI sprites (PNGs with back, female, shiny, back-female, back-shiny, shiny-female variants)
 \- items
     \- default PokeAPI items (PNGs)
@@ -263,6 +266,22 @@ Animated
 | --- |
 | PNG<br>_30x30_, _24x24_ |
 | <img src="sprites/items/ability-capsule.png" width="30"/> |
+
+###### `brilliant-diamond-shining-pearl`
+
+| Front |
+| --- |
+| PNG<br>_256x256_ |
+| <img src="sprites/pokemon/versions/generation-viii/brilliant-diamond-shining-pearl/25.png" width="100"/> |
+
+##### `generation ix`
+
+###### `brilliant-diamond-shining-pearl`
+
+| Front |
+| --- |
+| PNG<br>_256x256_ |
+| <img src="sprites/pokemon/versions/generation-ix/scarlet-violet/25.png" width="100"/> |
 
 ## Thanks
 
