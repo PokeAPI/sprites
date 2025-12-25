@@ -71,25 +71,6 @@ def download_image(id: str, name: str, folder: pathlib.Path, pokemon_url: str) -
     print(f"Downloaded image for {name} to {folder / f'{id}.gif'}")
 
 
-def missing_female_variants() -> None:
-    """Check for missing female variants in the Showdown sprites."""
-    pokemon_list = list_pokemon()
-    showdown_images = list_showdown_images(SHOWDOWN_DIR / "female")
-
-    missing_females: list[tuple[str, str]] = []
-    for pid, name in pokemon_list.items():
-        if name.endswith("-f") or "female" in name and pid not in showdown_images:
-            missing_females.append((pid, name))
-
-    table = tabulate.tabulate(
-        missing_females,
-        headers=["Pokémon ID", "Pokémon Name"],
-        tablefmt="github",
-    )
-    print(f"\n{'=' * 40}\nMissing Female Variants\n{'=' * 40}\n")
-    print(table)
-
-
 if __name__ == "__main__":
     pokemon_list = list_pokemon()
 
