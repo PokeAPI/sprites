@@ -27,6 +27,7 @@ def list_pokemon() -> dict[str, str]:
         raise Exception(f"Failed to retrieve Pokémon list (Status {response.status_code})")
 
     data = response.json()
+    print(f"Retrieved {data['count']} Pokémon from PokéAPI.")
     return {i["url"].split("/")[-2]: i["name"] for i in data["results"]}
 
 
@@ -73,12 +74,14 @@ def download_image(id: str, name: str, folder: pathlib.Path, pokemon_url: str) -
 
 if __name__ == "__main__":
     pokemon_list = list_pokemon()
+    # mappa name -> id per risolvere lookup per nome
+    name_to_id = {v: k for k, v in pokemon_list.items()}
 
     showdown_folders = (
         SHOWDOWN_DIR,
-        SHOWDOWN_DIR / "shiny",
-        SHOWDOWN_DIR / "back",
-        SHOWDOWN_DIR / "back" / "shiny",
+       # SHOWDOWN_DIR / "shiny",
+       # SHOWDOWN_DIR / "back",
+       # SHOWDOWN_DIR / "back" / "shiny",
     )
 
     for folder in showdown_folders:
@@ -128,7 +131,23 @@ if __name__ == "__main__":
                         except ValueError:
                             print("Skipping download.")
                             remaining.add(pid)
+            else:
+                try:
+                    pid_int = int(pid)
+                except ValueError:
+                    # skip printing for non-numeric ids
+                    continue
+                if pid_int > 10000:
 
+                    print(f"Image for {name} already exists - Mapping to ID {pid}")
+                    base_name = name.split("-", 1)[0]
+                    print(f"This sprite may correspond to a different form for: {base_name}")
+                    base_form_id = pokemon_list.get(base_name)
+                    base_form_id = name_to_id.get(base_name)
+                    print(f"Base form ID for {base_name} is {base_form_id}\n")
+
+                    # now i'd likely want to log these somewhere for manual checking later
+                    # also because i need to save every image to its corresponding name
         table = tabulate.tabulate(
             [(pid, pname) for pid, pname in pokemon_list.items() if pid in (missing_images if DRY_RUN else remaining)],
             headers=["Pokémon ID", "Pokémon Name"],
