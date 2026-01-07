@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 # NOTE: Doesn't account for females, refer this and manually check them in later https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_with_gender_differences
 
-DRY_RUN = True
+DRY_RUN = False
 SHOWDOWN_DIR = pathlib.Path(__file__).parent.parent / "sprites" / "pokemon" / "other" / "showdown"
 SHOWDOWN_BASE_URL = "https://play.pokemonshowdown.com/sprites/ani"
 
@@ -151,17 +151,36 @@ if __name__ == "__main__":
             candidates = [remote for remote, species in remote_to_species.items() if species == name]
 
             if candidates:
-                sname = candidates[0]
-                # print(f"Found remote sprite for {name}: {sname} -> downloading")
-                save_id = resolve_save_id(pid, sname, name_to_id)
-                save_name = f"{name}" if "-" not in sname else f"{name}"
-                if not DRY_RUN:
-                    download_image(
-                        save_id,
-                        sname,
-                        folder,
-                        f"{_construct_showdown_url(back=back, shiny=shiny)}/{sname}.gif",
-                    )
+                # Se c'è una sola candidate la usiamo direttamente; se ce ne sono più richiedi scelta.
+                if len(candidates) == 1:
+                    chosen = candidates[0]
+                else:
+                    print(f"Multiple Showdown sprites found for {name} (ID={pid}):")
+                    for i, cand in enumerate(candidates, start=1):
+                        print(f"  {i}) {cand}")
+                    chosen = None
+                    while True:
+                        answer = input("     [N/number]: ").strip().lower()
+                        if answer in ("n", "no"):
+                            remaining.add(pid)
+                            break
+                        if answer.isdigit():
+                            idx = int(answer) - 1
+                            if 0 <= idx < len(candidates):
+                                chosen = candidates[idx]
+                                print(f"     Selected {chosen} for {name}\n")
+                                break
+                        print("     Invalid choice; enter N or a number corresponding to one of the options.")
+                if chosen:
+                    save_id = resolve_save_id(pid, chosen, name_to_id)
+                    save_name = f"{name}" if "-" not in chosen else f"{name}"
+                    if not DRY_RUN:
+                        download_image(
+                            f"{save_id}{'-' + chosen.split('-', 1)[1] if '-' in chosen else ''}",
+                            chosen,
+                            folder,
+                            f"{_construct_showdown_url(back=back, shiny=shiny)}/{chosen}.gif",
+                        )
             else:
                 # nessuna corrispondenza trovata tra i nomi Showdown e la specie
                 print(f"No Showdown sprite found for {name} (ID={pid})")
