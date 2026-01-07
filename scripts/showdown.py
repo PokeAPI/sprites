@@ -22,7 +22,12 @@ def list_pokemon() -> dict[str, str]:
     """Retrieve a list of all Pokémon from the PokéAPI.
     The result is a mapping of Pokémon IDs to their names.
 
+    <hr>
+
     **MAIN PROBLEM**: naming scheme for alt forms is different between Showdown and PokéAPI
+
+    - *Current solution*: try to map names using fuzzy matching where exact match is not found
+    ️- *Possible future solution*: maintain a manual mapping file for known mismatches
     """
     api_url = "https://pokeapi.co/api/v2/pokemon?limit=10000" # MAIN PROBLEM : naming scheme for alt forms is different between Showdown and PokéAPI
     response = requests.get(api_url)
@@ -84,13 +89,11 @@ def resolve_alt_form_name(name: str) -> tuple[str, str]:
 
 def normalize_showdown_name(showdown_name: str, known_names: set[str]) -> str:
     """Map a Showdown sprite name to the most likely PokéAPI species name."""
-    # exact match
     if showdown_name in known_names:
         return showdown_name
     base, _ = resolve_alt_form_name(showdown_name)
     if base in known_names:
         return base
-    # try fuzzy matches on full and base name
     match = difflib.get_close_matches(showdown_name, list(known_names), n=1, cutoff=0.8)
     if match:
         return match[0]
@@ -120,7 +123,6 @@ def resolve_save_id(pid: str, sprite_name: str, name_to_id: dict[str, str]) -> s
 
 if __name__ == "__main__":
     pokemon_list = list_pokemon()
-    # mappa name -> id per risolvere lookup per nome
     name_to_id = {v: k for k, v in pokemon_list.items()}
 
     showdown_folders = (
@@ -138,7 +140,6 @@ if __name__ == "__main__":
         shiny = "shiny" in folder.parts
 
         showdown_index = showdown_sprite_index(back=back, shiny=shiny)
-        # mappa remote_name -> normalized_pokeapi_name
         remote_to_species = build_showdown_to_species_map(showdown_index, name_to_id)
 
         print(f"\n{'=' * 40}\nMissing images in folder: {folder}\n{'=' * 40}\n")
@@ -147,11 +148,9 @@ if __name__ == "__main__":
 
         for pid, name in pokemon_list.items():
 
-            # cerca remote entries che corrispondono alla specie PokeAPI
             candidates = [remote for remote, species in remote_to_species.items() if species == name]
 
             if candidates:
-                # Se c'è una sola candidate la usiamo direttamente; se ce ne sono più richiedi scelta.
                 if len(candidates) == 1:
                     chosen = candidates[0]
                 else:
@@ -182,14 +181,12 @@ if __name__ == "__main__":
                             f"{_construct_showdown_url(back=back, shiny=shiny)}/{chosen}.gif",
                         )
             else:
-                # nessuna corrispondenza trovata tra i nomi Showdown e la specie
                 print(f"No Showdown sprite found for {name} (ID={pid})")
                 base_form = name.split("-", 1)
                 base_form_name = base_form[0]
                 base_candidates = [remote for remote, species in remote_to_species.items() if species == base_form_name]
                 if base_candidates:
                     print(f"  -> but found base form sprite(s): {', '.join(base_candidates)}\n")
-                    # Se c'è una sola candidate: richiesta Y/N. Se multiple: richiedi N o un numero per selezionare.
                     if len(base_candidates) == 1:
                         print(f"     Is this acceptable for alt form '{name}'? (Y/N)")
                         answer = input("     [y/N]: ").strip().lower()
