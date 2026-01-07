@@ -71,6 +71,18 @@ def download_image(id: str, name: str, folder: pathlib.Path, pokemon_url: str) -
 
     print(f"Downloaded image for {name} to {folder / f'{id}.gif'}")
 
+def resolve_save_id(pid: str, sprite_name: str, name_to_id: dict[str, str]) -> str:
+    """Return the id string to use when saving the sprite file.
+    If pid refers to an alternate-form placeholder (>10000), map to the base form id when available."""
+    try:
+        pid_int = int(pid)
+    except ValueError:
+        return pid
+    if pid_int > 10000:
+        base_name = sprite_name.split("-", 1)[0]
+        return name_to_id.get(base_name, pid)
+    return pid
+
 
 if __name__ == "__main__":
     pokemon_list = list_pokemon()
@@ -79,9 +91,9 @@ if __name__ == "__main__":
 
     showdown_folders = (
         SHOWDOWN_DIR,
-       # SHOWDOWN_DIR / "shiny",
-       # SHOWDOWN_DIR / "back",
-       # SHOWDOWN_DIR / "back" / "shiny",
+       SHOWDOWN_DIR / "shiny",
+       SHOWDOWN_DIR / "back",
+       SHOWDOWN_DIR / "back" / "shiny",
     )
 
     for folder in showdown_folders:
@@ -101,7 +113,7 @@ if __name__ == "__main__":
             if pid in missing_images and not DRY_RUN:
                 if name in showdown_index:
                     download_image(
-                        pid,
+                        resolve_save_id(pid, name, name_to_id),
                         name,
                         folder,
                         f"{_construct_showdown_url(back=back, shiny=shiny)}/{name}.gif",
@@ -120,7 +132,7 @@ if __name__ == "__main__":
                             if 1 <= choice <= len(closest_matches):
                                 selected_name = closest_matches[choice - 1]
                                 download_image(
-                                    pid,
+                                    resolve_save_id(pid, selected_name, name_to_id),
                                     selected_name,
                                     folder,
                                     f"{_construct_showdown_url(back=back, shiny=shiny)}/{selected_name}.gif",
@@ -139,12 +151,7 @@ if __name__ == "__main__":
                     continue
                 if pid_int > 10000:
 
-                    print(f"Image for {name} already exists - Mapping to ID {pid}")
-                    base_name = name.split("-", 1)[0]
-                    print(f"This sprite may correspond to a different form for: {base_name}")
-                    base_form_id = pokemon_list.get(base_name)
-                    base_form_id = name_to_id.get(base_name)
-                    print(f"Base form ID for {base_name} is {base_form_id}\n")
+                    print(f"Note: {name} (ID: {pid}) is an alternate form placeholder; please verify manually.")
 
                     # now i'd likely want to log these somewhere for manual checking later
                     # also because i need to save every image to its corresponding name
