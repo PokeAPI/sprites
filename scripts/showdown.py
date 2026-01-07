@@ -20,15 +20,14 @@ class PokemonRecord(t.TypedDict):
 
 def list_pokemon() -> dict[str, str]:
     """Retrieve a list of all Pokémon from the PokéAPI."""
-    api_url = "https://pokeapi.co/api/v2/pokemon?limit=10000"
+    api_url = "https://pokeapi.co/api/v2/pokemon?limit=10000" # MAIN PROBLEM : naming scheme for alt forms is different between Showdown and PokéAPI
     response = requests.get(api_url)
 
     if response.status_code != 200:
         raise Exception(f"Failed to retrieve Pokémon list (Status {response.status_code})")
 
     data = response.json()
-    print(f"Retrieved {data['count']} Pokémon from PokéAPI.")
-    return {i["url"].split("/")[-2]: i["name"] for i in data["results"]}
+    return {i["url"].split("/")[-2]: i["name"] for i in data["results"]} # names in here are NOT the same as Showdown's naming scheme - matching FAILS sometimes
 
 
 def list_showdown_images(folder: pathlib.Path) -> set[str]:
@@ -71,6 +70,10 @@ def download_image(id: str, name: str, folder: pathlib.Path, pokemon_url: str) -
 
     print(f"Downloaded image for {name} to {folder / f'{id}.gif'}")
 
+def resolve_alt_form_name(name: str) -> tuple[str, str]:
+    """Return the base form name and the alt form suffix from a Showdown image name."""
+    return name.split("-", 1)
+
 def resolve_save_id(pid: str, sprite_name: str, name_to_id: dict[str, str]) -> str:
     """Return the id string to use when saving the sprite file.
     If pid refers to an alternate-form placeholder (>10000), map to the base form id when available."""
@@ -79,7 +82,7 @@ def resolve_save_id(pid: str, sprite_name: str, name_to_id: dict[str, str]) -> s
     except ValueError:
         return pid
     if pid_int > 10000:
-        base_name = sprite_name.split("-", 1)[0]
+        base_name, _ = resolve_alt_form_name(sprite_name)
         return name_to_id.get(base_name, pid)
     return pid
 
@@ -91,9 +94,9 @@ if __name__ == "__main__":
 
     showdown_folders = (
         SHOWDOWN_DIR,
-       SHOWDOWN_DIR / "shiny",
-       SHOWDOWN_DIR / "back",
-       SHOWDOWN_DIR / "back" / "shiny",
+        SHOWDOWN_DIR / "shiny",
+        SHOWDOWN_DIR / "back",
+        SHOWDOWN_DIR / "back" / "shiny",
     )
 
     for folder in showdown_folders:
@@ -118,43 +121,27 @@ if __name__ == "__main__":
                         folder,
                         f"{_construct_showdown_url(back=back, shiny=shiny)}/{name}.gif",
                     )
-                else:
-                    print(f"Exact name not found in Showdown index: {name}")
-                    closest_matches = difflib.get_close_matches(name, showdown_index, n=3, cutoff=0.7)
-                    if closest_matches:
-                        print("\n".join([str(n) + ") " + m for n, m in enumerate(closest_matches, start=1)]))
-                        print(
-                            "Enter to skip downloading this image, or enter the number of the closest match to download that image."
-                        )
-                        user_input = input("Your choice: ").strip()
-                        try:
-                            choice = int(user_input)
-                            if 1 <= choice <= len(closest_matches):
-                                selected_name = closest_matches[choice - 1]
-                                download_image(
-                                    resolve_save_id(pid, selected_name, name_to_id),
-                                    selected_name,
-                                    folder,
-                                    f"{_construct_showdown_url(back=back, shiny=shiny)}/{selected_name}.gif",
-                                )
-                            else:
-                                print("Invalid choice. Skipping download.")
-                                remaining.add(pid)
-                        except ValueError:
-                            print("Skipping download.")
-                            remaining.add(pid)
             else:
-                try:
-                    pid_int = int(pid)
-                except ValueError:
-                    # skip printing for non-numeric ids
-                    continue
-                if pid_int > 10000:
 
-                    print(f"Note: {name} (ID: {pid}) is an alternate form placeholder; please verify manually.")
-
-                    # now i'd likely want to log these somewhere for manual checking later
-                    # also because i need to save every image to its corresponding name
+                print(f"\nDownloading image for {name} (ID = {pid})")
+                base_form_id = resolve_save_id(pid, name, name_to_id)
+                base_form_name = resolve_alt_form_name(name)
+                base_form = pokemon_list.get(base_form_id)
+                print(f"Exact name not found in Showdown index: {name} - Possible alternate form")
+                if base_form != name and base_form in showdown_index:
+                    print(f"Found base form in Showdown index: {base_form} (ID = {base_form_id}), name of downloaded image will be modified.")
+                    # downloading current image, but saving it under "<base_form_id>/<alternate_form>"
+                    if not DRY_RUN:
+                        download_image(
+                            f"{base_form_id}-{base_form_name[1]}",
+                            f"{base_form_name[0]}-{base_form_name[1]}",
+                            folder,
+                            f"{_construct_showdown_url(back=back, shiny=shiny)}/{name}.gif",
+                        )
+                else:
+                    print(f"No suitable alternate form found for {name}. Skipping.")
+                    remaining.add(pid)
+                        
         table = tabulate.tabulate(
             [(pid, pname) for pid, pname in pokemon_list.items() if pid in (missing_images if DRY_RUN else remaining)],
             headers=["Pokémon ID", "Pokémon Name"],
