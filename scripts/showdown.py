@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 # NOTE: Doesn't account for females, refer this and manually check them in later https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_with_gender_differences
 
-DRY_RUN = True
+DRY_RUN = False
 SHOWDOWN_DIR = pathlib.Path(__file__).parent.parent / "sprites" / "pokemon" / "other" / "showdown"
 SHOWDOWN_BASE_URL = "https://play.pokemonshowdown.com/sprites/ani"
 
@@ -171,34 +171,17 @@ if __name__ == "__main__":
             candidates = [remote for remote, species in remote_to_species.items() if species == name]
 
             if candidates:
-                if len(candidates) == 1:
-                    chosen = candidates[0]
-                else:
-                    print(f"Multiple Showdown sprites found for {name} (ID={pid}):")
-                    for i, cand in enumerate(candidates, start=1):
-                        print(f"  {i}) {cand}")
-                    chosen = None
-                    while True:
-                        answer = input("     [N/number]: ").strip().lower()
-                        if answer in ("n", "no"):
-                            remaining.add(pid)
-                            break
-                        if answer.isdigit():
-                            idx = int(answer) - 1
-                            if 0 <= idx < len(candidates):
-                                chosen = candidates[idx]
-                                print(f"     Selected {chosen} for {name}\n")
-                                break
-                        print("     Invalid choice; enter N or a number corresponding to one of the options.")
-                if chosen:
+                # Download all matching candidates (no interactive prompt)
+                chosen_list = candidates
+                for chosen in chosen_list:
                     save_id = resolve_save_id(pid, chosen, name_to_id)
-                    save_name = f"{name}" if "-" not in chosen else f"{name}"
                     if int(save_id) > 10000:
                         print(f"WARNING: Saving alt form with alt form ID {save_id}, consider mapping to base form ID instead.")
-                    print(f"SAVED FILE NAME: {f"{save_id}{'-' + chosen.split('-', 1)[1] if '-' in chosen else ''}"}.gif")
+                    suffix = f"-{chosen.split('-', 1)[1]}" if '-' in chosen else ''
+                    print(f"SAVED FILE NAME: {save_id}{suffix}.gif")
                     if not DRY_RUN:
                         download_image(
-                            f"{save_id}{'-' + chosen.split('-', 1)[1] if '-' in chosen else ''}",
+                            f"{save_id}{suffix}",
                             chosen,
                             folder,
                             f"{_construct_showdown_url(back=back, shiny=shiny)}/{chosen}.gif",
@@ -210,40 +193,17 @@ if __name__ == "__main__":
                 base_candidates = [remote for remote, species in remote_to_species.items() if species == base_form_name]
                 if base_candidates:
                     print(f"  -> but found base form sprite(s): {', '.join(base_candidates)}\n")
-                    if len(base_candidates) == 1:
-                        print(f"     Is this acceptable for alt form '{name}'? (Y/N)")
-                        answer = input("     [y/N]: ").strip().lower()
-                        if answer in ("y", "yes", ""):
-                            chosen = base_candidates[0]
-                            print(f"     Accepted alternate form '{name.split('-', 1)[1]}' for '{base_form_name}'\n")
-                        else:
-                            remaining.add(pid)
-                            continue
-                    else:
-                        print(f"     Choose one of the following options or enter N to skip:")
-                        for i, cand in enumerate(base_candidates, start=1):
-                            print(f"       {i}) {cand}")
-                        chosen = None
-                        while True:
-                            answer = input("     [N/number]: ").strip().lower()
-                            if answer in ("n", "no"):
-                                remaining.add(pid)
-                                break
-                            if answer.isdigit():
-                                idx = int(answer) - 1
-                                if 0 <= idx < len(base_candidates):
-                                    chosen = base_candidates[idx]
-                                    print(f"     Accepted alternate form '{name.split('-', 1)[1]}' for '{base_form_name}'\n")
-                                    break
-                            print("     Invalid choice; enter N or a number corresponding to one of the options.")
-                    if chosen:
+                    # Accept and download all base candidates automatically (no prompts)
+                    for chosen in base_candidates:
+                        print(f"     Accepted alternate form mapping '{name}' -> '{chosen}'")
                         save_id = resolve_save_id(pid, chosen, name_to_id)
                         if int(save_id) > 10000:
                             print(f"WARNING: Saving alt form with alt form ID {save_id}, consider mapping to base form ID instead.")
-                        print(f"SAVED FILE NAME: {save_id}{f"-{name.split('-', 1)[1]}" if '-' in name else ''}.gif")
+                        suffix = f"-{name.split('-', 1)[1]}" if '-' in name else ''
+                        print(f"SAVED FILE NAME: {save_id}{suffix}.gif")
                         if not DRY_RUN:
                             download_image(
-                                save_id,
+                                f"{save_id}{suffix}",
                                 chosen,
                                 folder,
                                 f"{_construct_showdown_url(back=back, shiny=shiny)}/{chosen}.gif",
