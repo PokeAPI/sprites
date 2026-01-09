@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 # NOTE: Doesn't account for females, refer this and manually check them in later https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_with_gender_differences
 
-DRY_RUN = False
+DRY_RUN = True
 SHOWDOWN_DIR = pathlib.Path(__file__).parent.parent / "sprites" / "pokemon" / "other" / "showdown"
 SHOWDOWN_BASE_URL = "https://play.pokemonshowdown.com/sprites/ani"
 
@@ -36,7 +36,21 @@ def list_pokemon() -> dict[str, str]:
         raise Exception(f"Failed to retrieve Pokémon list (Status {response.status_code})")
 
     data = response.json()
-    return {i["url"].split("/")[-2]: i["name"] for i in data["results"]} # names in here are NOT the same as Showdown's naming scheme - matching FAILS sometimes
+    results = {i["url"].split("/")[-2]: i["name"] for i in data["results"]}
+    above_10000 = {k: v for k, v in results.items() if int(k) > 10000}
+    for k, v in above_10000.items():
+        print(f"Found sprite ID > 10000 in PokéAPI listing: {k} -> {v}")
+        print(" -> Possibly an alt form placeholder - trying to search for base form instead")
+        base_form_name = v.split("-", 1)[0]
+        base_form_id = next((id_ for id_, name in results.items() if name.split("-", 1)[0] == base_form_name), None)
+        if base_form_id is not None:
+            print(f"    -> Found base form '{base_form_name}' with ID {base_form_id}, remapping")
+            # build new name as "{base_id}-{suffix}", where suffix is whatever came after
+            # the first '-' in the original alt-form name
+            suffix = v.split("-", 1)[1] if "-" in v else ""
+            results[k] = f"{base_form_id}-{suffix}" if suffix else results[base_form_id]
+            print(f"    -> New mapping: {k} -> {results[k]}")
+    return results
 
 
 def list_showdown_images(folder: pathlib.Path) -> set[str]:
@@ -117,6 +131,12 @@ def resolve_save_id(pid: str, sprite_name: str, name_to_id: dict[str, str]) -> s
         return pid
     if pid_int > 10000:
         base_name, _ = resolve_alt_form_name(sprite_name)
+        print(f"Mapping alt form ID {pid} to base form name '{base_name}'")
+        base_name_id = name_to_id.get(base_name.split("-", 1)[0])
+        print(f"  -> base form ID is '{base_name_id}'")
+        if base_name_id is None:
+            print(f"Error: Could not find base form ID for alt form '{base_name}' (sprite name '{sprite_name}').")
+            exit(1)
         return name_to_id.get(base_name, pid)
     return pid
 
@@ -173,6 +193,9 @@ if __name__ == "__main__":
                 if chosen:
                     save_id = resolve_save_id(pid, chosen, name_to_id)
                     save_name = f"{name}" if "-" not in chosen else f"{name}"
+                    if int(save_id) > 10000:
+                        print(f"WARNING: Saving alt form with alt form ID {save_id}, consider mapping to base form ID instead.")
+                    print(f"SAVED FILE NAME: {f"{save_id}{'-' + chosen.split('-', 1)[1] if '-' in chosen else ''}"}.gif")
                     if not DRY_RUN:
                         download_image(
                             f"{save_id}{'-' + chosen.split('-', 1)[1] if '-' in chosen else ''}",
@@ -215,6 +238,9 @@ if __name__ == "__main__":
                             print("     Invalid choice; enter N or a number corresponding to one of the options.")
                     if chosen:
                         save_id = resolve_save_id(pid, chosen, name_to_id)
+                        if int(save_id) > 10000:
+                            print(f"WARNING: Saving alt form with alt form ID {save_id}, consider mapping to base form ID instead.")
+                        print(f"SAVED FILE NAME: {save_id}{f"-{name.split('-', 1)[1]}" if '-' in name else ''}.gif")
                         if not DRY_RUN:
                             download_image(
                                 save_id,
