@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 # NOTE: Doesn't account for females, refer this and manually check them in later https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_with_gender_differences
 
-DRY_RUN = False
+DRY_RUN = True
 SHOWDOWN_DIR = pathlib.Path(__file__).parent.parent / "sprites" / "pokemon" / "other" / "showdown"
 SHOWDOWN_BASE_URL = "https://play.pokemonshowdown.com/sprites/ani"
 
@@ -20,37 +20,27 @@ class PokemonRecord(t.TypedDict):
 
 def list_pokemon() -> dict[str, str]:
     """Retrieve a list of all Pokémon from the PokéAPI.
-    The result is a mapping of Pokémon IDs to their names.
-
-    <hr>
-
-    **MAIN PROBLEM**: naming scheme for alt forms is different between Showdown and PokéAPI
-
-    - *Current solution*: try to map names using fuzzy matching where exact match is not found
-    ️- *Possible future solution*: maintain a manual mapping file for known mismatches
+    The result is a mapping of Pokémon names (possibly remapped for alt-forms) to their original PokéAPI species names.
     """
-    api_url = "https://pokeapi.co/api/v2/pokemon?limit=10000" # MAIN PROBLEM : naming scheme for alt forms is different between Showdown and PokéAPI
+    api_url = "https://pokeapi.co/api/v2/pokemon?limit=10000"
     response = requests.get(api_url)
 
     if response.status_code != 200:
         raise Exception(f"Failed to retrieve Pokémon list (Status {response.status_code})")
 
     data = response.json()
-    results = {i["url"].split("/")[-2]: i["name"] for i in data["results"]}
-    above_10000 = {k: v for k, v in results.items() if int(k) > 10000}
-    for k, v in above_10000.items():
-        print(f"Found sprite ID > 10000 in PokéAPI listing: {k} -> {v}")
-        print(" -> Possibly an alt form placeholder - trying to search for base form instead")
-        base_form_name = v.split("-", 1)[0]
-        base_form_id = next((id_ for id_, name in results.items() if name.split("-", 1)[0] == base_form_name), None)
+    fetched_data = {i["url"].split("/")[-2]: i["name"] for i in data["results"]}
+    above_10000 = {k: v for k, v in fetched_data.items() if int(k) > 10000}
+    for id, full_name in above_10000.items():
+        print(f"Found sprite ID > 10000 in PokéAPI listing: {id} -> {full_name}")
+        base_form_name = full_name.split("-", 1)[0]
+        base_form_id = next((id_ for id_, name in fetched_data.items() if name.split("-", 1)[0] == base_form_name), None)
         if base_form_id is not None:
-            print(f"    -> Found base form '{base_form_name}' with ID {base_form_id}, remapping")
-            # build new name as "{base_id}-{suffix}", where suffix is whatever came after
-            # the first '-' in the original alt-form name
-            suffix = v.split("-", 1)[1] if "-" in v else ""
-            results[k] = f"{base_form_id}-{suffix}" if suffix else results[base_form_id]
-            print(f"    -> New mapping: {k} -> {results[k]}")
-    return results
+            suffix = full_name.split("-", 1)[1] if "-" in full_name else ""
+            print(f"  -> Mapping to base form ID {base_form_id} with suffix '-{suffix}'")
+            fetched_data[f"{base_form_id}-{suffix}"] = full_name
+            fetched_data.pop(id)
+    return fetched_data
 
 
 def list_showdown_images(folder: pathlib.Path) -> set[str]:
@@ -104,16 +94,21 @@ def resolve_alt_form_name(name: str) -> tuple[str, str]:
 def normalize_showdown_name(showdown_name: str, known_names: set[str]) -> str:
     """Map a Showdown sprite name to the most likely PokéAPI species name."""
     if showdown_name in known_names:
+        print(f"Exact match found for Showdown name '{showdown_name}'")
         return showdown_name
     base, _ = resolve_alt_form_name(showdown_name)
     if base in known_names:
+        print(f"Base form match found for Showdown name '{showdown_name}' -> '{base}'")
         return base
     match = difflib.get_close_matches(showdown_name, list(known_names), n=1, cutoff=0.8)
     if match:
+        print(f"Close match found for Showdown name '{showdown_name}' -> '{match[0]}'")
         return match[0]
     match = difflib.get_close_matches(base, list(known_names), n=1, cutoff=0.8)
     if match:
+        print(f"Close base form match found for Showdown name '{showdown_name}' -> '{match[0]}'")
         return match[0]
+    print(f"No match found for Showdown name '{showdown_name}', using original name.")
     return showdown_name
 
 
@@ -135,7 +130,7 @@ def resolve_save_id(pid: str, sprite_name: str, name_to_id: dict[str, str]) -> s
         base_name_id = name_to_id.get(base_name.split("-", 1)[0])
         print(f"  -> base form ID is '{base_name_id}'")
         if base_name_id is None:
-            print(f"Error: Could not find base form ID for alt form '{base_name}' (sprite name '{sprite_name}').")
+            print(f"Error: Could not find base form ID for alt form '{base_name}' (sprite name '{sprite_name}' - id: {pid}).")
             exit(1)
         return name_to_id.get(base_name, pid)
     return pid
@@ -160,47 +155,46 @@ if __name__ == "__main__":
         shiny = "shiny" in folder.parts
 
         showdown_index = showdown_sprite_index(back=back, shiny=shiny)
+        print(showdown_index)
         remote_to_species = build_showdown_to_species_map(showdown_index, name_to_id)
+
+        normalized_list = {k: normalize_showdown_name(v, set(name_to_id.keys())) for k, v in pokemon_list.items()}
 
         print(f"\n{'=' * 40}\nMissing images in folder: {folder}\n{'=' * 40}\n")
 
         remaining: set[str] = set()
 
-        for pid, name in pokemon_list.items():
+        for pid, name in normalized_list.items():
 
-            candidates = [remote for remote, species in remote_to_species.items() if species == name]
+            """candidates = [remote for remote, species in remote_to_species.items() if species == name]
+            print(f"Candidates for Pokémon ID {pid} - '{name}': {candidates}")
+            if (len(candidates) <= 0):
+                print(f"Pokémon ID {pid} - '{name}': Found no candidate(s).")
+
+            #print(f"Processing Pokémon ID {pid} - '{name}'")
 
             if candidates:
                 # Download all matching candidates (no interactive prompt)
                 chosen_list = candidates
                 for chosen in chosen_list:
-                    save_id = resolve_save_id(pid, chosen, name_to_id)
-                    if int(save_id) > 10000:
-                        print(f"WARNING: Saving alt form with alt form ID {save_id}, consider mapping to base form ID instead.")
-                    suffix = f"-{chosen.split('-', 1)[1]}" if '-' in chosen else ''
-                    print(f"SAVED FILE NAME: {save_id}{suffix}.gif")
-                    if not DRY_RUN:
-                        download_image(
-                            f"{save_id}{suffix}",
-                            chosen,
-                            folder,
-                            f"{_construct_showdown_url(back=back, shiny=shiny)}/{chosen}.gif",
-                        )
-            else:
-                print(f"No Showdown sprite found for {name} (ID={pid})")
+                    save_id = resolve_save_id(pid, chosen, name_to_id)"""
+            if not DRY_RUN:
+            #print(f"Save ID: {save_id} - Suffix: '{suffix}' - Chosen: '{chosen}'")
+                download_image(
+                    f"{pid}",
+                    name,
+                    folder,
+                    f"{_construct_showdown_url(back=back, shiny=shiny)}/{name}.gif",
+                )
+            """else:
                 base_form = name.split("-", 1)
                 base_form_name = base_form[0]
                 base_candidates = [remote for remote, species in remote_to_species.items() if species == base_form_name]
                 if base_candidates:
-                    print(f"  -> but found base form sprite(s): {', '.join(base_candidates)}\n")
                     # Accept and download all base candidates automatically (no prompts)
                     for chosen in base_candidates:
-                        print(f"     Accepted alternate form mapping '{name}' -> '{chosen}'")
                         save_id = resolve_save_id(pid, chosen, name_to_id)
-                        if int(save_id) > 10000:
-                            print(f"WARNING: Saving alt form with alt form ID {save_id}, consider mapping to base form ID instead.")
                         suffix = f"-{name.split('-', 1)[1]}" if '-' in name else ''
-                        print(f"SAVED FILE NAME: {save_id}{suffix}.gif")
                         if not DRY_RUN:
                             download_image(
                                 f"{save_id}{suffix}",
@@ -209,7 +203,7 @@ if __name__ == "__main__":
                                 f"{_construct_showdown_url(back=back, shiny=shiny)}/{chosen}.gif",
                             )
                 else:
-                    remaining.add(pid)
+                    remaining.add(pid)"""
 
         print(f"\nSummary for folder: {folder}\n{'-' * 40}\n")
         table = tabulate.tabulate(
