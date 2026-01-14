@@ -79,23 +79,27 @@ showdown_folders = (
 
 for showdown_name in showdown_list:
     if showdown_name in pokeapi_list.values():
+        # name matches directly
         final_list[id_list[showdown_name]] = showdown_name
     else:
         showdown_base_name = showdown_name.split("-", 1)[0]
         showdown_suffix = showdown_name.split("-", 1)[1] if "-" in showdown_name else ""
         pokeapi_base_names_list = { v: name.split("-", 1)[0] for v, name in pokeapi_list.items() }
         if showdown_base_name in pokeapi_base_names_list.values():
+            # base form name matches
             pokeapi_base_ids = { k: v for v, k in pokeapi_base_names_list.items() }
             id = pokeapi_base_ids[showdown_base_name]
             final_list[f"{id}-{showdown_suffix}"] = showdown_name
         else:
             closest_matches = difflib.get_close_matches(showdown_name, pokeapi_list.values(), n=5, cutoff=0.8)
             if closest_matches:
+                # full name close match found - WARNING: may be incorrect, depends on the order of difflib results
                 id = id_list[closest_matches[0]]
                 final_list[f"{id}"] = showdown_name
             else:
                 base_closest_matches = difflib.get_close_matches(showdown_base_name, pokeapi_base_names_list.values(), n=5, cutoff=0.8)
                 if base_closest_matches:
+                    # base form close match found - WARNING: may be incorrect, depends on the order of difflib results
                     id = pokeapi_base_ids[base_closest_matches[0]]
                     final_list[f"{id}-{showdown_suffix}"] = showdown_name
                 else:
@@ -107,8 +111,8 @@ for folder in showdown_folders:
     shiny = "shiny" in folder.parts
     back = "back" in folder.parts
     for (id, name) in final_list.items():
-        pokemon_url = f"{_construct_showdown_url(shiny, back)}/{name}.gif"
+        pokemon_url = f"{_construct_showdown_url(back=back, shiny=shiny)}/{name}.gif"
         if not DRY_RUN:
-            download_image(id, name, SHOWDOWN_DIR, pokemon_url)
+            download_image(id, name, folder, pokemon_url)
         else:
-            print(f"[DRY RUN] Would download image for {name} to {f'{id}.gif'} from {pokemon_url}")
+            print(f"[DRY RUN] Would download image for {name} to {folder / f'{id}.gif'}")
