@@ -19,7 +19,9 @@ class PokemonRecord(t.TypedDict):
 
 
 def list_pokemon() -> dict[str, str]:
-    """Retrieve a list of all Pokémon from the PokéAPI."""
+    """Retrieve a list of all Pokémon from the PokéAPI.
+    The result is a mapping of Pokémon names (possibly remapped for alt-forms) to their original PokéAPI species names.
+    """
     api_url = "https://pokeapi.co/api/v2/pokemon?limit=10000"
     response = requests.get(api_url)
 
@@ -27,11 +29,22 @@ def list_pokemon() -> dict[str, str]:
         raise Exception(f"Failed to retrieve Pokémon list (Status {response.status_code})")
 
     data = response.json()
-    return {i["url"].split("/")[-2]: i["name"] for i in data["results"]}
+    fetched_data = {i["url"].split("/")[-2]: i["name"] for i in data["results"]}
+    above_10000 = {k: v for k, v in fetched_data.items() if int(k) > 10000}
+    for id, full_name in above_10000.items():
+        print(f"Found sprite ID > 10000 in PokéAPI listing: {id} -> {full_name}")
+        base_form_name = full_name.split("-", 1)[0]
+        base_form_id = next((id_ for id_, name in fetched_data.items() if name.split("-", 1)[0] == base_form_name), None)
+        if base_form_id is not None:
+            suffix = full_name.split("-", 1)[1] if "-" in full_name else ""
+            print(f"  -> Mapping to base form ID {base_form_id} with suffix '-{suffix}'")
+            fetched_data[f"{base_form_id}-{suffix}"] = full_name
+            fetched_data.pop(id)
+    return fetched_data
 
 
 def list_showdown_images(folder: pathlib.Path) -> set[str]:
-    """List all Pokémon images available in the Showdown directory."""
+    """List all Pokémon images available in the local directory."""
     image_files = {f.stem for f in folder.glob("*.gif") if f.is_file()}
     return image_files
 
@@ -71,8 +84,61 @@ def download_image(id: str, name: str, folder: pathlib.Path, pokemon_url: str) -
     print(f"Downloaded image for {name} to {folder / f'{id}.gif'}")
 
 
+def resolve_alt_form_name(name: str) -> tuple[str, str]:
+    """Return the base form name and the alt form suffix from a Showdown image name."""
+    if "-" in name:
+        return tuple(name.split("-", 1))
+    return name, ""
+
+
+def normalize_showdown_name(showdown_name: str, known_names: set[str]) -> str:
+    """Map a Showdown sprite name to the most likely PokéAPI species name."""
+    if showdown_name in known_names:
+        print(f"Exact match found for Showdown name '{showdown_name}'")
+        return showdown_name
+    base, _ = resolve_alt_form_name(showdown_name)
+    if base in known_names:
+        print(f"Base form match found for Showdown name '{showdown_name}' -> '{base}'")
+        return base
+    match = difflib.get_close_matches(showdown_name, list(known_names), n=1, cutoff=0.8)
+    if match:
+        print(f"Close match found for Showdown name '{showdown_name}' -> '{match[0]}'")
+        return match[0]
+    match = difflib.get_close_matches(base, list(known_names), n=1, cutoff=0.8)
+    if match:
+        print(f"Close base form match found for Showdown name '{showdown_name}' -> '{match[0]}'")
+        return match[0]
+    print(f"No match found for Showdown name '{showdown_name}', using original name.")
+    return showdown_name
+
+
+def build_showdown_to_species_map(showdown_index: set[str], name_to_id: dict[str, str]) -> dict[str, str]:
+    names_set = set(name_to_id.keys())
+    return {sname: normalize_showdown_name(sname, names_set) for sname in showdown_index}
+
+
+def resolve_save_id(pid: str, sprite_name: str, name_to_id: dict[str, str]) -> str:
+    """Return the id string to use when saving the sprite file.
+    If pid refers to an alternate-form placeholder (>10000), map to the base form id when available."""
+    try:
+        pid_int = int(pid)
+    except ValueError:
+        return pid
+    if pid_int > 10000:
+        base_name, _ = resolve_alt_form_name(sprite_name)
+        print(f"Mapping alt form ID {pid} to base form name '{base_name}'")
+        base_name_id = name_to_id.get(base_name.split("-", 1)[0])
+        print(f"  -> base form ID is '{base_name_id}'")
+        if base_name_id is None:
+            print(f"Error: Could not find base form ID for alt form '{base_name}' (sprite name '{sprite_name}' - id: {pid}).")
+            exit(1)
+        return name_to_id.get(base_name, pid)
+    return pid
+
+
 if __name__ == "__main__":
     pokemon_list = list_pokemon()
+    name_to_id = {v: k for k, v in pokemon_list.items()}
 
     showdown_folders = (
         SHOWDOWN_DIR,
@@ -89,46 +155,57 @@ if __name__ == "__main__":
         shiny = "shiny" in folder.parts
 
         showdown_index = showdown_sprite_index(back=back, shiny=shiny)
+        print(showdown_index)
+        remote_to_species = build_showdown_to_species_map(showdown_index, name_to_id)
+
+        normalized_list = {k: normalize_showdown_name(v, set(name_to_id.keys())) for k, v in pokemon_list.items()}
 
         print(f"\n{'=' * 40}\nMissing images in folder: {folder}\n{'=' * 40}\n")
 
         remaining: set[str] = set()
 
-        for pid, name in pokemon_list.items():
-            if pid in missing_images and not DRY_RUN:
-                if name in showdown_index:
-                    download_image(
-                        pid,
-                        name,
-                        folder,
-                        f"{_construct_showdown_url(back=back, shiny=shiny)}/{name}.gif",
-                    )
-                else:
-                    print(f"Exact name not found in Showdown index: {name}")
-                    closest_matches = difflib.get_close_matches(name, showdown_index, n=3, cutoff=0.7)
-                    if closest_matches:
-                        print("\n".join([str(n) + ") " + m for n, m in enumerate(closest_matches, start=1)]))
-                        print(
-                            "Enter to skip downloading this image, or enter the number of the closest match to download that image."
-                        )
-                        user_input = input("Your choice: ").strip()
-                        try:
-                            choice = int(user_input)
-                            if 1 <= choice <= len(closest_matches):
-                                selected_name = closest_matches[choice - 1]
-                                download_image(
-                                    pid,
-                                    selected_name,
-                                    folder,
-                                    f"{_construct_showdown_url(back=back, shiny=shiny)}/{selected_name}.gif",
-                                )
-                            else:
-                                print("Invalid choice. Skipping download.")
-                                remaining.add(pid)
-                        except ValueError:
-                            print("Skipping download.")
-                            remaining.add(pid)
+        for pid, name in normalized_list.items():
 
+            """candidates = [remote for remote, species in remote_to_species.items() if species == name]
+            print(f"Candidates for Pokémon ID {pid} - '{name}': {candidates}")
+            if (len(candidates) <= 0):
+                print(f"Pokémon ID {pid} - '{name}': Found no candidate(s).")
+
+            #print(f"Processing Pokémon ID {pid} - '{name}'")
+
+            if candidates:
+                # Download all matching candidates (no interactive prompt)
+                chosen_list = candidates
+                for chosen in chosen_list:
+                    save_id = resolve_save_id(pid, chosen, name_to_id)"""
+            if not DRY_RUN:
+            #print(f"Save ID: {save_id} - Suffix: '{suffix}' - Chosen: '{chosen}'")
+                download_image(
+                    f"{pid}",
+                    name,
+                    folder,
+                    f"{_construct_showdown_url(back=back, shiny=shiny)}/{name}.gif",
+                )
+            """else:
+                base_form = name.split("-", 1)
+                base_form_name = base_form[0]
+                base_candidates = [remote for remote, species in remote_to_species.items() if species == base_form_name]
+                if base_candidates:
+                    # Accept and download all base candidates automatically (no prompts)
+                    for chosen in base_candidates:
+                        save_id = resolve_save_id(pid, chosen, name_to_id)
+                        suffix = f"-{name.split('-', 1)[1]}" if '-' in name else ''
+                        if not DRY_RUN:
+                            download_image(
+                                f"{save_id}{suffix}",
+                                chosen,
+                                folder,
+                                f"{_construct_showdown_url(back=back, shiny=shiny)}/{chosen}.gif",
+                            )
+                else:
+                    remaining.add(pid)"""
+
+        print(f"\nSummary for folder: {folder}\n{'-' * 40}\n")
         table = tabulate.tabulate(
             [(pid, pname) for pid, pname in pokemon_list.items() if pid in (missing_images if DRY_RUN else remaining)],
             headers=["Pokémon ID", "Pokémon Name"],
