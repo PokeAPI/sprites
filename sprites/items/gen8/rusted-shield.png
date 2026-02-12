@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Rusted Shield - Bulbapedia, the community-driven Pokémon encyclopedia</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"6aed11a584a5d0693787f21f","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Rusted_Shield","wgTitle":"Rusted Shield","wgCurRevisionId":4466493,"wgRevisionId":4466493,"wgArticleId":244503,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Items","Items introduced in Generation VIII","Other Items Pocket","Held items","Form-changing held items","Legendary artifacts"],"wgPageViewLanguage":"en","wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Rusted_Shield","wgRelevantArticleId":244503,"wgIsProbablyEditable":false,
+"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgCiteReferencePreviewsActive":true,"wgMFDisplayWikibaseDescriptions":{"search":false,"watchlist":false,"tagline":false},"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en"},"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgPopupsFlags":0,"wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"],"wgEditSubmitButtonLabelPublish":false};RLSTATE={"site.styles":"ready","user.styles":"ready","user":"ready","user.options":"loading","skins.bulbapediamonobook.styles":"ready","ext.embedVideo.styles":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready"};RLPAGEMODULES=["mediawiki.page.media","site","mediawiki.page.ready","mediawiki.toc","skins.bulbapediamonobook.scripts","ext.embedVideo.overlay","ext.checkUser.clientHints",
+"ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","mmv.bootstrap","ext.echo.centralauth","ext.popups"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=ext.embedVideo.styles%7Cext.visualEditor.desktopArticleTarget.noscript%7Cskins.bulbapediamonobook.styles&amp;only=styles&amp;skin=bulbapediamonobook">
+<script async="" src="/w/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=bulbapediamonobook"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=bulbapediamonobook">
+<meta name="generator" content="MediaWiki 1.43.0">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:image" content="https://archives.bulbagarden.net/media/upload/8/80/Bag_Rusted_Shield_SV_Sprite.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image" content="https://archives.bulbagarden.net/media/upload/8/80/Bag_Rusted_Shield_SV_Sprite.png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="800">
+<meta property="og:image:width" content="640">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=0.25, maximum-scale=5.0">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/rest.php/v1/search" title="Bulbapedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://bulbapedia.bulbagarden.net/w/api.php?action=rsd">
+<link rel="canonical" href="https://bulbapedia.bulbagarden.net/wiki/Rusted_Shield">
+<link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/2.5/">
+<link rel="alternate" type="application/atom+xml" title="Bulbapedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<!---------------------------------->
+<!-- Google dual analytics : HEAD -->
+<!---------------------------------->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XCGG53D4E3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XCGG53D4E3');
+  gtag('config', 'UA-326511-18');
+</script>
+
+<!---------------->
+<!-- Script End -->
+<!---------------->
+<!-------------------------->
+<!-- Adthrive Main : HEAD -->
+<!-------------------------->
+
+<script>
+(function(w, d) {
+w.adthrive = w.adthrive || {};
+w.adthrive.cmd = w.adthrive.cmd || [];
+w.adthrive.plugin = 'adthrive-ads-manual';
+w.adthrive.host = 'ads.adthrive.com';
+var s = d.createElement('script');
+s.async = true;
+s.referrerpolicy='no-referrer-when-downgrade';
+s.src = 'https://' + w.adthrive.host + '/sites/630428a76245162875c78210/ads.min.js?referrer=' + w.encodeURIComponent(w.location.href) + '&cb=' + (Math.floor(Math.random() * 100) + 1);
+var n = d.getElementsByTagName('script')[0];
+n.parentNode.insertBefore(s, n);
+})(window, document);
+</script>
+
+<!---------------->
+<!-- Script End -->
+<!---------------->
+<script type="text/javascript" src="//ahost.bulbagarden.net/Content/bulbapediascript.js"></script>
+<meta name="robots" content="max-image-preview:large">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<meta property="og:title" content="Rusted Shield">
+<meta property="og:site_name" content="Bulbapedia">
+<meta property="og:url" content="https://bulbapedia.bulbagarden.net/wiki/Rusted_Shield">
+<meta property="article:modified_time" content="2026-01-13T16:12:17Z">
+<meta property="article:published_time" content="2026-01-13T16:12:17Z">
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Article","name":"Rusted Shield - Bulbapedia, the community-driven Pok\u00e9mon encyclopedia","headline":"Rusted Shield - Bulbapedia, the community-driven Pok\u00e9mon encyclopedia","mainEntityOfPage":"Rusted Shield","identifier":"https:\/\/bulbapedia.bulbagarden.net\/wiki\/Rusted_Shield","url":"https:\/\/bulbapedia.bulbagarden.net\/wiki\/Rusted_Shield","dateModified":"2026-01-13T16:12:17Z","datePublished":"2026-01-13T16:12:17Z","image":{"@type":"ImageObject","url":"https:\/\/archives.bulbagarden.net\/media\/upload\/e\/e6\/Bulbapedia_1x_logo.png"},"author":{"@type":"Organization","name":"Bulbapedia","url":"https:\/\/bulbapedia.bulbagarden.net","logo":{"@type":"ImageObject","url":"https:\/\/archives.bulbagarden.net\/media\/upload\/e\/e6\/Bulbapedia_1x_logo.png","caption":"Bulbapedia"}},"publisher":{"@type":"Organization","name":"Bulbapedia","url":"https:\/\/bulbapedia.bulbagarden.net","logo":{"@type":"ImageObject","url":"https:\/\/archives.bulbagarden.net\/media\/upload\/e\/e6\/Bulbapedia_1x_logo.png","caption":"Bulbapedia"}},"potentialAction":{"@type":"SearchAction","target":"https:\/\/bulbapedia.bulbagarden.net\/w\/index.php?title=Special:Search&search={search_term}","query-input":"required name=search_term"}}</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Rusted_Shield rootpage-Rusted_Shield skin-bulbapediamonobook action-view skin--responsive"><div id="globalWrapper">
+        <div class="bg-global-menu bg-bulbapedia-menu">
+        <a href="https://bulbagarden.net" class="bg-global-nav-logo"></a>
+        <nav class="bg-global-nav">
+            <ul class="bg-global-nav-primary">
+                <li class="bg-global-nav-primary-item">
+                    <a href="https://bulbagarden.net" class="bg-global-nav-primary-link ">News</a>
+                </li>
+                <li class="bg-global-nav-primary-item bg-global-nav-primary-haschildren">
+                    <a href="https://bulbapedia.bulbagarden.net/"
+                       class="bg-global-nav-primary-link bg-global-nav-primary-toggle selected">Bulbapedia</a>
+                    <ul class="bg-global-nav-primary-children">
+                        <li class="bg-global-nav-secondary row">
+                            <ul>
+                                <li class="bg-global-nav-secondary-item bulbapedia">
+                                    <a href="https://bulbapedia.bulbagarden.net/"
+                                       class="bg-global-nav-secondary-link">Bulbapedia main page</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="bg-global-nav-secondary">
+                            <ul>
+                                <li class="bg-global-nav-secondary-item header">Pokémon</li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/List_of_Pokémon_by_National_Pokédex_number"
+                                       class="bg-global-nav-secondary-link">National Pokédex</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_name"
+                                       class="bg-global-nav-secondary-link">By Name</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Legendary_Pok%C3%A9mon"
+                                       class="bg-global-nav-secondary-link">Legendary Pokémon</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Mythical_Pok%C3%A9mon"
+                                       class="bg-global-nav-secondary-link">Mythical Pokémon</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Event_Pok%C3%A9mon"
+                                       class="bg-global-nav-secondary-link">Event Pokémon</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Terastal_phenomenon"
+                                       class="bg-global-nav-secondary-link">Terastal</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Noble_Pokémon"
+                                       class="bg-global-nav-secondary-link">Noble Pokémon</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Alpha_Pokémon"
+                                       class="bg-global-nav-secondary-link">Alpha Pokémon</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Gigantamax"
+                                       class="bg-global-nav-secondary-link">Gigantamax</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Dynamax"
+                                       class="bg-global-nav-secondary-link">Dynamax</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon"
+                                       class="bg-global-nav-secondary-link">more...</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="bg-global-nav-secondary">
+                            <ul>
+                                <li class="bg-global-nav-secondary-item header">Mechanics</li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Type"
+                                       class="bg-global-nav-secondary-link">Types</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Type#Type_chart"
+                                       class="bg-global-nav-secondary-link">Type chart</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Category:Abilities"
+                                       class="bg-global-nav-secondary-link">Abilities</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Nature#List_of_Natures"
+                                       class="bg-global-nav-secondary-link">Nature</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Status_condition"
+                                       class="bg-global-nav-secondary-link">Status conditions</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Category:Moves"
+                                       class="bg-global-nav-secondary-link">Moves</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Category:Items"
+                                       class="bg-global-nav-secondary-link">Items</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Category:Game_mechanics"
+                                       class="bg-global-nav-secondary-link">more...</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="bg-global-nav-secondary">
+                            <ul>
+                                <li class="bg-global-nav-secondary-item header">Games</li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Browse:Video_Games"
+                                       class="bg-global-nav-secondary-link">Video Games Portal</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Category:Walkthroughs"
+                                       class="bg-global-nav-secondary-link">Walkthroughs</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Scarlet_and_Violet"
+                                       class="bg-global-nav-secondary-link">Pokémon Scarlet and Violet</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Pokémon_Legends:_Arceus"
+                                       class="bg-global-nav-secondary-link">Pokémon Legends: Arceus</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Pokémon_Brilliant_Diamond_and_Shining_Pearl"
+                                       class="bg-global-nav-secondary-link">Pokémon Brilliant Diamond and Shining Pearl</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Category:Pok%C3%A9mon_Sword_and_Shield"
+                                       class="bg-global-nav-secondary-link">Pokémon Sword and Shield</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Spin-off_Pok%C3%A9mon_games"
+                                       class="bg-global-nav-secondary-link">Spin-offs</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Category:Pok%C3%A9mon_GO"
+                                       class="bg-global-nav-secondary-link">Pokémon GO</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Category:Games"
+                                       class="bg-global-nav-secondary-link">all games...</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="bg-global-nav-secondary">
+                            <ul>
+                                <li class="bg-global-nav-secondary-item header">TCG</li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Browse:Trading_Card_Game"
+                                       class="bg-global-nav-secondary-link">TCG Portal</a>
+                                </li>
+
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Trading_Card_Game"
+                                       class="bg-global-nav-secondary-link">About</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Trading_Card_Game#How_to_play"
+                                       class="bg-global-nav-secondary-link">How to play</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Rotation_(TCG)"
+                                       class="bg-global-nav-secondary-link">Rotation</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Promotional_cards_(TCG)"
+                                       class="bg-global-nav-secondary-link">Promotional cards</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Surging_Sparks_(TCG)"
+                                       class="bg-global-nav-secondary-link">Surging Sparks</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Stellar_Crown_(TCG)"
+                                       class="bg-global-nav-secondary-link">Stellar Crown</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Shrouded_Fable_(TCG)"
+                                       class="bg-global-nav-secondary-link">Shrouded Fable</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Twilight_Masquerade_(TCG)"
+                                       class="bg-global-nav-secondary-link">Twilight Masquerade</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_Trading_Card_Game_expansions"
+                                       class="bg-global-nav-secondary-link">all expansions...</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="bg-global-nav-secondary">
+                            <ul>
+                                <li class="bg-global-nav-secondary-item header">Animation & Manga</li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Browse:Animation"
+                                       class="bg-global-nav-secondary-link">Animation Portal</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Browse:Manga"
+                                       class="bg-global-nav-secondary-link">Manga Portal</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Horizons:_The_Series"
+                                       class="bg-global-nav-secondary-link">Pokémon Horizons</a>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Liko"
+                                       class="bg-global-nav-secondary-link">Liko</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_the_Series"
+                                       class="bg-global-nav-secondary-link">Pokémon the Series</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Ash_Ketchum"
+                                       class="bg-global-nav-secondary-link">Ash Ketchum</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/List_of_animated_series_characters"
+                                       class="bg-global-nav-secondary-link">Animated series characters</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_movie"
+                                       class="bg-global-nav-secondary-link">Movies</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Category:Manga"
+                                       class="bg-global-nav-secondary-link">Manga</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Adventures"
+                                       class="bg-global-nav-secondary-link">Pokémon Adventures</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="bg-global-nav-primary-item">
+                    <a href="https://bulbagarden.net/forums/" class="bg-global-nav-primary-link">Forums</a>
+                </li>
+                <li class="bg-global-nav-primary-item">
+                    <a href="https://discord.gg/bulbagarden" class="bg-global-nav-primary-link">Discord</a>
+                </li>
+                <li class="bg-global-nav-primary-item bg-global-nav-primary-haschildren">
+                    <a href="#bulbapedia"
+                       class="bg-global-nav-primary-link bg-global-nav-primary-toggle">More</a>
+                    <ul class="bg-global-nav-primary-children">
+                        <li class="bg-global-nav-secondary">
+                            <ul>
+                                <li class="bg-global-nav-secondary-item header">Social</li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://www.youtube.com/user/Bulbagarden" target="_blank"
+                                       rel="noopener" class="bg-global-nav-secondary-link">Youtube</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://twitch.tv/Bulbagarden" target="_blank"
+                                       rel="noopener" class="bg-global-nav-secondary-link">Twitch</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://x.com/Bulbagarden" target="_blank" rel="noopener"
+                                       class="bg-global-nav-secondary-link">X (Twitter)</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://www.facebook.com/Bulbagarden/" target="_blank"
+                                       rel="noopener" class="bg-global-nav-secondary-link">Facebook</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://www.instagram.com/bulbagarden.official/" target="_blank"
+                                       rel="noopener" class="bg-global-nav-secondary-link">Instagram</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbagarden.tumblr.com/" target="_blank"
+                                       rel="noopener" class="bg-global-nav-secondary-link">Tumblr</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://mastodon.social/@bulbagarden" target="_blank"
+                                       rel="noopener" class="bg-global-nav-secondary-link">Mastodon</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="bg-global-nav-secondary">
+                            <ul>
+                                <li class="bg-global-nav-secondary-item header">Apps</li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://play.google.com/store/apps/details?id=org.bulbagarden.alpha&hl=en&gl=US"
+                                       target="_blank" rel="noopener" class="bg-global-nav-secondary-link">Android</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://apps.apple.com/us/app/bulbapedia-wiki-for-pok%C3%A9mon/id1242159382"
+                                       target="_blank" rel="noopener"
+                                       class="bg-global-nav-secondary-link">iOS</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="bg-global-nav-primary utilities">
+                <li class="bg-global-nav-primary-item bg-global-nav-primary-haschildren">
+                    <a href="#bulbapedia" class="bg-global-nav-primary-link bg-global-nav-primary-toggle">Editors</a>
+                    <ul class="bg-global-nav-primary-children">
+                        <li class="bg-global-nav-secondary">
+                            <ul>
+                                <li class="bg-global-nav-secondary-item header">Bulbapedia</li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:Getting_started"
+                                       class="bg-global-nav-secondary-link">Getting Started</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:Bulletin_Board"
+                                       class="bg-global-nav-secondary-link">Bulletin Board</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://www.mediawiki.org/wiki/Help:Contents"
+                                       class="bg-global-nav-secondary-link">Help</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Bulbapedia:FAQ"
+                                       class="bg-global-nav-secondary-link">FAQ</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbagarden.net/forums/bulbawiki-forum.195/"
+                                       class="bg-global-nav-secondary-link">Bulbawiki forum</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Special:RecentChanges"
+                                       class="bg-global-nav-secondary-link">Recent changes</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Special:Random"
+                                       class="bg-global-nav-secondary-link">Random Page</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Special:SpecialPages"
+                                       class="bg-global-nav-secondary-link">Special pages</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="bg-global-nav-secondary">
+                            <ul>
+                                <li class="bg-global-nav-secondary-item header">Archives</li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://archives.bulbagarden.net/wiki/Main_Page"
+                                       class="bg-global-nav-secondary-link">Main Page</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://archives.bulbagarden.net/wiki/Archives:FAQ"
+                                       class="bg-global-nav-secondary-link">FAQ</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://archives.bulbagarden.net/wiki/Archives:To-do_list"
+                                       class="bg-global-nav-secondary-link">To-do list</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://archives.bulbagarden.net/wiki/Special:Upload"
+                                       class="bg-global-nav-secondary-link">Upload file</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://archives.bulbagarden.net/wiki/Special:RecentChanges"
+                                       class="bg-global-nav-secondary-link">Recent Changes</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://archives.bulbagarden.net/wiki/Special:Log/upload"
+                                       class="bg-global-nav-secondary-link">Recent Uploads</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://archives.bulbagarden.net/wiki/Special:Random/File"
+                                       class="bg-global-nav-secondary-link">Random File</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="bg-global-nav-primary-item bg-global-nav-primary-haschildren">
+                    <a href="#account"
+                       class="bg-global-nav-primary-link bg-global-nav-primary-toggle">Account</a>
+                    <ul class="bg-global-nav-primary-children">
+                        <li class="bg-global-nav-secondary row">
+                            <ul>
+                                <li class="bg-global-nav-secondary-item bulbapedia">
+                                    <a href="https://bulbapedia.bulbagarden.net/w/index.php?title=Special:UserLogin&returnto=Main+Page"
+                                       class="bg-global-nav-secondary-link">Bulbapedia login</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item forums">
+                                    <a href="https://bulbagarden.net/forums/index.php?login/"
+                                       class="bg-global-nav-secondary-link">Forum login</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="bg-global-nav-secondary">
+                            <ul>
+                                <li class="bg-global-nav-secondary-item header">New Accounts</li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbapedia.bulbagarden.net/wiki/Special:CreateAccount"
+                                       class="bg-global-nav-secondary-link">Create Bulbapedia Account</a>
+                                </li>
+                                <li class="bg-global-nav-secondary-item">
+                                    <a href="https://bulbagarden.net/forums/index.php?register/"
+                                       class="bg-global-nav-secondary-link">Create Forum Account</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="bgMenuToggle" class="bg-global-nav-primary-link menu">Menu</div>
+        <div class="bg-global-nav-search-wrapper">
+            <form action="/w/index.php" id="searchform">
+                <input type="hidden" name="title" value="Special:Search">
+                <input type="search" name="search" placeholder="Search Bulbapedia"
+                       title="Search Bulbapedia [alt-shift-f]" accesskey="f" id="searchInput"
+                       class="bg-global-nav-search-input" autocomplete="off">
+                <input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists"
+                       id="searchGoButton" class="searchButton" style="display: none;">
+                <input type="submit" name="fulltext" value="Search" title="Search the pages for this text"
+                       id="mw-searchButton" class="searchButton" style="display: none;">
+            </form>
+        </div>
+    </div>
+
+	<div id="column-content">
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div id="siteNotice"><div id="mw-dismissablenotice-anonplace"></div><script>(function(){var node=document.getElementById("mw-dismissablenotice-anonplace");if(node){node.outerHTML="\u003Cdiv id=\"localNotice\" data-nosnippet=\"\"\u003E\u003Cdiv class=\"sitenotice\" lang=\"en\" dir=\"ltr\"\u003E\u003Cdiv class=\"plainlinks\" style=\"padding:0px;\"\u003E\n\u003Cp\u003EOur friends at \u003Ca href=\"/wiki/Johto_Times\" title=\"Johto Times\"\u003EJohto Times\u003C/a\u003E are currently running a poll to determine \u003Cb\u003E\u003Ca rel=\"nofollow\" class=\"external text\" href=\"https://strawpoll.com/1MnwklXrkn7\"\u003Ethe fan-favorite core series Pokémon game!\u003C/a\u003E\u003C/b\u003E\u003Cbr /\u003E\n\u003C/p\u003E\nPlease remember to follow the \u003Ca href=\"/wiki/Bulbapedia:Unreleased_materials_policy\" title=\"Bulbapedia:Unreleased materials policy\"\u003Eunreleased materials policy\u003C/a\u003E, \u003Ca href=\"/wiki/Bulbapedia:Manual_of_style\" title=\"Bulbapedia:Manual of style\"\u003Emanual of style\u003C/a\u003E, and \u003Ca href=\"/wiki/Bulbapedia:Code_of_conduct\" title=\"Bulbapedia:Code of conduct\"\u003Ecode of conduct\u003C/a\u003E at all times.\u003Cbr /\u003ECheck the \u003Ca rel=\"nofollow\" class=\"external text\" href=\"https://bulbagarden.net/\"\u003EBulbagarden home page\u003C/a\u003E for up-to-date Pokémon news, and discuss it on the \u003Ca rel=\"nofollow\" class=\"external text\" href=\"https://bulbagarden.net/forums/\"\u003Eforums\u003C/a\u003E or in the \u003Ca rel=\"nofollow\" class=\"external text\" href=\"https://discord.gg/bulbagarden\"\u003EBulbagarden Discord server\u003C/a\u003E.\u003C/div\u003E\u003C/div\u003E\u003C/div\u003E";}}());</script></div>
+			<div class="mw-indicators">
+			</div>
+			<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">Rusted Shield</span></h1>
+			<div id="bodyContent" class="bulbapediamonobook-body">
+				<div id="siteSub">From Bulbapedia, the community-driven Pokémon encyclopedia.</div>
+				<div id="contentSub" ><div id="mw-content-subtitle"></div></div>
+				
+				<div id="jump-to-nav"></div><a href="#column-one" class="mw-jump-link">Jump to navigation</a><a href="#searchInput" class="mw-jump-link">Jump to search</a>
+				<!-- start content -->
+				<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="en" dir="ltr"><table class="roundy infobox" style="float:right; border: 3px solid #82445E; background: #D89DB7; width: 500px; margin-left: 5px; margin-bottom: 5px">
+
+<tbody><tr>
+<td>
+<table class="roundy" width="100%">
+
+<tbody><tr style="text-align:center">
+<td width="30px">
+</td>
+<td><big><big><b>Rusted Shield</b></big></big><br /><span lang="ja"><b>くちたたて</b></span><br /><i>Rusted Shield</i> 
+</td>
+<td style="width:30px">
+<table style="border-radius: 24px; -moz-border-radius: 24px; -webkit-border-radius: 24px; -khtml-border-radius: 24px; -icab-border-radius: 24px; -o-border-radius: 24px;; background: #D89DB7; border: 1px solid #82445E; float:right;">
+<tbody><tr>
+<td style="border-radius: 24px; -moz-border-radius: 24px; -webkit-border-radius: 24px; -khtml-border-radius: 24px; -icab-border-radius: 24px; -o-border-radius: 24px;"><span typeof="mw:File"><a href="/wiki/File:Bag_Rusted_Shield_Sprite.png" class="mw-file-description"><img src="https://archives.bulbagarden.net/media/upload/thumb/8/88/Bag_Rusted_Shield_Sprite.png/24px-Bag_Rusted_Shield_Sprite.png" decoding="async" loading="lazy" width="24" height="24" class="mw-file-element" srcset="https://archives.bulbagarden.net/media/upload/8/88/Bag_Rusted_Shield_Sprite.png 1.5x" data-file-width="32" data-file-height="32" /></a></span>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td>
+<table class="roundy" width="100%" style="border: 3px solid #82445E; background: #FFF; text-align:center; margin:auto">
+
+<tbody><tr>
+<td><span typeof="mw:File"><a href="/wiki/File:Bag_Rusted_Shield_SV_Sprite.png" class="mw-file-description" title="Rusted Shield"><img alt="Rusted Shield" src="https://archives.bulbagarden.net/media/upload/thumb/8/80/Bag_Rusted_Shield_SV_Sprite.png/150px-Bag_Rusted_Shield_SV_Sprite.png" decoding="async" loading="lazy" width="150" height="150" class="mw-file-element" srcset="https://archives.bulbagarden.net/media/upload/8/80/Bag_Rusted_Shield_SV_Sprite.png 1.5x" data-file-width="160" data-file-height="160" /></a></span>
+</td></tr>
+<tr>
+<td><small>Pokémon Scarlet and Violet artwork</small>
+</td></tr></tbody></table>
+</td></tr>
+<tr>
+<td>
+<table style="background: #82445E" width="100%" class="roundytop">
+<tbody><tr>
+<td class="roundy" style="text-align:center; background: #D89DB7">Introduced in Generation VIII
+</td></tr></tbody></table>
+<table style="background: #82445E" width="100%" class="roundybottom">
+<tbody><tr>
+<th colspan="3" class="roundytop" style="background: #D89DB7">Pocket
+</th></tr>
+<tr>
+<th style="background: #D89DB7" width="50%" class="blacklinks">Generation VIII
+</th>
+<td style="background: #fff; white-space:nowrap" width="50%"><span typeof="mw:File"><a href="/wiki/File:Bag_Other_Items_SwSh_pocket_icon.png" class="mw-file-description"><img src="https://archives.bulbagarden.net/media/upload/thumb/1/1e/Bag_Other_Items_SwSh_pocket_icon.png/24px-Bag_Other_Items_SwSh_pocket_icon.png" decoding="async" loading="lazy" width="24" height="24" class="mw-file-element" srcset="https://archives.bulbagarden.net/media/upload/thumb/1/1e/Bag_Other_Items_SwSh_pocket_icon.png/36px-Bag_Other_Items_SwSh_pocket_icon.png 1.5x, https://archives.bulbagarden.net/media/upload/thumb/1/1e/Bag_Other_Items_SwSh_pocket_icon.png/48px-Bag_Other_Items_SwSh_pocket_icon.png 2x" data-file-width="100" data-file-height="100" /></a></span> Other Items
+</td></tr>
+<tr>
+<th style="background: #D89DB7" width="50%" class="roundybl">Generation IX
+</th>
+<td style="background: #fff; white-space:nowrap" width="50%" class="roundybr"><span typeof="mw:File"><a href="/wiki/File:Bag_Other_Items_SwSh_pocket_icon.png" class="mw-file-description"><img src="https://archives.bulbagarden.net/media/upload/thumb/1/1e/Bag_Other_Items_SwSh_pocket_icon.png/24px-Bag_Other_Items_SwSh_pocket_icon.png" decoding="async" loading="lazy" width="24" height="24" class="mw-file-element" srcset="https://archives.bulbagarden.net/media/upload/thumb/1/1e/Bag_Other_Items_SwSh_pocket_icon.png/36px-Bag_Other_Items_SwSh_pocket_icon.png 1.5x, https://archives.bulbagarden.net/media/upload/thumb/1/1e/Bag_Other_Items_SwSh_pocket_icon.png/48px-Bag_Other_Items_SwSh_pocket_icon.png 2x" data-file-width="100" data-file-height="100" /></a></span> Other Items
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<p>The <b>Rusted Shield</b> (Japanese: <b>くちたたて</b> <i>Rusted Shield</i>) is a <a href="/wiki/Held_item" title="Held item">held item</a> introduced in <a href="/wiki/Generation_VIII" title="Generation VIII">Generation VIII</a>. It is a <a href="/wiki/Category:Legendary_artifacts" title="Category:Legendary artifacts">legendary artifact</a> associated with <a href="/wiki/Zamazenta_(Pok%C3%A9mon)" title="Zamazenta (Pokémon)">Zamazenta</a>.
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#In_the_core_series_games"><span class="tocnumber">1</span> <span class="toctext">In the core series games</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Price"><span class="tocnumber">1.1</span> <span class="toctext">Price</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Effect"><span class="tocnumber">1.2</span> <span class="toctext">Effect</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Description"><span class="tocnumber">1.3</span> <span class="toctext">Description</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Acquisition"><span class="tocnumber">1.4</span> <span class="toctext">Acquisition</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Distribution"><span class="tocnumber">1.4.1</span> <span class="toctext">Distribution</span></a>
+<ul>
+<li class="toclevel-4 tocsection-7"><a href="#As_a_held_item"><span class="tocnumber">1.4.1.1</span> <span class="toctext">As a held item</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Gallery"><span class="tocnumber">2</span> <span class="toctext">Gallery</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Models"><span class="tocnumber">2.1</span> <span class="toctext">Models</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#In_animation"><span class="tocnumber">3</span> <span class="toctext">In animation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#Pokémon_the_Series"><span class="tocnumber">3.1</span> <span class="toctext"><i>Pokémon the Series</i></span></a>
+<ul>
+<li class="toclevel-3 tocsection-12"><a href="#Pokémon_Journeys:_The_Series"><span class="tocnumber">3.1.1</span> <span class="toctext"><i>Pokémon Journeys: The Series</i></span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="#Pokémon_Evolutions"><span class="tocnumber">3.2</span> <span class="toctext">Pokémon Evolutions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#In_the_manga"><span class="tocnumber">4</span> <span class="toctext">In the manga</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Pokémon_Adventures"><span class="tocnumber">4.1</span> <span class="toctext">Pokémon Adventures</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="#Sword_&amp;_Shield_arc"><span class="tocnumber">4.1.1</span> <span class="toctext"><i>Sword &amp; Shield</i> arc</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#In_the_TCG"><span class="tocnumber">5</span> <span class="toctext">In the TCG</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#Trivia"><span class="tocnumber">6</span> <span class="toctext">Trivia</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#In_other_languages"><span class="tocnumber">7</span> <span class="toctext">In other languages</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#Related_articles"><span class="tocnumber">8</span> <span class="toctext">Related articles</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="#External_links"><span class="tocnumber">9</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="In_the_core_series_games">In the core series games</span></h2>
+<div style="display: grid; grid-template-columns: 32px 1fr 32px; border: 1px solid #272727; background: #a0a0a0; margin: 3px auto; max-width: 550px; border-radius: 60px; -moz-border-radius: 60px; -webkit-border-radius: 60px; -khtml-border-radius: 60px; -icab-border-radius: 60px; -o-border-radius: 60px;">
+<div style="background: #525252; border-radius: 60px; -moz-border-radius: 60px; -webkit-border-radius: 60px; -khtml-border-radius: 60px; -icab-border-radius: 60px; -o-border-radius: 60px;"><span class="mw-default-size" typeof="mw:File"><a href="/wiki/File:Ani201ODEX.png" class="mw-file-description" title="201"><img alt="201" src="https://archives.bulbagarden.net/media/upload/c/c4/Ani201ODEX.png" decoding="async" loading="lazy" width="32" height="32" class="mw-file-element" data-file-width="32" data-file-height="32" /></a></span></div>
+<div style="place-self: center; padding: 0 10px 0 10px;"><b><a href="/wiki/Bulbapedia:Spoilers" title="Bulbapedia:Spoilers"><span style="color: #272727">Spoiler warning:</span></a></b> this article may contain major plot or ending details.</div>
+<div style="background: #525252; border-radius: 60px; -moz-border-radius: 60px; -webkit-border-radius: 60px; -khtml-border-radius: 60px; -icab-border-radius: 60px; -o-border-radius: 60px;"><span class="mw-default-size" typeof="mw:File"><a href="/wiki/File:Ani201ODEX.png" class="mw-file-description" title="201"><img alt="201" src="https://archives.bulbagarden.net/media/upload/c/c4/Ani201ODEX.png" decoding="async" loading="lazy" width="32" height="32" class="mw-file-element" data-file-width="32" data-file-height="32" /></a></span></div>
+</div>
+<p>During the climax of <a href="/wiki/Pok%C3%A9mon_Sword_and_Shield" title="Pokémon Sword and Shield">Pokémon Shield</a>, the <a href="/wiki/Player_character" title="Player character">player</a>'s Rusted Shield, along with <a href="/wiki/Hop" title="Hop">Hop</a>'s <a href="/wiki/Rusted_Sword" title="Rusted Sword">Rusted Sword</a>, summons <a href="/wiki/Zamazenta_(Pok%C3%A9mon)" title="Zamazenta (Pokémon)">Zamazenta</a> and <a href="/wiki/Zacian_(Pok%C3%A9mon)" title="Zacian (Pokémon)">Zacian</a> to help the two <a href="/wiki/Pok%C3%A9mon_Trainer" title="Pokémon Trainer">Trainers</a> to battle against Eternamax <a href="/wiki/Eternatus_(Pok%C3%A9mon)" title="Eternatus (Pokémon)">Eternatus</a> at the <a href="/wiki/Tower_summit" title="Tower summit">tower summit</a>. The Rusted Shield temporarily becomes Zamazenta's <a href="/wiki/Held_item" title="Held item">held item</a> for the duration of this battle. During the post-game, the player returns the Rusted Shield to <a href="/wiki/Slumbering_Weald" title="Slumbering Weald">Slumbering Weald</a>. It is soon after temporarily stolen by <a href="/wiki/Shielbert" title="Shielbert">Shielbert</a>, before the player defeats him in a battle and retrieves the stolen item. Before the player battles Zamazenta at the tower summit in order to <a href="/wiki/Caught_Pok%C3%A9mon" title="Caught Pokémon">catch</a> it, they give the Rusted Shield to it as its held item.
+</p><p>In <a href="/wiki/Pok%C3%A9mon_Sword_and_Shield" title="Pokémon Sword and Shield">Pokémon Sword</a>, the Rusted Shield is instead obtained by Hop. During the post-game, when he returns it to the altar at Slumbering Weald, it is stolen by Shielbert. Hop battles Shielbert, but is defeated, allowing him to get away with the item. Later, Shielbert uses the Rusted Shield to lure Zamazenta to the tower summit. After the player has battled Zamazenta, it flees, and Hop retrieves the Rusted Shield from Shielbert, before chasing after Zamazenta. After Hop has caught Zamazenta at Slumbering Weald, the Rusted Shield becomes its held item in the subsequent battles he participates in.
+</p>
+<table style="border: 1px solid #272727; background: #a0a0a0; margin-left: auto; margin-right: auto; border-radius: 60px; -moz-border-radius: 60px; -webkit-border-radius: 60px; -khtml-border-radius: 60px; -icab-border-radius: 60px; -o-border-radius: 60px;" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<th style="background: #525252; border-radius: 60px; -moz-border-radius: 60px; -webkit-border-radius: 60px; -khtml-border-radius: 60px; -icab-border-radius: 60px; -o-border-radius: 60px;"><span class="mw-default-size" typeof="mw:File"><a href="/wiki/File:Ani201ODEX.png" class="mw-file-description" title="201"><img alt="201" src="https://archives.bulbagarden.net/media/upload/c/c4/Ani201ODEX.png" decoding="async" loading="lazy" width="32" height="32" class="mw-file-element" data-file-width="32" data-file-height="32" /></a></span>
+</th>
+<th style="padding: 0 10px 0 10px;"><big><big>Spoilers end here.</big></big>
+</th>
+<th style="background: #525252; border-radius: 60px; -moz-border-radius: 60px; -webkit-border-radius: 60px; -khtml-border-radius: 60px; -icab-border-radius: 60px; -o-border-radius: 60px;"><span class="mw-default-size" typeof="mw:File"><a href="/wiki/File:Ani201ODEX.png" class="mw-file-description" title="201"><img alt="201" src="https://archives.bulbagarden.net/media/upload/c/c4/Ani201ODEX.png" decoding="async" loading="lazy" width="32" height="32" class="mw-file-element" data-file-width="32" data-file-height="32" /></a></span>
+</th></tr></tbody></table>
+<h3><span class="mw-headline" id="Price">Price</span></h3>
+<table style="background:#D89DB7; border:5px solid #C86890" class="roundy">
+
+<tbody><tr>
+<td>
+<table border="1" style="background:#FFF; border:1px solid #D89DB7; border-collapse:collapse">
+
+<tbody><tr>
+<th style="padding-left: 3px; padding-right: 3px">Games
+</th>
+<th style="padding-left: 3px; padding-right: 3px">Cost
+</th>
+<th style="padding-left: 3px; padding-right: 3px">Sell&#160;price
+</th></tr>
+<tr>
+<td><b><a href="/wiki/Pok%C3%A9mon_Sword_and_Shield" title="Pokémon Sword and Shield"><span style="color:#00A1E9;">Sw</span><span style="color:#BF004F;">Sh</span></a></b><br /><b><a href="/wiki/Pok%C3%A9mon_Scarlet_and_Violet" title="Pokémon Scarlet and Violet"><span style="color:#F34134;">S</span><span style="color:#8334B7;">V</span></a></b></td>
+<td>N/A</td>
+<td>N/A
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Effect">Effect</span></h3>
+<p>When a <a href="/wiki/Zamazenta_(Pok%C3%A9mon)" title="Zamazenta (Pokémon)">Zamazenta</a> is holding this item in battle, it transforms into its <a href="/wiki/List_of_Pok%C3%A9mon_with_form_differences#Zacian_and_Zamazenta" title="List of Pokémon with form differences">Crowned Shield form</a>. In-battle, it also changes Zamazenta's <a href="/wiki/Iron_Head_(move)" title="Iron Head (move)">Iron Head</a> into <a href="/wiki/Behemoth_Bash_(move)" title="Behemoth Bash (move)">Behemoth Bash</a>.
+</p>
+<h3><span class="mw-headline" id="Description">Description</span></h3>
+<table width="60%" style="background: #D89DB7; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -khtml-border-radius: 10px; -icab-border-radius: 10px; -o-border-radius: 10px;; border: 5px solid #C86890;">
+
+<tbody><tr>
+<td>
+<table border="1" width="100%" style="background: #FFFFFF; border:1px solid #D89DB7; border-collapse:collapse;">
+
+<tbody><tr>
+<th>Games
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td><b><a href="/wiki/Pok%C3%A9mon_Sword_and_Shield" title="Pokémon Sword and Shield"><span style="color:#00A1E9;">Sw</span><span style="color:#BF004F;">Sh</span></a><a href="/wiki/Pok%C3%A9mon_Brilliant_Diamond_and_Shining_Pearl" title="Pokémon Brilliant Diamond and Shining Pearl"><span style="color:#44BAE5;">BD</span><span style="color:#DA7D99;">SP</span></a><a href="/wiki/Pok%C3%A9mon_Legends:_Arceus" title="Pokémon Legends: Arceus"><span style="color:#36597B;">LA</span></a></b><br /><b><a href="/wiki/Pok%C3%A9mon_Scarlet_and_Violet" title="Pokémon Scarlet and Violet"><span style="color:#F34134;">S</span><span style="color:#8334B7;">V</span></a></b>
+</td>
+<td>It is said that a <a href="/wiki/Zamazenta_(Pok%C3%A9mon)" title="Zamazenta (Pokémon)">hero</a> used this shield to halt a <a href="/wiki/Darkest_Day" title="Darkest Day">terrible disaster</a> in ancient times. But it's grown rusty and worn.
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Acquisition">Acquisition</span></h3>
+<table style="background:#D89DB7; border:5px solid #C86890; width:100%" class="roundy">
+
+<tbody><tr>
+<td>
+<table border="1" style="background:#FFF; border:1px solid #D89DB7; border-collapse:collapse">
+
+<tbody><tr>
+<th>Games
+</th>
+<th width="50%">Finite&#160;methods
+</th>
+<th width="50%">Repeatable&#160;methods
+</th></tr>
+<tr>
+<td><b><a href="/wiki/Pok%C3%A9mon_Sword_and_Shield" title="Pokémon Sword and Shield"><span style="color:#00A1E9;">Sw</span></a></b>
+</td>
+<td><a href="#Distribution">Event</a>
+</td>
+<td><i><a href="/wiki/Trade" title="Trade">Trade</a></i>
+</td></tr>
+<tr>
+<td><b><a href="/wiki/Pok%C3%A9mon_Sword_and_Shield" title="Pokémon Sword and Shield"><span style="color:#BF004F;">Sh</span></a></b>
+</td>
+<td>Held by <a href="/wiki/List_of_Pok%C3%A9mon_by_wild_held_item#Zamazenta" title="List of Pokémon by wild held item">wild</a> <a href="/wiki/Zamazenta_(Pok%C3%A9mon)" title="Zamazenta (Pokémon)">Zamazenta</a> (100% chance)
+</td>
+<td>
+</td></tr>
+<tr>
+<td><b><a href="/wiki/Pok%C3%A9mon_Scarlet_and_Violet" title="Pokémon Scarlet and Violet"><span style="color:#F34134;">S</span><span style="color:#8334B7;">V</span></a></b>
+</td>
+<td><a href="/wiki/Porto_Marinada_Market" title="Porto Marinada Market">Porto Marinada auction</a> (if the player owns a <a href="/wiki/Zamazenta_(Pok%C3%A9mon)" title="Zamazenta (Pokémon)">Zamazenta</a>)
+</td>
+<td>
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<h4><span class="mw-headline" id="Distribution">Distribution</span></h4>
+<h5><span class="mw-headline" id="As_a_held_item">As a <a href="/wiki/Held_item" title="Held item">held item</a></span></h5>
+<table class="roundy" style="background: #D89DB7; border: 5px solid #C86890">
+
+<tbody><tr>
+<td>
+<table border="1" style="background:#FFF; border:1px solid #D89DB7; border-collapse:collapse">
+
+<tbody><tr>
+<th style="background:#FFF; border-top-left-radius: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; -khtml-border-top-left-radius: 5px; -icab-border-top-left-radius: 5px; -o-border-top-left-radius: 5px;">Games
+</th>
+<th style="background:#FFF">Event
+</th>
+<th style="background:#FFF">Language/Region
+</th>
+<th style="background:#FFF; border-top-right-radius: 5px; -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; -khtml-border-top-right-radius: 5px; -icab-border-top-right-radius: 5px; -o-border-top-right-radius: 5px;">Distribution period
+</th></tr>
+<tr style="background:#FFF;">
+<td><b><a href="/wiki/Pok%C3%A9mon_Sword_and_Shield" title="Pokémon Sword and Shield"><span style="color:#00A1E9;">Sw</span></a></b>
+</td>
+<td><a href="/wiki/List_of_event_Pok%C3%A9mon_distributions_in_Pok%C3%A9mon_Sword_and_Shield#Arthur&#39;s_Shiny_Zamazenta" title="List of event Pokémon distributions in Pokémon Sword and Shield">Arthur's Shiny Zamazenta</a>
+</td>
+<td>American, European, Asian, Australian
+</td>
+<td>Various
+</td></tr>
+<tr style="background:#FFF;">
+<td><b><a href="/wiki/Pok%C3%A9mon_Sword_and_Shield" title="Pokémon Sword and Shield"><span style="color:#00A1E9;">Sw</span><span style="color:#BF004F;">Sh</span></a></b>
+</td>
+<td><a href="/wiki/List_of_event_Pok%C3%A9mon_distributions_in_Pok%C3%A9mon_Sword_and_Shield#Arthur&#39;s_Shiny_Zamazenta" title="List of event Pokémon distributions in Pokémon Sword and Shield">Arthur's Shiny Zamazenta</a>
+</td>
+<td>South Korea
+</td>
+<td>November 19 to December 31, 2021
+</td></tr></tbody></table>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Gallery">Gallery</span></h2>
+<h3><span class="mw-headline" id="Models">Models</span></h3>
+<table style="margin:auto; text-align:center; border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; border: 2px solid #82445E; background: #C86890; font-size:80%">
+
+<tbody><tr>
+<td style="border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; -icab-border-radius: 20px; -o-border-radius: 20px; border: 2px solid #82445E; background: #D89DB7; width:96px; height:96px"><span typeof="mw:File"><a href="/wiki/File:Rusted_Shield_SwSh.png" class="mw-file-description"><img src="https://archives.bulbagarden.net/media/upload/thumb/8/84/Rusted_Shield_SwSh.png/150px-Rusted_Shield_SwSh.png" decoding="async" loading="lazy" width="150" height="150" class="mw-file-element" srcset="https://archives.bulbagarden.net/media/upload/thumb/8/84/Rusted_Shield_SwSh.png/225px-Rusted_Shield_SwSh.png 1.5x, https://archives.bulbagarden.net/media/upload/thumb/8/84/Rusted_Shield_SwSh.png/300px-Rusted_Shield_SwSh.png 2x" data-file-width="712" data-file-height="712" /></a></span>
+</td></tr>
+<tr>
+<td>Model from<br /><a href="/wiki/Pok%C3%A9mon_Sword_and_Shield" title="Pokémon Sword and Shield"><span style="color:#000;">Sword and Shield</span></a>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="In_animation">In animation</span></h2>
+<figure typeof="mw:File/Thumb"><a href="/wiki/File:Rusted_Shield_anime.png" class="mw-file-description"><img src="https://archives.bulbagarden.net/media/upload/thumb/9/97/Rusted_Shield_anime.png/250px-Rusted_Shield_anime.png" decoding="async" loading="lazy" width="250" height="141" class="mw-file-element" srcset="https://archives.bulbagarden.net/media/upload/thumb/9/97/Rusted_Shield_anime.png/375px-Rusted_Shield_anime.png 1.5x, https://archives.bulbagarden.net/media/upload/thumb/9/97/Rusted_Shield_anime.png/500px-Rusted_Shield_anime.png 2x" data-file-width="1280" data-file-height="720" /></a><figcaption>The Rusted Shield in <a href="/wiki/Pok%C3%A9mon_Journeys:_The_Series" title="Pokémon Journeys: The Series"><i>Pokémon Journeys: The Series</i></a></figcaption></figure>
+<h3><span id="Pok.C3.A9mon_the_Series"></span><span class="mw-headline" id="Pokémon_the_Series"><i>Pokémon the Series</i></span></h3>
+<h4><span id="Pok.C3.A9mon_Journeys:_The_Series"></span><span class="mw-headline" id="Pokémon_Journeys:_The_Series"><a href="/wiki/Pok%C3%A9mon_Journeys:_The_Series" title="Pokémon Journeys: The Series"><i>Pokémon Journeys: The Series</i></a></span></h4>
+<p>In <i><a href="/wiki/JN044" title="JN044">Sword and Shield: "From Here to Eternatus!"</a></i>, <a href="/wiki/Goh" title="Goh">Goh</a> and <a href="/wiki/Sonia" title="Sonia">Sonia</a> found the Rusted Shield at the altar in the <a href="/wiki/Slumbering_Weald" title="Slumbering Weald">Slumbering Weald</a> after requesting the help of <a href="/wiki/Zacian_(Pok%C3%A9mon)" title="Zacian (Pokémon)">Zacian</a> and <a href="/wiki/Zamazenta_(Pok%C3%A9mon)" title="Zamazenta (Pokémon)">Zamazenta</a> in dealing with the <a href="/wiki/Darkest_Day" title="Darkest Day">Darkest Day</a>. Goh collected it and the <a href="/wiki/Rusted_Sword" title="Rusted Sword">Rusted Sword</a> and took both items with him. In <i><a href="/wiki/JN045" title="JN045">Sword and Shield... The Legends Awaken!</a></i>, the Rusted Shield called forth Zamazenta to the <a href="/wiki/Tower_summit" title="Tower summit">tower summit</a>, who grabbed the Shield in its mouth, allowing it to transform into its <a href="/wiki/List_of_Pok%C3%A9mon_with_form_differences#Zacian_and_Zamazenta" title="List of Pokémon with form differences">Crowned Shield</a> form. After Goh caught <a href="/wiki/Goh%27s_Eternatus" class="mw-redirect" title="Goh&#39;s Eternatus">Eternatus</a>, Zamazenta left its Shield behind. <a href="/wiki/Ash_Ketchum" title="Ash Ketchum">Ash</a> and Goh were later seen returning the Rusted Sword and Shield where they once rested.
+</p>
+<div style="clear:both;"></div>
+<h3><span id="Pok.C3.A9mon_Evolutions"></span><span class="mw-headline" id="Pokémon_Evolutions">Pokémon Evolutions</span></h3>
+<figure typeof="mw:File/Thumb"><a href="/wiki/File:Rusted_Sword_Shield_Evolutions.png" class="mw-file-description"><img src="https://archives.bulbagarden.net/media/upload/thumb/4/4e/Rusted_Sword_Shield_Evolutions.png/250px-Rusted_Sword_Shield_Evolutions.png" decoding="async" loading="lazy" width="250" height="106" class="mw-file-element" srcset="https://archives.bulbagarden.net/media/upload/thumb/4/4e/Rusted_Sword_Shield_Evolutions.png/375px-Rusted_Sword_Shield_Evolutions.png 1.5x, https://archives.bulbagarden.net/media/upload/thumb/4/4e/Rusted_Sword_Shield_Evolutions.png/500px-Rusted_Sword_Shield_Evolutions.png 2x" data-file-width="1280" data-file-height="542" /></a><figcaption>The Rusted Shield in <a href="/wiki/Pok%C3%A9mon_Evolutions" title="Pokémon Evolutions">Pokémon Evolutions</a></figcaption></figure>
+<p>The Rusted Shield appeared in a flashback in <i><a href="/wiki/PE01" title="PE01">The Champion</a></i>, under the possession of <a href="/wiki/Hop" title="Hop">Hop</a>. When he held it up during his and <a href="/wiki/Victor_(game)" title="Victor (game)">Victor</a>'s battle against <a href="/wiki/Eternatus_(Pok%C3%A9mon)" title="Eternatus (Pokémon)">Eternatus</a> at the <a href="/wiki/Tower_summit" title="Tower summit">tower summit</a>, it summoned <a href="/wiki/Zamazenta_(Pok%C3%A9mon)" title="Zamazenta (Pokémon)">Zamazenta</a> to their aid and allowed it to transform into its <a href="/wiki/List_of_Pok%C3%A9mon_with_form_differences#Zacian_and_Zamazenta" title="List of Pokémon with form differences">Crowned Shield</a> form.
+</p>
+<div style="clear:both;"></div>
+<h2><span class="mw-headline" id="In_the_manga">In the manga</span></h2>
+<figure typeof="mw:File/Thumb"><a href="/wiki/File:Rusted_Sword_Shield_Adventures.png" class="mw-file-description"><img src="https://archives.bulbagarden.net/media/upload/thumb/2/2d/Rusted_Sword_Shield_Adventures.png/200px-Rusted_Sword_Shield_Adventures.png" decoding="async" loading="lazy" width="200" height="186" class="mw-file-element" srcset="https://archives.bulbagarden.net/media/upload/thumb/2/2d/Rusted_Sword_Shield_Adventures.png/300px-Rusted_Sword_Shield_Adventures.png 1.5x, https://archives.bulbagarden.net/media/upload/thumb/2/2d/Rusted_Sword_Shield_Adventures.png/400px-Rusted_Sword_Shield_Adventures.png 2x" data-file-width="409" data-file-height="380" /></a><figcaption>The Rusted Shield in <a href="/wiki/Pok%C3%A9mon_Adventures" title="Pokémon Adventures">Pokémon Adventures</a></figcaption></figure>
+<h3><span id="Pok.C3.A9mon_Adventures"></span><span class="mw-headline" id="Pokémon_Adventures">Pokémon Adventures</span></h3>
+<h4><span id="Sword_.26_Shield_arc"></span><span class="mw-headline" id="Sword_&amp;_Shield_arc"><a href="/wiki/Sword_%26_Shield_arc_(Adventures)" title="Sword &amp; Shield arc (Adventures)"><i>Sword &amp; Shield</i> arc</a></span></h4>
+<p>The Rusted Shield first appeared in a flashback in <i><a href="/wiki/PASS05" title="PASS05">Ooh Shiny!! Legendary Equipment</a></i>, along with the Rusted Sword. One year earlier, <a href="/wiki/Henry_Sword" title="Henry Sword">Henry</a>, accompanied by <a href="/wiki/Casey_Shield" title="Casey Shield">Casey</a>, entered <a href="/wiki/Slumbering_Weald" title="Slumbering Weald">Slumbering Weald</a> in order to see the two legendary artifacts. After confronting illusions of <a href="/wiki/Zacian_(Pok%C3%A9mon)" title="Zacian (Pokémon)">Zacian</a> and <a href="/wiki/Zamazenta_(Pok%C3%A9mon)" title="Zamazenta (Pokémon)">Zamazenta</a> at the altar at the end of the forest and convincing them they weren't trying to steal anything, the two <a href="/wiki/Pok%C3%A9mon_Trainer" title="Pokémon Trainer">Trainers</a> approached the two artifacts on the altar, but were then knocked out by a bright burst of light. When they recovered, the artifacts were gone.
+</p><p>In <i><a href="/wiki/PASS20" title="PASS20">Cracking!! Brilliant Tap-Dancing</a></i>, it was revealed that the artifacts had been stolen by <a href="/wiki/Sordward" title="Sordward">Sordward</a> and <a href="/wiki/Shielbert" title="Shielbert">Shielbert</a>. In <i><a href="/wiki/PASS26" title="PASS26">Cracked!! The Rusted Sword and Shield</a></i>, they used the artifacts to "prove" themselves as descendants of Galar's ancient heroes. When the two brothers took on <a href="/wiki/Eternatus_(Pok%C3%A9mon)" title="Eternatus (Pokémon)">Eternatus</a> at the <a href="/wiki/Tower_summit" title="Tower summit">tower summit</a>, they took out the artifacts, but nothing happened, and the items were sent flying to the moat surrounding the <a href="/wiki/Hammerlocke_Stadium" title="Hammerlocke Stadium">Hammerlocke Stadium</a>, from which they were recovered by Casey's <a href="/wiki/Falinks_(Pok%C3%A9mon)" title="Falinks (Pokémon)">Falinks</a> and <a href="/wiki/Stunfisk_(Pok%C3%A9mon)" title="Stunfisk (Pokémon)">Stunfisk</a> and taken to her, who gave them to Henry to clean and repair. However, to his horror, Henry soon realized that he could not forge and repair the artifacts. In <i><a href="/wiki/PASS30" title="PASS30">Oh My!! The Disappearance of Henry</a></i>, the artifacts, along with Henry, disappeared as Zacian and Zamazenta attacked Eternatus, getting <a href="/wiki/Teleport_(move)" title="Teleport (move)">teleported</a> away by an unseen Pokémon. Casey later discovered that the artifacts had wound up in two different places: the <a href="/wiki/Isle_of_Armor" title="Isle of Armor">Isle of Armor</a> and the <a href="/wiki/Crown_Tundra" title="Crown Tundra">Crown Tundra</a>.
+</p><p>In <i><a href="/wiki/PASS37" title="PASS37">Crackle!! Retrieve the Sword &amp; Shield</a></i>, the Rusted Shield was revealed to have been found by <a href="/wiki/Galarian_form" title="Galarian form">Galarian</a> <a href="/wiki/Moltres_(Pok%C3%A9mon)" title="Moltres (Pokémon)">Moltres</a> and hidden at <a href="/wiki/Loop_Lagoon" title="Loop Lagoon">Loop Lagoon</a>. Henry was able to reclaim the artifact from Moltres shortly before it grabbed him and took him to the Crown Tundra, where he later successfully purified it of Eternatus's poison. In <i><a href="/wiki/PASS41" title="PASS41">Shing!! Final Form</a></i>, Zamazenta used the shield to transform to its <a href="/wiki/List_of_Pok%C3%A9mon_with_form_differences#Zacian_and_Zamazenta" title="List of Pokémon with form differences">Crowned Shield</a> form.
+</p>
+<div style="clear:both;"></div>
+<h2><span class="mw-headline" id="In_the_TCG">In the TCG</span></h2>
+<figure typeof="mw:File/Thumb"><a href="/wiki/File:RustedShieldShiningFates61.jpg" class="mw-file-description"><img src="https://archives.bulbagarden.net/media/upload/thumb/c/c7/RustedShieldShiningFates61.jpg/200px-RustedShieldShiningFates61.jpg" decoding="async" loading="lazy" width="200" height="279" class="mw-file-element" srcset="https://archives.bulbagarden.net/media/upload/thumb/c/c7/RustedShieldShiningFates61.jpg/300px-RustedShieldShiningFates61.jpg 1.5x, https://archives.bulbagarden.net/media/upload/thumb/c/c7/RustedShieldShiningFates61.jpg/400px-RustedShieldShiningFates61.jpg 2x" data-file-width="660" data-file-height="920" /></a><figcaption>The Rusted Shield in the TCG</figcaption></figure>
+<dl><dd><i>Main article: <a href="/wiki/Rusted_Shield_(Shining_Fates_61)" title="Rusted Shield (Shining Fates 61)">Rusted Shield (Shining Fates 61)</a></i></dd></dl>
+<p>The <b>Rusted Shield</b> was introduced as a <a href="/wiki/Pok%C3%A9mon_Tool_card_(TCG)" title="Pokémon Tool card (TCG)">Pokémon Tool card</a> in the <a href="/wiki/Pok%C3%A9mon_Trading_Card_Game" title="Pokémon Trading Card Game">Pokémon Trading Card Game</a> during the English Sword &amp; Shield Series (the Japanese Sword &amp; Shield Era). It was first released in the Japanese <a href="/wiki/Shiny_Star_V_(TCG)" class="mw-redirect" title="Shiny Star V (TCG)">Shiny Star V</a> expansion before debuting in English in the <a href="/wiki/Shining_Fates_(TCG)" title="Shining Fates (TCG)">Shining Fates</a> expansion, with artwork by <a href="/wiki/5ban_Graphics" title="5ban Graphics">5ban Graphics</a>. It allows <a href="/wiki/Zamazenta_(TCG)#Zamazenta_V" title="Zamazenta (TCG)">Zamazenta V</a> to gain 70 HP.
+</p>
+<div style="clear:both;"></div>
+<h2><span class="mw-headline" id="Trivia">Trivia</span></h2>
+<ul><li>While the <a href="/wiki/Player_character" title="Player character">player</a> seemingly obtains this item in <a href="/wiki/Slumbering_Weald" title="Slumbering Weald">Slumbering Weald</a> during the climax of <a href="/wiki/Pok%C3%A9mon_Sword_and_Shield" title="Pokémon Sword and Shield">Pokémon Shield</a>, this is not the case, as the game simply tells the player they obtained it without them actually obtaining anything.</li></ul>
+<h2><span class="mw-headline" id="In_other_languages">In other languages</span></h2>
+<table style="background: #D89DB7; border-radius: 1em; -moz-border-radius: 1em; -webkit-border-radius: 1em; -khtml-border-radius: 1em; -icab-border-radius: 1em; -o-border-radius: 1em; border: 3px solid #C86890;">
+<caption style="">
+</caption>
+<tbody><tr>
+<th colspan="2"><span style="color:#000;">Language</span>
+</th>
+<th><span style="color:#000;">Title</span>
+</th></tr>
+
+
+
+
+
+
+
+
+
+
+<tr style="background: #FFF">
+<td rowspan="2"><a href="/wiki/Pok%C3%A9mon_in_Chinese" class="mw-disambig" title="Pokémon in Chinese">Chinese</a>
+</td>
+<td><span class="explain" title="Hong Kong">Cantonese</span>
+</td>
+<td>腐朽的盾 <i><span class="explain" title="Rusted Shield">Fuhnáu dīk Téuhn</span></i>
+</td></tr>
+<tr style="background: #FFF">
+<td><span class="explain" title="Taiwan and mainland China">Mandarin</span>
+</td>
+<td>腐朽的盾 <i><span class="explain" title="Rusted Shield">Fǔxiǔ de Dùn</span></i>
+</td></tr>
+
+
+
+
+
+
+
+
+<tr style="background: #FFF">
+<td colspan="2"><a href="/wiki/Pok%C3%A9mon_in_French" class="mw-disambig" title="Pokémon in French">French</a>
+</td>
+<td>Bouclier Rouillé
+</td></tr>
+
+<tr style="background: #FFF">
+<td colspan="2"><a href="/wiki/Pok%C3%A9mon_in_Germany" title="Pokémon in Germany">German</a>
+</td>
+<td>Rostiger Schild
+</td></tr>
+
+
+
+
+
+<tr style="background: #FFF">
+<td colspan="2"><a href="/wiki/Pok%C3%A9mon_in_Indonesia" title="Pokémon in Indonesia">Indonesian</a>
+</td>
+<td>Perisai Berkarat
+</td></tr>
+<tr style="background: #FFF">
+<td colspan="2"><a href="/wiki/Pok%C3%A9mon_in_Italy" title="Pokémon in Italy">Italian</a>
+</td>
+<td>Scudo rovinato
+</td></tr>
+<tr style="background: #FFF">
+<td colspan="2"><a href="/wiki/Pok%C3%A9mon_in_South_Korea" title="Pokémon in South Korea">Korean</a>
+</td>
+<td>녹슨방패 <i>Nokseun Bangpae</i>
+</td></tr>
+
+
+
+
+
+
+
+
+<tr style="background: #FFF">
+<td colspan="2"><a href="/wiki/Pok%C3%A9mon_in_Brazil" title="Pokémon in Brazil">Brazilian Portuguese</a>
+</td>
+<td>Escudo Enferrujado
+</td></tr>
+
+
+
+
+
+<tr style="background: #FFF">
+<td colspan="2"><a href="/wiki/Pok%C3%A9mon_in_Spanish" class="mw-disambig" title="Pokémon in Spanish">Spanish</a>
+</td>
+<td>Escudo Oxidado
+</td></tr>
+
+
+
+
+<tr style="background: #FFF">
+<td colspan="2"><a href="/wiki/Pok%C3%A9mon_in_Thailand" title="Pokémon in Thailand">Thai</a>
+</td>
+<td>โล่ขึ้นสนิม <i>Lo Khuen Sanim</i>
+</td></tr>
+
+
+
+
+<tr>
+<td class="roundybottom" colspan="3" style="background: #D89DB7">
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="Related_articles">Related articles</span></h2>
+<ul><li><a href="/wiki/Rusted_Sword" title="Rusted Sword">Rusted Sword</a></li></ul>
+<h2><span class="mw-headline" id="External_links">External links</span></h2>
+<ul><li>On Smogon's Itemdex:
+<ul><li><span class="plainlinks"><a rel="nofollow" class="external text" href="https://www.smogon.com/dex/ss/items/rusted-shield/">Generation VIII</a></span> – <span class="plainlinks"><a rel="nofollow" class="external text" href="https://www.smogon.com/dex/sv/items/rusted-shield/">IX</a></span></li></ul></li></ul>
+<table align="center" style="background: #FAFFF4; border: 2px solid #8888AA; width: 100%; border-radius: 80px; -moz-border-radius: 80px; -webkit-border-radius: 80px; -khtml-border-radius: 80px; -icab-border-radius: 80px; -o-border-radius: 80px;; margin-top:1em">
+
+<tbody><tr>
+<td width="60px" style="border-radius: 80px; -moz-border-radius: 80px; -webkit-border-radius: 80px; -khtml-border-radius: 80px; -icab-border-radius: 80px; -o-border-radius: 80px; background: #FFFFFF;"><span typeof="mw:File"><a href="/wiki/File:Project_ItemDex_logo.png" class="mw-file-description"><img src="https://archives.bulbagarden.net/media/upload/6/60/Project_ItemDex_logo.png" decoding="async" loading="lazy" width="80" height="80" class="mw-file-element" data-file-width="64" data-file-height="64" /></a></span>
+</td>
+<td>This item article is part of <b><a href="/wiki/Bulbapedia:Project_ItemDex" title="Bulbapedia:Project ItemDex">Project ItemDex</a></b>, a <a href="/wiki/Bulbapedia:Projects" title="Bulbapedia:Projects">Bulbapedia project</a> that aims to write comprehensive articles on all <a href="/wiki/Item" title="Item">items</a>.
+</td></tr></tbody></table>
+<!-- 
+NewPP limit report
+Cached time: 20260211180242
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.132 seconds
+Real time usage: 0.299 seconds
+Preprocessor visited node count: 1632/1000000
+Post‐expand include size: 18973/2097152 bytes
+Template argument size: 3901/2097152 bytes
+Highest expansion depth: 8/100
+Expensive parser function count: 0/250
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  145.650      1 -total
+ 16.96%   24.701      1 Template:Langtable
+ 10.58%   15.416      1 Template:ItemPrice
+  9.95%   14.495     20 Template:Color
+  9.81%   14.294      6 Template:Gameabbrev8
+  8.97%   13.067      1 Template:ItemInfobox/head
+  5.29%    7.702      1 Template:Movedescentry
+  5.04%    7.341      1 Template:Project_ItemDex_notice
+  4.50%    6.548      3 Template:Gameabbrev9
+  3.99%    5.809      1 Template:ItemPrice/head
+-->
+
+<!-- Saved in parser cache with key themozz_mediawiki:pcache:idhash:244503-0!canonical and timestamp 20260211180242 and revision id 4466493. Rendering was triggered because: page-view
+ -->
+</div><!---------------------------------------------------------------->
+<!-------- Custom Adthrive Code : BEFORE Adthrive Main ----------->
+<!---------------------------------------------------------------->
+<script>
+// Initialize elements
+appendElementIf({id: "adthrive-left-s", wAbove: 1520, wBelow: 1699, hAbove: 700});
+appendElementIf({id: "adthrive-left-m", wAbove: 1700, wBelow: 1890, hAbove: 700});
+appendElementIf({id: "adthrive-left-l", wAbove: 1891, hAbove: 700});
+
+appendElementIf({id: "adthrive-right-s", wAbove: 945, wBelow: 1099, hAbove: 964});
+appendElementIf({id: "adthrive-right-m", wAbove: 1100, wBelow: 1399, hAbove: 964});
+appendElementIf({id: "adthrive-right-l", wAbove: 1400, hAbove: 964});
+appendElementIf({id: "adthrive-right-rect", hBelow: 964});
+
+
+// Appends element if condition is met
+function appendElementIf({id, wAbove, wBelow, hAbove, hBelow}) {
+
+	// find browser height
+	var w = window.innerWidth;
+	var h = window.innerHeight;
+
+	// If true after browser size check then unit is added
+	var condition = true;
+
+	// Check size conditions
+	if (wBelow && (w > wBelow)) condition = false;
+	if (wAbove && (w < wAbove)) condition = false;
+
+	if (hBelow && (h > hBelow)) condition = false;
+	if (hAbove && (h < hAbove)) condition = false;
+
+	// Append element if condition is met
+	if (condition) {
+		createAndAppendElement(id);
+	}
+}
+
+
+// creates and appends a div element to the body
+function createAndAppendElement(id)
+{
+	var atEl = document.createElement('div');
+	atEl.id = id;
+	document.body.appendChild(atEl);
+}
+</script>
+<!---------------->
+<!-- Script End -->
+<!---------------->        <style>
+        /*This styles are to place the close button right above the video without this the close button will be placed below the video.*/
+        #pw-close-btn {
+            display: none !important;
+        }
+        #span_btn {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            cursor: pointer;
+        }
+        @media only screen and (max-width: 767px) {
+            #span_btn {
+                top: 9px;
+                right: 11px;
+            }
+        }
+        .is-docked {
+           margin-bottom:90px !important;
+        }
+        </style><!--------------------------------------------->
+<!-- Adthrive Ad Block Recovery : END OF BODY -->
+<!--------------------------------------------->
+
+<script>!function(){"use strict";!function(e){if(-1===e.cookie.indexOf("__adblocker")){e.cookie="__adblocker=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";var t=new XMLHttpRequest;t.open("GET","https://ads.adthrive.com/abd/abd.js",!0),t.onreadystatechange=function(){if(XMLHttpRequest.DONE===t.readyState)if(200===t.status){var a=e.createElement("script");a.innerHTML=t.responseText,e.getElementsByTagName("head")[0].appendChild(a)}else{var n=new Date;n.setTime(n.getTime()+3e5),e.cookie="__adblocker=true; expires="+n.toUTCString()+"; path=/"}},t.send()}}(document)}();</script>
+
+<script>!function(){"use strict";var e;e=document,function(){var t,n;function r(){var t=e.createElement("script");t.src="https://cafemedia-com.videoplayerhub.com/galleryplayer.js",e.head.appendChild(t)}function a(){var t=e.cookie.match("(^|[^;]+)\s*__adblocker\s*=\s*([^;]+)");return t&&t.pop()}function c(){clearInterval(n)}return{init:function(){var e;"true"===(t=a())?r():(e=0,n=setInterval((function(){100!==e&&"false"!==t||c(),"true"===t&&(r(),c()),t=a(),e++}),50))}}}().init()}();
+</script>
+
+<!---------------->
+<!-- Script End -->
+<!---------------->
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://bulbapedia.bulbagarden.net/w/index.php?title=Rusted_Shield&amp;oldid=4466493">https://bulbapedia.bulbagarden.net/w/index.php?title=Rusted_Shield&amp;oldid=4466493</a>"</div></div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="/wiki/Category:Items" title="Category:Items">Items</a></li><li><a href="/wiki/Category:Items_introduced_in_Generation_VIII" title="Category:Items introduced in Generation VIII">Items introduced in Generation VIII</a></li><li><a href="/wiki/Category:Other_Items_Pocket" title="Category:Other Items Pocket">Other Items Pocket</a></li><li><a href="/wiki/Category:Held_items" title="Category:Held items">Held items</a></li><li><a href="/wiki/Category:Form-changing_held_items" title="Category:Form-changing held items">Form-changing held items</a></li><li><a href="/wiki/Category:Legendary_artifacts" title="Category:Legendary artifacts">Legendary artifacts</a></li></ul></div></div>
+				<!-- end content -->
+				<div class="visualClear"></div>
+			</div>
+		</div>
+		<div class="visualClear"></div>
+	</div>
+	<div id="column-one" >
+		<h2>Navigation menu</h2>
+		<div role="navigation" class="portlet" id="p-cactions" aria-labelledby="p-cactions-label">
+			<h3 id="p-cactions-label" >Page actions</h3>
+			<div class="pBody">
+				<ul >
+				<li id="ca-nstab-main" class="selected mw-list-item"><a href="/wiki/Rusted_Shield" title="View the content page [c]" accesskey="c">Article</a></li><li id="ca-talk" class="new mw-list-item"><a href="/w/index.php?title=Talk:Rusted_Shield&amp;action=edit&amp;redlink=1" rel="discussion" class="new" title="Discussion about the content page (page does not exist) [t]" accesskey="t">Discussion</a></li><li id="ca-view" class="selected mw-list-item"><a href="/wiki/Rusted_Shield">Read</a></li><li id="ca-viewsource" class="mw-list-item"><a href="/w/index.php?title=Rusted_Shield&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li id="ca-history" class="mw-list-item"><a href="/w/index.php?title=Rusted_Shield&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+				
+				</ul>
+			</div>
+		</div>
+		
+<div role="navigation" class="portlet mw-portlet mw-portlet-cactions-mobile"
+	id="p-cactions-mobile" aria-labelledby="p-cactions-mobile-label">
+	<h3 id="p-cactions-mobile-label" >Page actions</h3>
+	<div class="pBody">
+		<ul ><li id="main-mobile" class="selected mw-list-item"><a href="/wiki/Rusted_Shield" title="Article">Article</a></li><li id="talk-mobile" class="new mw-list-item"><a href="/w/index.php?title=Talk:Rusted_Shield&amp;action=edit&amp;redlink=1" title=" (page does not exist)" class="new">Discussion</a></li><li id="ca-more" class="mw-list-item"><a href="#p-cactions">More</a></li><li id="ca-tools" class="mw-list-item"><a href="#p-tb" title="Tools">Tools</a></li><li id="ca-languages" class="mw-list-item"><a href="#p-lang" title="In other languages">In other languages</a></li></ul>
+		
+	</div>
+</div>
+
+		<div role="navigation" class="portlet" id="p-personal" aria-labelledby="p-personal-label">
+			<h3 id="p-personal-label" >Personal tools</h3>
+			<div class="pBody">
+				<ul >
+				<li id="pt-createaccount" class="mw-list-item"><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=Rusted+Shield" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login" class="mw-list-item"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Rusted+Shield" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="portlet" id="p-logo" role="banner">
+			<a href="/wiki/Main_Page" class="mw-wiki-logo"></a>
+		</div>
+		<div id="sidebar">
+		
+<div role="navigation" class="portlet mw-portlet mw-portlet-navigation"
+	id="p-navigation" aria-labelledby="p-navigation-label">
+	<h3 id="p-navigation-label" >Navigation</h3>
+	<div class="pBody">
+		<ul ><li id="n-mainpage" class="mw-list-item"><a href="/wiki/Main_Page" title="Visit Bulbapedia&#039;s Main Page [z]" accesskey="z">Main Page</a></li><li id="n-Editor&#039;s-Hub" class="mw-list-item"><a href="/wiki/Bulbapedia:Editor%27s_Hub">Editor&#039;s Hub</a></li><li id="n-help" class="mw-list-item"><a href="https://bulbapedia.bulbagarden.net/wiki/Help:Contents" rel="nofollow" title="General editing help">Help</a></li><li id="n-faq" class="mw-list-item"><a href="/wiki/Bulbapedia:FAQ">Frequently asked questions</a></li><li id="n-portal" class="mw-list-item"><a href="https://bulbagarden.net/forums/bulbawiki-forum.195/" rel="nofollow" title="Discussion forum for the Bulbawiki network">Bulbawiki forum</a></li><li id="n-recentchanges" class="mw-list-item"><a href="/wiki/Special:RecentChanges" title="View recent changes to Bulbapedia. [r]" accesskey="r">Recent changes</a></li><li id="n-randompage" class="mw-list-item"><a href="/wiki/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li></ul>
+		
+	</div>
+</div>
+
+		<div role="search" class="portlet" id="p-search">
+			<h3 id="p-search-label" ><label for="searchInput">Search</label></h3>
+			<div class="pBody" id="searchBody">
+				<form action="/w/index.php" id="searchform"><input type="hidden" value="Special:Search" name="title"><input type="search" name="search" placeholder="Search Bulbapedia" aria-label="Search Bulbapedia" autocapitalize="sentences" title="Search Bulbapedia [f]" accesskey="f" id="searchInput"><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" class="searchButton" id="searchButton"> <input type="submit" name="fulltext" value="Search" title="Search the pages for this text" class="searchButton mw-fallbackSearchButton" id="mw-searchButton"></form>
+			</div>
+		</div>
+		
+<div role="navigation" class="portlet mw-portlet mw-portlet-Bulbagarden"
+	id="p-Bulbagarden" aria-labelledby="p-Bulbagarden-label">
+	<h3 id="p-Bulbagarden-label" >Bulbagarden</h3>
+	<div class="pBody">
+		<ul ><li id="n-gateway" class="mw-list-item"><a href="https://www.bulbagarden.net" rel="nofollow">Bulbagarden home page</a></li><li id="n-archive" class="mw-list-item"><a href="https://archives.bulbagarden.net/wiki/Main_Page" title="Depository for media used by Bulbagarden&#039;s wikis">Bulbagarden Archives</a></li><li id="n-Bulbagarden-Forums" class="mw-list-item"><a href="https://bulbagarden.net/forums/" rel="nofollow">Bulbagarden Forums</a></li><li id="n-Bulbagarden-Discord" class="mw-list-item"><a href="https://discord.gg/bulbagarden" rel="nofollow">Bulbagarden Discord</a></li><li id="n-Bulbagarden-Twitch" class="mw-list-item"><a href="https://www.twitch.tv/bulbagarden" rel="nofollow">Bulbagarden Twitch</a></li><li id="n-Bulbagarden-YouTube" class="mw-list-item"><a href="https://www.youtube.com/user/Bulbagarden" rel="nofollow">Bulbagarden YouTube</a></li></ul>
+		
+	</div>
+</div>
+
+<div role="navigation" class="portlet mw-portlet mw-portlet-Social_media"
+	id="p-Social_media" aria-labelledby="p-Social_media-label">
+	<h3 id="p-Social_media-label" >Social media</h3>
+	<div class="pBody">
+		<ul ><li id="n-Bluesky" class="mw-list-item"><a href="https://bsky.app/profile/bulbagarden.net" rel="nofollow">Bluesky</a></li><li id="n-Facebook" class="mw-list-item"><a href="https://www.facebook.com/Bulbagarden" rel="nofollow">Facebook</a></li><li id="n-Mastodon" class="mw-list-item"><a href="https://mastodon.social/@bulbagarden" rel="nofollow">Mastodon</a></li><li id="n-Twitter" class="mw-list-item"><a href="https://twitter.com/Bulbagarden" rel="nofollow">Twitter</a></li><li id="n-Tumblr" class="mw-list-item"><a href="https://bulbagarden.tumblr.com/" rel="nofollow">Tumblr</a></li></ul>
+		
+	</div>
+</div>
+
+<div role="navigation" class="portlet mw-portlet mw-portlet-tb"
+	id="p-tb" aria-labelledby="p-tb-label">
+	<h3 id="p-tb-label" >Tools</h3>
+	<div class="pBody">
+		<ul ><li id="t-whatlinkshere" class="mw-list-item"><a href="/wiki/Special:WhatLinksHere/Rusted_Shield" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/wiki/Special:RecentChangesLinked/Rusted_Shield" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload" class="mw-list-item"><a href="https://archives.bulbagarden.net/wiki/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages" class="mw-list-item"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink" class="mw-list-item"><a href="/w/index.php?title=Rusted_Shield&amp;oldid=4466493" title="Permanent link to this revision of this page">Permanent link</a></li><li id="t-info" class="mw-list-item"><a href="/w/index.php?title=Rusted_Shield&amp;action=info" title="More information about this page">Page information</a></li><li id="t-cite" class="mw-list-item"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Rusted_Shield&amp;id=4466493&amp;wpFormIdentifier=titleform" title="Information on how to cite this page">Cite this page</a></li></ul>
+		
+	</div>
+</div>
+
+		
+<div role="navigation" class="portlet mw-portlet mw-portlet-lang"
+	id="p-lang" aria-labelledby="p-lang-label">
+	<h3 id="p-lang-label" >In other languages</h3>
+	<div class="pBody">
+		<ul ><li class="interlanguage-link interwiki-de mw-list-item"><a href="https://www.pokewiki.de/Rostiger_Schild" title="Rostiger Schild – Deutsch" lang="de" hreflang="de" data-title="Rostiger Schild" data-language-autonym="Deutsch" data-language-local-name="Deutsch" class="interlanguage-link-target">Deutsch</a></li><li class="interlanguage-link interwiki-es mw-list-item"><a href="https://www.wikidex.net/wiki/Escudo_oxidado" title="Escudo oxidado – español" lang="es" hreflang="es" data-title="Escudo oxidado" data-language-autonym="Español" data-language-local-name="español" class="interlanguage-link-target">Español</a></li><li class="interlanguage-link interwiki-fr mw-list-item"><a href="https://www.pokepedia.fr/Bouclier_Rouill%C3%A9" title="Bouclier Rouillé – français" lang="fr" hreflang="fr" data-title="Bouclier Rouillé" data-language-autonym="Français" data-language-local-name="français" class="interlanguage-link-target">Français</a></li><li class="interlanguage-link interwiki-it mw-list-item"><a href="https://wiki.pokemoncentral.it/Scudo_rovinato" title="Scudo rovinato – italiano" lang="it" hreflang="it" data-title="Scudo rovinato" data-language-autonym="Italiano" data-language-local-name="italiano" class="interlanguage-link-target">Italiano</a></li><li class="interlanguage-link interwiki-ja mw-list-item"><a href="https://wiki.xn--rckteqa2e.com/wiki/%E3%81%8F%E3%81%A1%E3%81%9F%E3%81%9F%E3%81%A6" title="くちたたて – 日本語" lang="ja" hreflang="ja" data-title="くちたたて" data-language-autonym="日本語" data-language-local-name="日本語" class="interlanguage-link-target">日本語</a></li><li class="interlanguage-link interwiki-zh mw-list-item"><a href="https://wiki.52poke.com/wiki/%E8%85%90%E6%9C%BD%E7%9A%84%E7%9B%BE%EF%BC%88%E9%81%93%E5%85%B7%EF%BC%89" title="腐朽的盾（道具） – 中文" lang="zh" hreflang="zh" data-title="腐朽的盾（道具）" data-language-autonym="中文" data-language-local-name="中文" class="interlanguage-link-target">中文</a></li></ul>
+		
+	</div>
+</div>
+
+		</div>
+		<a href="#sidebar" title="Jump to navigation"
+			class="menu-toggle" id="sidebar-toggle"></a>
+		<a href="#p-personal" title="user tools"
+			class="menu-toggle" id="p-personal-toggle"></a>
+		<a href="#globalWrapper" title="back to top"
+			class="menu-toggle" id="globalWrapper-toggle"></a>
+	</div>
+	<!-- end of the left (by default at least) column -->
+	<div class="visualClear"></div>
+	<div id="footer" class="mw-footer" role="contentinfo"
+		>
+		<div id="f-copyrightico" class="footer-icons">
+			<a href="https://creativecommons.org/licenses/by-nc-sa/2.5/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png" alt="https://creativecommons.org/licenses/by-nc-sa/2.5/" width="88" height="31" loading="lazy"></a>
+		</div>
+		<div id="f-poweredbyico" class="footer-icons">
+			<a href="https://www.mediawiki.org/" class="cdx-button cdx-button--fake-button cdx-button--size-large cdx-button--fake-button--enabled"><img src="/w/resources/assets/poweredby_mediawiki.svg" alt="Powered by MediaWiki" width="88" height="31" loading="lazy"></a>
+		</div>
+		<ul id="f-list">
+			<li id="lastmod"> This page was last edited on 13 January 2026, at 16:12.</li><li id="copyright">Content is available under <a class="external" rel="nofollow" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Attribution-NonCommercial-ShareAlike 2.5</a>. (see <a class='internal' href="/wiki/Bulbapedia:Copyrights">Copyrights</a> for details)</li>
+			<li id="privacy"><a href="/wiki/Bulbapedia:Privacy_policy">Privacy policy</a></li><li id="about"><a href="/wiki/Bulbapedia:About">About Bulbapedia</a></li><li id="disclaimers"><a href="/wiki/Bulbapedia:General_disclaimer">Disclaimers</a></li><li id="mobileview"><a href="https://bulbapedia.bulbagarden.net/w/index.php?title=Rusted_Shield&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+		</ul>
+	</div>
+</div>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":260,"wgPageParseReport":{"limitreport":{"cputime":"0.132","walltime":"0.299","ppvisitednodes":{"value":1632,"limit":1000000},"postexpandincludesize":{"value":18973,"limit":2097152},"templateargumentsize":{"value":3901,"limit":2097152},"expansiondepth":{"value":8,"limit":100},"expensivefunctioncount":{"value":0,"limit":250},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%  145.650      1 -total"," 16.96%   24.701      1 Template:Langtable"," 10.58%   15.416      1 Template:ItemPrice","  9.95%   14.495     20 Template:Color","  9.81%   14.294      6 Template:Gameabbrev8","  8.97%   13.067      1 Template:ItemInfobox/head","  5.29%    7.702      1 Template:Movedescentry","  5.04%    7.341      1 Template:Project_ItemDex_notice","  4.50%    6.548      3 Template:Gameabbrev9","  3.99%    5.809      1 Template:ItemPrice/head"]},"cachereport":{"timestamp":"20260211180242","ttl":86400,"transientcontent":false}}});});</script>
+</body>
+</html>
