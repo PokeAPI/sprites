@@ -55,7 +55,7 @@ sprites
         \- generation v
             \- black and white (PNGs with back, female, shiny, back-female, back-shiny, shiny-female, animated variants)
             \- icons (PNGs)
-            \- animated-icons (PNGs)
+                \- animated (PNGs)
         \- generation vi
             \- omega ruby and alpha sapphire (PNGs with female, shiny, shiny-female variants)
             \- x and y (PNGs with female, shiny, shiny-female variants)
@@ -227,12 +227,12 @@ Animated
 | PNG<br>_32x32_ |
 | <img src="sprites/pokemon/versions/generation-v/icons/25.png" width="32"/> |
 
-###### `animated icons`
+Animated
 
 | Front |
 | --- |
 | PNG<br>_32x32_ |
-| <img src="sprites/pokemon/versions/generation-v/animated-icons/25.png" width="32"/> |
+| <img src="sprites/pokemon/versions/generation-v/icons/animated/25.png" width="32"/> |
 
 ##### `generation vi`
 
