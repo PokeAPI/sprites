@@ -33,6 +33,7 @@ convert(){
     local pokemonID
     local pokemonName
     local inputGeneration="${1:-6}"
+    # Folder where images downloaded from the Smogon spreadsheet are stored.
     local files="downloads/"
     local formDS
     formDS=$(jq . forms.json)

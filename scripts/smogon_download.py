@@ -1,8 +1,12 @@
-import os
 import requests
 import re
+from pathlib import Path
 
-# The list of URLs you provided
+# Image URLs collected from the Smogon Sprite Project spreadsheet
+# (spreadsheet link is provided inside the Smogon thread below).
+# These links point to attachment files hosted on Smogon forums.
+# Smogon thread:
+# https://www.smogon.com/forums/threads/smogon-sprite-project.3647722/
 urls = [
     "https://www.smogon.com/forums/attachments/1017_1-png.732406/",
     "https://www.smogon.com/forums/attachments/1017_1s-png.732407/",
@@ -21,10 +25,10 @@ HEADERS = {
 
 
 def download_sprites():
-    if not os.path.exists("downloads"):
-        os.makedirs("downloads")
-        print("📁 Created 'downloads' directory.")
+    download_dir = Path("scripts") / "downloads"
+    download_dir.mkdir(exist_ok=True)
 
+    print(f"📁 Directory ready: {download_dir.absolute()}")
     print(f"🚀 Starting download of {len(urls)} files...")
 
     for url in urls:
@@ -33,19 +37,18 @@ def download_sprites():
             # Example: 652sb-png.492504/ -> 652sb.png
             match = re.search(r"attachments/([\w-]+)-png\.\d+/?", url)
             if match:
-                base_name = match.group(1)
-                filename = f"{base_name}.png"
+                filename = f"{match.group(1)}.png"
             else:
                 # Fallback if regex fails
-                filename = url.split("/")[-2].split("-")[0] + ".png"
+                filename = f"{Path(url).parts[-1].split('-')[0]}.png"
 
-            save_path = os.path.join("downloads", filename)
+            save_path = download_dir / filename
 
             # 2. Download the file
             response = requests.get(url, headers=HEADERS, stream=True)
 
             if response.status_code == 200:
-                with open(save_path, "wb") as f:
+                with save_path.open("wb") as f:
                     for chunk in response.iter_content(chunk_size=8192):
                         f.write(chunk)
                 print(f"✅ Downloaded: {filename}")
@@ -57,7 +60,7 @@ def download_sprites():
 
     print("\n" + "=" * 30)
     print("Download process finished.")
-    print(f"Files are located in: {os.path.abspath('downloads')}")
+    print(f"Files are located in: {download_dir.resolve()}")
     print("=" * 30)
 
 
