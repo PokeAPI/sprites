@@ -54,6 +54,8 @@ sprites
             \- platinum (PNGs with back, female, shiny, back-female, back-shiny, shiny-female variants)
         \- generation v
             \- black and white (PNGs with back, female, shiny, back-female, back-shiny, shiny-female, animated variants)
+            \- icons (PNGs)
+                \- animated (PNGs)
         \- generation vi
             \- omega ruby and alpha sapphire (PNGs with female, shiny, shiny-female variants)
             \- x and y (PNGs with female, shiny, shiny-female variants)
@@ -218,6 +220,19 @@ Animated
 | GIF<br>_varies_ | GIF<br>_varies_ | GIF<br>_varies_ | GIF<br>_varies_ | GIF<br>_varies_ | GIF<br>_varies_ | GIF<br>_varies_ |
 | <img src="sprites/pokemon/versions/generation-v/black-white/animated/25.gif"/> | <img src="sprites/pokemon/versions/generation-v/black-white/animated/back/25.gif"/> | <img src="sprites/pokemon/versions/generation-v/black-white/animated/female/25.gif"/> | <img src="sprites/pokemon/versions/generation-v/black-white/animated/shiny/25.gif"/> | <img src="sprites/pokemon/versions/generation-v/black-white/animated/back/female/25.gif"/> | <img src="sprites/pokemon/versions/generation-v/black-white/animated/back/shiny/25.gif"/> | <img src="sprites/pokemon/versions/generation-v/black-white/animated/shiny/female/25.gif"/> |
 
+###### `icons`
+
+| Front |
+| --- |
+| PNG<br>_32x32_ |
+| <img src="sprites/pokemon/versions/generation-v/icons/25.png" width="32"/> |
+
+Animated
+
+| Front |
+| --- |
+| PNG<br>_32x32_ |
+| <img src="sprites/pokemon/versions/generation-v/icons/animated/25.png" width="32"/> |
 
 ##### `generation vi`
 
