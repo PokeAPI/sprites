@@ -25,7 +25,8 @@ HEADERS = {
 
 
 def download_sprites():
-    download_dir = Path("scripts") / "downloads"
+    script_dir = Path(__file__).resolve().parent
+    download_dir = script_dir / "downloads"
     download_dir.mkdir(exist_ok=True)
 
     print(f"📁 Directory ready: {download_dir.absolute()}")
