@@ -8,14 +8,10 @@ from pathlib import Path
 # Smogon thread:
 # https://www.smogon.com/forums/threads/smogon-sprite-project.3647722/
 urls = [
-    "https://www.smogon.com/forums/attachments/1017_1-png.732406/",
-    "https://www.smogon.com/forums/attachments/1017_1s-png.732407/",
-    "https://www.smogon.com/forums/attachments/1017_2-png.732408/",
-    "https://www.smogon.com/forums/attachments/1017_2s-png.732409/",
-    "https://www.smogon.com/forums/attachments/1017_3-png.732410/",
-    "https://www.smogon.com/forums/attachments/1017_3s-png.732411/",
-    "https://www.smogon.com/forums/attachments/1017_4-png.732412/",
-    "https://www.smogon.com/forums/attachments/1017_4s-png.732413/",
+    "https://www.smogon.com/forums/attachments/964-png.603593/",
+    "https://www.smogon.com/forums/attachments/964s-png.603594/",
+    # "https://www.smogon.com/forums/attachments/964-png.536964/",
+    # "https://www.smogon.com/forums/attachments/964s-png.536965/",
 ]
 
 # Set a User-Agent to prevent Smogon from blocking the request
