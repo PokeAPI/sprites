@@ -76,6 +76,8 @@ sprites
 
 ### `pokemon`
 
+Interested in helping us complete the default Gen 5 style sprite collection? See [CONTRIBUTING_SPRITES.md](./CONTRIBUTING_SPRITES.md) for details on our maintenance scripts for National Dex 650+.
+
 #### `other`
 
 ##### `dream-world`

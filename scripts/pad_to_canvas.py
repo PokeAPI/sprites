@@ -4,6 +4,7 @@ import os
 import argparse
 from PIL import Image
 
+
 def pad_images(input_folder, output_folder, canvas_size):
     os.makedirs(output_folder, exist_ok=True)
 
@@ -12,7 +13,7 @@ def pad_images(input_folder, output_folder, canvas_size):
             continue
 
         img_path = os.path.join(input_folder, filename)
-        img = Image.open(img_path).convert("RGBA") # keep transparency
+        img = Image.open(img_path).convert("RGBA")  # keep transparency
 
         # skip images that are taller than the canvas
         if img.height > canvas_size:
@@ -35,16 +36,22 @@ def pad_images(input_folder, output_folder, canvas_size):
 
     print("Done!")
 
+
 # ---------------------------------------------------------------------------
 # CLI handling
 # ---------------------------------------------------------------------------
 def parse_args():
-    parser = argparse.ArgumentParser(description="Pad images to a transparent square canvas.")
+    parser = argparse.ArgumentParser(
+        description="Pad images to a transparent square canvas."
+    )
     parser.add_argument("--input", required=True, help="Input folder path")
     parser.add_argument("--output", required=True, help="Output folder path")
-    parser.add_argument("--size", type=int, default=256, help="Canvas size (default: 256)")
+    parser.add_argument(
+        "--size", type=int, default=256, help="Canvas size (default: 256)"
+    )
 
     return parser.parse_args()
+
 
 if __name__ == "__main__":
     args = parse_args()

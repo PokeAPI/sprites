@@ -33,7 +33,8 @@ convert(){
     local pokemonID
     local pokemonName
     local inputGeneration="${1:-6}"
-    local files="../smogon/gen$inputGeneration/"
+    # Folder where images downloaded from the Smogon spreadsheet are stored.
+    local files="downloads/"
     local formDS
     formDS=$(jq . forms.json)
     # echo "$formDS" | jq -r '.["885"]'
@@ -84,15 +85,36 @@ convert(){
             fi
             if [ "$form" ]; then
                 pokemonName=$(echo "$formDS" | jq -r ".[\"${id}_${form}\"]")
+
                 if [ $? -ne 0 ] || [ "$pokemonName" == 'null' ]; then
                     echo "[-] Form ${id}_${form} wasn't found in the JSON mapping"
                 else
-                    pokemonID=$(curl -sS "https://pokeapi.co/api/v2/pokemon/$pokemonName/" | jq -r '.id' 2>/dev/null)
-                    if [ $? -ne 0 ]; then
-                        echo "[-] Pkmn $pokemonName wasn't found in PokeAPI"
-                    else
-                        echo "[+] Copying Form $smogonName to $destination/$pokemonID.png"
+                    # Try to fetch the pokemon by the variety name extracted from forms.json
+                    response=$(curl -sS "https://pokeapi.co/api/v2/pokemon/$pokemonName/" 2>/dev/null)
+                    pokemonID=$(echo "$response" | jq -r '.id' 2>/dev/null)
+
+                    if [ -n "$pokemonID" ] && [ "$pokemonID" != "null" ]; then
+                        echo "[+] Found variety by name: Moving $smogonName to $destination/$pokemonID.png"
                         cp "$smogonName" "$destination/$pokemonID.png"
+                    else
+                        # Search all forms from Pokémon API
+                        echo "[!] Variety '$pokemonName' not found directly. Searching in Pokémon forms..."
+
+                        pokemonResponse=$(curl -sS "https://pokeapi.co/api/v2/pokemon/$id/" 2>/dev/null)
+
+                        # Get all forms from the pokemon and find matching one
+                        formSuffix=$(echo "$pokemonResponse" | jq -r \
+                            --arg name "$pokemonName" \
+                            '.forms[] | select(.name == $name) | .name | sub("^[^#-]+-"; "")' 2>/dev/null)
+
+                        if [ -n "$formSuffix" ] && [ "$formSuffix" != "null" ] && [ "$formSuffix" != "$pokemonName" ]; then
+                            destFile="${id}-${formSuffix}.png"
+                            
+                            echo "[+] Found in forms: Moving $smogonName to $destination/$destFile"
+                            cp "$smogonName" "$destination/$destFile"
+                        else
+                            echo "[!] No matching form found for $pokemonName."
+                        fi
                     fi
                 fi
             fi

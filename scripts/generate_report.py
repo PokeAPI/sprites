@@ -15,10 +15,7 @@ import natsort
 # Setup caching (24h)
 # ---------------------------------------------------------------------------
 requests_cache.install_cache(
-    "api_cache",
-    backend="sqlite",
-    use_cache_dir=True,
-    expire_after=86400
+    "api_cache", backend="sqlite", use_cache_dir=True, expire_after=86400
 )
 
 
@@ -26,12 +23,8 @@ requests_cache.install_cache(
 # Static folder config, extend this map to test more generations/games/folders
 # ---------------------------------------------------------------------------
 FOLDER: Dict[str, List[str]] = {
-    "generation-viii": [
-        "brilliant-diamond-shining-pearl"
-    ],
-    "generation-ix": [
-        "scarlet-violet"
-    ]
+    "generation-viii": ["brilliant-diamond-shining-pearl"],
+    "generation-ix": ["scarlet-violet"],
 }
 
 
@@ -42,10 +35,7 @@ FileInfo = Dict[str, Tuple[str, str, Set[str]]]
 # ---------------------------------------------------------------------------
 # Logging configuration
 # ---------------------------------------------------------------------------
-logging.basicConfig(
-    level=logging.INFO,
-    format="[%(levelname)s] %(message)s"
-)
+logging.basicConfig(level=logging.INFO, format="[%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
 
@@ -67,10 +57,7 @@ def get_pokemon_data(api_url: str, endpoint: str, identifier: str) -> dict:
 # ---------------------------------------------------------------------------
 # Local filesystem scan
 # ---------------------------------------------------------------------------
-def get_local_images(
-    local_path: str,
-    folder_config: Dict[str, List[str]]
-) -> FileInfo:
+def get_local_images(local_path: str, folder_config: Dict[str, List[str]]) -> FileInfo:
     """Scan local directories for image files."""
     all_files_by_path: FileInfo = {}
 
@@ -80,8 +67,7 @@ def get_local_images(
 
             try:
                 files = {
-                    f for f in os.listdir(path)
-                    if os.path.isfile(os.path.join(path, f))
+                    f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))
                 }
 
                 logger.info(f"Found {len(files)} files in '{path}'.")
@@ -102,7 +88,7 @@ def create_table(
     generation_key: str,
     game_key: str,
     file_set: Set[str],
-    api_url: str
+    api_url: str,
 ) -> str:
     """Generate the HTML table displaying comparison images."""
     table_rows = ""
@@ -154,8 +140,7 @@ def create_table(
 
         # Extract sprites
         default_sprite = (
-            pokemon_sprites.get("front_default", "")
-            if pokemon_sprites else ""
+            pokemon_sprites.get("front_default", "") if pokemon_sprites else ""
         )
 
         version_sprite = (
@@ -163,12 +148,13 @@ def create_table(
             .get(generation_key, {})
             .get(game_key, {})
             .get("front_default", "")
-            if pokemon_sprites else ""
+            if pokemon_sprites
+            else ""
         )
 
         # Add HTML row
         table_rows += f"""
-            <div class="inline-flex flex-col items-center m-1 p-2 border-2 {'bg-red-600' if error else 'border-indigo-600'}">
+            <div class="inline-flex flex-col items-center m-1 p-2 border-2 {"bg-red-600" if error else "border-indigo-600"}">
                 <span class="text-xs text-gray-500">{identifier}</span>
                 <img src="{default_sprite}" style="max-width: 96px; object-fit: contain;">
                 <img src="{version_sprite}" style="max-width: 96px; object-fit: contain;">
@@ -189,10 +175,7 @@ def create_table(
 # Full report generation
 # ---------------------------------------------------------------------------
 def generate_report(
-    local_path: str,
-    api_url: str,
-    output_file: str,
-    cli_args: dict
+    local_path: str, api_url: str, output_file: str, cli_args: dict
 ) -> None:
     """Generate the entire HTML report."""
     all_files_by_path = get_local_images(local_path, FOLDER)
@@ -200,20 +183,16 @@ def generate_report(
     tables_html = ""
     for path, (gen_key, game_key, files) in all_files_by_path.items():
         if files:
-            tables_html += create_table(
-                path,
-                gen_key,
-                game_key,
-                files,
-                api_url
-            )
+            tables_html += create_table(path, gen_key, game_key, files, api_url)
 
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     # Render CLI args as HTML
-    cli_args_html = "<ul>" + "".join(
-        f"<li><strong>{k}</strong>: {v}</li>" for k, v in cli_args.items()
-    ) + "</ul>"
+    cli_args_html = (
+        "<ul>"
+        + "".join(f"<li><strong>{k}</strong>: {v}</li>" for k, v in cli_args.items())
+        + "</ul>"
+    )
 
     html_content = f"""
     <!DOCTYPE html>
@@ -252,26 +231,24 @@ def parse_args():
     parser.add_argument(
         "--local-path",
         required=True,
-        help="Base directory containing the local sprite folders."
+        help="Base directory containing the local sprite folders.",
     )
 
     parser.add_argument(
         "--api-url",
         help="Base URL of the Pokémon API.",
-        default="http://localhost/api/v2"
+        default="http://localhost/api/v2",
     )
 
     parser.add_argument(
-        "--output",
-        required=True,
-        help="Path to the generated HTML report."
+        "--output", required=True, help="Path to the generated HTML report."
     )
 
     parser.add_argument(
         "--clear-cache",
         action="store_true",
         help="Clear requests_cache before execution.",
-        default=False
+        default=False,
     )
 
     return parser.parse_args()
@@ -288,5 +265,5 @@ if __name__ == "__main__":
         local_path=args.local_path,
         api_url=args.api_url,
         output_file=args.output,
-        cli_args=vars(args)
+        cli_args=vars(args),
     )
