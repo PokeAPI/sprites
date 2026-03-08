@@ -75,8 +75,12 @@ def process_folders(root_path):
                     new_filename = f"{new_id}.png"
                     new_file_path = file_path.with_name(new_filename)
 
-                    file_path.replace(new_file_path)
-                    print(f"Success: [{file_path.parent}] {filename} -> {new_filename}")
+                    if new_file_path.exists():
+                        file_path.unlink()  # Remove the old file since the new one already exists
+                        print(f"!!! Skipping {filename} -> {new_filename} (already exists, old file removed)")
+                    else:
+                        file_path.replace(new_file_path)
+                        print(f"Success: [{file_path.parent}] {filename} -> {new_filename}")
 
 
 if __name__ == "__main__":
