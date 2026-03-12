@@ -26,9 +26,11 @@ pokemon_id,identifier,species_id,sprite_type,generation,issue
 10041,gyarados-mega,130,back_shiny,6,missing_file
 10061,floette-eternal,670,back_shiny,6,corrupt_file
 678,meowstic-male,678,front,6,corrupt_file
+696,tyrunt,696,front,6,corrupt_file
 10061,floette-eternal,670,front,6,corrupt_file
 678,meowstic-male,678,front_shiny,6,corrupt_file
 693,clawitzer,693,front_shiny,6,wrong_size_128x128
+696,tyrunt,696,front_shiny,6,corrupt_file
 10027,pumpkaboo-small,710,front_shiny,6,wrong_size_128x128
 10028,pumpkaboo-large,710,front_shiny,6,wrong_size_128x128
 10029,pumpkaboo-super,710,front_shiny,6,wrong_size_128x128
