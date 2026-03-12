@@ -135,7 +135,9 @@ def check_assets():
 
     # 5. Output Report & Preview
     if report_data:
-        df_report = pd.DataFrame(report_data).sort_values(by=["pokemon_id"])
+        df_report = pd.DataFrame(report_data).sort_values(
+            by=["generation", "sprite_type", "pokemon_id"], ascending=[True, True, True]
+        )
         report_name = f"{Path(__file__).stem}_report.csv"
         output_path = SCRIPT_DIR / report_name
         df_report.to_csv(output_path, index=False)
