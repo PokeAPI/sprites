@@ -42,6 +42,7 @@ convert(){
     cd "$files" || exit
 
     local destinationRoot='../../sprites/pokemon'
+    local bwDestinationRoot="$destinationRoot/versions/generation-v/black-white"
 
     for smogonName in *.png; do
         id=""
@@ -54,6 +55,8 @@ convert(){
         pokemonID=""
         pokemonName=""
         destination="$destinationRoot"
+        bwDestination="$bwDestinationRoot"
+
         if [[ $smogonName =~ $regex ]]; then
             #id=$(echo "${BASH_REMATCH[1]}" | sed 's/^0*//') # Extremely slow
             id=$(removeLeadingZero "${BASH_REMATCH[1]}") # Slow if function
@@ -61,14 +64,17 @@ convert(){
             if [[ "${BASH_REMATCH[3]}" == *b*  ]]; then
                 isBack="back"
                 destination="$destination/back"
+                bwDestination="$bwDestination/back"
             fi
             if [[ "${BASH_REMATCH[3]}" == *s*  ]]; then
                 isShiny="shiny"
                 destination="$destination/shiny"
+                bwDestination="$bwDestination/shiny"
             fi
             if [[ "${BASH_REMATCH[3]}" == *f*  ]]; then
                 isFemale="female"
                 destination="$destination/female"
+                bwDestination="$bwDestination/female"
             fi
             if [[ "${BASH_REMATCH[3]}" == *g*  ]]; then
                 isGmax="gmax"
@@ -81,6 +87,7 @@ convert(){
                 else
                     echo "[+] Copying GMax $smogonName to $destination/$pokemonID.png"
                     cp "$smogonName" "$destination/$pokemonID.png"
+                    cp "$smogonName" "$bwDestination/$pokemonID.png"
                 fi
             fi
             if [ "$form" ]; then
@@ -96,6 +103,7 @@ convert(){
                     if [ -n "$pokemonID" ] && [ "$pokemonID" != "null" ]; then
                         echo "[+] Found variety by name: Moving $smogonName to $destination/$pokemonID.png"
                         cp "$smogonName" "$destination/$pokemonID.png"
+                        cp "$smogonName" "$bwDestination/$pokemonID.png"
                     else
                         # Search all forms from Pokémon API
                         echo "[!] Variety '$pokemonName' not found directly. Searching in Pokémon forms..."
@@ -109,9 +117,12 @@ convert(){
 
                         if [ -n "$formSuffix" ] && [ "$formSuffix" != "null" ] && [ "$formSuffix" != "$pokemonName" ]; then
                             destFile="${id}-${formSuffix}.png"
-                            
+                            mkdir -p "$destination"
+                            mkdir -p "$bwDestination"
+
                             echo "[+] Found in forms: Moving $smogonName to $destination/$destFile"
                             cp "$smogonName" "$destination/$destFile"
+                            cp "$smogonName" "$bwDestination/$destFile"
                         else
                             echo "[!] No matching form found for $pokemonName."
                         fi
@@ -121,7 +132,9 @@ convert(){
             if [ ! "$form" ] && [ ! "$isGmax" ]; then
                 echo "[+] Copying Pkmn $smogonName $destination/$id.png"
                 mkdir -p "$destination"
+                mkdir -p "$bwDestination"
                 cp "$smogonName" "$destination/$id.png"
+                cp "$smogonName" "$bwDestination/$id.png"
             fi
         fi
     done
