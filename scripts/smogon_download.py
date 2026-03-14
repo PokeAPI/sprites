@@ -1,5 +1,6 @@
 import requests
 import re
+import json
 from pathlib import Path
 
 # Image URLs collected from the Smogon Sprite Project spreadsheet
@@ -8,10 +9,14 @@ from pathlib import Path
 # Smogon thread:
 # https://www.smogon.com/forums/threads/smogon-sprite-project.3647722/
 urls = [
-    "https://www.smogon.com/forums/attachments/964-png.603593/",
-    "https://www.smogon.com/forums/attachments/964s-png.603594/",
-    # "https://www.smogon.com/forums/attachments/964-png.536964/",
-    # "https://www.smogon.com/forums/attachments/964s-png.536965/",
+    "https://play.pokemonshowdown.com/sprites/gen5ani/comfey.gif",
+    "https://play.pokemonshowdown.com/sprites/gen5ani-back/comfey.gif",
+    "https://play.pokemonshowdown.com/sprites/gen5ani-shiny/comfey.gif",
+    "https://play.pokemonshowdown.com/sprites/gen5ani-back-shiny/comfey.gif",
+    "https://www.smogon.com/forums/attachments/762-gif.369401/",
+    "https://www.smogon.com/forums/attachments/762b-gif.369402/",
+    "https://www.smogon.com/forums/attachments/762s-gif.369403/",
+    "https://www.smogon.com/forums/attachments/762sb-gif.369404/",
 ]
 
 # Set a User-Agent to prevent Smogon from blocking the request
@@ -19,25 +24,80 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.31"
 }
 
+# Mapping Showdown directories to your filename suffixes
+SHOWDOWN_SUFFIX_MAP = {
+    "gen5ani": "",
+    "gen5ani-back": "b",
+    "gen5ani-shiny": "s",
+    "gen5ani-back-shiny": "sb",
+}
+
+
+def load_forms_map(script_dir):
+    """Loads forms.json and inverts it to {name: id} for easy lookup."""
+    forms_path = script_dir / "forms.json"
+    if not forms_path.exists():
+        print("⚠️ Warning: forms.json not found. Showdown downloads may fail.")
+        return {}
+
+    with open(forms_path, "r") as f:
+        data = json.load(f)
+        # Invert {"764": "comfey"} -> {"comfey": "764"}
+        return {v.lower(): k for k, v in data.items()}
+
 
 def download_sprites():
     script_dir = Path(__file__).resolve().parent
     download_dir = script_dir / "downloads"
     download_dir.mkdir(exist_ok=True)
 
+    # Load and invert the name map
+    name_to_id = load_forms_map(script_dir)
+
     print(f"📁 Directory ready: {download_dir.absolute()}")
     print(f"🚀 Starting download of {len(urls)} files...")
 
     for url in urls:
         try:
+            filename = None
+
             # 1. Extract filename from URL
-            # Example: 652sb-png.492504/ -> 652sb.png
-            match = re.search(r"attachments/([\w-]+)-png\.\d+/?", url)
-            if match:
-                filename = f"{match.group(1)}.png"
+            # --- Pokemon Showdown ---
+            if "play.pokemonshowdown.com" in url:
+                # Extract the directory and the name (e.g., gen5ani-back and comfey)
+                # URL pattern: .../sprites/{directory}/{name}.gif
+                parts = url.rstrip("/").split("/")
+                directory = parts[-2]
+                name_with_ext = parts[-1]
+                name = name_with_ext.split(".")[0].lower()
+                extension = name_with_ext.split(".")[-1]
+
+                pokemon_id = name_to_id.get(name)
+                suffix = SHOWDOWN_SUFFIX_MAP.get(directory)
+
+                if pokemon_id is not None and suffix is not None:
+                    filename = f"{pokemon_id}{suffix}.{extension}"
+                else:
+                    print(f"⚠️ Could not map Showdown URL: {url}")
+                    continue
+
+            # --- Smogon Forums ---
             else:
-                # Fallback if regex fails
-                filename = f"{Path(url).parts[-1].split('-')[0]}.png"
+                # Capture the name and the extension type (e.g., 762-gif.369401 -> 762 and gif)
+                match = re.search(r"attachments/([\w-]+)-(png|gif)\.\d+/?", url)
+                if match:
+                    base_name = match.group(1)
+                    extension = match.group(2)
+                    filename = f"{base_name}.{extension}"
+                else:
+                    # Handles cases where the regex might miss a specific format
+                    raw_part = Path(url).parts[-1].split(".")[0]  # e.g., "762-gif"
+                    if "-" in raw_part:
+                        name, ext = raw_part.rsplit("-", 1)
+                        filename = f"{name}.{ext}"
+                    else:
+                        print(f"⚠️ Could not parse Smogon URL: {url}")
+                        continue
 
             save_path = download_dir / filename
 
