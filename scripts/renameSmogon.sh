@@ -36,7 +36,13 @@ convert(){
     # Folder where images downloaded from the Smogon spreadsheet are stored.
     local files="downloads/"
     local formDS
+    local formDSAnimated
     formDS=$(jq . forms.json)
+    formDSAnimated="$formDS"  # default to same as formDS
+    if [ -f forms-animated.json ]; then
+        # Merge forms-animated.json into forms.json (animated overrides original)
+        formDSAnimated=$(jq -n --argjson base "$formDS" --argjson animated "$(jq . forms-animated.json)" '$base * $animated')
+    fi
     # echo "$formDS" | jq -r '.["885"]'
 
     cd "$files" || exit
@@ -95,13 +101,18 @@ convert(){
                 else
                     echo "[+] Copying GMax $smogonName to $bwDestination/$pokemonID.$fileExt"
                     if [ "$fileExt" == "png" ]; then
-                        cp "$smogonName" "$destination/$pokemonID.$fileExt"
+                        mv "$smogonName" "$destination/$pokemonID.$fileExt"
                     fi
-                    cp "$smogonName" "$bwDestination/$pokemonID.$fileExt"
+                    mv "$smogonName" "$bwDestination/$pokemonID.$fileExt"
                 fi
             fi
             if [ "$form" ]; then
-                pokemonName=$(echo "$formDS" | jq -r ".[\"${id}_${form}\"]")
+                # Use animated forms for .gif, regular forms for .png
+                if [ "$fileExt" == "gif" ]; then
+                    pokemonName=$(echo "$formDSAnimated" | jq -r ".[\"${id}_${form}\"]")
+                else
+                    pokemonName=$(echo "$formDS" | jq -r ".[\"${id}_${form}\"]")
+                fi
 
                 if [ $? -ne 0 ] || [ "$pokemonName" == 'null' ]; then
                     echo "[-] Form ${id}_${form} wasn't found in the JSON mapping"
@@ -113,9 +124,9 @@ convert(){
                     if [ -n "$pokemonID" ] && [ "$pokemonID" != "null" ]; then
                         echo "[+] Found variety by name: Moving $smogonName to $bwDestination/$pokemonID.$fileExt"
                         if [ "$fileExt" == "png" ]; then
-                            cp "$smogonName" "$destination/$pokemonID.$fileExt"
+                            mv "$smogonName" "$destination/$pokemonID.$fileExt"
                         fi
-                        cp "$smogonName" "$bwDestination/$pokemonID.$fileExt"
+                        mv "$smogonName" "$bwDestination/$pokemonID.$fileExt"
                     else
                         # Search all forms from Pokémon API
                         echo "[!] Variety '$pokemonName' not found directly. Searching in Pokémon forms..."
@@ -134,9 +145,9 @@ convert(){
 
                             echo "[+] Found in forms: Moving $smogonName to $bwDestination/$destFile"
                             if [ "$fileExt" == "png" ]; then
-                                cp "$smogonName" "$destination/$destFile"
+                                mv "$smogonName" "$destination/$destFile"
                             fi
-                            cp "$smogonName" "$bwDestination/$destFile"
+                            mv "$smogonName" "$bwDestination/$destFile"
                         else
                             echo "[!] No matching form found for $pokemonName."
                         fi
@@ -148,9 +159,9 @@ convert(){
                 mkdir -p "$destination"
                 mkdir -p "$bwDestination"
                 if [ "$fileExt" == "png" ]; then
-                    cp "$smogonName" "$destination/$id.$fileExt"
+                    mv "$smogonName" "$destination/$id.$fileExt"
                 fi
-                cp "$smogonName" "$bwDestination/$id.$fileExt"
+                mv "$smogonName" "$bwDestination/$id.$fileExt"
             fi
         fi
     done
