@@ -9,14 +9,10 @@ from pathlib import Path
 # Smogon thread:
 # https://www.smogon.com/forums/threads/smogon-sprite-project.3647722/
 urls = [
-    "https://play.pokemonshowdown.com/sprites/gen5ani/comfey.gif",
-    "https://play.pokemonshowdown.com/sprites/gen5ani-back/comfey.gif",
-    "https://play.pokemonshowdown.com/sprites/gen5ani-shiny/comfey.gif",
-    "https://play.pokemonshowdown.com/sprites/gen5ani-back-shiny/comfey.gif",
-    "https://www.smogon.com/forums/attachments/762-gif.369401/",
-    "https://www.smogon.com/forums/attachments/762b-gif.369402/",
-    "https://www.smogon.com/forums/attachments/762s-gif.369403/",
-    "https://www.smogon.com/forums/attachments/762sb-gif.369404/",
+    "https://www.smogon.com/forums/attachments/019-gif.171350/",
+    "https://www.smogon.com/forums/attachments/19b-gif.177101/",
+    "https://www.smogon.com/forums/attachments/019s-gif.173309/",
+    "https://www.smogon.com/forums/attachments/19sb-gif.177103/",
 ]
 
 # Set a User-Agent to prevent Smogon from blocking the request
@@ -24,7 +20,7 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.31"
 }
 
-# Mapping Showdown directories to your filename suffixes
+# Mapping Showdown directories to filename suffixes
 SHOWDOWN_SUFFIX_MAP = {
     "gen5ani": "",
     "gen5ani-back": "b",
@@ -51,7 +47,6 @@ def download_sprites():
     download_dir = script_dir / "downloads"
     download_dir.mkdir(exist_ok=True)
 
-    # Load and invert the name map
     name_to_id = load_forms_map(script_dir)
 
     print(f"📁 Directory ready: {download_dir.absolute()}")
