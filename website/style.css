@@ -1,0 +1,210 @@
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --card-bg-color: #fff;
+    --card-border-color: #eee;
+    --header-bg-color: #fff;
+    --button-bg-color: #007bff;
+    --button-hover-bg-color: #0056b3;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --card-bg-color: #1e1e1e;
+    --card-border-color: #333;
+    --header-bg-color: #1e1e1e;
+    --button-bg-color: #0056b3;
+    --button-hover-bg-color: #007bff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --bg-color: #121212;
+        --text-color: #f0f0f0;
+        --card-bg-color: #1e1e1e;
+        --card-border-color: #333;
+        --header-bg-color: #1e1e1e;
+        --button-bg-color: #0056b3;
+        --button-hover-bg-color: #007bff;
+    }
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+}
+
+#themeToggle {
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--button-bg-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#themeToggle:hover {
+    background-color: var(--button-hover-bg-color);
+}
+
+h1 {
+    color: var(--text-color);
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--card-border-color);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: var(--card-bg-color);
+    border-bottom: 1px solid var(--card-border-color);
+}
+
+.autocomplete-items div:hover {
+    background-color: var(--button-hover-bg-color); 
+}
+
+.autocomplete-active {
+    background-color: var(--button-bg-color) !important; 
+    color: #ffffff; 
+}
+
+.search-options {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+#displayBtn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#displayBtn:hover {
+    background-color: #218838;
+}
+
+.results-container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.sprite-group {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sprite-group h2 {
+    margin-top: 0;
+    border-bottom: 2px solid var(--card-border-color);
+    padding-bottom: 10px;
+    color: var(--text-color);
+}
+
+.sprite-group h3 {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+.sprite-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 15px;
+}
+
+.sprite-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-color);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--card-border-color);
+}
+
+.sprite-card img {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+}
+
+.sprite-card .placeholder {
+    width: 96px;
+    height: 96px;
+    background-color: #eee;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.sprite-card p {
+    margin: 5px 0 0;
+    font-size: 12px;
+    word-break: break-all;
+}
+
+[data-theme="dark"] .sprite-card .placeholder {
+    background-color: #333;
+    color: #ccc;
+}
