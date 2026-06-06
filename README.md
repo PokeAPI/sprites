@@ -208,8 +208,6 @@ This folder contains the official B&W sprites on top of custom sprites designed 
 
 - The sprites with IDs greater than 650 are thus not official. You can find the source of these sprites at this [Smogon thread](https://www.smogon.com/forums/threads/sword-shield-sprite-project.3647722/) and also at this [Google Sheet](https://docs.google.com/spreadsheets/d/1acgzAjh0dnFRQnjZu8kSjS177rKCzpFfEHRLtwuuXRU/edit#gid=0). We thank leParagon, Blaquaza, TheAetherPlayer, G.E.Z., KingOfThe-X-Roads, Spook, Cynda, Involuntary Twitch, mjco, Z-nogyroP, PumpkinPastel, RadicalCharizard, HM100, N-Kin, Zerudez, MyMarshlands, Wobblebuns, princessofmusic, aXl, fishbowlsoul90, HealnDeal, Espeon Scientist, AMVictory, Mega-Pokebattlerz, Layell, GeoisEvil, Quanyails, RedRooster, Wyverii, Basic Vanillite, Larryturbo, TheCynicalPoet, Arkeis, paintseagull, Branflakes325, Siiilver, Noscium, Sleet, Zermonious, Bynine, Corson, Legitimate Username, TrainerSplash, Farriella, MrDollSteak, TeraVolt, Dleep, WPS, Brylark, KattenK, Travis, SpheX, SelenaArmorclaw and Hematite, who are the spriters that created these custom B&W sprites.
 
-- Special thanks to [KingOfThe-X-Roads](https://www.deviantart.com/kingofthe-x-roads) for providing the front_default sprites for generation 9.
-
 | Front | Back | Front female | Front shiny | Back female | Back shiny | Shiny female |
 | --- | --- | --- | --- | --- | --- | --- |
 | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ | PNG<br>_96x96_ |
@@ -300,6 +298,8 @@ Animated
 | PNG<br>_256x256_ |
 | <img src="sprites/pokemon/versions/generation-ix/scarlet-violet/25.png" width="100"/> |
 
-## Thanks
+## Special Thanks
 
-We would like to thank the [Smogon community](https://www.smogon.com/) for allowing us to use and serve their custom B&W-style sprites for the Pokemon with IDs greater than 650. Check out their free and open-source Pokemon Battle Simulator at [Pokémon Showdown](https://github.com/smogon/pokemon-showdown)
+- We would like to thank the [Smogon community](https://www.smogon.com/) for allowing us to use and serve their custom B&W-style sprites for the Pokemon with IDs greater than 650. Check out their free and open-source Pokemon Battle Simulator at [Pokémon Showdown](https://github.com/smogon/pokemon-showdown)
+- [KingOfThe-X-Roads](https://www.deviantart.com/kingofthe-x-roads) for providing the front_default sprites for generation 9.
+- [x.com/DoveKyle](https://x.com/DoveKyle)/[github.com/kyledovey](https://github.com/kyledovey) for providing the back_default sprites for generation 9.
