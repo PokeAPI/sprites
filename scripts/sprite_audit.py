@@ -1,7 +1,12 @@
-import pandas as pd
-from pathlib import Path
-from PIL import Image
+import argparse
+import os
+import shutil
+import tempfile
 from collections import Counter
+from pathlib import Path
+
+import pandas as pd
+from PIL import Image, ImageFile
 
 # CONFIGURATION
 GITHUB_BASE_URL = "https://raw.githubusercontent.com/PokeAPI/pokeapi/master/data/v2/csv"
@@ -10,7 +15,6 @@ FORMS_CSV_URL = f"{GITHUB_BASE_URL}/pokemon_forms.csv"
 VG_CSV_URL = f"{GITHUB_BASE_URL}/version_groups.csv"
 
 # Local Sprite directories relative to this script
-# .parent.parent refers to /Parent/ (going up from /Parent/sprites/scripts/)
 SCRIPT_DIR = Path(__file__).resolve().parent
 BASE_PATH = SCRIPT_DIR.parent / "sprites" / "pokemon"
 
@@ -31,12 +35,12 @@ def get_standard_dimension():
     for folder in PATHS.values():
         if not folder.exists():
             continue
-        for file in folder.glob("*"):
+        for file in sorted(folder.glob("*")):
             if file.suffix.lower() in valid_ext:
                 try:
                     with Image.open(file) as img:
                         all_sizes.append(img.size)
-                except:
+                except Exception:
                     continue
 
     if not all_sizes:
@@ -47,7 +51,78 @@ def get_standard_dimension():
     return most_common
 
 
-def check_assets():
+def scan_entries(pokemon_entries, standard_size, collect_corrupts: bool = False):
+    """Scan entries, return (report_list, corrupt_set).
+
+    If collect_corrupts=True unreadable files are added to corrupt_set for a later repair pass.
+    """
+    report = []
+    corrupt_paths = set()
+
+    for pokemon in pokemon_entries:
+        p_id = pokemon["pokemon_id"]
+        s_id = pokemon["species_id"]
+        name = pokemon["identifier"]
+        gen = int(pokemon["generation"]) if pd.notnull(pokemon["generation"]) else "Unknown"
+        filename = f"{p_id}.png"
+
+        for label, folder in PATHS.items():
+            file_path = folder / filename
+            issue = None
+
+            if not file_path.exists():
+                issue = "missing_file"
+            else:
+                try:
+                    with Image.open(file_path) as img:
+                        if img.size != standard_size:
+                            issue = f"wrong_size_{img.size[0]}x{img.size[1]}"
+                except Exception as e:
+                    print(f"⚠️ Error opening {file_path}: {e}")
+                    if collect_corrupts:
+                        corrupt_paths.add(file_path)
+                    issue = "corrupt_file"
+
+            if issue:
+                report.append(
+                    {
+                        "pokemon_id": p_id,
+                        "identifier": name,
+                        "species_id": s_id,
+                        "sprite_type": label.lower().replace(" ", "_"),
+                        "generation": gen,
+                        "issue": issue,
+                    }
+                )
+
+    return report, corrupt_paths
+
+
+def attempt_repair(path: Path) -> bool:
+    """Try to repair an unreadable image by loading with truncated-images enabled and re-saving.
+
+    Returns True if the file was replaced with a re-saved copy, False otherwise.
+    """
+    try:
+        ImageFile.LOAD_TRUNCATED_IMAGES = True
+        with Image.open(path) as im:
+            im.load()
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tf:
+                tmpname = tf.name
+            im.save(tmpname, format="PNG")
+            shutil.move(tmpname, str(path))
+        return True
+    except Exception as ex:
+        print(f"  repair failed: {ex}")
+        try:
+            if "tmpname" in locals() and Path(tmpname).exists():
+                Path(tmpname).unlink()
+        except Exception:
+            pass
+        return False
+
+
+def check_assets(repair_enabled: bool = False):
     print("\n" + "=" * 50)
     print("🔍 POKÉMON SPRITE AUDIT")
     print(f"📂 Script: {Path(__file__).name}")
@@ -84,54 +159,30 @@ def check_assets():
         how="left",
     )
 
-    pokemon_entries = (
+    df_entries = (
         df_merged[["id_x", "species_id", "identifier", "generation_id"]]
         .rename(columns={"id_x": "pokemon_id", "generation_id": "generation"})
-        .to_dict("records")
     )
+
+    # Ensure deterministic ordering by pokemon_id
+    df_entries = df_entries.sort_values(by=["pokemon_id"])
+    pokemon_entries = df_entries.to_dict("records")
 
     # 4. Deep Scan (Existence + Dimensions)
-    print(
-        f"🧪 Scanning {len(pokemon_entries)} entries across {len(PATHS)} categories..."
-    )
-    report_data = []
+    print(f"🧪 Scanning {len(pokemon_entries)} entries across {len(PATHS)} categories...")
 
-    for pokemon in pokemon_entries:
-        p_id = pokemon["pokemon_id"]
-        s_id = pokemon["species_id"]
-        name = pokemon["identifier"]
-        gen = (
-            int(pokemon["generation"])
-            if pd.notnull(pokemon["generation"])
-            else "Unknown"
-        )
-        filename = f"{p_id}.png"
+    # First pass: collect corrupt files (if any)
+    report_data, corrupt_set = scan_entries(pokemon_entries, standard_size, collect_corrupts=True)
 
-        for label, folder in PATHS.items():
-            file_path = folder / filename
-            issue = None
+    if repair_enabled and corrupt_set:
+        print(f"\nFound {len(corrupt_set)} corrupt/unopenable files; attempting repair...")
+        for path in sorted(corrupt_set):
+            print(f"  → Repairing {path}...")
+            success = attempt_repair(path)
+            print(f"    {'success' if success else 'failed'}: {path}")
 
-            if not file_path.exists():
-                issue = "missing_file"
-            else:
-                try:
-                    with Image.open(file_path) as img:
-                        if img.size != standard_size:
-                            issue = f"wrong_size_{img.size[0]}x{img.size[1]}"
-                except Exception:
-                    issue = "corrupt_file"
-
-            if issue:
-                report_data.append(
-                    {
-                        "pokemon_id": p_id,
-                        "identifier": name,
-                        "species_id": s_id,
-                        "sprite_type": label.lower().replace(" ", "_"),
-                        "generation": gen,
-                        "issue": issue,
-                    }
-                )
+        # Re-scan after repair attempts
+        report_data, _ = scan_entries(pokemon_entries, standard_size, collect_corrupts=False)
 
     # 5. Output Report & Preview
     if report_data:
@@ -159,5 +210,12 @@ def check_assets():
         print("\n✨ Audit complete: 0 issues found. Your sprite collection is perfect!")
 
 
+def parse_args_and_run():
+    parser = argparse.ArgumentParser(description="Audit Pokémon sprites")
+    parser.add_argument("--repair", action="store_true", help="Attempt to repair corrupt images by re-saving via Pillow")
+    args = parser.parse_args()
+    check_assets(repair_enabled=args.repair)
+
+
 if __name__ == "__main__":
-    check_assets()
+    parse_args_and_run()
