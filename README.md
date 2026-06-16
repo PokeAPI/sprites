@@ -302,4 +302,4 @@ Animated
 
 - We would like to thank the [Smogon community](https://www.smogon.com/) for allowing us to use and serve their custom B&W-style sprites for the Pokemon with IDs greater than 650. Check out their free and open-source Pokemon Battle Simulator at [Pokémon Showdown](https://github.com/smogon/pokemon-showdown)
 - [KingOfThe-X-Roads](https://www.deviantart.com/kingofthe-x-roads) for providing the front_default sprites for generation 9.
-- [x.com/DoveKyle](https://x.com/DoveKyle)/[github.com/kyledovey](https://github.com/kyledovey) for providing the back_default sprites for generation 9.
+- [x.com/DoveKyle](https://x.com/DoveKyle)/[github.com/kyledovey](https://github.com/kyledovey) for providing the back_default and back_shiny sprites for generation 9.
