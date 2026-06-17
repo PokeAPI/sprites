@@ -7,6 +7,10 @@ pokemon_id,identifier,species_id,sprite_type,generation,issue
 10159,eevee-starter,133,front,7,missing_file
 10158,pikachu-starter,25,front_shiny,7,missing_file
 10159,eevee-starter,133,front_shiny,7,missing_file
+10301,zygarde-mega,718,back,9,missing_file
+10301,zygarde-mega,718,back_shiny,9,missing_file
+10301,zygarde-mega,718,front,9,missing_file
+10301,zygarde-mega,718,front_shiny,9,missing_file
 10264,koraidon-limited-build,1007,back,Unknown,missing_file
 10265,koraidon-sprinting-build,1007,back,Unknown,missing_file
 10266,koraidon-swimming-build,1007,back,Unknown,missing_file
