@@ -1,1 +1,0 @@
-Enjoy Pokemon Champions
