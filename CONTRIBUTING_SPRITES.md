@@ -13,15 +13,15 @@ This initial version of the maintenance workflow focuses specifically on:
 
 ### 1. Identifying Missing Sprites
 
-**Script:** `scripts/check_missing_sprites.py`
+**Script:** `scripts/sprite_audit.py`
 
-This script identifies which Pokémon or forms are missing from the `sprites/pokemon/` directory.
+This script identifies missing or invalid sprites in the `sprites/pokemon/` directory.
 
 * **Data Sources:** It references `pokemon.csv` and `pokemon_forms.csv` from the PokéAPI database.
-* **Logic:** It checks for the existence of four primary assets for every entry:
+* **Logic:** It checks the existence and dimensions of four primary assets for every entry:
   * Front (Default & Shiny)
   * Back (Default & Shiny)
-* **Output:** Missing entries are logged in `missing_sprites.csv` to track our progress toward a 100% complete National Dex.
+* **Output:** Issues are logged in `sprite_audit_report.csv` to track our progress toward a 100% complete National Dex.
 
 ### 2. Synchronizing with Smogon
 
@@ -60,6 +60,6 @@ The Smogon source data is community-maintained and contains known inconsistencie
 
 ### How to Use
 
-1. **Check for gaps:** `python scripts/check_missing_sprites.py`
+1. **Check for gaps:** `python scripts/sprite_audit.py`
 2. **Sync Smogon assets:** `python scripts/smogon_download.py`
 3. **Manual Fixes:** Review the downloaded files against the "Known Issues" above and correct names/folders manually before submitting a PR.
