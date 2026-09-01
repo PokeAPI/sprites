@@ -37,6 +37,7 @@ sprites
         \- home (PNGs)
     \- versions
         \- generation i
+            \- red and green (PNGs with gray variants)
             \- red and blue (PNGs with back, gray, transparent, back-gray variants)
             \- yellow (PNGs with back, gbc, gray, transparent, back-gbc, back-gray, back-transparent variants)
         \- generation ii
@@ -65,8 +66,9 @@ sprites
         \- generation viii
             \- icons (PNGs with female variants)
             \- brilliant-diamond-shining-pearl (PNGs)
-        \- generation xi
+        \- generation ix
             \- scarlet-violet (PNGs with female)
+            \- champions (PNGs)
     \- default PokeAPI sprites (PNGs with back, female, shiny, back-female, back-shiny, shiny-female variants)
 \- items
     \- default PokeAPI items (PNGs)
