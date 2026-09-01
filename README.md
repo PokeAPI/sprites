@@ -292,12 +292,19 @@ Animated
 
 ##### `generation ix`
 
-###### `brilliant-diamond-shining-pearl`
+###### `scarlet-violet`
 
 | Front |
 | --- |
 | PNG<br>_256x256_ |
 | <img src="sprites/pokemon/versions/generation-ix/scarlet-violet/25.png" width="100"/> |
+
+###### `champions`
+
+| Front |
+| --- |
+| PNG<br>_128x128_ |
+| <img src="sprites/pokemon/versions/generation-ix/champions/25.png" width="100"/> |
 
 ## Special Thanks
 
