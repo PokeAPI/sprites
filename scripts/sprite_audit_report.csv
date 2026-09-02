@@ -1,45 +1,1209 @@
-pokemon_id,identifier,species_id,sprite_type,generation,issue
-10158,pikachu-starter,25,back,7,missing_file
-10159,eevee-starter,133,back,7,missing_file
-10158,pikachu-starter,25,back_shiny,7,missing_file
-10159,eevee-starter,133,back_shiny,7,missing_file
-10158,pikachu-starter,25,front,7,missing_file
-10159,eevee-starter,133,front,7,missing_file
-10158,pikachu-starter,25,front_shiny,7,missing_file
-10159,eevee-starter,133,front_shiny,7,missing_file
-10301,zygarde-mega,718,back,9,missing_file
-10301,zygarde-mega,718,back_shiny,9,missing_file
-10301,zygarde-mega,718,front,9,missing_file
-10301,zygarde-mega,718,front_shiny,9,missing_file
-10264,koraidon-limited-build,1007,back,Unknown,missing_file
-10265,koraidon-sprinting-build,1007,back,Unknown,missing_file
-10266,koraidon-swimming-build,1007,back,Unknown,missing_file
-10267,koraidon-gliding-build,1007,back,Unknown,missing_file
-10268,miraidon-low-power-mode,1008,back,Unknown,missing_file
-10269,miraidon-drive-mode,1008,back,Unknown,missing_file
-10270,miraidon-aquatic-mode,1008,back,Unknown,missing_file
-10271,miraidon-glide-mode,1008,back,Unknown,missing_file
-10264,koraidon-limited-build,1007,back_shiny,Unknown,missing_file
-10265,koraidon-sprinting-build,1007,back_shiny,Unknown,missing_file
-10266,koraidon-swimming-build,1007,back_shiny,Unknown,missing_file
-10267,koraidon-gliding-build,1007,back_shiny,Unknown,missing_file
-10268,miraidon-low-power-mode,1008,back_shiny,Unknown,missing_file
-10269,miraidon-drive-mode,1008,back_shiny,Unknown,missing_file
-10270,miraidon-aquatic-mode,1008,back_shiny,Unknown,missing_file
-10271,miraidon-glide-mode,1008,back_shiny,Unknown,missing_file
-10264,koraidon-limited-build,1007,front,Unknown,missing_file
-10265,koraidon-sprinting-build,1007,front,Unknown,missing_file
-10266,koraidon-swimming-build,1007,front,Unknown,missing_file
-10267,koraidon-gliding-build,1007,front,Unknown,missing_file
-10268,miraidon-low-power-mode,1008,front,Unknown,missing_file
-10269,miraidon-drive-mode,1008,front,Unknown,missing_file
-10270,miraidon-aquatic-mode,1008,front,Unknown,missing_file
-10271,miraidon-glide-mode,1008,front,Unknown,missing_file
-10264,koraidon-limited-build,1007,front_shiny,Unknown,missing_file
-10265,koraidon-sprinting-build,1007,front_shiny,Unknown,missing_file
-10266,koraidon-swimming-build,1007,front_shiny,Unknown,missing_file
-10267,koraidon-gliding-build,1007,front_shiny,Unknown,missing_file
-10268,miraidon-low-power-mode,1008,front_shiny,Unknown,missing_file
-10269,miraidon-drive-mode,1008,front_shiny,Unknown,missing_file
-10270,miraidon-aquatic-mode,1008,front_shiny,Unknown,missing_file
-10271,miraidon-glide-mode,1008,front_shiny,Unknown,missing_file
+category,category_name,pokemon_id,form_id,identifier,species_id,generation,is_form,has_gender_differences,missing_sprites,wrong_size_sprites,corrupt_sprites,issue_summary
+default,Default (Pixel Art),42,,golbat,42,1,0,1,"Back Female, Back Shiny Female",,,"Missing: Back Female, Back Shiny Female"
+default,Default (Pixel Art),133,,eevee,133,1,0,1,,,"Front Female, Front Shiny Female, Back Female, Back Shiny Female","Corrupt: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),202,,wobbuffet,202,2,0,1,"Back Female, Back Shiny Female",,,"Missing: Back Female, Back Shiny Female"
+default,Default (Pixel Art),332,,cacturne,332,3,0,1,"Back Female, Back Shiny Female",,,"Missing: Back Female, Back Shiny Female"
+default,Default (Pixel Art),398,,staraptor,398,4,0,1,"Back Female, Back Shiny Female",,,"Missing: Back Female, Back Shiny Female"
+default,Default (Pixel Art),400,,bibarel,400,4,0,1,"Back Female, Back Shiny Female",,,"Missing: Back Female, Back Shiny Female"
+default,Default (Pixel Art),415,,combee,415,4,0,1,"Back Female, Back Shiny Female",,,"Missing: Back Female, Back Shiny Female"
+default,Default (Pixel Art),417,,pachirisu,417,4,0,1,"Back Female, Back Shiny Female",,,"Missing: Back Female, Back Shiny Female"
+default,Default (Pixel Art),460,,abomasnow,460,4,0,1,"Back Female, Back Shiny Female",,,"Missing: Back Female, Back Shiny Female"
+default,Default (Pixel Art),592,10552,frillish-female,592,5,1,1,"Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),593,10553,jellicent-female,593,5,1,1,"Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),668,10551,pyroar-female,668,6,1,1,"Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10025,,meowstic-female,678,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10033,,venusaur-mega,3,6,0,1,"Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10037,,alakazam-mega,65,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10041,,gyarados-mega,130,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10046,,scizor-mega,212,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10047,,heracross-mega,214,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10048,,houndoom-mega,229,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10050,,blaziken-mega,257,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10054,,medicham-mega,308,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10058,,garchomp-mega,445,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10060,,abomasnow-mega,460,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10072,,steelix-mega,208,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10080,,pikachu-rock-star,25,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10081,,pikachu-belle,25,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10082,,pikachu-pop-star,25,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10083,,pikachu-phd,25,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10084,,pikachu-libre,25,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10085,,pikachu-cosplay,25,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10087,,camerupt-mega,323,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),414,10269,mothim-sandy,414,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),414,10270,mothim-trash,414,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),664,10271,scatterbug-polar,664,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),665,10301,spewpa-river,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10091,,rattata-alola,19,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10092,,raticate-alola,20,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10093,,raticate-totem-alola,20,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10094,,pikachu-original-cap,25,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10095,,pikachu-hoenn-cap,25,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10096,,pikachu-sinnoh-cap,25,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10097,,pikachu-unova-cap,25,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10098,,pikachu-kalos-cap,25,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10099,,pikachu-alola-cap,25,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10100,,raichu-alola,26,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10148,,pikachu-partner-cap,25,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10158,,pikachu-starter,25,7,0,1,"Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10159,,eevee-starter,133,7,0,1,"Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),854,10344,sinistea-antique,854,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),855,10345,polteageist-antique,855,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),869,10346,alcremie-ruby-cream-strawberry-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10347,alcremie-matcha-cream-strawberry-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10348,alcremie-mint-cream-strawberry-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10349,alcremie-lemon-cream-strawberry-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10350,alcremie-salted-cream-strawberry-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10351,alcremie-ruby-swirl-strawberry-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10352,alcremie-caramel-swirl-strawberry-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10353,alcremie-rainbow-swirl-strawberry-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10450,alcremie-ruby-cream-berry-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10451,alcremie-matcha-cream-berry-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10452,alcremie-mint-cream-berry-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10453,alcremie-lemon-cream-berry-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10454,alcremie-salted-cream-berry-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10455,alcremie-ruby-swirl-berry-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10456,alcremie-caramel-swirl-berry-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10457,alcremie-rainbow-swirl-berry-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10459,alcremie-ruby-cream-love-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10460,alcremie-matcha-cream-love-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10461,alcremie-mint-cream-love-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10462,alcremie-lemon-cream-love-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10463,alcremie-salted-cream-love-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10464,alcremie-ruby-swirl-love-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10465,alcremie-caramel-swirl-love-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10466,alcremie-rainbow-swirl-love-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10468,alcremie-ruby-cream-star-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10469,alcremie-matcha-cream-star-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10470,alcremie-mint-cream-star-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10471,alcremie-lemon-cream-star-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10472,alcremie-salted-cream-star-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10473,alcremie-ruby-swirl-star-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10474,alcremie-caramel-swirl-star-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10475,alcremie-rainbow-swirl-star-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10477,alcremie-ruby-cream-clover-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10478,alcremie-matcha-cream-clover-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10479,alcremie-mint-cream-clover-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10480,alcremie-lemon-cream-clover-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10481,alcremie-salted-cream-clover-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10482,alcremie-ruby-swirl-clover-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10483,alcremie-caramel-swirl-clover-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10484,alcremie-rainbow-swirl-clover-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10486,alcremie-ruby-cream-flower-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10487,alcremie-matcha-cream-flower-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10488,alcremie-mint-cream-flower-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10489,alcremie-lemon-cream-flower-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10490,alcremie-salted-cream-flower-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10491,alcremie-ruby-swirl-flower-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10492,alcremie-caramel-swirl-flower-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10493,alcremie-rainbow-swirl-flower-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10495,alcremie-ruby-cream-ribbon-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10496,alcremie-matcha-cream-ribbon-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10497,alcremie-mint-cream-ribbon-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10498,alcremie-lemon-cream-ribbon-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10499,alcremie-salted-cream-ribbon-sweet,869,8,1,0,Back Shiny,,Front,Missing: Back Shiny | Corrupt: Front
+default,Default (Pixel Art),869,10500,alcremie-ruby-swirl-ribbon-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10501,alcremie-caramel-swirl-ribbon-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),869,10502,alcremie-rainbow-swirl-ribbon-sweet,869,8,1,0,"Back, Back Shiny",,Front,"Missing: Back, Back Shiny | Corrupt: Front"
+default,Default (Pixel Art),902,,basculegion-male,902,8,0,1,"Front Female, Front Shiny Female, Back Female",,,"Missing: Front Female, Front Shiny Female, Back Female"
+default,Default (Pixel Art),10160,,pikachu-world-cap,25,8,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10186,,indeedee-female,876,8,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10195,,venusaur-gmax,3,8,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10198,,butterfree-gmax,12,8,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10199,,pikachu-gmax,25,8,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10205,,eevee-gmax,133,8,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10248,,basculegion-female,902,8,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),916,,oinkologne-male,916,9,0,1,"Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),1012,10447,poltchageist-artisan,1012,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),1013,10448,sinistcha-masterpiece,1013,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10253,,wooper-paldea,194,9,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10254,,oinkologne-female,916,9,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10264,10433,koraidon-limited-build,1007,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10265,10434,koraidon-sprinting-build,1007,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10266,10435,koraidon-swimming-build,1007,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10267,10436,koraidon-gliding-build,1007,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10268,10437,miraidon-low-power-mode,1008,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10269,10438,miraidon-drive-mode,1008,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10270,10439,miraidon-aquatic-mode,1008,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10271,10440,miraidon-glide-mode,1008,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10282,,meganium-mega,154,9,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10295,,pyroar-mega,668,9,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10301,,zygarde-mega,718,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10304,,raichu-mega-x,26,9,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10305,,raichu-mega-y,26,9,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10308,,staraptor-mega,398,9,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10309,,garchomp-mega-z,445,9,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10314,,meowstic-male-mega,678,9,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10326,,meowstic-female-mega,678,9,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+default,Default (Pixel Art),10264,,koraidon-limited-build,1007,Unknown,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10265,,koraidon-sprinting-build,1007,Unknown,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10266,,koraidon-swimming-build,1007,Unknown,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10267,,koraidon-gliding-build,1007,Unknown,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10268,,miraidon-low-power-mode,1008,Unknown,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10269,,miraidon-drive-mode,1008,Unknown,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10270,,miraidon-aquatic-mode,1008,Unknown,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+default,Default (Pixel Art),10271,,miraidon-glide-mode,1008,Unknown,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+dream-world,Dream World,3,,venusaur,3,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,12,,butterfree,12,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,19,,rattata,19,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,20,,raticate,20,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,25,,pikachu,25,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,26,,raichu,26,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,41,,zubat,41,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,42,,golbat,42,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,44,,gloom,44,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,45,,vileplume,45,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,64,,kadabra,64,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,65,,alakazam,65,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,84,,doduo,84,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,85,,dodrio,85,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,97,,hypno,97,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,111,,rhyhorn,111,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,112,,rhydon,112,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,118,,goldeen,118,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,119,,seaking,119,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,123,,scyther,123,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,129,,magikarp,129,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,130,,gyarados,130,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,133,,eevee,133,1,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,154,,meganium,154,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,165,,ledyba,165,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,166,,ledian,166,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,178,,xatu,178,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,185,,sudowoodo,185,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,186,,politoed,186,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,190,,aipom,190,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,194,,wooper,194,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,195,,quagsire,195,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,198,,murkrow,198,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,202,,wobbuffet,202,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,203,,girafarig,203,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,207,,gligar,207,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,208,,steelix,208,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,212,,scizor,212,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,214,,heracross,214,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,215,,sneasel,215,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,217,,ursaring,217,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,221,,piloswine,221,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,224,,octillery,224,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,229,,houndoom,229,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,232,,donphan,232,2,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,255,,torchic,255,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,256,,combusken,256,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,257,,blaziken,257,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,267,,beautifly,267,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,269,,dustox,269,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,272,,ludicolo,272,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,274,,nuzleaf,274,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,275,,shiftry,275,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,307,,meditite,307,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,308,,medicham,308,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,315,,roselia,315,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,316,,gulpin,316,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,317,,swalot,317,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,322,,numel,322,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,323,,camerupt,323,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,332,,cacturne,332,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,350,,milotic,350,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,369,,relicanth,369,3,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,172,10065,pichu-spiky-eared,172,4,1,0,Front,,,Missing: Front
+dream-world,Dream World,396,,starly,396,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,397,,staravia,397,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,398,,staraptor,398,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,399,,bidoof,399,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,400,,bibarel,400,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,401,,kricketot,401,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,402,,kricketune,402,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,403,,shinx,403,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,404,,luxio,404,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,405,,luxray,405,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,407,,roserade,407,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,415,,combee,415,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,417,,pachirisu,417,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,418,,buizel,418,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,419,,floatzel,419,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,424,,ambipom,424,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,443,,gible,443,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,444,,gabite,444,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,445,,garchomp,445,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,449,,hippopotas,449,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,450,,hippowdon,450,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,453,,croagunk,453,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,454,,toxicroak,454,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,456,,finneon,456,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,457,,lumineon,457,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,459,,snover,459,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,460,,abomasnow,460,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,461,,weavile,461,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,464,,rhyperior,464,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,465,,tangrowth,465,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,473,,mamoswine,473,4,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,493,10057,arceus-unknown,493,4,1,0,Front,,,Missing: Front
+dream-world,Dream World,521,,unfezant,521,5,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,592,10552,frillish-female,592,5,1,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,593,10553,jellicent-female,593,5,1,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10017,,darmanitan-zen,555,5,0,0,Front,,,Missing: Front
+dream-world,Dream World,660,,diggersby,660,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,666,10094,vivillon-archipelago,666,6,1,0,Front,,,Missing: Front
+dream-world,Dream World,668,,pyroar-male,668,6,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,668,10551,pyroar-female,668,6,1,1,Front,,,Missing: Front
+dream-world,Dream World,676,,furfrou,676,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,676,10116,furfrou-star,676,6,1,0,Front,,,Missing: Front
+dream-world,Dream World,676,10117,furfrou-diamond,676,6,1,0,Front,,,Missing: Front
+dream-world,Dream World,676,10118,furfrou-debutante,676,6,1,0,Front,,,Missing: Front
+dream-world,Dream World,676,10119,furfrou-matron,676,6,1,0,Front,,,Missing: Front
+dream-world,Dream World,676,10120,furfrou-dandy,676,6,1,0,Front,,,Missing: Front
+dream-world,Dream World,676,10121,furfrou-la-reine,676,6,1,0,Front,,,Missing: Front
+dream-world,Dream World,676,10122,furfrou-kabuki,676,6,1,0,Front,,,Missing: Front
+dream-world,Dream World,678,,meowstic-male,678,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,681,,aegislash-shield,681,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,682,,spritzee,682,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,683,,aromatisse,683,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,685,,slurpuff,685,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,687,,malamar,687,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,688,,binacle,688,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,694,,helioptile,694,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,695,,heliolisk,695,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,703,,carbink,703,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,709,,trevenant,709,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,720,,hoopa,720,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,721,,volcanion,721,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10025,,meowstic-female,678,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10033,,venusaur-mega,3,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10034,,charizard-mega-x,6,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10035,,charizard-mega-y,6,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10037,,alakazam-mega,65,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10038,,gengar-mega,94,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10039,,kangaskhan-mega,115,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10040,,pinsir-mega,127,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10041,,gyarados-mega,130,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10042,,aerodactyl-mega,142,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10043,,mewtwo-mega-x,150,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10044,,mewtwo-mega-y,150,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10045,,ampharos-mega,181,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10046,,scizor-mega,212,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10047,,heracross-mega,214,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10048,,houndoom-mega,229,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10049,,tyranitar-mega,248,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10050,,blaziken-mega,257,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10051,,gardevoir-mega,282,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10052,,mawile-mega,303,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10053,,aggron-mega,306,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10054,,medicham-mega,308,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10055,,manectric-mega,310,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10056,,banette-mega,354,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10057,,absol-mega,359,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10058,,garchomp-mega,445,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10060,,abomasnow-mega,460,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10061,,floette-eternal,670,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10062,,latias-mega,380,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10063,,latios-mega,381,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10064,,swampert-mega,260,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10065,,sceptile-mega,254,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10066,,sableye-mega,302,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10067,,altaria-mega,334,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10068,,gallade-mega,475,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10069,,audino-mega,531,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10070,,sharpedo-mega,319,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10071,,slowbro-mega,80,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10072,,steelix-mega,208,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10073,,pidgeot-mega,18,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10074,,glalie-mega,362,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10075,,diancie-mega,719,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10076,,metagross-mega,376,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10079,,rayquaza-mega,384,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10080,,pikachu-rock-star,25,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10081,,pikachu-belle,25,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10082,,pikachu-pop-star,25,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10083,,pikachu-phd,25,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10084,,pikachu-libre,25,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10085,,pikachu-cosplay,25,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10087,,camerupt-mega,323,6,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10088,,lopunny-mega,428,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10089,,salamence-mega,373,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,10090,,beedrill-mega,15,6,0,0,Front,,,Missing: Front
+dream-world,Dream World,414,10269,mothim-sandy,414,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,414,10270,mothim-trash,414,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,664,10271,scatterbug-polar,664,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,664,10275,scatterbug-elegant,664,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,664,10276,scatterbug-meadow,664,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,664,10277,scatterbug-modern,664,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,664,10278,scatterbug-marine,664,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,664,10279,scatterbug-archipelago,664,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,664,10280,scatterbug-high-plains,664,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,664,10281,scatterbug-sandstorm,664,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,664,10282,scatterbug-river,664,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,664,10283,scatterbug-monsoon,664,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,664,10284,scatterbug-savanna,664,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,664,10285,scatterbug-sun,664,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,664,10286,scatterbug-ocean,664,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,664,10287,scatterbug-jungle,664,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,664,10288,scatterbug-fancy,664,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,664,10289,scatterbug-poke-ball,664,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10290,spewpa-polar,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10291,spewpa-tundra,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10292,spewpa-continental,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10293,spewpa-garden,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10294,spewpa-elegant,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10295,spewpa-meadow,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10296,spewpa-modern,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10297,spewpa-marine,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10298,spewpa-archipelago,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10299,spewpa-high-plains,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10300,spewpa-sandstorm,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10301,spewpa-river,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10302,spewpa-monsoon,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10303,spewpa-savanna,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10304,spewpa-sun,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10305,spewpa-ocean,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10306,spewpa-jungle,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10307,spewpa-fancy,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,665,10308,spewpa-poke-ball,665,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,732,,trumbeak,732,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,733,,toucannon,733,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,736,,grubbin,736,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,738,,vikavolt,738,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,751,,dewpider,751,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,752,,araquanid,752,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,755,,morelull,755,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,767,,wimpod,767,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,768,,golisopod,768,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,772,,type-null,772,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,773,,silvally,773,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,773,10232,silvally-fighting,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,773,10233,silvally-flying,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,773,10234,silvally-poison,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,773,10235,silvally-ground,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,773,10236,silvally-rock,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,773,10237,silvally-bug,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,773,10238,silvally-ghost,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,773,10239,silvally-steel,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,773,10240,silvally-fire,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,773,10241,silvally-water,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,773,10242,silvally-grass,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,773,10243,silvally-electric,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,773,10244,silvally-psychic,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,773,10245,silvally-ice,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,773,10246,silvally-dragon,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,773,10247,silvally-dark,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,773,10248,silvally-fairy,773,7,1,0,Front,,,Missing: Front
+dream-world,Dream World,774,,minior-red-meteor,774,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,776,,turtonator,776,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,781,,dhelmise,781,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,782,,jangmo-o,782,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,784,,kommo-o,784,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,785,,tapu-koko,785,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,786,,tapu-lele,786,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,789,,cosmog,789,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,790,,cosmoem,790,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,793,,nihilego,793,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,794,,buzzwole,794,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,795,,pheromosa,795,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,796,,xurkitree,796,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,797,,celesteela,797,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,798,,kartana,798,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,799,,guzzlord,799,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,801,,magearna,801,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,802,,marshadow,802,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,803,,poipole,803,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,804,,naganadel,804,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,805,,stakataka,805,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,806,,blacephalon,806,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10091,,rattata-alola,19,7,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,10092,,raticate-alola,20,7,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10093,,raticate-totem-alola,20,7,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10094,,pikachu-original-cap,25,7,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10095,,pikachu-hoenn-cap,25,7,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10096,,pikachu-sinnoh-cap,25,7,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10097,,pikachu-unova-cap,25,7,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10098,,pikachu-kalos-cap,25,7,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10099,,pikachu-alola-cap,25,7,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10100,,raichu-alola,26,7,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,10102,,sandslash-alola,28,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10104,,ninetales-alola,38,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10105,,diglett-alola,50,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10108,,persian-alola,53,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10109,,geodude-alola,74,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10110,,graveler-alola,75,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10111,,golem-alola,76,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10112,,grimer-alola,88,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10113,,muk-alola,89,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10116,,greninja-battle-bond,658,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10117,,greninja-ash,658,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10118,,zygarde-10-power-construct,718,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10119,,zygarde-50-power-construct,718,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10120,,zygarde-complete,718,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10121,,gumshoos-totem,735,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10122,,vikavolt-totem,738,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10127,,wishiwashi-school,746,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10128,,lurantis-totem,754,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10129,,salazzle-totem,758,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10130,,minior-orange-meteor,774,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10131,,minior-yellow-meteor,774,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10132,,minior-green-meteor,774,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10133,,minior-blue-meteor,774,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10134,,minior-indigo-meteor,774,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10135,,minior-violet-meteor,774,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10136,,minior-red,774,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10137,,minior-orange,774,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10138,,minior-yellow,774,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10139,,minior-green,774,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10140,,minior-blue,774,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10141,,minior-indigo,774,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10142,,minior-violet,774,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10143,,mimikyu-busted,778,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10144,,mimikyu-totem-disguised,778,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10145,,mimikyu-totem-busted,778,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10146,,kommo-o-totem,784,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10147,,magearna-original,801,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10148,,pikachu-partner-cap,25,7,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10149,,marowak-totem,105,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10150,,ribombee-totem,743,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10151,,rockruff-own-tempo,744,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10153,,araquanid-totem,752,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10154,,togedemaru-totem,777,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10155,,necrozma-dusk,800,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10156,,necrozma-dawn,800,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10157,,necrozma-ultra,800,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,10158,,pikachu-starter,25,7,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10159,,eevee-starter,133,7,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10181,,zygarde-10,718,7,0,0,Front,,,Missing: Front
+dream-world,Dream World,824,,blipbug,824,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,825,,dottler,825,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,826,,orbeetle,826,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,827,,nickit,827,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,829,,gossifleur,829,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,830,,eldegoss,830,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,832,,dubwool,832,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,836,,boltund,836,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,845,,cramorant,845,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,850,,sizzlipede,850,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,851,,centiskorch,851,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,852,,clobbopus,852,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,853,,grapploct,853,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,854,10344,sinistea-antique,854,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,855,10345,polteageist-antique,855,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,862,,obstagoon,862,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,863,,perrserker,863,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,864,,cursola,864,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,866,,mr-rime,866,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,867,,runerigus,867,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,868,,milcery,868,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,869,,alcremie,869,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,869,10346,alcremie-ruby-cream-strawberry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10347,alcremie-matcha-cream-strawberry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10348,alcremie-mint-cream-strawberry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10349,alcremie-lemon-cream-strawberry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10350,alcremie-salted-cream-strawberry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10351,alcremie-ruby-swirl-strawberry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10352,alcremie-caramel-swirl-strawberry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10353,alcremie-rainbow-swirl-strawberry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10449,alcremie-vanilla-cream-berry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10450,alcremie-ruby-cream-berry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10451,alcremie-matcha-cream-berry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10452,alcremie-mint-cream-berry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10453,alcremie-lemon-cream-berry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10454,alcremie-salted-cream-berry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10455,alcremie-ruby-swirl-berry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10456,alcremie-caramel-swirl-berry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10457,alcremie-rainbow-swirl-berry-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10458,alcremie-vanilla-cream-love-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10459,alcremie-ruby-cream-love-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10460,alcremie-matcha-cream-love-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10461,alcremie-mint-cream-love-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10462,alcremie-lemon-cream-love-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10463,alcremie-salted-cream-love-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10464,alcremie-ruby-swirl-love-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10465,alcremie-caramel-swirl-love-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10466,alcremie-rainbow-swirl-love-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10467,alcremie-vanilla-cream-star-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10468,alcremie-ruby-cream-star-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10469,alcremie-matcha-cream-star-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10470,alcremie-mint-cream-star-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10471,alcremie-lemon-cream-star-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10472,alcremie-salted-cream-star-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10473,alcremie-ruby-swirl-star-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10474,alcremie-caramel-swirl-star-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10475,alcremie-rainbow-swirl-star-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10476,alcremie-vanilla-cream-clover-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10477,alcremie-ruby-cream-clover-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10478,alcremie-matcha-cream-clover-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10479,alcremie-mint-cream-clover-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10480,alcremie-lemon-cream-clover-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10481,alcremie-salted-cream-clover-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10482,alcremie-ruby-swirl-clover-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10483,alcremie-caramel-swirl-clover-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10484,alcremie-rainbow-swirl-clover-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10485,alcremie-vanilla-cream-flower-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10486,alcremie-ruby-cream-flower-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10487,alcremie-matcha-cream-flower-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10488,alcremie-mint-cream-flower-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10489,alcremie-lemon-cream-flower-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10490,alcremie-salted-cream-flower-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10491,alcremie-ruby-swirl-flower-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10492,alcremie-caramel-swirl-flower-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10493,alcremie-rainbow-swirl-flower-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10494,alcremie-vanilla-cream-ribbon-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10495,alcremie-ruby-cream-ribbon-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10496,alcremie-matcha-cream-ribbon-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10497,alcremie-mint-cream-ribbon-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10498,alcremie-lemon-cream-ribbon-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10499,alcremie-salted-cream-ribbon-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10500,alcremie-ruby-swirl-ribbon-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10501,alcremie-caramel-swirl-ribbon-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,869,10502,alcremie-rainbow-swirl-ribbon-sweet,869,8,1,0,Front,,,Missing: Front
+dream-world,Dream World,876,,indeedee-male,876,8,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,880,,dracozolt,880,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,881,,arctozolt,881,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,882,,dracovish,882,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,883,,arctovish,883,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,884,,duraludon,884,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,888,,zacian,888,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,889,,zamazenta,889,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,890,,eternatus,890,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,891,,kubfu,891,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,892,,urshifu-single-strike,892,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,893,,zarude,893,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,894,,regieleki,894,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,895,,regidrago,895,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,898,,calyrex,898,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,899,,wyrdeer,899,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,900,,kleavor,900,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,901,,ursaluna,901,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,902,,basculegion-male,902,8,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,903,,sneasler,903,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,904,,overqwil,904,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,905,,enamorus-incarnate,905,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10160,,pikachu-world-cap,25,8,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10161,,meowth-galar,52,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10163,,rapidash-galar,78,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10165,,slowbro-galar,80,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10166,,farfetchd-galar,83,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10167,,weezing-galar,110,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10168,,mr-mime-galar,122,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10169,,articuno-galar,144,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10170,,zapdos-galar,145,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10171,,moltres-galar,146,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10172,,slowking-galar,199,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10173,,corsola-galar,222,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10174,,zigzagoon-galar,263,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10175,,linoone-galar,264,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10179,,yamask-galar,562,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10180,,stunfisk-galar,618,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10182,,cramorant-gulping,845,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10183,,cramorant-gorging,845,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10186,,indeedee-female,876,8,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,10190,,eternatus-eternamax,890,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10191,,urshifu-rapid-strike,892,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10192,,zarude-dada,893,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10195,,venusaur-gmax,3,8,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10196,,charizard-gmax,6,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10197,,blastoise-gmax,9,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10198,,butterfree-gmax,12,8,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10199,,pikachu-gmax,25,8,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10200,,meowth-gmax,52,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10201,,machamp-gmax,68,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10202,,gengar-gmax,94,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10203,,kingler-gmax,99,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10204,,lapras-gmax,131,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10205,,eevee-gmax,133,8,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10206,,snorlax-gmax,143,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10207,,garbodor-gmax,569,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10208,,melmetal-gmax,809,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10209,,rillaboom-gmax,812,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10210,,cinderace-gmax,815,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10211,,inteleon-gmax,818,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10212,,corviknight-gmax,823,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10213,,orbeetle-gmax,826,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10214,,drednaw-gmax,834,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10215,,coalossal-gmax,839,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10216,,flapple-gmax,841,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10217,,appletun-gmax,842,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10218,,sandaconda-gmax,844,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10219,,toxtricity-amped-gmax,849,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10220,,centiskorch-gmax,851,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10221,,hatterene-gmax,858,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10222,,grimmsnarl-gmax,861,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10223,,alcremie-gmax,869,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10224,,copperajah-gmax,879,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10225,,duraludon-gmax,884,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10226,,urshifu-single-strike-gmax,892,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10227,,urshifu-rapid-strike-gmax,892,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10228,,toxtricity-low-key-gmax,849,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10229,,growlithe-hisui,58,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10230,,arcanine-hisui,59,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10231,,voltorb-hisui,100,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10232,,electrode-hisui,101,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10233,,typhlosion-hisui,157,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10234,,qwilfish-hisui,211,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10235,,sneasel-hisui,215,8,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10236,,samurott-hisui,503,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10237,,lilligant-hisui,549,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10238,,zorua-hisui,570,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10239,,zoroark-hisui,571,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10240,,braviary-hisui,628,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10241,,sliggoo-hisui,705,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10242,,goodra-hisui,706,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10243,,avalugg-hisui,713,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10244,,decidueye-hisui,724,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10245,,dialga-origin,483,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10246,,palkia-origin,484,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10247,,basculin-white-striped,550,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,10248,,basculegion-female,902,8,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10249,,enamorus-therian,905,8,0,0,Front,,,Missing: Front
+dream-world,Dream World,916,,oinkologne-male,916,9,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,1012,10447,poltchageist-artisan,1012,9,1,0,Front,,,Missing: Front
+dream-world,Dream World,1013,10448,sinistcha-masterpiece,1013,9,1,0,Front,,,Missing: Front
+dream-world,Dream World,10253,,wooper-paldea,194,9,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10254,,oinkologne-female,916,9,0,1,Front Female,,,Missing: Front Female
+dream-world,Dream World,10255,,dudunsparce-three-segment,982,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10264,10433,koraidon-limited-build,1007,9,1,0,Front,,,Missing: Front
+dream-world,Dream World,10265,10434,koraidon-sprinting-build,1007,9,1,0,Front,,,Missing: Front
+dream-world,Dream World,10266,10435,koraidon-swimming-build,1007,9,1,0,Front,,,Missing: Front
+dream-world,Dream World,10267,10436,koraidon-gliding-build,1007,9,1,0,Front,,,Missing: Front
+dream-world,Dream World,10268,10437,miraidon-low-power-mode,1008,9,1,0,Front,,,Missing: Front
+dream-world,Dream World,10269,10438,miraidon-drive-mode,1008,9,1,0,Front,,,Missing: Front
+dream-world,Dream World,10270,10439,miraidon-aquatic-mode,1008,9,1,0,Front,,,Missing: Front
+dream-world,Dream World,10271,10440,miraidon-glide-mode,1008,9,1,0,Front,,,Missing: Front
+dream-world,Dream World,10275,,ogerpon-cornerstone-mask,1017,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10276,,terapagos-terastal,1024,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10277,,terapagos-stellar,1024,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10278,,clefable-mega,36,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10279,,victreebel-mega,71,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10280,,starmie-mega,121,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10281,,dragonite-mega,149,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10282,,meganium-mega,154,9,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10283,,feraligatr-mega,160,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10284,,skarmory-mega,227,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10285,,froslass-mega,478,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10286,,emboar-mega,500,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10287,,excadrill-mega,530,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10288,,scolipede-mega,545,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10289,,scrafty-mega,560,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10290,,eelektross-mega,604,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10291,,chandelure-mega,609,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10292,,chesnaught-mega,652,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10293,,delphox-mega,655,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10294,,greninja-mega,658,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10295,,pyroar-mega,668,9,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10296,,floette-mega,670,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10297,,malamar-mega,687,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10298,,barbaracle-mega,689,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10299,,dragalge-mega,691,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10300,,hawlucha-mega,701,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10301,,zygarde-mega,718,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10302,,drampa-mega,780,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10303,,falinks-mega,870,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10304,,raichu-mega-x,26,9,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10305,,raichu-mega-y,26,9,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10306,,chimecho-mega,358,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10307,,absol-mega-z,359,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10308,,staraptor-mega,398,9,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10309,,garchomp-mega-z,445,9,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10310,,lucario-mega-z,448,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10311,,heatran-mega,485,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10312,,darkrai-mega,491,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10313,,golurk-mega,623,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10314,,meowstic-male-mega,678,9,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10315,,crabominable-mega,740,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10316,,golisopod-mega,768,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10317,,magearna-mega,801,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10318,,magearna-original-mega,801,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10319,,zeraora-mega,807,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10320,,scovillain-mega,952,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10321,,glimmora-mega,970,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10322,,tatsugiri-curly-mega,978,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10323,,tatsugiri-droopy-mega,978,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10324,,tatsugiri-stretchy-mega,978,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10325,,baxcalibur-mega,998,9,0,0,Front,,,Missing: Front
+dream-world,Dream World,10326,,meowstic-female-mega,678,9,0,1,"Front, Front Female",,,"Missing: Front, Front Female"
+dream-world,Dream World,10264,,koraidon-limited-build,1007,Unknown,0,0,Front,,,Missing: Front
+dream-world,Dream World,10265,,koraidon-sprinting-build,1007,Unknown,0,0,Front,,,Missing: Front
+dream-world,Dream World,10266,,koraidon-swimming-build,1007,Unknown,0,0,Front,,,Missing: Front
+dream-world,Dream World,10267,,koraidon-gliding-build,1007,Unknown,0,0,Front,,,Missing: Front
+dream-world,Dream World,10268,,miraidon-low-power-mode,1008,Unknown,0,0,Front,,,Missing: Front
+dream-world,Dream World,10269,,miraidon-drive-mode,1008,Unknown,0,0,Front,,,Missing: Front
+dream-world,Dream World,10270,,miraidon-aquatic-mode,1008,Unknown,0,0,Front,,,Missing: Front
+dream-world,Dream World,10271,,miraidon-glide-mode,1008,Unknown,0,0,Front,,,Missing: Front
+home,Pokémon HOME,592,10552,frillish-female,592,5,1,1,"Front, Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front, Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,593,10553,jellicent-female,593,5,1,1,"Front, Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front, Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,668,10551,pyroar-female,668,6,1,1,"Front, Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front, Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,10025,,meowstic-female,678,6,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10033,,venusaur-mega,3,6,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10037,,alakazam-mega,65,6,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10041,,gyarados-mega,130,6,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10046,,scizor-mega,212,6,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10047,,heracross-mega,214,6,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10048,,houndoom-mega,229,6,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10050,,blaziken-mega,257,6,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10054,,medicham-mega,308,6,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10058,,garchomp-mega,445,6,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10060,,abomasnow-mega,460,6,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10072,,steelix-mega,208,6,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10080,,pikachu-rock-star,25,6,0,1,"Front, Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front, Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,10081,,pikachu-belle,25,6,0,1,"Front, Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front, Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,10082,,pikachu-pop-star,25,6,0,1,"Front, Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front, Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,10083,,pikachu-phd,25,6,0,1,"Front, Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front, Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,10084,,pikachu-libre,25,6,0,1,"Front, Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front, Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,10085,,pikachu-cosplay,25,6,0,1,"Front, Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front, Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,10087,,camerupt-mega,323,6,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,414,10269,mothim-sandy,414,7,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,414,10270,mothim-trash,414,7,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,664,10271,scatterbug-polar,664,7,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10091,,rattata-alola,19,7,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10092,,raticate-alola,20,7,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10093,,raticate-totem-alola,20,7,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10094,,pikachu-original-cap,25,7,0,1,"Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,10095,,pikachu-hoenn-cap,25,7,0,1,"Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,10096,,pikachu-sinnoh-cap,25,7,0,1,"Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,10097,,pikachu-unova-cap,25,7,0,1,"Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,10098,,pikachu-kalos-cap,25,7,0,1,"Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,10099,,pikachu-alola-cap,25,7,0,1,"Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,10100,,raichu-alola,26,7,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10148,,pikachu-partner-cap,25,7,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10158,,pikachu-starter,25,7,0,1,"Front, Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front, Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,10159,,eevee-starter,133,7,0,1,"Front, Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front, Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,854,10344,sinistea-antique,854,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,855,10345,polteageist-antique,855,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10160,,pikachu-world-cap,25,8,0,1,"Front Shiny, Front Female, Front Shiny Female",,,"Missing: Front Shiny, Front Female, Front Shiny Female"
+home,Pokémon HOME,10186,,indeedee-female,876,8,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10195,,venusaur-gmax,3,8,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10198,,butterfree-gmax,12,8,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10199,,pikachu-gmax,25,8,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10205,,eevee-gmax,133,8,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10248,,basculegion-female,902,8,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,1012,10447,poltchageist-artisan,1012,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,1013,10448,sinistcha-masterpiece,1013,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10253,,wooper-paldea,194,9,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10254,,oinkologne-female,916,9,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10264,10433,koraidon-limited-build,1007,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10265,10434,koraidon-sprinting-build,1007,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10266,10435,koraidon-swimming-build,1007,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10267,10436,koraidon-gliding-build,1007,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10268,10437,miraidon-low-power-mode,1008,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10269,10438,miraidon-drive-mode,1008,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10270,10439,miraidon-aquatic-mode,1008,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10271,10440,miraidon-glide-mode,1008,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10282,,meganium-mega,154,9,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10295,,pyroar-mega,668,9,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10304,,raichu-mega-x,26,9,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10305,,raichu-mega-y,26,9,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10308,,staraptor-mega,398,9,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10309,,garchomp-mega-z,445,9,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10314,,meowstic-male-mega,678,9,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10326,,meowstic-female-mega,678,9,0,1,"Front Female, Front Shiny Female",,,"Missing: Front Female, Front Shiny Female"
+home,Pokémon HOME,10264,,koraidon-limited-build,1007,Unknown,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10265,,koraidon-sprinting-build,1007,Unknown,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10266,,koraidon-swimming-build,1007,Unknown,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10267,,koraidon-gliding-build,1007,Unknown,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10268,,miraidon-low-power-mode,1008,Unknown,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10269,,miraidon-drive-mode,1008,Unknown,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10270,,miraidon-aquatic-mode,1008,Unknown,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+home,Pokémon HOME,10271,,miraidon-glide-mode,1008,Unknown,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,201,10025,unown-z,201,2,1,0,Front Shiny,,,Missing: Front Shiny
+official-artwork,Official Artwork,592,10552,frillish-female,592,5,1,1,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,593,10553,jellicent-female,593,5,1,1,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,493,10085,arceus-fairy,493,6,1,0,Front Shiny,,,Missing: Front Shiny
+official-artwork,Official Artwork,668,10551,pyroar-female,668,6,1,1,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10025,,meowstic-female,678,6,0,1,Front Shiny,,,Missing: Front Shiny
+official-artwork,Official Artwork,10085,,pikachu-cosplay,25,6,0,1,Front Shiny,,,Missing: Front Shiny
+official-artwork,Official Artwork,414,10269,mothim-sandy,414,7,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,414,10270,mothim-trash,414,7,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,664,10271,scatterbug-polar,664,7,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,664,10277,scatterbug-modern,664,7,1,0,Front Shiny,,,Missing: Front Shiny
+official-artwork,Official Artwork,664,10278,scatterbug-marine,664,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,664,10279,scatterbug-archipelago,664,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,664,10280,scatterbug-high-plains,664,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,664,10281,scatterbug-sandstorm,664,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,664,10282,scatterbug-river,664,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,664,10283,scatterbug-monsoon,664,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,664,10284,scatterbug-savanna,664,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,664,10285,scatterbug-sun,664,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,664,10286,scatterbug-ocean,664,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,664,10287,scatterbug-jungle,664,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,664,10288,scatterbug-fancy,664,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,664,10289,scatterbug-poke-ball,664,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10290,spewpa-polar,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10291,spewpa-tundra,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10292,spewpa-continental,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10293,spewpa-garden,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10294,spewpa-elegant,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10295,spewpa-meadow,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10296,spewpa-modern,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10297,spewpa-marine,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10298,spewpa-archipelago,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10299,spewpa-high-plains,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10300,spewpa-sandstorm,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10301,spewpa-river,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10302,spewpa-monsoon,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10303,spewpa-savanna,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10304,spewpa-sun,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10305,spewpa-ocean,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10306,spewpa-jungle,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10307,spewpa-fancy,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,665,10308,spewpa-poke-ball,665,7,1,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10143,,mimikyu-busted,778,7,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10145,,mimikyu-totem-busted,778,7,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10148,,pikachu-partner-cap,25,7,0,1,Front Shiny,,,Missing: Front Shiny
+official-artwork,Official Artwork,10158,,pikachu-starter,25,7,0,1,Front Shiny,,,Missing: Front Shiny
+official-artwork,Official Artwork,10159,,eevee-starter,133,7,0,1,Front Shiny,,,Missing: Front Shiny
+official-artwork,Official Artwork,854,10344,sinistea-antique,854,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,855,10345,polteageist-antique,855,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10346,alcremie-ruby-cream-strawberry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10347,alcremie-matcha-cream-strawberry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10348,alcremie-mint-cream-strawberry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10349,alcremie-lemon-cream-strawberry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10350,alcremie-salted-cream-strawberry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10351,alcremie-ruby-swirl-strawberry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10352,alcremie-caramel-swirl-strawberry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10353,alcremie-rainbow-swirl-strawberry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10449,alcremie-vanilla-cream-berry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10450,alcremie-ruby-cream-berry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10451,alcremie-matcha-cream-berry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10452,alcremie-mint-cream-berry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10453,alcremie-lemon-cream-berry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10454,alcremie-salted-cream-berry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10455,alcremie-ruby-swirl-berry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10456,alcremie-caramel-swirl-berry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10457,alcremie-rainbow-swirl-berry-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10458,alcremie-vanilla-cream-love-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10459,alcremie-ruby-cream-love-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10460,alcremie-matcha-cream-love-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10461,alcremie-mint-cream-love-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10462,alcremie-lemon-cream-love-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10463,alcremie-salted-cream-love-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10464,alcremie-ruby-swirl-love-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10465,alcremie-caramel-swirl-love-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10466,alcremie-rainbow-swirl-love-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10467,alcremie-vanilla-cream-star-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10468,alcremie-ruby-cream-star-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10469,alcremie-matcha-cream-star-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10470,alcremie-mint-cream-star-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10471,alcremie-lemon-cream-star-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10472,alcremie-salted-cream-star-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10473,alcremie-ruby-swirl-star-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10474,alcremie-caramel-swirl-star-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10475,alcremie-rainbow-swirl-star-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10476,alcremie-vanilla-cream-clover-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10477,alcremie-ruby-cream-clover-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10478,alcremie-matcha-cream-clover-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10479,alcremie-mint-cream-clover-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10480,alcremie-lemon-cream-clover-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10481,alcremie-salted-cream-clover-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10482,alcremie-ruby-swirl-clover-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10483,alcremie-caramel-swirl-clover-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10484,alcremie-rainbow-swirl-clover-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10485,alcremie-vanilla-cream-flower-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10486,alcremie-ruby-cream-flower-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10487,alcremie-matcha-cream-flower-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10488,alcremie-mint-cream-flower-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10489,alcremie-lemon-cream-flower-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10490,alcremie-salted-cream-flower-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10491,alcremie-ruby-swirl-flower-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10492,alcremie-caramel-swirl-flower-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10493,alcremie-rainbow-swirl-flower-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10494,alcremie-vanilla-cream-ribbon-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10495,alcremie-ruby-cream-ribbon-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10496,alcremie-matcha-cream-ribbon-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10497,alcremie-mint-cream-ribbon-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10498,alcremie-lemon-cream-ribbon-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10499,alcremie-salted-cream-ribbon-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10500,alcremie-ruby-swirl-ribbon-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10501,alcremie-caramel-swirl-ribbon-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,869,10502,alcremie-rainbow-swirl-ribbon-sweet,869,8,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10160,,pikachu-world-cap,25,8,0,1,Front Shiny,,,Missing: Front Shiny
+official-artwork,Official Artwork,10192,,zarude-dada,893,8,0,0,Front Shiny,,,Missing: Front Shiny
+official-artwork,Official Artwork,1012,10447,poltchageist-artisan,1012,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,1013,10448,sinistcha-masterpiece,1013,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,1022,,iron-boulder,1022,9,0,0,,Front Shiny (476x475),,Wrong Size: Front Shiny (476x475)
+official-artwork,Official Artwork,10255,,dudunsparce-three-segment,982,9,0,0,Front Shiny,,,Missing: Front Shiny
+official-artwork,Official Artwork,10257,,maushold-family-of-three,925,9,0,0,Front Shiny,,,Missing: Front Shiny
+official-artwork,Official Artwork,10264,10433,koraidon-limited-build,1007,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10265,10434,koraidon-sprinting-build,1007,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10266,10435,koraidon-swimming-build,1007,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10267,10436,koraidon-gliding-build,1007,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10268,10437,miraidon-low-power-mode,1008,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10269,10438,miraidon-drive-mode,1008,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10270,10439,miraidon-aquatic-mode,1008,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10271,10440,miraidon-glide-mode,1008,9,1,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10277,,terapagos-stellar,1024,9,0,0,Front Shiny,,,Missing: Front Shiny
+official-artwork,Official Artwork,10278,,clefable-mega,36,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10279,,victreebel-mega,71,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10280,,starmie-mega,121,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10281,,dragonite-mega,149,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10282,,meganium-mega,154,9,0,1,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10283,,feraligatr-mega,160,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10284,,skarmory-mega,227,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10285,,froslass-mega,478,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10286,,emboar-mega,500,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10287,,excadrill-mega,530,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10288,,scolipede-mega,545,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10289,,scrafty-mega,560,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10290,,eelektross-mega,604,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10291,,chandelure-mega,609,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10292,,chesnaught-mega,652,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10293,,delphox-mega,655,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10294,,greninja-mega,658,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10295,,pyroar-mega,668,9,0,1,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10296,,floette-mega,670,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10297,,malamar-mega,687,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10298,,barbaracle-mega,689,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10299,,dragalge-mega,691,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10300,,hawlucha-mega,701,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10301,,zygarde-mega,718,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10302,,drampa-mega,780,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10303,,falinks-mega,870,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10304,,raichu-mega-x,26,9,0,1,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10305,,raichu-mega-y,26,9,0,1,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10306,,chimecho-mega,358,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10307,,absol-mega-z,359,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10308,,staraptor-mega,398,9,0,1,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10309,,garchomp-mega-z,445,9,0,1,Front Shiny,Front (526x526),,Missing: Front Shiny | Wrong Size: Front (526x526)
+official-artwork,Official Artwork,10310,,lucario-mega-z,448,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10311,,heatran-mega,485,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10312,,darkrai-mega,491,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10313,,golurk-mega,623,9,0,0,,"Front (533x533), Front Shiny (533x533)",,"Wrong Size: Front (533x533), Front Shiny (533x533)"
+official-artwork,Official Artwork,10314,,meowstic-male-mega,678,9,0,1,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10315,,crabominable-mega,740,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10316,,golisopod-mega,768,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10317,,magearna-mega,801,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10318,,magearna-original-mega,801,9,0,0,Front Shiny,,,Missing: Front Shiny
+official-artwork,Official Artwork,10319,,zeraora-mega,807,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10320,,scovillain-mega,952,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10321,,glimmora-mega,970,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10322,,tatsugiri-curly-mega,978,9,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10323,,tatsugiri-droopy-mega,978,9,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10324,,tatsugiri-stretchy-mega,978,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10325,,baxcalibur-mega,998,9,0,0,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10326,,meowstic-female-mega,678,9,0,1,,"Front (534x534), Front Shiny (534x534)",,"Wrong Size: Front (534x534), Front Shiny (534x534)"
+official-artwork,Official Artwork,10264,,koraidon-limited-build,1007,Unknown,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10265,,koraidon-sprinting-build,1007,Unknown,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10266,,koraidon-swimming-build,1007,Unknown,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10267,,koraidon-gliding-build,1007,Unknown,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10268,,miraidon-low-power-mode,1008,Unknown,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10269,,miraidon-drive-mode,1008,Unknown,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10270,,miraidon-aquatic-mode,1008,Unknown,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+official-artwork,Official Artwork,10271,,miraidon-glide-mode,1008,Unknown,0,0,"Front, Front Shiny",,,"Missing: Front, Front Shiny"
+showdown,Showdown (Animated),133,,eevee,133,1,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),592,10552,frillish-female,592,5,1,1,"Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),593,10553,jellicent-female,593,5,1,1,"Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),668,10551,pyroar-female,668,6,1,1,"Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10025,,meowstic-female,678,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10033,,venusaur-mega,3,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10037,,alakazam-mega,65,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10041,,gyarados-mega,130,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10046,,scizor-mega,212,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10047,,heracross-mega,214,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10048,,houndoom-mega,229,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10050,,blaziken-mega,257,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10054,,medicham-mega,308,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10058,,garchomp-mega,445,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10060,,abomasnow-mega,460,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10072,,steelix-mega,208,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10080,,pikachu-rock-star,25,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10081,,pikachu-belle,25,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10082,,pikachu-pop-star,25,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10083,,pikachu-phd,25,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10084,,pikachu-libre,25,6,0,1,"Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10085,,pikachu-cosplay,25,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10087,,camerupt-mega,323,6,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),414,10269,mothim-sandy,414,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),414,10270,mothim-trash,414,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),664,10271,scatterbug-polar,664,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),664,10273,scatterbug-continental,664,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),664,10274,scatterbug-garden,664,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),664,10275,scatterbug-elegant,664,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),664,10276,scatterbug-meadow,664,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),664,10277,scatterbug-modern,664,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),664,10287,scatterbug-jungle,664,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),664,10288,scatterbug-fancy,664,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),664,10289,scatterbug-poke-ball,664,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10290,spewpa-polar,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10291,spewpa-tundra,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10292,spewpa-continental,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10293,spewpa-garden,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10294,spewpa-elegant,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10295,spewpa-meadow,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10296,spewpa-modern,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10297,spewpa-marine,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10298,spewpa-archipelago,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10299,spewpa-high-plains,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10300,spewpa-sandstorm,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10301,spewpa-river,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10302,spewpa-monsoon,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10303,spewpa-savanna,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10304,spewpa-sun,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10305,spewpa-ocean,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10306,spewpa-jungle,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10307,spewpa-fancy,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),665,10308,spewpa-poke-ball,665,7,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10091,,rattata-alola,19,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10092,,raticate-alola,20,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10093,,raticate-totem-alola,20,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10094,,pikachu-original-cap,25,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10095,,pikachu-hoenn-cap,25,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10096,,pikachu-sinnoh-cap,25,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10097,,pikachu-unova-cap,25,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10098,,pikachu-kalos-cap,25,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10099,,pikachu-alola-cap,25,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10100,,raichu-alola,26,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10148,,pikachu-partner-cap,25,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10158,,pikachu-starter,25,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10159,,eevee-starter,133,7,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),854,10344,sinistea-antique,854,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10346,alcremie-ruby-cream-strawberry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10347,alcremie-matcha-cream-strawberry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10348,alcremie-mint-cream-strawberry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10349,alcremie-lemon-cream-strawberry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10350,alcremie-salted-cream-strawberry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10351,alcremie-ruby-swirl-strawberry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10352,alcremie-caramel-swirl-strawberry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10353,alcremie-rainbow-swirl-strawberry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10449,alcremie-vanilla-cream-berry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10450,alcremie-ruby-cream-berry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10451,alcremie-matcha-cream-berry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10452,alcremie-mint-cream-berry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10453,alcremie-lemon-cream-berry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10454,alcremie-salted-cream-berry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10455,alcremie-ruby-swirl-berry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10456,alcremie-caramel-swirl-berry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10457,alcremie-rainbow-swirl-berry-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10458,alcremie-vanilla-cream-love-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10459,alcremie-ruby-cream-love-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10460,alcremie-matcha-cream-love-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10461,alcremie-mint-cream-love-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10462,alcremie-lemon-cream-love-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10463,alcremie-salted-cream-love-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10464,alcremie-ruby-swirl-love-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10465,alcremie-caramel-swirl-love-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10466,alcremie-rainbow-swirl-love-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10467,alcremie-vanilla-cream-star-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10468,alcremie-ruby-cream-star-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10469,alcremie-matcha-cream-star-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10470,alcremie-mint-cream-star-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10471,alcremie-lemon-cream-star-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10472,alcremie-salted-cream-star-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10473,alcremie-ruby-swirl-star-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10474,alcremie-caramel-swirl-star-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10475,alcremie-rainbow-swirl-star-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10476,alcremie-vanilla-cream-clover-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10477,alcremie-ruby-cream-clover-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10478,alcremie-matcha-cream-clover-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10479,alcremie-mint-cream-clover-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10480,alcremie-lemon-cream-clover-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10481,alcremie-salted-cream-clover-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10482,alcremie-ruby-swirl-clover-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10483,alcremie-caramel-swirl-clover-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10484,alcremie-rainbow-swirl-clover-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10485,alcremie-vanilla-cream-flower-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10486,alcremie-ruby-cream-flower-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10487,alcremie-matcha-cream-flower-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10488,alcremie-mint-cream-flower-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10489,alcremie-lemon-cream-flower-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10490,alcremie-salted-cream-flower-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10491,alcremie-ruby-swirl-flower-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10492,alcremie-caramel-swirl-flower-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10493,alcremie-rainbow-swirl-flower-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10494,alcremie-vanilla-cream-ribbon-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10495,alcremie-ruby-cream-ribbon-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10496,alcremie-matcha-cream-ribbon-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10497,alcremie-mint-cream-ribbon-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10498,alcremie-lemon-cream-ribbon-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10499,alcremie-salted-cream-ribbon-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10500,alcremie-ruby-swirl-ribbon-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10501,alcremie-caramel-swirl-ribbon-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),869,10502,alcremie-rainbow-swirl-ribbon-sweet,869,8,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10160,,pikachu-world-cap,25,8,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10186,,indeedee-female,876,8,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10195,,venusaur-gmax,3,8,0,1,"Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10197,,blastoise-gmax,9,8,0,0,"Back, Back Shiny",,,"Missing: Back, Back Shiny"
+showdown,Showdown (Animated),10198,,butterfree-gmax,12,8,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10199,,pikachu-gmax,25,8,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10205,,eevee-gmax,133,8,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10209,,rillaboom-gmax,812,8,0,0,"Back, Back Shiny",,,"Missing: Back, Back Shiny"
+showdown,Showdown (Animated),10210,,cinderace-gmax,815,8,0,0,"Back, Back Shiny",,,"Missing: Back, Back Shiny"
+showdown,Showdown (Animated),10211,,inteleon-gmax,818,8,0,0,"Back, Back Shiny",,,"Missing: Back, Back Shiny"
+showdown,Showdown (Animated),10226,,urshifu-single-strike-gmax,892,8,0,0,"Back, Back Shiny",,,"Missing: Back, Back Shiny"
+showdown,Showdown (Animated),10227,,urshifu-rapid-strike-gmax,892,8,0,0,"Back, Back Shiny",,,"Missing: Back, Back Shiny"
+showdown,Showdown (Animated),10248,,basculegion-female,902,8,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),990,,iron-treads,990,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),991,,iron-bundle,991,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),992,,iron-hands,992,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),993,,iron-jugulis,993,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),994,,iron-moth,994,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),995,,iron-thorns,995,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),1006,,iron-valiant,1006,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),1008,,miraidon,1008,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),1010,,iron-leaves,1010,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),1012,10447,poltchageist-artisan,1012,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),1013,10448,sinistcha-masterpiece,1013,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),1017,,ogerpon,1017,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),1022,,iron-boulder,1022,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),1023,,iron-crown,1023,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),1024,,terapagos,1024,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),1025,,pecharunt,1025,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10253,,wooper-paldea,194,9,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10254,,oinkologne-female,916,9,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10257,,maushold-family-of-three,925,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10264,10433,koraidon-limited-build,1007,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10265,10434,koraidon-sprinting-build,1007,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10266,10435,koraidon-swimming-build,1007,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10267,10436,koraidon-gliding-build,1007,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10268,10437,miraidon-low-power-mode,1008,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10269,10438,miraidon-drive-mode,1008,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10270,10439,miraidon-aquatic-mode,1008,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10271,10440,miraidon-glide-mode,1008,9,1,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10273,,ogerpon-wellspring-mask,1017,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10274,,ogerpon-hearthflame-mask,1017,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10275,,ogerpon-cornerstone-mask,1017,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10276,,terapagos-terastal,1024,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10277,,terapagos-stellar,1024,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10282,,meganium-mega,154,9,0,1,"Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10287,,excadrill-mega,530,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10288,,scolipede-mega,545,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10289,,scrafty-mega,560,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10290,,eelektross-mega,604,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10291,,chandelure-mega,609,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10292,,chesnaught-mega,652,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10293,,delphox-mega,655,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10294,,greninja-mega,658,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10295,,pyroar-mega,668,9,0,1,"Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10296,,floette-mega,670,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10297,,malamar-mega,687,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10298,,barbaracle-mega,689,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10299,,dragalge-mega,691,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10300,,hawlucha-mega,701,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10301,,zygarde-mega,718,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10302,,drampa-mega,780,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10303,,falinks-mega,870,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10304,,raichu-mega-x,26,9,0,1,"Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10305,,raichu-mega-y,26,9,0,1,"Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10306,,chimecho-mega,358,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10307,,absol-mega-z,359,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10308,,staraptor-mega,398,9,0,1,"Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10309,,garchomp-mega-z,445,9,0,1,"Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10310,,lucario-mega-z,448,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10311,,heatran-mega,485,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10312,,darkrai-mega,491,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10313,,golurk-mega,623,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10314,,meowstic-male-mega,678,9,0,1,"Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10315,,crabominable-mega,740,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10316,,golisopod-mega,768,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10317,,magearna-mega,801,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10318,,magearna-original-mega,801,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10319,,zeraora-mega,807,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10320,,scovillain-mega,952,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10321,,glimmora-mega,970,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10322,,tatsugiri-curly-mega,978,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10323,,tatsugiri-droopy-mega,978,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10324,,tatsugiri-stretchy-mega,978,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10325,,baxcalibur-mega,998,9,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10326,,meowstic-female-mega,678,9,0,1,"Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female",,,"Missing: Front, Front Shiny, Back, Back Shiny, Front Female, Front Shiny Female, Back Female, Back Shiny Female"
+showdown,Showdown (Animated),10264,,koraidon-limited-build,1007,Unknown,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10265,,koraidon-sprinting-build,1007,Unknown,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10266,,koraidon-swimming-build,1007,Unknown,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10267,,koraidon-gliding-build,1007,Unknown,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10268,,miraidon-low-power-mode,1008,Unknown,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10269,,miraidon-drive-mode,1008,Unknown,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10270,,miraidon-aquatic-mode,1008,Unknown,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"
+showdown,Showdown (Animated),10271,,miraidon-glide-mode,1008,Unknown,0,0,"Front, Front Shiny, Back, Back Shiny",,,"Missing: Front, Front Shiny, Back, Back Shiny"

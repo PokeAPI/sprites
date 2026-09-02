@@ -4,6 +4,8 @@ bower_components
 npm-debug.log
 test/
 desktop.ini
+.vscode/
+idea/
 
 # PhpStorm
 .idea/
@@ -14,3 +16,9 @@ desktop.ini
 
 smogon/
 scripts/downloads/
+
+# Generated Audit Reports
+scripts/sprite_audit_report.csv
+website/audit.html
+website/audit_data.json
+website/audit_report.csv

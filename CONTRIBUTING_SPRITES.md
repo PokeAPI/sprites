@@ -15,13 +15,20 @@ This initial version of the maintenance workflow focuses specifically on:
 
 **Script:** `scripts/sprite_audit.py`
 
-This script identifies missing or invalid sprites in the `sprites/pokemon/` directory.
+This script identifies missing, corrupt, or incorrectly sized sprites across multiple asset categories and cosmetic forms.
 
-* **Data Sources:** It references `pokemon.csv` and `pokemon_forms.csv` from the PokéAPI database.
-* **Logic:** It checks the existence and dimensions of four primary assets for every entry:
-  * Front (Default & Shiny)
-  * Back (Default & Shiny)
-* **Output:** Issues are logged in `sprite_audit_report.csv` to track our progress toward a 100% complete National Dex.
+* **Data Sources:** References `pokemon.csv`, `pokemon_forms.csv`, and `version_groups.csv` from the PokéAPI database.
+* **Supported Categories (`--category`):**
+  * `default`: Front & Back (Default & Shiny) Gen 5 pixel art (`96x96`).
+  * `official-artwork`: High-res official artwork renders (`475x475`).
+  * `home`: Pokémon HOME 3D renders (`512x512`).
+  * `showdown`: Pokémon Showdown animated battle sprites (`.gif`).
+  * `dream-world`: Dream World vector sprites (`.svg`/`.png`).
+  * `all`: Runs audits across all asset categories.
+* **Cosmetic Form Auditing (`--include-forms`):** Audits non-default cosmetic forms (such as Sinistea Antique, Polteageist Antique, Vivillon patterns, Unown letters, Alcremie forms) defined in `pokemon_forms.csv`.
+* **Output & Reports:**
+  * Interactive HTML dashboard generated directly to `website/audit.html` (viewable on GitHub Pages). Custom path configurable via `-o` / `--output`.
+  * Grouped issues logged to CSV (`scripts/sprite_audit_report.csv`).
 
 ### 2. Synchronizing with Smogon
 
@@ -60,6 +67,21 @@ The Smogon source data is community-maintained and contains known inconsistencie
 
 ### How to Use
 
-1. **Check for gaps:** `python scripts/sprite_audit.py`
-2. **Sync Smogon assets:** `python scripts/smogon_download.py`
-3. **Manual Fixes:** Review the downloaded files against the "Known Issues" above and correct names/folders manually before submitting a PR.
+1. **Audit default sprites:**
+   ```bash
+   python scripts/sprite_audit.py --category default
+   ```
+2. **Audit all categories including cosmetic forms (updates GitHub Pages dashboard):**
+   ```bash
+   python scripts/sprite_audit.py --category all --include-forms
+   ```
+3. **Audit a specific category (e.g. Showdown or Official Artwork):**
+   ```bash
+   python scripts/sprite_audit.py --category showdown
+   python scripts/sprite_audit.py --category official-artwork
+   ```
+4. **Sync Smogon assets:**
+   ```bash
+   python scripts/smogon_download.py
+   ```
+5. **Manual Fixes:** Review the downloaded files against the "Known Issues" above and correct names/folders manually before submitting a PR.
