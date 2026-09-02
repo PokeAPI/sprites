@@ -231,10 +231,11 @@
                     <thead>
                         <tr class="bg-slate-100/90 dark:bg-slate-950/90 text-slate-600 dark:text-slate-400 uppercase text-[11px] font-semibold border-b border-slate-200 dark:border-slate-800 tracking-wider">
                             <th class="py-3 px-4 w-36">Category</th>
-                            <th class="py-3 px-4 w-28">ID</th>
+                            <th class="py-3 px-4 w-36">ID</th>
                             <th class="py-3 px-4 w-48">Identifier</th>
                             <th class="py-3 px-4 w-16 text-center">Gen</th>
                             <th class="py-3 px-4 w-20">Type</th>
+                            <th class="py-3 px-4 w-20 text-center">Finder</th>
                             <th class="py-3 px-4">Flawed Assets Breakdown</th>
                         </tr>
                     </thead>
@@ -428,7 +429,7 @@
             const pageData = filtered.slice(startIndex, startIndex + currentLimit);
 
             if (pageData.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="6" class="py-8 text-center text-slate-500 font-sans text-xs">No issues found matching the selected filters.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="7" class="py-8 text-center text-slate-500 font-sans text-xs">No issues found matching the selected filters.</td></tr>`;
                 return;
             }
 
@@ -456,14 +457,28 @@
                     ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-sans font-medium bg-purple-100 text-purple-800 border border-purple-300 dark:bg-purple-950 dark:text-purple-300 dark:border-purple-800/70">Form</span>` 
                     : `<span class="px-1.5 py-0.5 rounded text-[10px] font-sans font-medium bg-blue-100 text-blue-800 border border-blue-300 dark:bg-blue-950 dark:text-blue-300 dark:border-blue-800/70">Pokemon</span>`;
 
-                const idDisplay = item.is_form && item.form_id ? `${item.pokemon_id} <span class="text-slate-400 dark:text-slate-500">(form: ${item.form_id})</span>` : `${item.pokemon_id}`;
+                const pokemonApiUrl = `https://pokeapi.co/api/v2/pokemon/${item.pokemon_id}`;
+                const pokemonIdLink = `<a href="${pokemonApiUrl}" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline font-mono font-semibold" title="View Pokémon API JSON">#${item.pokemon_id}</a>`;
+
+                let idCellHtml = pokemonIdLink;
+                if (item.is_form && item.form_id) {
+                    const formApiUrl = `https://pokeapi.co/api/v2/pokemon-form/${item.form_id}`;
+                    idCellHtml += ` <a href="${formApiUrl}" target="_blank" rel="noopener noreferrer" class="text-slate-400 dark:text-slate-500 hover:text-purple-600 dark:hover:text-purple-400 hover:underline font-mono text-[11px]" title="View Form API JSON">(form: ${item.form_id})</a>`;
+                }
+
+                const finderUrl = item.is_form && item.form_id 
+                    ? `index.html#/pokemon-form/${item.form_id}` 
+                    : `index.html#/pokemon/${item.pokemon_id}`;
+
+                const finderLink = `<a href="${finderUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 font-sans text-xs transition" title="Open in Sprite Finder"><span class="underline">Finder</span> <span class="text-[10px]">↗</span></a>`;
 
                 tr.innerHTML = `
                     <td class="py-2.5 px-4 font-sans font-medium text-slate-700 dark:text-slate-300">${item.category_name}</td>
-                    <td class="py-2.5 px-4 text-blue-600 dark:text-blue-400 font-mono font-semibold">${idDisplay}</td>
-                    <td class="py-2.5 px-4 text-slate-900 dark:text-slate-200 font-mono">${item.identifier}</td>
+                    <td class="py-2.5 px-4 font-mono">${idCellHtml}</td>
+                    <td class="py-2.5 px-4 text-slate-900 dark:text-slate-200 font-mono font-medium">${item.identifier}</td>
                     <td class="py-2.5 px-4 text-center text-slate-500 dark:text-slate-400 font-sans">${item.generation}</td>
                     <td class="py-2.5 px-4">${isFormBadge}</td>
+                    <td class="py-2.5 px-4 text-center font-sans">${finderLink}</td>
                     <td class="py-2.5 px-4 font-sans">${breakdownHtml}</td>
                 `;
                 tbody.appendChild(tr);
