@@ -467,14 +467,17 @@ def check_assets(
         return
 
     # Process Pokémon entries
-    df_forms_default = df_forms[df_forms["is_default"] == 1][
-        ["pokemon_id", "introduced_in_version_group_id"]
-    ]
+    df_forms_first = df_forms.sort_values(by=["pokemon_id", "id"]).drop_duplicates(subset=["pokemon_id"])
     df_merged = df_pokemon.merge(
-        df_forms_default, left_on="id", right_on="pokemon_id", how="left"
+        df_forms_first[["pokemon_id", "introduced_in_version_group_id", "form_identifier", "is_mega", "is_battle_only"]],
+        left_on="id",
+        right_on="pokemon_id",
+        how="left",
     )
     df_merged = df_merged.merge(
-        df_species[["id", "has_gender_differences"]],
+        df_species[["id", "has_gender_differences"]].rename(
+            columns={"has_gender_differences": "has_gender_diff_species"}
+        ),
         left_on="species_id",
         right_on="id",
         how="left",
@@ -485,6 +488,24 @@ def check_assets(
         right_on="id",
         how="left",
     )
+
+    # Determine whether a Pokémon variety expects female sprite assets:
+    # 1. Base canonical species (is_default == 1) whose species has gender differences.
+    # 2. Dimorphic regional varieties (e.g. Hisuian Sneasel, form_identifier == "hisui").
+    # Excludes: Megas (is_mega == 1), G-Max (is_battle_only == 1), dedicated female form entries (form_identifier == "female"),
+    # Cosplay/Cap Pikachus, and non-dimorphic regional forms (Alolan Rattata, Paldean Wooper).
+    def is_dimorphic_entry(r):
+        if r.get("has_gender_diff_species") != 1:
+            return 0
+        if r.get("is_default") == 1:
+            return 1
+        # Regional forms of dimorphic species that retain sexual dimorphism (Hisuian Sneasel)
+        if not r.get("is_mega") and not r.get("is_battle_only") and r.get("form_identifier") == "hisui":
+            return 1
+        return 0
+
+    df_merged["has_gender_differences"] = df_merged.apply(is_dimorphic_entry, axis=1)
+
     df_entries = (
         df_merged[["id_x", "species_id", "identifier", "generation_id", "has_gender_differences"]]
         .rename(columns={"id_x": "pokemon_id", "generation_id": "generation"})
@@ -502,12 +523,6 @@ def check_assets(
             how="left",
             suffixes=("", "_poke"),
         ).merge(
-            df_species[["id", "has_gender_differences"]],
-            left_on="species_id",
-            right_on="id",
-            how="left",
-            suffixes=("", "_species"),
-        ).merge(
             df_vg[["id", "generation_id"]],
             left_on="introduced_in_version_group_id",
             right_on="id",
@@ -515,7 +530,8 @@ def check_assets(
             suffixes=("", "_vg"),
         )
         df_forms_processed = (
-            df_forms_non_default[["id", "pokemon_id", "species_id", "identifier", "form_identifier", "generation_id", "has_gender_differences"]]
+            df_forms_non_default[["id", "pokemon_id", "species_id", "identifier", "form_identifier", "generation_id"]]
+            .assign(has_gender_differences=0)
             .rename(columns={"id": "form_id", "generation_id": "generation"})
             .sort_values(by=["pokemon_id", "form_id"])
         )
