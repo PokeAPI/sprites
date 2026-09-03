@@ -37,8 +37,9 @@ sprites
         \- home (PNGs)
     \- versions
         \- generation i
-            \- red and blue (PNGs with back, gray, transparent, back-gray variants)
-            \- yellow (PNGs with back, gbc, gray, transparent, back-gbc, back-gray, back-transparent variants)
+            \- red and green (PNGs with back, gray, back-gray variants)
+            \- red and blue (PNGs with back, gray, transparent, transparent-gray, back-transparent-gray, back-gray variants)
+            \- yellow (PNGs with back, gbc, gray, transparent, transparent-gray, back-gbc, back-gray, back-transparent-gray, back-transparent variants)
         \- generation ii
             \- crystal (PNGs with back, shiny, back-shiny, transparent, transparent-shiny, back-transparent, back-transparent-shiny variants)
 				\- animated (GIFs of front facing sprites with shiny variants)
@@ -65,8 +66,9 @@ sprites
         \- generation viii
             \- icons (PNGs with female variants)
             \- brilliant-diamond-shining-pearl (PNGs)
-        \- generation xi
+        \- generation ix
             \- scarlet-violet (PNGs with female)
+            \- champions (PNGs)
     \- default PokeAPI sprites (PNGs with back, female, shiny, back-female, back-shiny, shiny-female variants)
 \- items
     \- default PokeAPI items (PNGs)
@@ -118,18 +120,17 @@ This folder contains sprites designed by the [Smogon community](https://www.smog
 
 ###### `red-blue`
 
-| Front | Back | Front gray | Front transparent | Back gray |
-| --- | --- | --- | --- | --- |
-| PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_32x32_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_96x96_ | PNG<br>_32x32_ |
-| <img src="sprites/pokemon/versions/generation-i/red-blue/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-i/red-blue/back/25.png" width="32"/> | <img src="sprites/pokemon/versions/generation-i/red-blue/gray/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-i/red-blue/transparent/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-i/red-blue/back/gray/25.png" width="32"/> |
+| Front | Back | Front gray | Front transparent | Back transparent | Back gray | Front transparent gray | Back transparent gray |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_32x32_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_96x96_ | PNG<br>_56x56_ | PNG<br>_32x32_ | PNG<br>_56x56_ | PNG<br>_56x56_ |
+| <img src="sprites/pokemon/versions/generation-i/red-blue/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-i/red-blue/back/25.png" width="32"/> | <img src="sprites/pokemon/versions/generation-i/red-blue/gray/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-i/red-blue/transparent/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-i/red-blue/transparent/back/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-i/red-blue/back/gray/25.png" width="32"/> | <img src="sprites/pokemon/versions/generation-i/red-blue/transparent/gray/25.png" width="56"/> | <img src="sprites/pokemon/versions/generation-i/red-blue/transparent/back/gray/25.png" width="56"/> |
 
 ###### `yellow`
 
-| Front | Back | Front gbc | Front gray | Front transparent | Back gray | Back gbc | Back transparent |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_32x32_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_96x96_ | PNG<br>_32x32_ | PNG<br>_32x32_ | PNG<br>_96x96_ |
-| <img src="sprites/pokemon/versions/generation-i/yellow/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-i/yellow/back/25.png" width="32"/> | <img src="sprites/pokemon/versions/generation-i/yellow/gbc/25.png" width="32"/> | <img src="sprites/pokemon/versions/generation-i/yellow/gray/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-i/yellow/transparent/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-i/yellow/back/gray/25.png" width="32"/> | <img src="sprites/pokemon/versions/generation-i/yellow/back/gbc/25.png" width="32"/> | <img src="sprites/pokemon/versions/generation-i/yellow/transparent/back/25.png" width="96"/> |
-
+| Front | Back | Front gbc | Front gray | Front transparent | Front transparent gray | Back gray | Back gbc | Back transparent | Back transparent gray |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_32x32_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_40x40_, _48x48_, _56x56_ | PNG<br>_56x56_ | PNG<br>_56x56_ | PNG<br>_32x32_ | PNG<br>_32x32_ | PNG<br>_96x96_ | PNG<br>_56x56_ |
+| <img src="sprites/pokemon/versions/generation-i/yellow/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-i/yellow/back/25.png" width="32"/> | <img src="sprites/pokemon/versions/generation-i/yellow/gbc/25.png" width="32"/> | <img src="sprites/pokemon/versions/generation-i/yellow/gray/25.png" width="40"/> | <img src="sprites/pokemon/versions/generation-i/yellow/transparent/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-i/yellow/transparent/gray/25.png" width="56"/> | <img src="sprites/pokemon/versions/generation-i/yellow/back/gray/25.png" width="32"/> | <img src="sprites/pokemon/versions/generation-i/yellow/back/gbc/25.png" width="32"/> | <img src="sprites/pokemon/versions/generation-i/yellow/transparent/back/25.png" width="96"/> | <img src="sprites/pokemon/versions/generation-i/yellow/transparent/back/gray/25.png" width="56"/> |
 
 ##### `generation ii`
 
@@ -291,12 +292,19 @@ Animated
 
 ##### `generation ix`
 
-###### `brilliant-diamond-shining-pearl`
+###### `scarlet-violet`
 
 | Front |
 | --- |
 | PNG<br>_256x256_ |
 | <img src="sprites/pokemon/versions/generation-ix/scarlet-violet/25.png" width="100"/> |
+
+###### `champions`
+
+| Front |
+| --- |
+| PNG<br>_128x128_ |
+| <img src="sprites/pokemon/versions/generation-ix/champions/25.png" width="100"/> |
 
 ## Special Thanks
 
