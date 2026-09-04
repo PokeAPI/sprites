@@ -276,6 +276,8 @@ def build_index(output_file: Path | None = None) -> Path:
     gen_titles, game_titles, game_order = load_pokeapi_game_metadata()
 
     species_gender_diff = dict(zip(df_species["id"], df_species["has_gender_differences"]))
+    species_generation = dict(zip(df_species["id"], df_species["generation_id"]))
+    pk_species_map = dict(zip(df_pk["id"], df_pk["species_id"]))
 
     pokemon_list: list[dict[str, Any]] = []
     for _, row in df_pk.iterrows():
@@ -285,14 +287,19 @@ def build_index(output_file: Path | None = None) -> Path:
             "name": str(row["identifier"]),
             "species_id": sp_id,
             "has_gender_diff": bool(species_gender_diff.get(sp_id, 0)),
+            "generation_id": int(species_generation.get(sp_id, 1)),
             "is_form": False,
         })
 
     for _, row in df_forms.iterrows():
+        pk_id = int(row["pokemon_id"])
+        sp_id = int(pk_species_map.get(pk_id, pk_id))
         pokemon_list.append({
             "id": int(row["id"]),
             "name": str(row["identifier"]),
-            "pokemon_id": int(row["pokemon_id"]),
+            "pokemon_id": pk_id,
+            "has_gender_diff": bool(species_gender_diff.get(sp_id, 0)),
+            "generation_id": int(species_generation.get(sp_id, 1)),
             "is_form": True,
         })
 
@@ -514,6 +521,7 @@ def build_index(output_file: Path | None = None) -> Path:
                 generations_data.append({
                     "id": gen_id,
                     "title": gen_title,
+                    "gen_num": gen_num,
                     "games": games_data,
                     "icons": icons_list,
                 })

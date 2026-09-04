@@ -375,19 +375,26 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         });
 
+        const introGen = entity.generation_id || 1;
+
         // 3. Version Sprites - Dynamically discovered and pre-categorized by Generation & Game Groups
         (spriteIndex.generations || []).forEach(gen => {
+            const genNum = gen.gen_num || 1;
+            const isDebuted = genNum >= introGen;
+
             const activeGames = [];
             (gen.games || []).forEach(game => {
                 const hasAnyInGame = (game.views || []).some(v => folderSets[v.folder]?.has(idStr));
-                if (hasAnyInGame) {
+                if (isDebuted || hasAnyInGame) {
                     activeGames.push(game);
                 }
             });
 
-            const activeIcons = (gen.icons || []).filter(icon => folderSets[icon.folder]?.has(idStr));
+            const activeIcons = isDebuted 
+                ? (gen.icons || []) 
+                : (gen.icons || []).filter(icon => folderSets[icon.folder]?.has(idStr));
 
-            // Skip generation if no assets exist for this Pokémon
+            // Skip generation if no assets exist for this Pokémon AND Pokémon has not debuted yet
             if (activeGames.length === 0 && activeIcons.length === 0) {
                 return;
             }
@@ -414,6 +421,17 @@ document.addEventListener('DOMContentLoaded', async () => {
                     // Only one subcategory -> keep flat
                     const grid = createSubgroup(genGroup, game.name, game.folder);
                     const allViews = subcatMap.size === 1 ? Array.from(subcatMap.values())[0] : [];
+                    if (allViews.length > 0) {
+                        const availableCount = allViews.filter(v => v.hasSprite).length;
+                        const h3 = grid.previousElementSibling;
+                        if (h3 && h3.classList.contains('subgroup-title')) {
+                            const count = document.createElement('span');
+                            count.className = 'game-subcat-count';
+                            count.style.marginLeft = 'auto';
+                            count.textContent = `${availableCount}/${allViews.length} available`;
+                            h3.appendChild(count);
+                        }
+                    }
                     allViews.forEach(v => {
                         const isShiny = v.label.includes('Shiny') || (v.subpath && v.subpath.includes('shiny'));
                         const isFemale = v.female || v.label.includes('Female') || (v.subpath && v.subpath.includes('female'));
@@ -486,9 +504,26 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Render generation menu icons
             if (activeIcons.length > 0) {
                 const grid = createSubgroup(genGroup, '🏷️ Box & Party Icons', `versions/${gen.id}/icons`);
+                const availableIcons = activeIcons.filter(icon => folderSets[icon.folder]?.has(idStr)).length;
+                const h3 = grid.previousElementSibling;
+                if (h3 && h3.classList.contains('subgroup-title')) {
+                    const count = document.createElement('span');
+                    count.className = 'game-subcat-count';
+                    count.style.marginLeft = 'auto';
+                    count.textContent = `${availableIcons}/${activeIcons.length} available`;
+                    h3.appendChild(count);
+                }
                 activeIcons.forEach(icon => {
                     const isFemale = icon.female || icon.label.includes('Female') || (icon.subpath && icon.subpath.includes('female'));
-                    renderCard(grid, getSpriteUrl(`${icon.folder}/${idStr}${viewExt(icon)}`), icon.label, false, false, false, isFemale);
+                    const hasSprite = folderSets[icon.folder]?.has(idStr);
+                    if (isFemale && !entity.has_gender_diff && !hasSprite) {
+                        return;
+                    }
+                    if (hasSprite) {
+                        renderCard(grid, getSpriteUrl(`${icon.folder}/${idStr}${viewExt(icon)}`), icon.label, false, false, false, isFemale);
+                    } else {
+                        renderCard(grid, '', icon.label, true, false, false, isFemale);
+                    }
                 });
             }
         });
