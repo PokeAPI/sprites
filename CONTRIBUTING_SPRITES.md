@@ -13,7 +13,7 @@ This initial version of the maintenance workflow focuses specifically on:
 
 ### 1. Identifying Missing Sprites
 
-**Script:** `scripts/sprite_audit.py`
+**Script:** `scripts/tracker/sprite_audit.py`
 
 This script identifies missing, corrupt, or incorrectly sized sprites across multiple asset categories and cosmetic forms.
 
@@ -28,7 +28,8 @@ This script identifies missing, corrupt, or incorrectly sized sprites across mul
 * **Cosmetic Form Auditing (`--include-forms`):** Audits non-default cosmetic forms (such as Sinistea Antique, Polteageist Antique, Vivillon patterns, Unown letters, Alcremie forms) defined in `pokemon_forms.csv`.
 * **Output & Reports:**
   * Interactive HTML dashboard generated directly to `website/audit.html` (viewable on GitHub Pages). Custom path configurable via `-o` / `--output`.
-  * Grouped issues logged to CSV (`scripts/sprite_audit_report.csv`).
+  * Grouped issues logged to CSV (`scripts/tracker/sprite_audit_report.csv`).
+  * Optional `--build-index` flag generates the offline repository manifest (`website/data/sprite_index.json`) for Sprite Finder.
 
 ### 2. Synchronizing with Smogon
 
@@ -69,16 +70,16 @@ The Smogon source data is community-maintained and contains known inconsistencie
 
 1. **Audit default sprites:**
    ```bash
-   python scripts/sprite_audit.py --category default
+   python scripts/tracker/sprite_audit.py --category default
    ```
 2. **Audit all categories including cosmetic forms (updates GitHub Pages dashboard):**
    ```bash
-   python scripts/sprite_audit.py --category all --include-forms
+   python scripts/tracker/sprite_audit.py --category all --include-forms
    ```
 3. **Audit a specific category (e.g. Showdown or Official Artwork):**
    ```bash
-   python scripts/sprite_audit.py --category showdown
-   python scripts/sprite_audit.py --category official-artwork
+   python scripts/tracker/sprite_audit.py --category showdown
+   python scripts/tracker/sprite_audit.py --category official-artwork
    ```
 4. **Sync Smogon assets:**
    ```bash

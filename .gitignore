@@ -17,8 +17,13 @@ idea/
 smogon/
 scripts/downloads/
 
-# Generated Audit Reports
+# Generated Reports & Manifests
 scripts/sprite_audit_report.csv
+scripts/tracker/sprite_audit_report.csv
 website/audit.html
 website/audit_data.json
 website/audit_report.csv
+website/data/sprite_index.json
+
+# Pycache
+__pycache__/

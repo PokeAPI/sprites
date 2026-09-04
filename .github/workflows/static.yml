@@ -41,7 +41,7 @@ jobs:
 
       - name: Run Sprite Audit & Build Dashboard
         run: |
-          python scripts/sprite_audit.py --category all --include-forms
+          python scripts/tracker/sprite_audit.py --category all --include-forms --build-index
 
       - name: Setup Pages
         uses: actions/configure-pages@v6

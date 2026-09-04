@@ -1,15 +1,19 @@
+from __future__ import annotations
+
 import argparse
 import json
 import shutil
+import subprocess
 import sys
 import tempfile
 from collections import Counter
 from pathlib import Path
-from typing import  Dict, List, Optional, Set, Tuple
+from typing import Any
 
 import pandas as pd
 from PIL import Image, ImageFile
 
+# Ensure UTF-8 output encoding across all terminals
 if hasattr(sys.stdout, "reconfigure"):
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -26,20 +30,19 @@ GITHUB_BASE_URL = "https://raw.githubusercontent.com/PokeAPI/pokeapi/master/data
 POKEMON_CSV_URL = f"{GITHUB_BASE_URL}/pokemon.csv"
 FORMS_CSV_URL = f"{GITHUB_BASE_URL}/pokemon_forms.csv"
 SPECIES_CSV_URL = f"{GITHUB_BASE_URL}/pokemon_species.csv"
-VG_CSV_URL = f"{GITHUB_BASE_URL}/version_groups.csv"
 
 # Local Sprite directories relative to this script
 SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent
+PROJECT_ROOT = SCRIPT_DIR.parent.parent
 BASE_PATH = PROJECT_ROOT / "sprites" / "pokemon"
 WEBSITE_DIR = PROJECT_ROOT / "website"
 TEMPLATES_DIR = SCRIPT_DIR / "templates"
 
 # CATEGORY REGISTRY
-CATEGORIES = {
+CATEGORIES: dict[str, dict[str, Any]] = {
     "default": {
-        "name": "Default (Pixel Art)",
-        "description": "Standard Gen 5 Black & White style sprites",
+        "name": "Root Sprites (Default)",
+        "description": "Root /sprites/pokemon/ default pixel sprites (Gen 5 style)",
         "paths": {
             "Front": BASE_PATH,
             "Front Shiny": BASE_PATH / "shiny",
@@ -113,9 +116,14 @@ CATEGORIES = {
 }
 
 
-def get_standard_dimension(category_paths: Dict[str, Path], female_paths: Dict[str, Path], extensions: List[str], sample_limit: int = 50) -> Optional[Tuple[int, int]]:
+def get_standard_dimension(
+    category_paths: dict[str, Path],
+    female_paths: dict[str, Path],
+    extensions: list[str],
+    sample_limit: int = 50,
+) -> tuple[int, int] | None:
     """Scans sample files in a category to find the most common image size."""
-    all_sizes = []
+    all_sizes: list[tuple[int, int]] = []
     valid_ext = tuple(ext.lower() for ext in extensions)
 
     all_folders = list(category_paths.values()) + list(female_paths.values())
@@ -137,12 +145,26 @@ def get_standard_dimension(category_paths: Dict[str, Path], female_paths: Dict[s
     if not all_sizes:
         return None
 
-    most_common = Counter(all_sizes).most_common(1)[0][0]
+    most_common: tuple[int, int] = Counter(all_sizes).most_common(1)[0][0]
     return most_common
 
 
 def attempt_repair(path: Path) -> bool:
-    """Try to repair an unreadable image by loading with truncated-images enabled and re-saving."""
+    """Try to repair an unreadable or corrupt image using ImageMagick -strip or Pillow.
+
+    Returns True if the file was successfully repaired, False otherwise.
+    """
+    # 1. Try ImageMagick -strip (removes bad/corrupted iCCP / EXIF metadata chunks)
+    try:
+        res = subprocess.run(["magick", "mogrify", "-strip", str(path)], capture_output=True)
+        if res.returncode == 0:
+            with Image.open(path) as test_im:
+                test_im.load()
+            return True
+    except Exception:
+        pass
+
+    # 2. Fallback to Pillow load truncated and re-save
     try:
         ImageFile.LOAD_TRUNCATED_IMAGES = True
         with Image.open(path) as im:
@@ -164,33 +186,33 @@ def attempt_repair(path: Path) -> bool:
 
 def scan_category(
     category_key: str,
-    category_info: dict,
-    pokemon_entries: List[dict],
-    form_entries: List[dict],
+    category_info: dict[str, Any],
+    pokemon_entries: list[dict[str, Any]],
+    form_entries: list[dict[str, Any]],
     include_forms: bool = False,
     collect_corrupts: bool = False,
-) -> Tuple[List[dict], Set[Path], int, int, int, int, int]:
+) -> tuple[list[dict[str, Any]], set[Path], int, int, int, int, int]:
     """Scan a category for Pokémon varieties, female variants, and optional cosmetic forms.
 
     Returns:
         (grouped_issues, corrupt_paths, total_asset_targets, passed_asset_targets, total_missing, total_wrong_size, total_corrupt)
     """
-    category_name = category_info["name"]
-    paths = category_info["paths"]
-    female_paths = category_info.get("female_paths", {})
-    extensions = category_info["extensions"]
-    check_dimensions = category_info["check_dimensions"]
+    category_name: str = category_info["name"]
+    paths: dict[str, Path] = category_info["paths"]
+    female_paths: dict[str, Path] = category_info.get("female_paths", {})
+    extensions: list[str] = category_info["extensions"]
+    check_dimensions: bool = category_info["check_dimensions"]
 
-    standard_size = None
+    standard_size: tuple[int, int] | None = None
     if check_dimensions:
         standard_size = get_standard_dimension(paths, female_paths, extensions)
         if standard_size:
             print(f"  Standard dimension: {standard_size[0]}x{standard_size[1]}")
         else:
-            print(f"  [WARN] Could not determine standard dimension; skipping dimension checks.")
+            print("  [WARN] Could not determine standard dimension; skipping dimension checks.")
 
-    grouped_issues = []
-    corrupt_paths = set()
+    grouped_issues: list[dict[str, Any]] = []
+    corrupt_paths: set[Path] = set()
     total_asset_targets = 0
     passed_asset_targets = 0
     total_missing = 0
@@ -202,22 +224,21 @@ def scan_category(
         p_id = p["pokemon_id"]
         s_id = p["species_id"]
         name = p["identifier"]
-        gen = int(p["generation"]) if pd.notnull(p["generation"]) else "Unknown"
         has_gender_diff = int(p["has_gender_differences"]) if pd.notnull(p.get("has_gender_differences")) else 0
 
-        missing_types = []
-        wrong_size_types = []
-        corrupt_types = []
+        missing_types: list[str] = []
+        wrong_size_types: list[str] = []
+        corrupt_types: list[str] = []
 
         # Standard slots
-        slots_to_check = list(paths.items())
+        slots_to_check: list[tuple[str, Path]] = list(paths.items())
         # Add female slots if species has gender differences
         if has_gender_diff and female_paths:
             slots_to_check.extend(female_paths.items())
 
         for sprite_label, folder in slots_to_check:
             total_asset_targets += 1
-            found_path = None
+            found_path: Path | None = None
 
             for ext in extensions:
                 candidate = folder / f"{p_id}{ext}"
@@ -248,7 +269,7 @@ def scan_category(
                     passed_asset_targets += 1
 
         if missing_types or wrong_size_types or corrupt_types:
-            summary_parts = []
+            summary_parts: list[str] = []
             if missing_types:
                 summary_parts.append(f"Missing: {', '.join(missing_types)}")
             if wrong_size_types:
@@ -264,7 +285,6 @@ def scan_category(
                     "form_id": "",
                     "identifier": name,
                     "species_id": s_id,
-                    "generation": gen,
                     "is_form": 0,
                     "has_gender_differences": has_gender_diff,
                     "missing_sprites": missing_types,
@@ -287,22 +307,21 @@ def scan_category(
             s_id = f["species_id"]
             name = f["identifier"]
             form_ident = f["form_identifier"] if pd.notnull(f["form_identifier"]) else ""
-            gen = int(f["generation"]) if pd.notnull(f["generation"]) else "Unknown"
             has_gender_diff = int(f["has_gender_differences"]) if pd.notnull(f.get("has_gender_differences")) else 0
 
-            missing_types = []
-            wrong_size_types = []
-            corrupt_types = []
+            missing_types: list[str] = []
+            wrong_size_types: list[str] = []
+            corrupt_types: list[str] = []
 
-            slots_to_check = list(paths.items())
+            slots_to_check: list[tuple[str, Path]] = list(paths.items())
             if has_gender_diff and female_paths:
                 slots_to_check.extend(female_paths.items())
 
             for sprite_label, folder in slots_to_check:
                 total_asset_targets += 1
-                found_path = None
+                found_path: Path | None = None
 
-                candidate_names = []
+                candidate_names: list[str] = []
                 for ext in extensions:
                     candidate_names.append(f"{f_id}{ext}")
                     if form_ident:
@@ -338,7 +357,7 @@ def scan_category(
                         passed_asset_targets += 1
 
             if missing_types or wrong_size_types or corrupt_types:
-                summary_parts = []
+                summary_parts: list[str] = []
                 if missing_types:
                     summary_parts.append(f"Missing: {', '.join(missing_types)}")
                 if wrong_size_types:
@@ -354,7 +373,6 @@ def scan_category(
                         "form_id": f_id,
                         "identifier": name,
                         "species_id": s_id,
-                        "generation": gen,
                         "is_form": 1,
                         "has_gender_differences": has_gender_diff,
                         "missing_sprites": missing_types,
@@ -381,8 +399,8 @@ def scan_category(
 
 
 def generate_html_report(
-    grouped_issues: List[dict],
-    stats_by_category: Dict[str, dict],
+    grouped_issues: list[dict[str, Any]],
+    stats_by_category: dict[str, dict[str, Any]],
     total_asset_targets: int,
     total_passed_assets: int,
     total_missing_assets: int,
@@ -402,6 +420,17 @@ def generate_html_report(
         from jinja2 import Environment, FileSystemLoader
         env = Environment(loader=FileSystemLoader(str(TEMPLATES_DIR)), autoescape=False)
         template = env.get_template("audit_dashboard.html")
+        rendered_html = template.render(
+            completion_rate=f"{completion_rate:.2f}".rstrip("0").rstrip(".") if completion_rate != 100 else "100",
+            total_passed_assets=f"{total_passed_assets:,}",
+            total_asset_targets=f"{total_asset_targets:,}",
+            affected_entries_count=f"{len(grouped_issues):,}",
+            total_missing_assets=f"{total_missing_assets:,}",
+            total_wrong_size_assets=f"{total_wrong_size_assets:,}",
+            total_corrupt_assets=f"{total_corrupt_assets:,}",
+            categories_json=json.dumps(stats_by_category),
+            issues_json=json.dumps(grouped_issues),
+        )
     except ImportError:
         # Fallback to simple placeholder replacement if jinja2 is unavailable
         template_text = template_file.read_text(encoding="utf-8")
@@ -417,22 +446,6 @@ def generate_html_report(
             .replace("{{ categories_json }}", json.dumps(stats_by_category))
             .replace("{{ issues_json }}", json.dumps(grouped_issues))
         )
-        with open(output_path, "w", encoding="utf-8") as f:
-            f.write(rendered_html)
-        print(f"[REPORT] HTML Report written to: {output_path}")
-        return
-
-    rendered_html = template.render(
-        completion_rate=f"{completion_rate:.2f}".rstrip("0").rstrip(".") if completion_rate != 100 else "100",
-        total_passed_assets=f"{total_passed_assets:,}",
-        total_asset_targets=f"{total_asset_targets:,}",
-        affected_entries_count=f"{len(grouped_issues):,}",
-        total_missing_assets=f"{total_missing_assets:,}",
-        total_wrong_size_assets=f"{total_wrong_size_assets:,}",
-        total_corrupt_assets=f"{total_corrupt_assets:,}",
-        categories_json=json.dumps(stats_by_category),
-        issues_json=json.dumps(grouped_issues),
-    )
 
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(rendered_html)
@@ -443,16 +456,19 @@ def check_assets(
     category: str = "all",
     include_forms: bool = False,
     repair_enabled: bool = False,
-    html_out: Optional[str] = None,
-    csv_out: Optional[str] = None,
+    html_out: str | None = None,
+    csv_out: str | None = None,
     no_csv: bool = False,
-):
+) -> None:
+    """Executes the asset audit across specified categories and outputs reports."""
     print("\n" + "=" * 60)
-    print("POKEMON SPRITE AUDIT DASHBOARD")
-    print(f"Script: {Path(__file__).name}")
-    print(f"Category: {category.upper()}")
-    print(f"Include Cosmetic Forms: {'YES' if include_forms else 'NO'}")
-    print(f"Repair Mode: {'ENABLED' if repair_enabled else 'DISABLED'}")
+    print("POKÉMON SPRITE AUDIT DASHBOARD")
+    print(f"Script   : {Path(__file__).name}")
+    print(f"Target   : {BASE_PATH.relative_to(PROJECT_ROOT)}")
+    print(f"Category : {category.upper()}")
+    print(f"Cosmetic Forms : {'YES' if include_forms else 'NO'}")
+    print(f"Repair Mode    : {'ENABLED' if repair_enabled else 'DISABLED'}")
+    print("Notice   : Version sprites (sprites/pokemon/versions/) are NOT indexed by this script.")
     print("=" * 60 + "\n")
 
     # 1. Load Data from GitHub
@@ -461,7 +477,6 @@ def check_assets(
         df_pokemon = pd.read_csv(POKEMON_CSV_URL)
         df_forms = pd.read_csv(FORMS_CSV_URL)
         df_species = pd.read_csv(SPECIES_CSV_URL)
-        df_vg = pd.read_csv(VG_CSV_URL)
     except Exception as e:
         print(f"[ERROR] Failed fetching data: {e}")
         return
@@ -482,24 +497,17 @@ def check_assets(
         right_on="id",
         how="left",
     )
-    df_merged = df_merged.merge(
-        df_vg[["id", "generation_id"]],
-        left_on="introduced_in_version_group_id",
-        right_on="id",
-        how="left",
-    )
 
     # Determine whether a Pokémon variety expects female sprite assets:
     # 1. Base canonical species (is_default == 1) whose species has gender differences.
     # 2. Dimorphic regional varieties (e.g. Hisuian Sneasel, form_identifier == "hisui").
     # Excludes: Megas (is_mega == 1), G-Max (is_battle_only == 1), dedicated female form entries (form_identifier == "female"),
     # Cosplay/Cap Pikachus, and non-dimorphic regional forms (Alolan Rattata, Paldean Wooper).
-    def is_dimorphic_entry(r):
+    def is_dimorphic_entry(r: pd.Series) -> int:
         if r.get("has_gender_diff_species") != 1:
             return 0
         if r.get("is_default") == 1:
             return 1
-        # Regional forms of dimorphic species that retain sexual dimorphism (Hisuian Sneasel)
         if not r.get("is_mega") and not r.get("is_battle_only") and r.get("form_identifier") == "hisui":
             return 1
         return 0
@@ -507,14 +515,14 @@ def check_assets(
     df_merged["has_gender_differences"] = df_merged.apply(is_dimorphic_entry, axis=1)
 
     df_entries = (
-        df_merged[["id_x", "species_id", "identifier", "generation_id", "has_gender_differences"]]
-        .rename(columns={"id_x": "pokemon_id", "generation_id": "generation"})
+        df_merged[["id_x", "species_id", "identifier", "has_gender_differences"]]
+        .rename(columns={"id_x": "pokemon_id"})
         .sort_values(by=["pokemon_id"])
     )
-    pokemon_entries = df_entries.to_dict("records")
+    pokemon_entries: list[dict[str, Any]] = df_entries.to_dict("records")
 
     # Process Cosmetic Forms entries
-    form_entries = []
+    form_entries: list[dict[str, Any]] = []
     if include_forms:
         df_forms_non_default = df_forms[df_forms["is_default"] == 0].merge(
             df_pokemon[["id", "species_id"]],
@@ -522,23 +530,17 @@ def check_assets(
             right_on="id",
             how="left",
             suffixes=("", "_poke"),
-        ).merge(
-            df_vg[["id", "generation_id"]],
-            left_on="introduced_in_version_group_id",
-            right_on="id",
-            how="left",
-            suffixes=("", "_vg"),
         )
         df_forms_processed = (
-            df_forms_non_default[["id", "pokemon_id", "species_id", "identifier", "form_identifier", "generation_id"]]
+            df_forms_non_default[["id", "pokemon_id", "species_id", "identifier", "form_identifier"]]
             .assign(has_gender_differences=0)
-            .rename(columns={"id": "form_id", "generation_id": "generation"})
+            .rename(columns={"id": "form_id"})
             .sort_values(by=["pokemon_id", "form_id"])
         )
         form_entries = df_forms_processed.to_dict("records")
 
     # 2. Determine target categories
-    target_categories = {}
+    target_categories: dict[str, dict[str, Any]] = {}
     if category.lower() == "all":
         target_categories = CATEGORIES
     elif category.lower() in CATEGORIES:
@@ -547,8 +549,8 @@ def check_assets(
         print(f"[ERROR] Invalid category '{category}'. Available: {list(CATEGORIES.keys())} or 'all'")
         return
 
-    all_grouped_issues = []
-    stats_by_category = {}
+    all_grouped_issues: list[dict[str, Any]] = []
+    stats_by_category: dict[str, dict[str, Any]] = {}
     grand_total_targets = 0
     grand_total_passed = 0
     grand_total_missing = 0
@@ -613,15 +615,18 @@ def check_assets(
             "total_targets": cat_targets,
             "passed_targets": cat_passed,
             "flawed_targets": flawed_targets,
+            "missing_targets": cat_missing,
+            "wrong_size_targets": cat_wrong_size,
+            "corrupt_targets": cat_corrupt,
             "affected_entries": len(cat_issues),
         }
         print(f"  Result: {len(cat_issues)} affected entries ({flawed_targets:,} flawed files) out of {cat_targets:,} asset targets.")
 
-    # 4. Save Grouped CSV Report
+    # 4. Save Grouped CSV Report (without misleading 'generation' column)
     if not no_csv:
         csv_file = Path(csv_out) if csv_out else (SCRIPT_DIR / "sprite_audit_report.csv")
         if all_grouped_issues:
-            csv_rows = []
+            csv_rows: list[dict[str, Any]] = []
             for item in all_grouped_issues:
                 csv_rows.append(
                     {
@@ -631,7 +636,6 @@ def check_assets(
                         "form_id": item["form_id"],
                         "identifier": item["identifier"],
                         "species_id": item["species_id"],
-                        "generation": item["generation"],
                         "is_form": item["is_form"],
                         "has_gender_differences": item["has_gender_differences"],
                         "missing_sprites": item["missing_str"],
@@ -641,8 +645,8 @@ def check_assets(
                     }
                 )
             df_report = pd.DataFrame(csv_rows).sort_values(
-                by=["category", "generation", "pokemon_id"],
-                ascending=[True, True, True],
+                by=["category", "pokemon_id"],
+                ascending=[True, True],
             )
             df_report.to_csv(csv_file, index=False)
             print(f"\n[REPORT] CSV Report saved to: {csv_file}")
@@ -655,7 +659,6 @@ def check_assets(
                     "form_id",
                     "identifier",
                     "species_id",
-                    "generation",
                     "is_form",
                     "has_gender_differences",
                     "missing_sprites",
@@ -695,7 +698,6 @@ def check_assets(
         with open(website_json, "w", encoding="utf-8") as f:
             json.dump(website_payload, f, indent=2)
         if not no_csv and csv_file.exists():
-            import shutil
             shutil.copyfile(csv_file, website_csv)
 
     # 6. Console Summary
@@ -716,7 +718,8 @@ def check_assets(
     print("=" * 60 + "\n")
 
 
-def parse_args_and_run():
+def parse_args_and_run() -> None:
+    """Parses command line arguments and runs audit."""
     parser = argparse.ArgumentParser(description="Audit Pokémon Sprites across categories and formats")
     parser.add_argument(
         "--category",
@@ -732,7 +735,7 @@ def parse_args_and_run():
     parser.add_argument(
         "--repair",
         action="store_true",
-        help="Attempt to repair corrupt images by re-saving via Pillow",
+        help="Attempt to repair corrupt images using ImageMagick -strip or Pillow",
     )
     parser.add_argument(
         "-o",
@@ -754,6 +757,11 @@ def parse_args_and_run():
         action="store_true",
         help="Skip CSV report generation",
     )
+    parser.add_argument(
+        "--build-index",
+        action="store_true",
+        help="Build offline repository sprite index for Sprite Finder (website/data/sprite_index.json)",
+    )
 
     args = parser.parse_args()
     check_assets(
@@ -764,6 +772,10 @@ def parse_args_and_run():
         csv_out=args.csv,
         no_csv=args.no_csv,
     )
+
+    if args.build_index:
+        from build_sprite_index import build_index
+        build_index()
 
 
 if __name__ == "__main__":

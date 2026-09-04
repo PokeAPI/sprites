@@ -3,31 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PokeAPI Sprite Finder</title>
+    <title>Sprite Finder - PokéAPI Repositories</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <h1>PokeAPI Sprite Finder</h1>
-        <a href="audit.html">Audit Report</a>
-        <button id="themeToggle">Toggle Theme</button>
-    </div>
-    <div class="search-container">
+    <header class="header">
+        <div class="header-brand">
+            <div class="brand-badge">SF</div>
+            <div>
+                <h1 class="brand-title">Sprite Finder</h1>
+                <p class="brand-sub">Offline Repository Asset Browser</p>
+            </div>
+        </div>
+        <div class="header-actions">
+            <a href="audit.html" class="btn btn-outline" title="Open Sprite Audit Dashboard">
+                <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                <span>Audit Report</span>
+            </a>
+            <button id="themeToggle" class="btn btn-outline" title="Toggle theme">
+                <span id="themeToggleIcon">🌙</span>
+                <span id="themeToggleText">Dark</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="search-container">
+        <div class="search-options">
+            <label class="radio-label"><input type="radio" name="searchType" value="pokemon" checked> <span>Pokémon</span></label>
+            <label class="radio-label"><input type="radio" name="searchType" value="pokemon-form"> <span>Form</span></label>
+            <label class="radio-label"><input type="radio" name="searchType" value="item"> <span>Item</span></label>
+            <label class="radio-label"><input type="radio" name="searchType" value="type"> <span>Type</span></label>
+            <label class="radio-label"><input type="radio" name="searchType" value="badge"> <span>Badge</span></label>
+        </div>
+
         <div class="search-wrapper">
-            <input type="text" id="searchInput" placeholder="Enter name or ID..." autocomplete="off">
+            <div class="search-input-group">
+                <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <input type="text" id="searchInput" placeholder="Search by name (e.g. pikachu) or ID (#25)..." autocomplete="off">
+                <button id="clearSearchBtn" class="clear-btn" style="display:none;">×</button>
+            </div>
             <div id="autocomplete-list" class="autocomplete-items"></div>
         </div>
-<div id="searchId" class="search-id"></div>
-<div id="searchId" class="search-id"></div>
-        <div class="search-options">
-            <label><input type="radio" name="searchType" value="pokemon" checked> Pokémon</label>
-            <label><input type="radio" name="searchType" value="item"> Item</label>
-            <label><input type="radio" name="searchType" value="pokemon-form"> Pokémon Form</label>
-            <label><input type="radio" name="searchType" value="type"> Type</label>
+
+        <div class="search-actions">
+            <div id="searchId" class="search-id-badge"></div>
+            <button id="displayBtn" class="btn btn-primary">
+                <span>Display Sprites</span>
+            </button>
         </div>
-        <button id="displayBtn">Display Sprites</button>
-    </div>
-    <div id="results" class="results-container"></div>
+    </main>
+
+    <section id="results" class="results-container"></section>
+
+    <footer class="footer">
+        <p>PokéAPI Sprite Finder • Powered by direct repository index</p>
+    </footer>
+
     <script type="module" src="script.js"></script>
 </body>
 </html>
