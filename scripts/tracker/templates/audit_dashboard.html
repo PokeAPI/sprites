@@ -37,593 +37,430 @@
 <body class="min-h-full flex flex-col font-sans antialiased bg-slate-50 text-slate-900 dark:bg-[#09090b] dark:text-zinc-100 transition-colors duration-150">
     <!-- Navbar -->
     <header class="bg-white/95 dark:bg-[#09090b]/95 border-b border-slate-200 dark:border-zinc-800 sticky top-0 z-50 backdrop-blur-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 rounded-md bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 flex items-center justify-center font-bold text-sm border border-zinc-800 dark:border-zinc-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-2">
+            <div class="flex items-center space-x-2.5 sm:space-x-3 min-w-0">
+                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-md bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 flex items-center justify-center font-bold text-xs sm:text-sm border border-zinc-800 dark:border-zinc-200 shadow-sm shrink-0">
                     PA
                 </div>
-                <div>
-                    <h1 class="font-semibold text-sm text-slate-900 dark:text-zinc-100 tracking-tight">PokéAPI Sprite Audit</h1>
-                    <p class="text-xs text-slate-500 dark:text-zinc-400">Asset Verification & Quality Dashboard</p>
+                <div class="min-w-0">
+                    <h1 class="font-semibold text-xs sm:text-sm text-slate-900 dark:text-zinc-100 tracking-tight truncate">PokéAPI Sprite Audit</h1>
+                    <p class="hidden sm:block text-xs text-slate-500 dark:text-zinc-400">Asset Verification & Quality Dashboard</p>
                 </div>
             </div>
-            <div class="flex items-center space-x-2">
-                <a href="index.html" class="inline-flex items-center space-x-1.5 text-xs font-medium text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white px-3 py-1.5 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-200 dark:border-zinc-800 transition shadow-sm">
-                    <svg class="w-3.5 h-3.5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    <span>Sprite Finder</span>
+            <div class="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
+                <a href="index.html" class="inline-flex items-center space-x-1.5 text-xs font-medium text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white px-2.5 sm:px-3 py-1.5 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-200 dark:border-zinc-800 transition shadow-sm" title="Sprite Finder">
+                    <svg class="w-3.5 h-3.5 opacity-70 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <span class="hidden sm:inline">Sprite Finder</span>
                 </a>
-                <a href="audit_report.csv" download="sprite_audit_report.csv" class="inline-flex items-center space-x-1.5 text-xs font-medium text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white px-3 py-1.5 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-200 dark:border-zinc-800 transition shadow-sm">
-                    <svg class="w-3.5 h-3.5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                    <span>Download CSV</span>
+                <a id="downloadCsvBtn" href="audit_report.csv" download="sprite_audit_report.csv" class="inline-flex items-center space-x-1.5 text-xs font-medium text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white px-2.5 sm:px-3 py-1.5 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-200 dark:border-zinc-800 transition shadow-sm" title="Download CSV">
+                    <svg class="w-3.5 h-3.5 opacity-70 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    <span id="downloadCsvText" class="hidden sm:inline">Download CSV</span>
                 </a>
                 <!-- Theme Toggle Button -->
-                <button id="themeToggleBtn" class="flex items-center space-x-1.5 text-xs font-medium text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white px-2.5 py-1.5 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-200 dark:border-zinc-800 transition shadow-sm" title="Toggle theme">
+                <button id="themeToggleBtn" class="flex items-center space-x-1.5 text-xs font-medium text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white px-2 sm:px-2.5 py-1.5 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-200 dark:border-zinc-800 transition shadow-sm" title="Toggle theme">
                     <span id="themeToggleIcon">🌙</span>
-                    <span id="themeToggleText">Dark</span>
+                    <span id="themeToggleText" class="hidden sm:inline">Dark</span>
                 </button>
             </div>
         </div>
     </header>
 
-    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-        <!-- Path Scope & Version Sprites Notice Banner (Neutral Shadcn Slate Aesthetic) -->
-        <div class="bg-white dark:bg-zinc-900/70 border border-slate-200 dark:border-zinc-800 rounded-lg p-4 text-xs text-slate-700 dark:text-zinc-300 flex items-start space-x-3 shadow-sm">
-            <span class="text-zinc-500 dark:text-zinc-400 text-base leading-none mt-0.5">ℹ️</span>
-            <div class="space-y-1 flex-1">
-                <div>
-                    <span class="font-semibold text-slate-900 dark:text-zinc-100">Audit Scope:</span>
-                    This dashboard tracks the <span class="font-semibold">Root Sprites (Default)</span> collection located at <code class="bg-slate-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-slate-800 dark:text-zinc-200 font-mono">sprites/pokemon/</code>.
-                </div>
-                <div class="text-amber-700 dark:text-amber-400 font-medium">
-                    ⚠️ <strong>Notice:</strong> Version-specific game sprites (<code class="bg-slate-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded font-mono">sprites/pokemon/versions/</code>) are not indexed by this script yet.
-                </div>
+    <main class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-5 sm:space-y-8">
+        <!-- Top Tab Switcher -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 border-b border-slate-200 dark:border-zinc-800 pb-3 sm:pb-4">
+            <div>
+                <h2 class="text-sm sm:text-base font-semibold text-slate-900 dark:text-zinc-100 tracking-tight">Audit Dashboard</h2>
+                <p class="text-[11px] sm:text-xs text-slate-500 dark:text-zinc-400">Switch between artwork collections and game version sprites</p>
+            </div>
+            <!-- Segmented Tab Controls -->
+            <div class="inline-flex p-1 bg-slate-200/70 dark:bg-zinc-900 rounded-lg border border-slate-300/80 dark:border-zinc-800 text-xs font-medium w-full sm:w-auto shadow-inner">
+                <button id="tabBtnArtwork" onclick="switchTab('artwork')" class="tab-main-btn flex-1 sm:flex-initial justify-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-md transition shadow-sm bg-white dark:bg-zinc-800 text-slate-900 dark:text-zinc-100 font-semibold flex items-center space-x-1.5 sm:space-x-2">
+                    <svg class="w-3.5 h-3.5 opacity-80 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span class="truncate">Modern & Artwork Collections</span>
+                </button>
+                <button id="tabBtnVersions" onclick="switchTab('versions')" class="tab-main-btn flex-1 sm:flex-initial justify-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-md transition text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-zinc-100 flex items-center space-x-1.5 sm:space-x-2">
+                    <svg class="w-3.5 h-3.5 opacity-80 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                    <span class="truncate">Game Version Sprites</span>
+                    <span class="hidden sm:inline px-1.5 py-0.5 rounded text-[10px] bg-slate-300 dark:bg-zinc-800 text-slate-800 dark:text-zinc-300 font-mono font-normal">Gen I–IX</span>
+                </button>
             </div>
         </div>
 
-        <!-- Top Metrics Cards -->
-        <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-4 rounded-lg shadow-sm">
-                <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Completion</div>
-                <div class="mt-2 text-2xl font-bold text-slate-900 dark:text-zinc-100 font-mono">{{ completion_rate }}%</div>
-                <div class="text-[11px] text-slate-500 dark:text-zinc-400 mt-1 font-mono">{{ total_passed_assets }} / {{ total_asset_targets }} passed</div>
-            </div>
-            <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-4 rounded-lg shadow-sm">
-                <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Targets Checked</div>
-                <div class="mt-2 text-2xl font-bold text-slate-900 dark:text-zinc-100 font-mono">{{ total_asset_targets }}</div>
-                <div class="text-[11px] text-slate-500 dark:text-zinc-400 mt-1">total assets</div>
-            </div>
-            <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-4 rounded-lg shadow-sm">
-                <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Affected Entries</div>
-                <div class="mt-2 text-2xl font-bold text-slate-900 dark:text-zinc-100 font-mono">{{ affected_entries_count }}</div>
-                <div class="text-[11px] text-slate-500 dark:text-zinc-400 mt-1">Pokémon / forms</div>
-            </div>
-            <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-4 rounded-lg shadow-sm">
-                <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Missing Files</div>
-                <div class="mt-2 text-2xl font-bold text-rose-600 dark:text-rose-400 font-mono">{{ total_missing_assets }}</div>
-                <div class="text-[11px] text-slate-500 dark:text-zinc-400 mt-1">unfound files</div>
-            </div>
-            <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-4 rounded-lg shadow-sm">
-                <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Wrong Size</div>
-                <div class="mt-2 text-2xl font-bold text-amber-600 dark:text-amber-400 font-mono">{{ total_wrong_size_assets }}</div>
-                <div class="text-[11px] text-slate-500 dark:text-zinc-400 mt-1">dimension mismatches</div>
-            </div>
-            <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-4 rounded-lg shadow-sm">
-                <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Corrupt Files</div>
-                <div class="mt-2 text-2xl font-bold text-purple-600 dark:text-purple-400 font-mono">{{ total_corrupt_assets }}</div>
-                <div class="text-[11px] text-slate-500 dark:text-zinc-400 mt-1">unreadable files</div>
-            </div>
-        </section>
-
-        <!-- Category Progress Breakdown -->
-        <section class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 rounded-lg p-6 shadow-sm">
-            <div class="flex items-center justify-between mb-4">
-                <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-zinc-100">Category Coverage Breakdown</h2>
-                <span class="text-xs text-slate-500 dark:text-zinc-400">Aggregated by sprite category</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="category-cards">
-                <!-- Dynamically populated via JS -->
-            </div>
-        </section>
-
-        <!-- Interactive Filter & Table Section -->
-        <section class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 rounded-lg shadow-sm overflow-hidden flex flex-col">
-            <!-- Controls Bar -->
-            <div class="p-4 border-b border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-950/70 space-y-3">
-                <!-- Search & Dropdown Filters Row -->
-                <div class="flex flex-col lg:flex-row gap-3 items-start lg:items-center justify-between">
-                    <!-- Search Input with Clear Button -->
-                    <div class="relative flex-1 w-full lg:max-w-md">
-                        <input type="text" id="searchInput" placeholder="Search by name, ID, form slug, or issue details..." 
-                            class="w-full pl-3 pr-8 py-2 bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md text-xs text-slate-900 dark:text-zinc-100 placeholder-slate-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 transition">
-                        <button id="clearSearchBtn" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-500 hover:text-slate-600 dark:hover:text-zinc-300 text-xs font-bold font-mono">×</button>
+        <!-- TAB 1: MODERN & ARTWORK COLLECTIONS -->
+        <div id="tabContentArtwork" class="space-y-5 sm:space-y-8">
+            <!-- Scope Banner -->
+            <div class="bg-white dark:bg-zinc-900/70 border border-slate-200 dark:border-zinc-800 rounded-lg p-3.5 sm:p-4 text-xs text-slate-700 dark:text-zinc-300 flex items-start space-x-2.5 sm:space-x-3 shadow-sm">
+                <span class="text-zinc-500 dark:text-zinc-400 text-base leading-none mt-0.5 shrink-0">ℹ️</span>
+                <div class="space-y-1 flex-1 min-w-0">
+                    <div>
+                        <span class="font-semibold text-slate-900 dark:text-zinc-100">Audit Scope:</span>
+                        This tab audits root pixel sprites (<code class="bg-slate-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-slate-800 dark:text-zinc-200 font-mono break-all">sprites/pokemon/</code>) and official artwork renders (HOME, Showdown, Official Artwork, Dream World).
                     </div>
-
-                    <!-- Filter Dropdowns -->
-                    <div class="flex flex-wrap items-center gap-2 w-full lg:w-auto">
-                        <!-- Issue Filter -->
-                        <select id="issueFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2.5 py-1.5 text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500">
-                            <option value="ALL">All Issues</option>
-                            <option value="missing">Missing Files Only</option>
-                            <option value="wrong_size">Wrong Size Only</option>
-                            <option value="corrupt">Corrupt Files Only</option>
-                            <option value="multiple">Multiple Issues (>1)</option>
-                        </select>
-
-                        <!-- Entity Type Filter -->
-                        <select id="entityFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2.5 py-1.5 text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500">
-                            <option value="ALL">All Entities</option>
-                            <option value="pokemon">Pokémon Only</option>
-                            <option value="form">Cosmetic Forms Only</option>
-                        </select>
-
-                        <!-- Gender Differences Filter -->
-                        <select id="genderFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2.5 py-1.5 text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500">
-                            <option value="ALL">All Genders</option>
-                            <option value="dimorphic">Gender Dimorphic Only</option>
-                            <option value="standard">Standard (No Gender Diff)</option>
-                        </select>
-
-                        <!-- Sort By -->
-                        <select id="sortFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2.5 py-1.5 text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500">
-                            <option value="id_asc">Sort: ID (Low to High)</option>
-                            <option value="id_desc">Sort: ID (High to Low)</option>
-                            <option value="name_asc">Sort: Name (A to Z)</option>
-                            <option value="name_desc">Sort: Name (Z to A)</option>
-                            <option value="issues_desc">Sort: Most Issues First</option>
-                        </select>
-
-                        <!-- Reset Filters Button -->
-                        <button id="resetFiltersBtn" class="px-2.5 py-1.5 rounded-md text-xs font-medium bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-slate-700 dark:text-zinc-300 border border-slate-300 dark:border-zinc-700 transition">
-                            Reset
-                        </button>
+                    <div class="text-slate-500 dark:text-zinc-400">
+                        To view coverage of game-specific battle sprites and menu icons across Generations I through IX, switch to the <strong>Game Version Sprites</strong> tab above.
                     </div>
                 </div>
-
-                <!-- Category Tabs -->
-                <div class="flex flex-wrap gap-1.5 border-t border-slate-200 dark:border-zinc-800 pt-3" id="categoryTabs">
-                    <button data-cat="ALL" class="cat-tab px-3 py-1 rounded-md text-xs font-medium bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 border border-zinc-900 dark:border-zinc-100 transition shadow-sm">All Categories</button>
-                </div>
             </div>
 
-            <!-- Table Info Bar & Page Size Selector -->
-            <div class="px-4 py-2 bg-slate-100/60 dark:bg-zinc-950/60 border-b border-slate-200 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500 dark:text-zinc-400">
-                <div class="flex items-center space-x-2">
-                    <span id="resultsCount">Showing {{ affected_entries_count }} affected entries</span>
-                    <span id="activeFiltersBadge" class="hidden text-[10px] px-2 py-0.5 rounded bg-zinc-200 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200 border border-zinc-300 dark:border-zinc-700 font-mono">Filtered</span>
+            <!-- Top Metrics Cards -->
+            <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-4">
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Completion</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-slate-900 dark:text-zinc-100 font-mono">{{ completion_rate }}%</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1 font-mono truncate">{{ total_passed_assets }} / {{ total_asset_targets }} passed</div>
+                </div>
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Targets Checked</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-slate-900 dark:text-zinc-100 font-mono">{{ total_asset_targets }}</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1">total assets</div>
+                </div>
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Affected Entries</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-slate-900 dark:text-zinc-100 font-mono">{{ affected_entries_count }}</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1">Pokémon / forms</div>
+                </div>
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Missing Files</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-rose-600 dark:text-rose-400 font-mono">{{ total_missing_assets }}</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1">unfound files</div>
+                </div>
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Wrong Size</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-amber-600 dark:text-amber-400 font-mono">{{ total_wrong_size_assets }}</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1 truncate">dimension mismatches</div>
+                </div>
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Corrupt Files</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-purple-600 dark:text-purple-400 font-mono">{{ total_corrupt_assets }}</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1">unreadable files</div>
+                </div>
+            </section>
+
+            <!-- Category Coverage Progress Breakdown -->
+            <section class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 rounded-lg p-3.5 sm:p-6 shadow-sm space-y-3 sm:space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
+                    <div>
+                        <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-zinc-100">Category Coverage Breakdown</h2>
+                        <span class="text-xs text-slate-500 dark:text-zinc-400">Aggregated by sprite collection</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4" id="category-cards">
+                    <!-- Dynamically populated via JS -->
+                </div>
+            </section>
+
+            <!-- Interactive Filter & Table Section -->
+            <section class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 rounded-lg shadow-sm overflow-hidden flex flex-col">
+                <!-- Controls Bar -->
+                <div class="p-3 sm:p-4 border-b border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-950/70 space-y-2.5 sm:space-y-3">
+                    <div class="flex flex-col lg:flex-row gap-2.5 sm:gap-3 items-start lg:items-center justify-between">
+                        <!-- Search Input with Clear Button -->
+                        <div class="relative flex-1 w-full lg:max-w-md">
+                            <input type="text" id="searchInput" placeholder="Search by name, ID, form slug, or issue details..." 
+                                class="w-full pl-3 pr-8 py-1.5 sm:py-2 bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md text-[11px] sm:text-xs text-slate-900 dark:text-zinc-100 placeholder-slate-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 transition">
+                            <button id="clearSearchBtn" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-500 hover:text-slate-600 dark:hover:text-zinc-300 text-xs font-bold font-mono">×</button>
+                        </div>
+
+                        <!-- Filter Dropdowns -->
+                        <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 w-full lg:w-auto">
+                            <!-- Issue Filter -->
+                            <select id="issueFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2 py-1.5 text-[11px] sm:text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 w-full sm:w-auto flex-1 sm:flex-initial min-w-[120px]">
+                                <option value="ALL">All Issues</option>
+                                <option value="missing">Missing Files Only</option>
+                                <option value="wrong_size">Wrong Size Only</option>
+                                <option value="corrupt">Corrupt Files Only</option>
+                                <option value="multiple">Multiple Issues (>1)</option>
+                            </select>
+
+                            <!-- Entity Type Filter -->
+                            <select id="entityFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2 py-1.5 text-[11px] sm:text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 w-full sm:w-auto flex-1 sm:flex-initial min-w-[120px]">
+                                <option value="ALL">All Entities</option>
+                                <option value="pokemon">Pokémon Only</option>
+                                <option value="form">Cosmetic Forms Only</option>
+                            </select>
+
+                            <!-- Gender Differences Filter -->
+                            <select id="genderFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2 py-1.5 text-[11px] sm:text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 w-full sm:w-auto flex-1 sm:flex-initial min-w-[120px]">
+                                <option value="ALL">All Genders</option>
+                                <option value="dimorphic">Gender Dimorphic Only</option>
+                                <option value="standard">Standard (No Gender Diff)</option>
+                            </select>
+
+                            <!-- Sort By -->
+                            <select id="sortFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2 py-1.5 text-[11px] sm:text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 w-full sm:w-auto flex-1 sm:flex-initial min-w-[120px]">
+                                <option value="id_asc">Sort: ID (Low to High)</option>
+                                <option value="id_desc">Sort: ID (High to Low)</option>
+                                <option value="name_asc">Sort: Name (A to Z)</option>
+                                <option value="name_desc">Sort: Name (Z to A)</option>
+                                <option value="issues_desc">Sort: Most Issues First</option>
+                            </select>
+
+                            <!-- Reset Filters Button -->
+                            <button id="resetFiltersBtn" class="px-2.5 py-1.5 rounded-md text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-slate-700 dark:text-zinc-300 border border-slate-300 dark:border-zinc-700 transition shrink-0">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Category Tabs -->
+                    <div class="flex flex-wrap gap-1.5 border-t border-slate-200 dark:border-zinc-800 pt-3" id="categoryTabs">
+                        <button data-cat="ALL" class="cat-tab px-3 py-1 rounded-md text-xs font-medium bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 border border-zinc-900 dark:border-zinc-100 transition shadow-sm">All Categories</button>
+                    </div>
                 </div>
 
-                <div class="flex items-center space-x-4">
-                    <!-- Page Size Selector -->
+                <!-- Table Info Bar & Page Size Selector -->
+                <div class="px-3 sm:px-4 py-2 bg-slate-100/60 dark:bg-zinc-950/60 border-b border-slate-200 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 text-xs text-slate-500 dark:text-zinc-400">
+                    <div class="flex items-center space-x-2">
+                        <span id="resultsCount">Showing {{ affected_entries_count }} affected entries</span>
+                        <span id="activeFiltersBadge" class="hidden text-[10px] px-2 py-0.5 rounded bg-zinc-200 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200 border border-zinc-300 dark:border-zinc-700 font-mono">Filtered</span>
+                    </div>
+
+                    <div class="flex items-center space-x-3 sm:space-x-4">
+                        <!-- Page Size Selector -->
+                        <div class="flex items-center space-x-1.5">
+                            <label for="pageSizeSelect" class="text-slate-600 dark:text-zinc-400 text-xs">Show:</label>
+                            <select id="pageSizeSelect" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded px-2 py-1 text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 font-mono">
+                                <option value="15">15</option>
+                                <option value="25">25</option>
+                                <option value="50" selected>50</option>
+                                <option value="100">100</option>
+                                <option value="250">250</option>
+                                <option value="ALL">All</option>
+                            </select>
+                            <span class="text-slate-600 dark:text-zinc-400 text-xs hidden sm:inline">entries</span>
+                        </div>
+
+                        <div class="text-slate-500 dark:text-zinc-400 font-mono text-xs">
+                            Page <span id="currentPage" class="font-semibold text-slate-900 dark:text-zinc-100">1</span> of <span id="totalPages" class="font-semibold text-slate-900 dark:text-zinc-100">1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Issues Table -->
+                <div class="overflow-x-auto custom-scrollbar flex-1 min-h-[420px]">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-100/90 dark:bg-zinc-950/90 text-slate-600 dark:text-zinc-400 uppercase text-[10px] sm:text-[11px] font-semibold border-b border-slate-200 dark:border-zinc-800 tracking-wider">
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-36 sm:w-40">Category</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-28 sm:w-36">ID</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-40 sm:w-48">Identifier</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-20 text-center whitespace-nowrap">Type</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-20 text-center whitespace-nowrap">Finder</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4">Flawed Assets Breakdown</th>
+                            </tr>
+                        </thead>
+                        <tbody id="issuesTableBody" class="divide-y divide-slate-200 dark:divide-zinc-800/60 font-mono text-xs">
+                            <!-- Rows rendered by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination Controls -->
+                <div class="p-2.5 sm:p-3.5 bg-slate-50 dark:bg-zinc-950 border-t border-slate-200 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-2 sm:gap-3">
                     <div class="flex items-center space-x-1.5">
-                        <label for="pageSizeSelect" class="text-slate-600 dark:text-zinc-400 text-xs">Show:</label>
-                        <select id="pageSizeSelect" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded px-2 py-1 text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 font-mono">
-                            <option value="15">15</option>
-                            <option value="25">25</option>
-                            <option value="50" selected>50</option>
-                            <option value="100">100</option>
-                            <option value="250">250</option>
-                            <option value="ALL">All</option>
-                        </select>
-                        <span class="text-slate-600 dark:text-zinc-400 text-xs">entries</span>
+                        <button id="firstBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">First</button>
+                        <button id="prevBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">Previous</button>
                     </div>
 
-                    <div class="text-slate-500 dark:text-zinc-400 font-mono text-xs">
-                        Page <span id="currentPage" class="font-semibold text-slate-900 dark:text-zinc-100">1</span> of <span id="totalPages" class="font-semibold text-slate-900 dark:text-zinc-100">1</span>
+                    <div class="text-xs text-slate-500 dark:text-zinc-400 font-mono" id="paginationInfo"></div>
+
+                    <div class="flex items-center space-x-1.5">
+                        <button id="nextBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">Next</button>
+                        <button id="lastBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">Last</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- TAB 2: GAME VERSION SPRITES -->
+        <div id="tabContentVersions" class="hidden space-y-5 sm:space-y-8">
+            <!-- Scope Banner -->
+            <div class="bg-white dark:bg-zinc-900/70 border border-slate-200 dark:border-zinc-800 rounded-lg p-3.5 sm:p-4 text-xs text-slate-700 dark:text-zinc-300 flex items-start space-x-2.5 sm:space-x-3 shadow-sm">
+                <span class="text-zinc-500 dark:text-zinc-400 text-base leading-none mt-0.5 shrink-0">🎮</span>
+                <div class="space-y-1 flex-1 min-w-0">
+                    <div>
+                        <span class="font-semibold text-slate-900 dark:text-zinc-100">Game Version Audit Scope:</span>
+                        Tracking official core game versions across Generations I through IX based on PokéAPI game indices (<code class="bg-slate-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-slate-800 dark:text-zinc-200 font-mono break-all">sprites/pokemon/versions/</code>).
+                        Progress tracked against
+                        <a href="https://github.com/PokeAPI/sprites/issues/258" target="_blank" rel="noopener noreferrer" class="font-medium text-blue-600 dark:text-blue-400 hover:underline underline-offset-2 inline-flex items-center gap-0.5">Issue #258<svg class="w-3 h-3 opacity-70 inline ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>.
+                    </div>
+                    <div class="text-slate-500 dark:text-zinc-400">
+                        Each game's Pokémon target scope is sourced from PokéAPI game indices and debut generations. Menu icons were unified at generation level through Gen VI; starting in Gen VII, icons diverged per individual game in official releases, but this repository currently organizes them under generation-level folders as an open restructuring tracked in <a href="https://github.com/PokeAPI/sprites/issues/258" target="_blank" rel="noopener noreferrer" class="font-medium text-blue-600 dark:text-blue-400 hover:underline underline-offset-2">Issue #258</a>.
                     </div>
                 </div>
             </div>
 
-            <!-- Issues Table -->
-            <div class="overflow-x-auto custom-scrollbar flex-1 min-h-[420px]">
-                <table class="w-full text-left border-collapse text-xs">
-                    <thead>
-                        <tr class="bg-slate-100/90 dark:bg-zinc-950/90 text-slate-600 dark:text-zinc-400 uppercase text-[11px] font-semibold border-b border-slate-200 dark:border-zinc-800 tracking-wider">
-                            <th class="py-3 px-4 w-40">Category</th>
-                            <th class="py-3 px-4 w-36">ID</th>
-                            <th class="py-3 px-4 w-48">Identifier</th>
-                            <th class="py-3 px-4 w-20">Type</th>
-                            <th class="py-3 px-4 w-20 text-center">Finder</th>
-                            <th class="py-3 px-4">Flawed Assets Breakdown</th>
-                        </tr>
-                    </thead>
-                    <tbody id="issuesTableBody" class="divide-y divide-slate-200 dark:divide-zinc-800/60 font-mono text-xs">
-                        <!-- Rows rendered by JS -->
-                    </tbody>
-                </table>
-            </div>
+            <!-- Top Metrics Cards -->
+            <section class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4">
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Version Completion</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-slate-900 dark:text-zinc-100 font-mono">{{ version_completion_rate }}%</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1 font-mono truncate">{{ total_version_passed }} / {{ total_version_targets }} passed</div>
+                </div>
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Targets Checked</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-slate-900 dark:text-zinc-100 font-mono">{{ total_version_targets }}</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1">total game version sprites</div>
+                </div>
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Affected Entries</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-slate-900 dark:text-zinc-100 font-mono">{{ version_affected_entries_count }}</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1">Pokémon / games</div>
+                </div>
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Missing Sprites</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-rose-600 dark:text-rose-400 font-mono">{{ total_version_missing }}</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1">unfound version sprites</div>
+                </div>
+            </section>
 
-            <!-- Pagination Controls -->
-            <div class="p-3.5 bg-slate-50 dark:bg-zinc-950 border-t border-slate-200 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-3">
-                <div class="flex items-center space-x-1.5">
-                    <button id="firstBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">First</button>
-                    <button id="prevBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">Previous</button>
+            <!-- Game Coverage Progress Breakdown -->
+            <section class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 rounded-lg p-3.5 sm:p-6 shadow-sm space-y-3 sm:space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3">
+                    <div>
+                        <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-zinc-100">Game Coverage Breakdown</h2>
+                        <span class="text-[11px] sm:text-xs text-slate-500 dark:text-zinc-400">Click any game card to filter the missing sprites table below</span>
+                    </div>
+                    <!-- Generation Filter Pills -->
+                    <div class="flex flex-wrap gap-1" id="versionGenPills">
+                        <button data-gen="ALL" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 border border-zinc-900 dark:border-zinc-100 transition shadow-sm">All Generations</button>
+                        <button data-gen="1" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen I</button>
+                        <button data-gen="2" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen II</button>
+                        <button data-gen="3" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen III</button>
+                        <button data-gen="4" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen IV</button>
+                        <button data-gen="5" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen V</button>
+                        <button data-gen="6" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen VI</button>
+                        <button data-gen="7" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen VII</button>
+                        <button data-gen="8" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen VIII</button>
+                        <button data-gen="9" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen IX</button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-3.5" id="version-game-cards">
+                    <!-- Dynamically populated via JS -->
+                </div>
+            </section>
+
+            <!-- Version Sprites Interactive Filter & Table Section -->
+            <section class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 rounded-lg shadow-sm overflow-hidden flex flex-col">
+                <!-- Controls Bar -->
+                <div class="p-3 sm:p-4 border-b border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-950/70 space-y-2.5 sm:space-y-3">
+                    <div class="flex flex-col lg:flex-row gap-2.5 sm:gap-3 items-start lg:items-center justify-between">
+                        <!-- Search Input with Clear Button -->
+                        <div class="relative flex-1 w-full lg:max-w-md">
+                            <input type="text" id="versionSearchInput" placeholder="Search by Pokémon name, Dex ID, game, or missing view..." 
+                                class="w-full pl-3 pr-8 py-2 bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md text-xs text-slate-900 dark:text-zinc-100 placeholder-slate-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 transition">
+                            <button id="clearVersionSearchBtn" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-500 hover:text-slate-600 dark:hover:text-zinc-300 text-xs font-bold font-mono">×</button>
+                        </div>
+
+                        <!-- Filter Dropdowns -->
+                        <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 w-full lg:w-auto">
+                            <!-- Game Filter -->
+                            <select id="versionGameFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2 py-1.5 text-[11px] sm:text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 w-full sm:w-auto flex-1 sm:flex-initial min-w-[130px]">
+                                <option value="ALL">All Games & Icons</option>
+                                <!-- Populated by JS -->
+                            </select>
+
+                            <!-- Gender Differences Filter -->
+                            <select id="versionGenderFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2 py-1.5 text-[11px] sm:text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 w-full sm:w-auto flex-1 sm:flex-initial min-w-[130px]">
+                                <option value="ALL">All Genders</option>
+                                <option value="dimorphic">Gender Dimorphic Only</option>
+                                <option value="standard">Standard (No Gender Diff)</option>
+                            </select>
+
+                            <!-- Sort By -->
+                            <select id="versionSortFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2 py-1.5 text-[11px] sm:text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 w-full sm:w-auto flex-1 sm:flex-initial min-w-[130px]">
+                                <option value="id_asc">Sort: ID (Low to High)</option>
+                                <option value="id_desc">Sort: ID (High to Low)</option>
+                                <option value="name_asc">Sort: Name (A to Z)</option>
+                                <option value="name_desc">Sort: Name (Z to A)</option>
+                                <option value="missing_desc">Sort: Most Missing First</option>
+                            </select>
+
+                            <!-- Reset Filters Button -->
+                            <button id="resetVersionFiltersBtn" class="px-2.5 py-1.5 rounded-md text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-slate-700 dark:text-zinc-300 border border-slate-300 dark:border-zinc-700 transition shrink-0">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="text-xs text-slate-500 dark:text-zinc-400 font-mono" id="paginationInfo"></div>
+                <!-- Table Info Bar & Page Size Selector -->
+                <div class="px-3 sm:px-4 py-2 bg-slate-100/60 dark:bg-zinc-950/60 border-b border-slate-200 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 text-xs text-slate-500 dark:text-zinc-400">
+                    <div class="flex items-center space-x-2">
+                        <span id="versionResultsCount">Showing {{ version_affected_entries_count }} affected entries</span>
+                        <span id="activeVersionFiltersBadge" class="hidden text-[10px] px-2 py-0.5 rounded bg-zinc-200 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200 border border-zinc-300 dark:border-zinc-700 font-mono">Filtered</span>
+                    </div>
 
-                <div class="flex items-center space-x-1.5">
-                    <button id="nextBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">Next</button>
-                    <button id="lastBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">Last</button>
+                    <div class="flex items-center space-x-3 sm:space-x-4">
+                        <!-- Page Size Selector -->
+                        <div class="flex items-center space-x-1.5">
+                            <label for="versionPageSizeSelect" class="text-slate-600 dark:text-zinc-400 text-xs">Show:</label>
+                            <select id="versionPageSizeSelect" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded px-2 py-1 text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 font-mono">
+                                <option value="15">15</option>
+                                <option value="25">25</option>
+                                <option value="50" selected>50</option>
+                                <option value="100">100</option>
+                                <option value="250">250</option>
+                                <option value="ALL">All</option>
+                            </select>
+                            <span class="text-slate-600 dark:text-zinc-400 text-xs hidden sm:inline">entries</span>
+                        </div>
+
+                        <div class="text-slate-500 dark:text-zinc-400 font-mono text-xs">
+                            Page <span id="versionCurrentPage" class="font-semibold text-slate-900 dark:text-zinc-100">1</span> of <span id="versionTotalPages" class="font-semibold text-slate-900 dark:text-zinc-100">1</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+
+                <!-- Version Issues Table -->
+                <div class="overflow-x-auto custom-scrollbar flex-1 min-h-[420px]">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-100/90 dark:bg-zinc-950/90 text-slate-600 dark:text-zinc-400 uppercase text-[10px] sm:text-[11px] font-semibold border-b border-slate-200 dark:border-zinc-800 tracking-wider">
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-24 sm:w-28 min-w-[88px] text-center whitespace-nowrap">Gen</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-36 sm:w-48">Game</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-28 sm:w-32">Dex ID</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-36 sm:w-44">Pokémon</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-20 text-center whitespace-nowrap">Type</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-20 text-center whitespace-nowrap">Finder</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4">Missing Sprites Breakdown</th>
+                            </tr>
+                        </thead>
+                        <tbody id="versionTableBody" class="divide-y divide-slate-200 dark:divide-zinc-800/60 font-mono text-xs">
+                            <!-- Rows rendered by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination Controls -->
+                <div class="p-2.5 sm:p-3.5 bg-slate-50 dark:bg-zinc-950 border-t border-slate-200 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-2 sm:gap-3">
+                    <div class="flex items-center space-x-1.5">
+                        <button id="versionFirstBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">First</button>
+                        <button id="versionPrevBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">Previous</button>
+                    </div>
+
+                    <div class="text-xs text-slate-500 dark:text-zinc-400 font-mono" id="versionPaginationInfo"></div>
+
+                    <div class="flex items-center space-x-1.5">
+                        <button id="versionNextBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">Next</button>
+                        <button id="versionLastBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">Last</button>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer class="bg-slate-100 dark:bg-zinc-950 border-t border-slate-200 dark:border-zinc-800 py-6 text-center text-xs text-slate-500 dark:text-zinc-500 font-mono">
         PokéAPI Sprites Repository Audit Dashboard • Generated by scripts/tracker/sprite_audit.py
     </footer>
 
-    <!-- Data & Script -->
+    <!-- Data & Script Bootstrap -->
     <script>
-        const AUDIT_DATA = {{ issues_json }};
-        const CATEGORIES_DATA = {{ categories_json }};
-
-        let selectedCategory = 'ALL';
-        let selectedIssue = 'ALL';
-        let selectedEntity = 'ALL';
-        let selectedGender = 'ALL';
-        let selectedSort = 'id_asc';
-        let searchQuery = '';
-        let currentPageNum = 1;
-        let pageSize = 50;
-
-        function renderCategoryCards() {
-            const cardsContainer = document.getElementById('category-cards');
-            const tabsContainer = document.getElementById('categoryTabs');
-            
-            cardsContainer.innerHTML = '';
-            
-            for (const [key, stats] of Object.entries(CATEGORIES_DATA)) {
-                const pct = stats.total_targets > 0 ? ((stats.passed_targets / stats.total_targets) * 100).toFixed(1) : 100;
-                
-                const catIssues = AUDIT_DATA.filter(i => i.category === key);
-                const missingCount = stats.missing_targets !== undefined 
-                    ? stats.missing_targets 
-                    : catIssues.reduce((acc, i) => acc + (i.missing_sprites ? i.missing_sprites.length : 0), 0);
-                const wrongSizeCount = stats.wrong_size_targets !== undefined 
-                    ? stats.wrong_size_targets 
-                    : catIssues.reduce((acc, i) => acc + (i.wrong_size_sprites ? i.wrong_size_sprites.length : 0), 0);
-                const corruptCount = stats.corrupt_targets !== undefined 
-                    ? stats.corrupt_targets 
-                    : catIssues.reduce((acc, i) => acc + (i.corrupt_sprites ? i.corrupt_sprites.length : 0), 0);
-
-                const card = document.createElement('div');
-                card.className = 'bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-md p-4 flex flex-col justify-between shadow-sm';
-                card.innerHTML = `
-                    <div>
-                        <div class="flex items-center justify-between">
-                            <span class="font-semibold text-xs text-slate-800 dark:text-zinc-200 uppercase tracking-wider">${stats.name}</span>
-                            <span class="text-xs px-2 py-0.5 rounded font-mono font-semibold ${stats.affected_entries === 0 ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800' : 'bg-rose-100 text-rose-800 dark:bg-rose-950/60 dark:text-rose-300 border border-rose-300 dark:border-rose-800'}">
-                                ${pct}%
-                            </span>
-                        </div>
-                        <p class="text-[11px] text-slate-500 dark:text-zinc-400 mt-1">${stats.description || ''}</p>
-                    </div>
-                    <div class="mt-4">
-                        <div class="w-full bg-slate-200 dark:bg-zinc-800 h-1.5 rounded-full overflow-hidden">
-                            <div class="bg-zinc-800 dark:bg-zinc-200 h-full rounded-full" style="width: ${pct}%"></div>
-                        </div>
-                        <div class="flex justify-between text-[11px] text-slate-500 dark:text-zinc-400 mt-2 font-mono">
-                            <span>Passed: ${stats.passed_targets.toLocaleString()}</span>
-                            <span>Flawed: ${stats.flawed_targets.toLocaleString()}</span>
-                            <span>Total: ${stats.total_targets.toLocaleString()}</span>
-                        </div>
-                        <div class="grid grid-cols-3 gap-1.5 mt-2.5 pt-2 border-t border-slate-200 dark:border-zinc-800/80 text-[10px] font-mono text-center">
-                            <div class="px-1.5 py-1 rounded ${missingCount > 0 ? 'bg-rose-50 text-rose-700 border border-rose-200 dark:bg-rose-950/60 dark:text-rose-300 dark:border-rose-900/60 font-medium' : 'text-slate-400 dark:text-zinc-600 bg-slate-100/50 dark:bg-zinc-900/40'}">
-                                Missing: ${missingCount.toLocaleString()}
-                            </div>
-                            <div class="px-1.5 py-1 rounded ${wrongSizeCount > 0 ? 'bg-amber-50 text-amber-700 border border-amber-200 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-900/60 font-medium' : 'text-slate-400 dark:text-zinc-600 bg-slate-100/50 dark:bg-zinc-900/40'}">
-                                Wrong Size: ${wrongSizeCount.toLocaleString()}
-                            </div>
-                            <div class="px-1.5 py-1 rounded ${corruptCount > 0 ? 'bg-purple-50 text-purple-700 border border-purple-200 dark:bg-purple-950/60 dark:text-purple-300 dark:border-purple-900/60 font-medium' : 'text-slate-400 dark:text-zinc-600 bg-slate-100/50 dark:bg-zinc-900/40'}">
-                                Corrupt: ${corruptCount.toLocaleString()}
-                            </div>
-                        </div>
-                    </div>
-                `;
-                cardsContainer.appendChild(card);
-
-                const tab = document.createElement('button');
-                tab.className = 'cat-tab px-3 py-1 rounded-md text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 hover:text-slate-900 dark:hover:text-white border border-slate-300 dark:border-zinc-700 transition';
-                tab.dataset.cat = key;
-                tab.textContent = stats.name;
-                tab.onclick = () => {
-                    document.querySelectorAll('.cat-tab').forEach(b => {
-                        b.classList.remove('bg-zinc-900', 'text-white', 'dark:bg-zinc-100', 'dark:text-zinc-900', 'border-zinc-900', 'dark:border-zinc-100');
-                        b.classList.add('bg-white', 'dark:bg-zinc-900', 'text-slate-700', 'dark:text-zinc-300', 'border-slate-300', 'dark:border-zinc-700');
-                    });
-                    tab.classList.remove('bg-white', 'dark:bg-zinc-900', 'text-slate-700', 'dark:text-zinc-300', 'border-slate-300', 'dark:border-zinc-700');
-                    tab.classList.add('bg-zinc-900', 'text-white', 'dark:bg-zinc-100', 'dark:text-zinc-900', 'border-zinc-900', 'dark:border-zinc-100');
-                    selectedCategory = key;
-                    currentPageNum = 1;
-                    renderTable();
-                };
-                tabsContainer.appendChild(tab);
-            }
-
-            const allTab = tabsContainer.querySelector('[data-cat="ALL"]');
-            allTab.onclick = () => {
-                document.querySelectorAll('.cat-tab').forEach(b => {
-                    b.classList.remove('bg-zinc-900', 'text-white', 'dark:bg-zinc-100', 'dark:text-zinc-900', 'border-zinc-900', 'dark:border-zinc-100');
-                    b.classList.add('bg-white', 'dark:bg-zinc-900', 'text-slate-700', 'dark:text-zinc-300', 'border-slate-300', 'dark:border-zinc-700');
-                });
-                allTab.classList.remove('bg-white', 'dark:bg-zinc-900', 'text-slate-700', 'dark:text-zinc-300', 'border-slate-300', 'dark:border-zinc-700');
-                allTab.classList.add('bg-zinc-900', 'text-white', 'dark:bg-zinc-100', 'dark:text-zinc-900', 'border-zinc-900', 'dark:border-zinc-100');
-                selectedCategory = 'ALL';
-                currentPageNum = 1;
-                renderTable();
-            };
-        }
-
-        function getFilteredData() {
-            let result = AUDIT_DATA.filter(item => {
-                if (selectedCategory !== 'ALL' && item.category !== selectedCategory) return false;
-                
-                if (selectedIssue === 'missing' && (!item.missing_sprites || item.missing_sprites.length === 0)) return false;
-                if (selectedIssue === 'wrong_size' && (!item.wrong_size_sprites || item.wrong_size_sprites.length === 0)) return false;
-                if (selectedIssue === 'corrupt' && (!item.corrupt_sprites || item.corrupt_sprites.length === 0)) return false;
-                if (selectedIssue === 'multiple' && (item.issues_count < 2)) return false;
-
-                if (selectedEntity === 'pokemon' && item.is_form !== 0) return false;
-                if (selectedEntity === 'form' && item.is_form !== 1) return false;
-
-                if (selectedGender === 'dimorphic' && (!item.has_gender_differences || item.has_gender_differences === 0)) return false;
-                if (selectedGender === 'standard' && item.has_gender_differences === 1) return false;
-
-                if (searchQuery) {
-                    const q = searchQuery.toLowerCase();
-                    const matchName = item.identifier && item.identifier.toLowerCase().includes(q);
-                    const matchId = String(item.pokemon_id).includes(q) || (item.form_id && String(item.form_id).includes(q)) || (item.species_id && String(item.species_id).includes(q));
-                    const matchSummary = item.issue_summary && item.issue_summary.toLowerCase().includes(q);
-                    const matchCategory = item.category_name && item.category_name.toLowerCase().includes(q);
-                    if (!matchName && !matchId && !matchSummary && !matchCategory) return false;
-                }
-
-                return true;
-            });
-
-            // Sorting
-            result.sort((a, b) => {
-                if (selectedSort === 'id_asc') {
-                    const idA = a.is_form && a.form_id ? Number(a.form_id) : Number(a.pokemon_id);
-                    const idB = b.is_form && b.form_id ? Number(b.form_id) : Number(b.pokemon_id);
-                    return idA - idB;
-                } else if (selectedSort === 'id_desc') {
-                    const idA = a.is_form && a.form_id ? Number(a.form_id) : Number(a.pokemon_id);
-                    const idB = b.is_form && b.form_id ? Number(b.form_id) : Number(b.pokemon_id);
-                    return idB - idA;
-                } else if (selectedSort === 'name_asc') {
-                    return a.identifier.localeCompare(b.identifier);
-                } else if (selectedSort === 'name_desc') {
-                    return b.identifier.localeCompare(a.identifier);
-                } else if (selectedSort === 'issues_desc') {
-                    return b.issues_count - a.issues_count;
-                }
-                return 0;
-            });
-
-            return result;
-        }
-
-        function renderTable() {
-            const filtered = getFilteredData();
-            const currentLimit = pageSize === 'ALL' ? (filtered.length || 1) : Number(pageSize);
-            const totalPages = Math.ceil(filtered.length / currentLimit) || 1;
-            if (currentPageNum > totalPages) currentPageNum = totalPages;
-
-            const isFiltered = (selectedCategory !== 'ALL' || selectedIssue !== 'ALL' || selectedEntity !== 'ALL' || selectedGender !== 'ALL' || searchQuery !== '' || selectedSort !== 'id_asc');
-            document.getElementById('activeFiltersBadge').classList.toggle('hidden', !isFiltered);
-
-            let countLabel = `Showing ${filtered.length.toLocaleString()} affected entries`;
-            if (selectedIssue === 'corrupt') {
-                const totalFiles = filtered.reduce((acc, item) => acc + (item.corrupt_sprites ? item.corrupt_sprites.length : 0), 0);
-                countLabel = `Showing ${filtered.length.toLocaleString()} affected entries (${totalFiles.toLocaleString()} corrupt files)`;
-            } else if (selectedIssue === 'missing') {
-                const totalFiles = filtered.reduce((acc, item) => acc + (item.missing_sprites ? item.missing_sprites.length : 0), 0);
-                countLabel = `Showing ${filtered.length.toLocaleString()} affected entries (${totalFiles.toLocaleString()} missing files)`;
-            } else if (selectedIssue === 'wrong_size') {
-                const totalFiles = filtered.reduce((acc, item) => acc + (item.wrong_size_sprites ? item.wrong_size_sprites.length : 0), 0);
-                countLabel = `Showing ${filtered.length.toLocaleString()} affected entries (${totalFiles.toLocaleString()} wrong size files)`;
-            } else {
-                const totalFiles = filtered.reduce((acc, item) => acc + (item.issues_count || 0), 0);
-                countLabel = `Showing ${filtered.length.toLocaleString()} affected entries (${totalFiles.toLocaleString()} flawed files)`;
-            }
-            document.getElementById('resultsCount').textContent = countLabel;
-            document.getElementById('currentPage').textContent = currentPageNum;
-            document.getElementById('totalPages').textContent = totalPages;
-            document.getElementById('paginationInfo').textContent = `Showing page ${currentPageNum} of ${totalPages} (${filtered.length.toLocaleString()} total)`;
-
-            document.getElementById('firstBtn').disabled = currentPageNum <= 1;
-            document.getElementById('prevBtn').disabled = currentPageNum <= 1;
-            document.getElementById('nextBtn').disabled = currentPageNum >= totalPages;
-            document.getElementById('lastBtn').disabled = currentPageNum >= totalPages;
-
-            const tbody = document.getElementById('issuesTableBody');
-            tbody.innerHTML = '';
-
-            const startIndex = (currentPageNum - 1) * currentLimit;
-            const pageData = filtered.slice(startIndex, startIndex + currentLimit);
-
-            if (pageData.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="6" class="py-8 text-center text-slate-500 dark:text-zinc-500 font-sans text-xs">No issues found matching the selected filters.</td></tr>`;
-                return;
-            }
-
-            pageData.forEach(item => {
-                const tr = document.createElement('tr');
-                tr.className = 'hover:bg-slate-100/60 dark:hover:bg-zinc-900/60 transition';
-
-                let breakdownHtml = '<div class="flex flex-wrap gap-1.5 items-center">';
-
-                if (item.missing_sprites && item.missing_sprites.length > 0) {
-                    breakdownHtml += `<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-rose-100 text-rose-800 border border-rose-300 dark:bg-rose-950/60 dark:text-rose-300 dark:border-rose-800/80">Missing (${item.missing_sprites.length}): ${item.missing_sprites.join(', ')}</span>`;
-                }
-
-                if (item.wrong_size_sprites && item.wrong_size_sprites.length > 0) {
-                    breakdownHtml += `<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-amber-100 text-amber-800 border border-amber-300 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800/80">Wrong Size: ${item.wrong_size_sprites.join(', ')}</span>`;
-                }
-
-                if (item.corrupt_sprites && item.corrupt_sprites.length > 0) {
-                    breakdownHtml += `<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-purple-100 text-purple-800 border border-purple-300 dark:bg-purple-950/60 dark:text-purple-300 dark:border-purple-800/80">Corrupt: ${item.corrupt_sprites.join(', ')}</span>`;
-                }
-
-                breakdownHtml += '</div>';
-
-                const isFormBadge = item.is_form 
-                    ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-sans font-medium bg-purple-100 text-purple-800 border border-purple-300 dark:bg-purple-950/60 dark:text-purple-300 dark:border-purple-800/70">Form</span>` 
-                    : `<span class="px-1.5 py-0.5 rounded text-[10px] font-sans font-medium bg-zinc-100 text-zinc-800 border border-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:border-zinc-700">Pokemon</span>`;
-
-                const pokemonApiUrl = `https://pokeapi.co/api/v2/pokemon/${item.pokemon_id}`;
-                const pokemonIdLink = `<a href="${pokemonApiUrl}" target="_blank" rel="noopener noreferrer" class="text-slate-900 dark:text-zinc-100 hover:underline font-mono font-semibold" title="View Pokémon API JSON">#${item.pokemon_id}</a>`;
-
-                let idCellHtml = pokemonIdLink;
-                if (item.is_form && item.form_id) {
-                    const formApiUrl = `https://pokeapi.co/api/v2/pokemon-form/${item.form_id}`;
-                    idCellHtml += ` <a href="${formApiUrl}" target="_blank" rel="noopener noreferrer" class="text-slate-400 dark:text-zinc-500 hover:text-purple-600 dark:hover:text-purple-400 hover:underline font-mono text-[11px]" title="View Form API JSON">(form: ${item.form_id})</a>`;
-                }
-
-                const finderUrl = item.is_form && item.form_id 
-                    ? `index.html#/pokemon-form/${item.form_id}` 
-                    : `index.html#/pokemon/${item.pokemon_id}`;
-
-                const finderLink = `<a href="${finderUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1 text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-zinc-100 font-sans text-xs transition" title="Open in Sprite Finder"><span class="underline underline-offset-2">Finder</span><svg class="w-3 h-3 ml-0.5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>`;
-
-                tr.innerHTML = `
-                    <td class="py-2.5 px-4 font-sans font-medium text-slate-700 dark:text-zinc-300">${item.category_name}</td>
-                    <td class="py-2.5 px-4 font-mono">${idCellHtml}</td>
-                    <td class="py-2.5 px-4 text-slate-900 dark:text-zinc-100 font-mono font-medium">${item.identifier}</td>
-                    <td class="py-2.5 px-4">${isFormBadge}</td>
-                    <td class="py-2.5 px-4 text-center font-sans">${finderLink}</td>
-                    <td class="py-2.5 px-4 font-sans">${breakdownHtml}</td>
-                `;
-                tbody.appendChild(tr);
-            });
-        }
-
-        // Listeners
-        const searchInput = document.getElementById('searchInput');
-        const clearSearchBtn = document.getElementById('clearSearchBtn');
-
-        searchInput.addEventListener('input', (e) => {
-            searchQuery = e.target.value.trim();
-            clearSearchBtn.classList.toggle('hidden', searchQuery.length === 0);
-            currentPageNum = 1;
-            renderTable();
-        });
-
-        clearSearchBtn.addEventListener('click', () => {
-            searchInput.value = '';
-            searchQuery = '';
-            clearSearchBtn.classList.add('hidden');
-            currentPageNum = 1;
-            renderTable();
-        });
-
-        document.getElementById('issueFilter').addEventListener('change', (e) => {
-            selectedIssue = e.target.value;
-            currentPageNum = 1;
-            renderTable();
-        });
-
-        document.getElementById('entityFilter').addEventListener('change', (e) => {
-            selectedEntity = e.target.value;
-            currentPageNum = 1;
-            renderTable();
-        });
-
-        document.getElementById('genderFilter').addEventListener('change', (e) => {
-            selectedGender = e.target.value;
-            currentPageNum = 1;
-            renderTable();
-        });
-
-        document.getElementById('sortFilter').addEventListener('change', (e) => {
-            selectedSort = e.target.value;
-            currentPageNum = 1;
-            renderTable();
-        });
-
-        document.getElementById('pageSizeSelect').addEventListener('change', (e) => {
-            pageSize = e.target.value === 'ALL' ? 'ALL' : Number(e.target.value);
-            currentPageNum = 1;
-            renderTable();
-        });
-
-        document.getElementById('resetFiltersBtn').addEventListener('click', () => {
-            selectedCategory = 'ALL';
-            selectedIssue = 'ALL';
-            selectedEntity = 'ALL';
-            selectedGender = 'ALL';
-            selectedSort = 'id_asc';
-            searchQuery = '';
-            pageSize = 50;
-
-            searchInput.value = '';
-            clearSearchBtn.classList.add('hidden');
-            document.getElementById('issueFilter').value = 'ALL';
-            document.getElementById('entityFilter').value = 'ALL';
-            document.getElementById('genderFilter').value = 'ALL';
-            document.getElementById('sortFilter').value = 'id_asc';
-            document.getElementById('pageSizeSelect').value = '50';
-
-            document.querySelectorAll('.cat-tab').forEach(b => {
-                b.classList.remove('bg-zinc-900', 'text-white', 'dark:bg-zinc-100', 'dark:text-zinc-900', 'border-zinc-900', 'dark:border-zinc-100');
-                b.classList.add('bg-white', 'dark:bg-zinc-900', 'text-slate-700', 'dark:text-zinc-300', 'border-slate-300', 'dark:border-zinc-700');
-            });
-            const allTab = document.querySelector('[data-cat="ALL"]');
-            if (allTab) {
-                allTab.classList.remove('bg-white', 'dark:bg-zinc-900', 'text-slate-700', 'dark:text-zinc-300', 'border-slate-300', 'dark:border-zinc-700');
-                allTab.classList.add('bg-zinc-900', 'text-white', 'dark:bg-zinc-100', 'dark:text-zinc-900', 'border-zinc-900', 'dark:border-zinc-100');
-            }
-
-            currentPageNum = 1;
-            renderTable();
-        });
-
-        document.getElementById('firstBtn').addEventListener('click', () => {
-            if (currentPageNum > 1) {
-                currentPageNum = 1;
-                renderTable();
-            }
-        });
-
-        document.getElementById('prevBtn').addEventListener('click', () => {
-            if (currentPageNum > 1) {
-                currentPageNum--;
-                renderTable();
-            }
-        });
-
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            currentPageNum++;
-            renderTable();
-        });
-
-        document.getElementById('lastBtn').addEventListener('click', () => {
-            const filtered = getFilteredData();
-            const currentLimit = pageSize === 'ALL' ? (filtered.length || 1) : Number(pageSize);
-            const totalPages = Math.ceil(filtered.length / currentLimit) || 1;
-            if (currentPageNum < totalPages) {
-                currentPageNum = totalPages;
-                renderTable();
-            }
-        });
-
-        // Theme Toggle
-        function updateThemeUI(isDark) {
-            document.getElementById('themeToggleIcon').textContent = isDark ? '🌙' : '☀️';
-            document.getElementById('themeToggleText').textContent = isDark ? 'Dark' : 'Light';
-        }
-
-        document.getElementById('themeToggleBtn').addEventListener('click', () => {
-            const isDark = document.documentElement.classList.toggle('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            updateThemeUI(isDark);
-        });
-
-        updateThemeUI(document.documentElement.classList.contains('dark'));
-        renderCategoryCards();
-        renderTable();
+        window.AUDIT_DATA = {{ issues_json }};
+        window.CATEGORIES_DATA = {{ categories_json }};
+        window.VERSION_STATS = {{ version_stats_json }};
+        window.VERSION_ISSUES = {{ version_issues_json }};
     </script>
+    <script src="audit.js"></script>
 </body>
 </html>

@@ -12,75 +12,87 @@ import json
 import re
 import sys
 import time
+from collections import defaultdict
 from pathlib import Path
 from typing import Any
-import pandas as pd
 
-if hasattr(sys.stdout, "reconfigure"):
-    try:
-        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-    except Exception:
-        pass
+from common import (
+    GITHUB_BASE_URL,
+    PROJECT_ROOT,
+    SPRITES_DIR,
+    UNIFIED_VERSION_GROUPS,
+    WEBSITE_DIR,
+    get_candidate_stems,
+    load_csv,
+    reconfigure_utf8,
+    roman_to_int,
+)
 
-SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent.parent
-SPRITES_DIR = PROJECT_ROOT / "sprites"
-WEBSITE_DATA_DIR = PROJECT_ROOT / "website" / "data"
+reconfigure_utf8()
 
-GITHUB_BASE_URL = "https://raw.githubusercontent.com/PokeAPI/pokeapi/master/data/v2/csv"
-POKEMON_CSV_URL = f"{GITHUB_BASE_URL}/pokemon.csv"
-FORMS_CSV_URL = f"{GITHUB_BASE_URL}/pokemon_forms.csv"
-SPECIES_CSV_URL = f"{GITHUB_BASE_URL}/pokemon_species.csv"
+WEBSITE_DATA_DIR = WEBSITE_DIR / "data"
 
-def load_pokeapi_game_metadata() -> tuple[dict[str, str], dict[str, str], dict[str, list[str]]]:
+def load_pokeapi_game_metadata() -> tuple[
+    dict[str, str],
+    dict[str, str],
+    dict[str, list[str]],
+    list[dict[str, str]],
+    list[dict[str, str]],
+    list[dict[str, str]],
+]:
     """Dynamically derives generation titles, game titles, and chronological order from PokéAPI CSVs."""
     gen_titles: dict[str, str] = {}
     game_titles: dict[str, str] = {}
     game_order: dict[str, list[str]] = {}
 
+    gen_rows = load_csv(f"{GITHUB_BASE_URL}/generations.csv")
+    gn_rows = load_csv(f"{GITHUB_BASE_URL}/generation_names.csv")
+    vg_rows = load_csv(f"{GITHUB_BASE_URL}/version_groups.csv")
+    v_rows = load_csv(f"{GITHUB_BASE_URL}/versions.csv")
+    vn_rows = load_csv(f"{GITHUB_BASE_URL}/version_names.csv")
+
     try:
-        df_gen = pd.read_csv(f"{GITHUB_BASE_URL}/generations.csv")
-        df_gn = pd.read_csv(f"{GITHUB_BASE_URL}/generation_names.csv")
-        df_gn_en = df_gn[df_gn["local_language_id"] == 9]
-        gen_map = dict(zip(df_gn_en["generation_id"], df_gn_en["name"]))
-        gen_titles = dict(zip(df_gen["identifier"], df_gen["id"].map(gen_map)))
+        gen_map = {r["generation_id"]: r["name"] for r in gn_rows if r.get("local_language_id") == "9"}
+        gen_titles = {r["identifier"]: gen_map.get(r["id"], r["identifier"].replace("-", " ").title()) for r in gen_rows}
 
-        df_vg = pd.read_csv(f"{GITHUB_BASE_URL}/version_groups.csv")
-        df_v = pd.read_csv(f"{GITHUB_BASE_URL}/versions.csv")
-        df_vn = pd.read_csv(f"{GITHUB_BASE_URL}/version_names.csv")
-        df_vn_en = df_vn[df_vn["local_language_id"] == 9]
-
-        v_names = dict(zip(df_vn_en["version_id"], df_vn_en["name"]))
-        # Individual version names (e.g. gold, silver, crystal)
-        for _, row in df_v.iterrows():
-            vid = row["id"]
-            ident = str(row["identifier"])
+        v_names = {r["version_id"]: r["name"] for r in vn_rows if r.get("local_language_id") == "9"}
+        for r in v_rows:
+            vid = r["id"]
+            ident = r["identifier"]
             if vid in v_names:
                 game_titles[ident] = v_names[vid]
 
         # Version groups (e.g. red-blue, ruby-sapphire, black-white)
-        for vgid, group in df_v.groupby("version_group_id"):
-            names = [v_names.get(vid, "") for vid in group["id"] if vid in v_names]
-            vg_row = df_vg[df_vg["id"] == vgid]
-            if not vg_row.empty:
-                ident = vg_row["identifier"].values[0]
+        vg_to_versions: dict[str, list[dict[str, str]]] = defaultdict(list)
+        for r in v_rows:
+            vg_to_versions[r["version_group_id"]].append(r)
+
+        vg_by_id = {r["id"]: r for r in vg_rows}
+        for vgid, group in vg_to_versions.items():
+            names = [v_names.get(r["id"], "") for r in group if r["id"] in v_names]
+            vg_row = vg_by_id.get(vgid)
+            if vg_row:
+                ident = vg_row["identifier"]
                 title = " & ".join(names)
                 if ident == "red-green-japan":
                     title = "Red & Green (Japan)"
+                title = title.replace("\ufffd", "'").replace("’", "'").replace("‘", "'")
                 game_titles[ident] = title
 
-        # Folder aliases and community models
+        for k, v in list(game_titles.items()):
+            game_titles[k] = v.replace("\ufffd", "'").replace("’", "'").replace("‘", "'")
+
+        # Folder aliases, unified collections, and community models
         if "omega-ruby-alpha-sapphire" in game_titles:
             game_titles["omegaruby-alphasapphire"] = game_titles["omega-ruby-alpha-sapphire"]
-        if "champions" not in game_titles:
-            game_titles["champions"] = "Champions (Community Models)"
-        else:
-            game_titles["champions"] = "Champions (Community Models)"
+        game_titles["champions"] = "Champions (Community Models)"
+        game_titles["black-white"] = "Black & White / Black 2 & White 2"
+        game_titles["ultra-sun-ultra-moon"] = "Sun & Moon / Ultra Sun & Ultra Moon"
 
         # Chronological game order per generation from version_groups.csv
-        gen_id_to_ident = dict(zip(df_gen["id"], df_gen["identifier"]))
-        df_vg_sorted = df_vg.sort_values("order")
-        for _, row in df_vg_sorted.iterrows():
+        gen_id_to_ident = {r["id"]: r["identifier"] for r in gen_rows}
+        vg_sorted = sorted(vg_rows, key=lambda r: int(r.get("order", 0)))
+        for row in vg_sorted:
             gid = row["generation_id"]
             gident = gen_id_to_ident.get(gid)
             if not gident:
@@ -97,7 +109,78 @@ def load_pokeapi_game_metadata() -> tuple[dict[str, str], dict[str, str], dict[s
     except Exception as e:
         print(f"[WARN] Failed to fetch dynamic game metadata from PokéAPI ({e}), using fallback formatting.")
 
-    return gen_titles, game_titles, game_order
+    return gen_titles, game_titles, game_order, gen_rows, vg_rows, v_rows
+
+
+def build_canonical_games(
+    vg_rows: list[dict[str, str]],
+    v_rows: list[dict[str, str]],
+    gen_rows: list[dict[str, str]],
+    versions_base: Path,
+) -> dict[str, list[str]]:
+    """Dynamically builds the canonical games matrix per generation from PokéAPI version groups and local directories."""
+    if not gen_rows or not vg_rows:
+        return {}
+
+    gen_map = {r["id"]: r["identifier"] for r in gen_rows}
+    canonical_games: dict[str, list[str]] = {}
+
+    gen_to_vg: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for r in sorted(vg_rows, key=lambda x: int(x.get("order", 0))):
+        gen_to_vg[r["generation_id"]].append(r)
+
+    for gid, group in gen_to_vg.items():
+        gident = gen_map.get(gid)
+        if not gident:
+            continue
+        gen_dir = versions_base / gident
+        disk_folders = [d.name for d in gen_dir.iterdir() if d.is_dir() and d.name != "icons"] if gen_dir.exists() else []
+
+        canonical_for_gen: list[str] = []
+        for row in group:
+            vg_id = row["id"]
+            vg_ident = str(row["identifier"])
+
+            # Map unified sibling version groups to their upstream parent directory
+            actual_ident = UNIFIED_VERSION_GROUPS.get(vg_ident, vg_ident)
+
+            # 1. Direct directory match
+            if actual_ident in disk_folders:
+                if actual_ident not in canonical_for_gen:
+                    canonical_for_gen.append(actual_ident)
+                continue
+
+            # 2. Normalized unhyphenated match (e.g. omega-ruby-alpha-sapphire -> omegaruby-alphasapphire)
+            unhyphen = actual_ident.replace("-", "")
+            match_unhyphen = [f for f in disk_folders if f.replace("-", "") == unhyphen]
+            if match_unhyphen:
+                for f in match_unhyphen:
+                    if f not in canonical_for_gen:
+                        canonical_for_gen.append(f)
+                continue
+
+            # 3. Individual versions match (e.g. gold-silver -> gold, silver)
+            if v_rows:
+                vg_versions = [r["identifier"] for r in v_rows if r.get("version_group_id") == vg_id]
+                matching_v = [v for v in vg_versions if v in disk_folders]
+                if matching_v:
+                    for v in matching_v:
+                        if v not in canonical_for_gen:
+                            canonical_for_gen.append(v)
+                    continue
+
+            # 4. Standalone games not yet populated on disk (exclude expansions and unified siblings)
+            if (
+                vg_ident not in UNIFIED_VERSION_GROUPS
+                and not vg_ident.startswith("the-")
+                and vg_ident not in ("colosseum", "xd", "blue-japan", "mega-dimension")
+            ):
+                if vg_ident not in canonical_for_gen:
+                    canonical_for_gen.append(vg_ident)
+
+        canonical_games[gident] = canonical_for_gen
+
+    return canonical_games
 
 OTHER_TITLES: dict[str, str] = {
     "official-artwork": "Official Artwork (High-Res)",
@@ -105,35 +188,6 @@ OTHER_TITLES: dict[str, str] = {
     "showdown": "Pokémon Showdown Battle GIFs",
     "dream-world": "Dream World Vector Art",
 }
-
-SUBPATH_ORDER: list[str] = [
-    "",
-    "transparent",
-    "gbc",
-    "gray",
-    "transparent/gray",
-    "shiny",
-    "female",
-    "shiny/female",
-    "transparent/shiny",
-    "back",
-    "transparent/back",
-    "back/gbc",
-    "back/gray",
-    "transparent/back/gray",
-    "back/shiny",
-    "back/female",
-    "back/shiny/female",
-    "transparent/back/shiny",
-    "animated",
-    "animated/shiny",
-    "animated/female",
-    "animated/shiny/female",
-    "animated/back",
-    "animated/back/shiny",
-    "animated/back/female",
-    "animated/back/shiny/female",
-]
 
 SUBCATEGORY_ORDER: list[str] = [
     "Default",
@@ -146,13 +200,58 @@ SUBCATEGORY_ORDER: list[str] = [
 ]
 
 
+def roman_to_int(s: str) -> int:
+    """Converts a roman numeral string to integer (e.g. 'viii' -> 8, 'x' -> 10, etc.)."""
+    vals = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000}
+    total = 0
+    prev = 0
+    for char in reversed(s.lower()):
+        val = vals.get(char, 0)
+        if val < prev:
+            total -= val
+        else:
+            total += val
+            prev = val
+    return total
+
+
 def parse_gen_num(gen_str: str) -> int:
-    """Extracts numeric generation (e.g. 'generation-iii' -> 3)."""
-    roman_map = {"i": 1, "ii": 2, "iii": 3, "iv": 4, "v": 5, "vi": 6, "vii": 7, "viii": 8, "ix": 9}
+    """Extracts numeric generation (e.g. 'generation-iii' -> 3, 'generation-x' -> 10)."""
     match = re.search(r"generation-([a-z]+)", gen_str.lower())
     if match:
-        return roman_map.get(match.group(1), 0)
+        return roman_to_int(match.group(1))
     return 0
+
+
+def get_subcategory(subpath: str) -> str:
+    """Categorizes variant subpaths into logical groups (Default, Transparent, Gray, etc.)."""
+    if not subpath:
+        return "Default"
+    parts = set(subpath.split("/"))
+    if "animated" in parts:
+        return "Animated"
+    if "transparent" in parts and "gray" in parts:
+        return "Transparent Gray"
+    if "transparent" in parts:
+        return "Transparent"
+    if "gray" in parts:
+        return "Gray"
+    if "gbc" in parts:
+        return "GBC Color"
+    return "Default"
+
+
+def subpath_sort_key(subpath: str) -> tuple[int, int, int, int, str]:
+    """Algorithmic sorting key for perspective subpaths."""
+    if not subpath:
+        return (0, 0, 0, 0, "")
+    parts = set(subpath.split("/"))
+    subcat = get_subcategory(subpath)
+    subcat_rank = SUBCATEGORY_ORDER.index(subcat) if subcat in SUBCATEGORY_ORDER else 99
+    is_back = 1 if "back" in parts else 0
+    is_female = 1 if "female" in parts else 0
+    is_shiny = 1 if "shiny" in parts else 0
+    return (subcat_rank, is_back, is_female, is_shiny, subpath)
 
 
 def get_symmetric_subpaths_for_subcat(subcat: str, gen_num: int, has_female: bool = False) -> list[str]:
@@ -199,65 +298,31 @@ def get_symmetric_subpaths_for_subcat(subcat: str, gen_num: int, has_female: boo
     return results
 
 
-def get_subcategory(subpath: str) -> str:
-    """Categorizes variant subpaths into logical groups (Default, Transparent, Gray, etc.)."""
-    if not subpath:
-        return "Default"
-    parts = set(subpath.split("/"))
-    if "animated" in parts:
-        return "Animated"
-    if "transparent" in parts and "gray" in parts:
-        return "Transparent Gray"
-    if "transparent" in parts:
-        return "Transparent"
-    if "gray" in parts:
-        return "Gray"
-    if "gbc" in parts:
-        return "GBC Color"
-    return "Default"
-
-
 def format_subpath_label(subpath: str, is_icon: bool = False) -> str:
     """Generates human-readable labels for any variation folder subpath."""
     if is_icon:
-        if subpath == "":
-            return "Menu Icon"
-        if subpath == "female":
-            return "Menu Icon (Female)"
-        if subpath == "animated":
-            return "Animated Menu Icon"
-        return subpath.replace("/", " ").title()
-
-    if subpath == "":
+        return {"": "Menu Icon", "female": "Menu Icon (Female)", "animated": "Animated Menu Icon"}.get(
+            subpath, subpath.replace("/", " ").title()
+        )
+    if not subpath:
         return "Front Default"
 
     parts = set(subpath.split("/"))
-    prefix = ""
-    if "animated" in parts:
-        prefix += "Front Animated " if "back" not in parts else "Back Animated "
-    elif "transparent" in parts:
-        prefix += "Front Transparent " if "back" not in parts else "Back Transparent "
-    elif "gbc" in parts:
-        prefix += "Front GBC Color " if "back" not in parts else "Back GBC Color "
-    elif "gray" in parts:
-        prefix += "Front Gray " if "back" not in parts else "Back Gray "
-    elif "back" in parts:
-        prefix += "Back "
-    else:
-        prefix += "Front "
-
-    middle = ""
-    if "gray" in parts and "transparent" in parts:
-        middle += "Gray "
+    direction = "Back" if "back" in parts else "Front"
+    mods = []
+    for tag, name in (("animated", "Animated"), ("transparent", "Transparent"), ("gbc", "GBC Color"), ("gray", "Gray")):
+        if tag in parts:
+            mods.append(name)
+            break
+    if "transparent" in parts and "gray" in parts and "Gray" not in mods:
+        mods.append("Gray")
     if "shiny" in parts:
-        middle += "Shiny "
+        mods.append("Shiny")
     if "female" in parts:
-        middle += "Female "
+        mods.append("Female")
 
-    label = (prefix + middle).strip()
-    if label in ("Front", "Back"):
-        label += " Default"
-    return label
+    label = f"{direction} {' '.join(mods)}".strip()
+    return f"{label} Default" if label in ("Front", "Back") else label
 
 
 def build_index(output_file: Path | None = None) -> Path:
@@ -269,54 +334,132 @@ def build_index(output_file: Path | None = None) -> Path:
 
     # 1. Fetch PokéAPI metadata
     print("[INDEX] Fetching PokéAPI metadata CSVs...")
-    df_pk = pd.read_csv(POKEMON_CSV_URL)
-    df_forms = pd.read_csv(FORMS_CSV_URL)
-    df_species = pd.read_csv(SPECIES_CSV_URL)
+    df_pk = load_csv(f"{GITHUB_BASE_URL}/pokemon.csv")
+    df_forms = load_csv(f"{GITHUB_BASE_URL}/pokemon_forms.csv")
+    df_species = load_csv(f"{GITHUB_BASE_URL}/pokemon_species.csv")
 
-    gen_titles, game_titles, game_order = load_pokeapi_game_metadata()
+    gen_titles, game_titles, game_order, gen_rows, vg_rows, v_rows = load_pokeapi_game_metadata()
 
-    species_gender_diff = dict(zip(df_species["id"], df_species["has_gender_differences"]))
-    species_generation = dict(zip(df_species["id"], df_species["generation_id"]))
-    pk_species_map = dict(zip(df_pk["id"], df_pk["species_id"]))
+    # Load types metadata
+    types_list: list[dict[str, Any]] = []
+    try:
+        types_rows = load_csv(f"{GITHUB_BASE_URL}/types.csv")
+        for r in types_rows:
+            types_list.append({
+                "id": int(r["id"]),
+                "name": str(r["identifier"]),
+            })
+    except Exception as e:
+        print(f"[WARN] Failed to load types CSV ({e})")
+
+    # Build game_indices mapping: game_id -> list of pokemon IDs
+    game_indices: dict[str, list[int]] = {}
+    try:
+        gi_rows = load_csv(f"{GITHUB_BASE_URL}/pokemon_game_indices.csv")
+        v_to_vg = {r["id"]: r["version_group_id"] for r in v_rows}
+        vg_ident_map = {r["id"]: r["identifier"] for r in vg_rows}
+        game_poke_sets: dict[str, set[int]] = defaultdict(set)
+
+        for r in gi_rows:
+            vid = r.get("version_id")
+            pid = r.get("pokemon_id")
+            if vid and pid:
+                vg_id = v_to_vg.get(vid)
+                if vg_id:
+                    vg_key = vg_ident_map.get(vg_id)
+                    if vg_key:
+                        game_poke_sets[vg_key].add(int(pid))
+
+        if "black-2-white-2" in game_poke_sets:
+            game_poke_sets.setdefault("black-white", set()).update(game_poke_sets["black-2-white-2"])
+        if "sun-moon" in game_poke_sets:
+            game_poke_sets.setdefault("ultra-sun-ultra-moon", set()).update(game_poke_sets["sun-moon"])
+
+        game_indices = {k: sorted(list(v)) for k, v in game_poke_sets.items()}
+    except Exception as e:
+        print(f"[WARN] Failed to load game indices ({e})")
+
+    vg_gen_map = {r["id"]: int(r["generation_id"]) for r in vg_rows if r.get("generation_id")}
+    species_gender_diff = {r["id"]: (r.get("has_gender_differences") == "1") for r in df_species}
+    species_generation = {r["id"]: int(r["generation_id"]) for r in df_species if r.get("generation_id")}
+    pk_species_map = {r["id"]: r["species_id"] for r in df_pk}
+
+    forms_by_pk: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for r in df_forms:
+        forms_by_pk[r["pokemon_id"]].append(r)
+
+    # Determine true debut generation for varieties and forms
+    pk_debut_gen: dict[int, int] = {}
+    for r in df_pk:
+        p_id = int(r["id"])
+        s_id = r["species_id"]
+        is_def = r.get("is_default", "1")
+        if is_def == "1":
+            pk_debut_gen[p_id] = species_generation.get(s_id, 1)
+        else:
+            matching_forms = forms_by_pk.get(str(p_id), [])
+            if matching_forms:
+                form_gens = [vg_gen_map[f["introduced_in_version_group_id"]] for f in matching_forms if f.get("introduced_in_version_group_id") in vg_gen_map]
+                pk_debut_gen[p_id] = min(form_gens) if form_gens else species_generation.get(s_id, 1)
+            else:
+                pk_debut_gen[p_id] = species_generation.get(s_id, 1)
 
     pokemon_list: list[dict[str, Any]] = []
-    for _, row in df_pk.iterrows():
-        sp_id = int(row["species_id"])
+    for r in df_pk:
+        pk_id = int(r["id"])
+        sp_id = int(r["species_id"])
+        gen_id = pk_debut_gen.get(pk_id, species_generation.get(str(sp_id), 1))
         pokemon_list.append({
-            "id": int(row["id"]),
-            "name": str(row["identifier"]),
+            "id": pk_id,
+            "name": str(r["identifier"]),
             "species_id": sp_id,
-            "has_gender_diff": bool(species_gender_diff.get(sp_id, 0)),
-            "generation_id": int(species_generation.get(sp_id, 1)),
+            "has_gender_diff": bool(species_gender_diff.get(str(sp_id), False)),
+            "generation_id": int(gen_id),
             "is_form": False,
+            "file_stem": str(pk_id),
+            "candidate_stems": [str(pk_id)],
         })
 
-    for _, row in df_forms.iterrows():
-        pk_id = int(row["pokemon_id"])
-        sp_id = int(pk_species_map.get(pk_id, pk_id))
-        pokemon_list.append({
-            "id": int(row["id"]),
-            "name": str(row["identifier"]),
-            "pokemon_id": pk_id,
-            "has_gender_diff": bool(species_gender_diff.get(sp_id, 0)),
-            "generation_id": int(species_generation.get(sp_id, 1)),
-            "is_form": True,
-        })
+    # Only include non-default cosmetic forms (is_default == 0) to avoid duplicating regular Pokémon
+    for r in df_forms:
+        if r.get("is_default") == "0":
+            f_id = int(r["id"])
+            pk_id = int(r["pokemon_id"])
+            sp_id = int(pk_species_map.get(str(pk_id), pk_id))
+            form_ident = str(r.get("form_identifier") or "")
+            vg_id = r.get("introduced_in_version_group_id")
+            if vg_id and vg_id in vg_gen_map:
+                gen_id = vg_gen_map[vg_id]
+            else:
+                gen_id = pk_debut_gen.get(pk_id, species_generation.get(str(sp_id), 1))
+
+            candidate_stems = get_candidate_stems(pk_id, f_id, r.get("identifier", ""), is_form=True, form_identifier=form_ident)
+
+            pokemon_list.append({
+                "id": f_id,
+                "name": str(r["identifier"]),
+                "pokemon_id": pk_id,
+                "form_id": f_id,
+                "form_identifier": form_ident,
+                "species_id": sp_id,
+                "has_gender_diff": False,
+                "generation_id": int(gen_id),
+                "is_form": True,
+                "file_stem": candidate_stems[0],
+                "candidate_stems": candidate_stems,
+            })
 
     # 2. Filesystem Scan of sprites/pokemon
     base_pk = SPRITES_DIR / "pokemon"
-    folder_files: dict[str, list[int | str]] = {}
+    folder_files: dict[str, list[int | str]] = defaultdict(list)
     folder_exts: dict[str, str] = {}
 
     if base_pk.exists():
         for p in base_pk.rglob("*"):
             if p.is_file() and p.suffix.lower() in (".png", ".gif", ".svg", ".jpg"):
                 rel_folder = p.parent.relative_to(PROJECT_ROOT).as_posix()
-                ext = p.suffix.lower()
-                if rel_folder not in folder_files:
-                    folder_files[rel_folder] = []
-                    folder_exts[rel_folder] = ext
                 folder_files[rel_folder].append(int(p.stem) if p.stem.isdigit() else p.stem)
+                folder_exts.setdefault(rel_folder, p.suffix.lower())
 
     for f in folder_files:
         folder_files[f].sort(key=lambda x: (isinstance(x, str), x))
@@ -330,7 +473,7 @@ def build_index(output_file: Path | None = None) -> Path:
                 root_subdirs.append(rel)
 
     root_views: list[dict[str, Any]] = []
-    for sub in sorted(root_subdirs, key=lambda s: (SUBPATH_ORDER.index(s) if s in SUBPATH_ORDER else 999, s)):
+    for sub in sorted(root_subdirs, key=subpath_sort_key):
         folder_rel = f"sprites/pokemon/{sub}".rstrip("/")
         if folder_rel in folder_files and len(folder_files[folder_rel]) > 0:
             root_views.append({
@@ -377,7 +520,7 @@ def build_index(output_file: Path | None = None) -> Path:
                         "subpath": subpath,
                     })
 
-            views.sort(key=lambda v: (SUBPATH_ORDER.index(v["subpath"]) if v["subpath"] in SUBPATH_ORDER else 999, v["subpath"]))
+            views.sort(key=lambda v: subpath_sort_key(v["subpath"]))
             for v in views:
                 v.pop("subpath", None)
 
@@ -394,6 +537,7 @@ def build_index(output_file: Path | None = None) -> Path:
 
     # 5. Dynamically Discover Versions Structure
     versions_base = SPRITES_DIR / "pokemon" / "versions"
+    canonical_games_dict = build_canonical_games(vg_rows, v_rows, gen_rows, versions_base)
     generations_data: list[dict[str, Any]] = []
 
     if versions_base.exists():
@@ -473,6 +617,42 @@ def build_index(output_file: Path | None = None) -> Path:
                                     "female": False,
                                 })
 
+            # Ensure canonical core games are tracked even if not yet populated on disk
+            canonical_games = canonical_games_dict.get(gen_id, [])
+            for cg_key in canonical_games:
+                if cg_key not in games_dict:
+                    cg_views = []
+                    expected_subpaths = get_symmetric_subpaths_for_subcat("Default", gen_num, has_female=(gen_num >= 4))
+                    for subp in expected_subpaths:
+                        folder_rel = f"sprites/pokemon/versions/{gen_id}/{cg_key}/{subp}".rstrip("/")
+                        cg_views.append({
+                            "label": format_subpath_label(subp, is_icon=False),
+                            "folder": folder_rel,
+                            "ext": ".png",
+                            "subpath": subp,
+                            "subcategory": "Default",
+                            "female": "female" in subp.split("/"),
+                        })
+                    if gen_num >= 7:
+                        cg_views.append({
+                            "label": "Menu Icon",
+                            "folder": f"sprites/pokemon/versions/{gen_id}/{cg_key}/icons",
+                            "ext": ".png",
+                            "subpath": "icons",
+                            "subcategory": "Icons",
+                            "female": False,
+                        })
+                        if gen_num >= 4:
+                            cg_views.append({
+                                "label": "Menu Icon (Female)",
+                                "folder": f"sprites/pokemon/versions/{gen_id}/{cg_key}/icons/female",
+                                "ext": ".png",
+                                "subpath": "icons/female",
+                                "subcategory": "Icons",
+                                "female": True,
+                            })
+                    games_dict[cg_key] = cg_views
+
             order_list = game_order.get(gen_id, [])
             sorted_game_keys = sorted(
                 games_dict.keys(),
@@ -485,7 +665,7 @@ def build_index(output_file: Path | None = None) -> Path:
 
                 # Ensure symmetric perspective matrices for present subcategories
                 present_subcats = {v["subcategory"] for v in views if v["subcategory"] != "Icons"}
-                has_female = gen_num >= 4 and any(v.get("female") for v in views)
+                has_female = gen_num >= 4
                 for subcat in present_subcats:
                     expected_subpaths = get_symmetric_subpaths_for_subcat(subcat, gen_num, has_female=has_female)
                     if expected_subpaths:
@@ -503,11 +683,7 @@ def build_index(output_file: Path | None = None) -> Path:
                                     "female": "female" in subp.split("/"),
                                 })
 
-                views.sort(key=lambda v: (
-                    SUBCATEGORY_ORDER.index(v["subcategory"]) if v.get("subcategory") in SUBCATEGORY_ORDER else 999,
-                    SUBPATH_ORDER.index(v["subpath"]) if v["subpath"] in SUBPATH_ORDER else 999,
-                    v["subpath"],
-                ))
+                views.sort(key=lambda v: subpath_sort_key(v["subpath"]))
                 game_name = game_titles.get(game_key, game_key.replace("-", " ").title())
                 games_data.append({
                     "name": game_name,
@@ -534,21 +710,19 @@ def build_index(output_file: Path | None = None) -> Path:
 
     # 7. Items
     base_items = SPRITES_DIR / "items"
-    items_dict: dict[str, list[str]] = {}
+    items_dict: dict[str, list[str]] = defaultdict(list)
     if base_items.exists():
         for p in base_items.rglob("*.png"):
-            rel = p.relative_to(base_items).as_posix()
-            items_dict.setdefault(p.stem, []).append(rel)
+            items_dict[p.stem].append(p.relative_to(base_items).as_posix())
 
     # 8. Types
     base_types = SPRITES_DIR / "types"
-    types_dict: dict[str, dict[str, list[str]]] = {}
+    types_dict: dict[str, dict[str, list[str]]] = defaultdict(lambda: defaultdict(list))
     if base_types.exists():
         for p in base_types.rglob("*.png"):
-            rel = p.relative_to(base_types).as_posix()
-            parts = rel.split("/")
+            parts = p.relative_to(base_types).as_posix().split("/")
             if len(parts) >= 3:
-                types_dict.setdefault(parts[0], {}).setdefault(parts[1], []).append("/".join(parts[2:]))
+                types_dict[parts[0]][parts[1]].append("/".join(parts[2:]))
 
     manifest = {
         "version": "2.0",
@@ -569,6 +743,8 @@ def build_index(output_file: Path | None = None) -> Path:
         "badges_list": badges_list,
         "items_dict": items_dict,
         "types_dict": types_dict,
+        "types_list": types_list,
+        "game_indices": game_indices,
     }
 
     with open(dest, "w", encoding="utf-8") as f:

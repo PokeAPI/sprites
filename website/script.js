@@ -80,21 +80,144 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const viewExt = (v) => (v && v.ext) ? v.ext : '.png';
 
-    // --- 3. UI Construction Helpers ---
+    // --- 3. UI Construction Helpers & Deep Linking ---
+    const showToast = (message) => {
+        let toast = document.getElementById('globalToast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'globalToast';
+            toast.className = 'global-toast';
+            document.body.appendChild(toast);
+        }
+        toast.textContent = message;
+        toast.classList.add('show');
+        clearTimeout(toast._timer);
+        toast._timer = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2200);
+    };
+
+    const copyAnchorLink = async (anchorId, btn) => {
+        const cleanHash = window.location.hash ? window.location.hash.split('?')[0] : '';
+        let linkParam = '';
+        if (anchorId.startsWith('game-')) {
+            linkParam = `?game=${encodeURIComponent(anchorId.replace(/^game-/, ''))}`;
+        } else if (anchorId.startsWith('category-')) {
+            linkParam = `?cat=${encodeURIComponent(anchorId.replace(/^category-/, ''))}`;
+        } else {
+            linkParam = `?target=${encodeURIComponent(anchorId)}`;
+        }
+
+        const url = `${window.location.origin}${window.location.pathname}${linkParam}${cleanHash}`;
+        
+        try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText(url);
+                showToast('Link copied to clipboard!');
+            } else {
+                const ta = document.createElement('textarea');
+                ta.value = url;
+                ta.style.position = 'fixed';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.focus();
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                showToast('Link copied to clipboard!');
+            }
+        } catch {
+            showToast(`Anchor: ${linkParam}`);
+        }
+
+        if (window.history && window.history.replaceState) {
+            window.history.replaceState(null, '', url);
+        }
+
+        if (btn) {
+            const origHtml = btn.innerHTML;
+            btn.innerHTML = `<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.innerHTML = origHtml;
+                btn.classList.remove('copied');
+            }, 1800);
+        }
+    };
+
+    const createAnchorBtn = (anchorId) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'anchor-link-btn';
+        btn.title = 'Copy link to this section';
+        btn.setAttribute('aria-label', 'Copy link to section');
+        btn.innerHTML = `<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>`;
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            copyAnchorLink(anchorId, btn);
+        });
+        return btn;
+    };
+
+    const getDeepLinkTarget = () => {
+        const params = new URLSearchParams(window.location.search);
+        const qIdx = window.location.hash.indexOf('?');
+        if (qIdx !== -1) {
+            new URLSearchParams(window.location.hash.substring(qIdx)).forEach((val, key) => {
+                if (!params.has(key)) params.set(key, val);
+            });
+        }
+
+        const game = params.get('game');
+        if (game) return `game-${game}`;
+        const cat = params.get('cat');
+        if (cat) return `category-${cat}`;
+        const target = params.get('target') || params.get('anchor');
+        return target ? target.replace(/^#/, '') : null;
+    };
+
+    const scrollToTarget = (targetId) => {
+        if (!targetId) return;
+
+        requestAnimationFrame(() => {
+            setTimeout(() => {
+                const pureId = targetId.replace(/^(game|category)-/, '');
+                const el = document.getElementById(targetId) || 
+                           document.querySelector(`[data-game="${pureId}"]`) ||
+                           document.querySelector(`[data-category="${pureId}"]`) ||
+                           document.getElementById(pureId);
+
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
+        });
+    };
+
     const clearResults = () => {
         resultsContainer.innerHTML = '';
         if (searchId) searchId.textContent = '';
     };
 
-    const createGroup = (parent, title, badge = null) => {
+    const createGroup = (parent, title, badge = null, elementId = null) => {
         const group = document.createElement('div');
         group.className = 'sprite-group';
+        if (elementId) {
+            group.id = elementId;
+        }
 
         const header = document.createElement('div');
         header.className = 'group-header';
 
         const h2 = document.createElement('h2');
-        h2.textContent = title;
+        const titleSpan = document.createElement('span');
+        titleSpan.textContent = title;
+        h2.appendChild(titleSpan);
+
+        if (elementId) {
+            h2.appendChild(createAnchorBtn(elementId));
+        }
         header.appendChild(h2);
 
         if (badge) {
@@ -109,13 +232,24 @@ document.addEventListener('DOMContentLoaded', async () => {
         return group;
     };
 
-    const createSubgroup = (group, title, badge = null) => {
+    const createSubgroup = (group, title, badge = null, elementId = null) => {
         const sub = document.createElement('div');
         sub.className = 'subgroup';
+        if (elementId) {
+            sub.id = elementId;
+        }
 
         const h3 = document.createElement('h3');
         h3.className = 'subgroup-title';
-        h3.textContent = title;
+
+        const titleSpan = document.createElement('span');
+        titleSpan.textContent = title;
+        h3.appendChild(titleSpan);
+
+        if (elementId) {
+            h3.appendChild(createAnchorBtn(elementId));
+        }
+
         if (badge) {
             const tag = document.createElement('span');
             tag.className = 'badge-tag';
@@ -147,9 +281,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
 
     const renderCard = (grid, url, rawLabel, isPlaceholder = false, isHires = false, isShiny = null, isFemale = null) => {
-        const card = document.createElement('div');
-        card.className = `sprite-card${isHires ? ' hires' : ''}`;
-
         const labelLower = (rawLabel || '').toLowerCase();
         const urlLower = (url || '').toLowerCase();
         const shiny = (typeof isShiny === 'boolean') 
@@ -160,94 +291,32 @@ document.addEventListener('DOMContentLoaded', async () => {
             : (labelLower.includes('female') || urlLower.includes('female'));
         const cleanLabel = cleanCardLabel(rawLabel);
 
-        // Top-right corner indicators (bare symbols, no badge background)
-        if (shiny || female) {
-            const indicators = document.createElement('div');
-            indicators.className = 'sprite-indicators';
+        const card = document.createElement('div');
+        card.className = `sprite-card${isHires ? ' hires' : ''}`;
 
-            if (shiny) {
-                const shinyIcon = document.createElement('span');
-                shinyIcon.className = 'indicator-shiny';
-                shinyIcon.title = 'Shiny';
-                shinyIcon.innerHTML = `
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
-                        <path d="M10 2L12.5 8L18 10L12.5 12L10 18L7.5 12L2 10L7.5 8Z"/>
-                        <path d="M19 15L20.2 18L23 19L20.2 20L19 23L17.8 20L15 19L17.8 18Z"/>
-                    </svg>`;
-                indicators.appendChild(shinyIcon);
-            }
+        const indicatorsHtml = (shiny || female) ? `
+            <div class="sprite-indicators">
+                ${shiny ? `<span class="indicator-shiny" title="Shiny"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M10 2L12.5 8L18 10L12.5 12L10 18L7.5 12L2 10L7.5 8Z"/><path d="M19 15L20.2 18L23 19L20.2 20L19 23L17.8 20L15 19L17.8 18Z"/></svg></span>` : ''}
+                ${female ? `<span class="indicator-female" title="Female"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><line x1="12" y1="15" x2="12" y2="23"/><line x1="8" y1="19" x2="16" y2="19"/></svg></span>` : ''}
+            </div>` : '';
 
-            if (female) {
-                const femaleIcon = document.createElement('span');
-                femaleIcon.className = 'indicator-female';
-                femaleIcon.title = 'Female';
-                femaleIcon.innerHTML = `
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="9" r="6"/>
-                        <line x1="12" y1="15" x2="12" y2="23"/>
-                        <line x1="8" y1="19" x2="16" y2="19"/>
-                    </svg>`;
-                indicators.appendChild(femaleIcon);
-            }
+        const imgHtml = (isPlaceholder || !url)
+            ? `<div class="placeholder">Not Available</div>`
+            : `<img src="${url}" alt="${cleanLabel}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'placeholder\\'>Not Available</div>'">`;
 
-            card.appendChild(indicators);
-        }
+        const prefixHtml = (shiny || female) ? `
+            <span class="prefix-group">
+                ${shiny ? '<span class="prefix-tag prefix-shiny" title="Shiny">[S]</span>' : ''}
+                ${female ? '<span class="prefix-tag prefix-female" title="Female">[F]</span>' : ''}
+            </span>` : '';
 
-        // Centered sprite area
-        const imgWrap = document.createElement('div');
-        imgWrap.className = 'sprite-img-container';
-
-        if (isPlaceholder || !url) {
-            imgWrap.innerHTML = `<div class="placeholder">Not Available</div>`;
-        } else {
-            const img = document.createElement('img');
-            img.src = url;
-            img.alt = cleanLabel;
-            img.loading = 'lazy';
-            img.onerror = () => {
-                imgWrap.innerHTML = `<div class="placeholder">Not Available</div>`;
-            };
-            imgWrap.appendChild(img);
-        }
-        card.appendChild(imgWrap);
-
-        // Uniform baseline text label with plain text prefix for shiny/female
-        const p = document.createElement('p');
-        p.className = 'sprite-label';
-
-        const labelInner = document.createElement('span');
-        labelInner.className = 'label-inner';
-
-        if (shiny || female) {
-            const prefixGroup = document.createElement('span');
-            prefixGroup.className = 'prefix-group';
-
-            if (shiny) {
-                const sSpan = document.createElement('span');
-                sSpan.className = 'prefix-tag prefix-shiny';
-                sSpan.title = 'Shiny';
-                sSpan.textContent = '[S]';
-                prefixGroup.appendChild(sSpan);
-            }
-
-            if (female) {
-                const fSpan = document.createElement('span');
-                fSpan.className = 'prefix-tag prefix-female';
-                fSpan.title = 'Female';
-                fSpan.textContent = '[F]';
-                prefixGroup.appendChild(fSpan);
-            }
-
-            labelInner.appendChild(prefixGroup);
-        }
-
-        const labelText = document.createElement('span');
-        labelText.className = 'label-text';
-        labelText.textContent = cleanLabel;
-        labelInner.appendChild(labelText);
-
-        p.appendChild(labelInner);
-        card.appendChild(p);
+        card.innerHTML = `
+            ${indicatorsHtml}
+            <div class="sprite-img-container">${imgHtml}</div>
+            <p class="sprite-label">
+                <span class="label-inner">${prefixHtml}<span class="label-text">${cleanLabel}</span></span>
+            </p>
+        `;
 
         grid.appendChild(card);
     };
@@ -272,13 +341,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                 matches = list.filter(p => p.name.includes(val) || String(p.id).startsWith(val)).slice(0, 20);
             } else if (searchType === 'pokemon-form') {
                 const list = spriteIndex.pokemon_list.filter(p => p.is_form);
-                matches = list.filter(p => p.name.includes(val) || String(p.id).startsWith(val)).slice(0, 20);
+                matches = list.filter(p => p.name.includes(val) || String(p.id).startsWith(val) || (p.pokemon_id && String(p.pokemon_id).startsWith(val))).slice(0, 20);
             } else if (searchType === 'item') {
                 const items = Object.keys(spriteIndex.items_dict || {});
                 matches = items.filter(i => i.includes(val)).slice(0, 20).map(i => ({ id: i, name: i }));
             } else if (searchType === 'type') {
-                const standardTypes = ['normal', 'fire', 'water', 'grass', 'electric', 'ice', 'fighting', 'poison', 'ground', 'flying', 'psychic', 'bug', 'rock', 'ghost', 'dragon', 'steel', 'dark', 'fairy', 'stellar'];
-                matches = standardTypes.filter(t => t.includes(val)).map(t => ({ id: t, name: t }));
+                const types = spriteIndex.types_list || [];
+                matches = types.filter(t => t.name.toLowerCase().includes(val) || String(t.id) === val).slice(0, 20);
             } else if (searchType === 'badge') {
                 const badges = (spriteIndex.badges_list || []).map(b => ({ id: b, name: `Badge #${b}` }));
                 matches = badges.filter(b => String(b.id).startsWith(val) || b.name.toLowerCase().includes(val)).slice(0, 20);
@@ -291,9 +360,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             matches.forEach(item => {
                 const div = document.createElement('div');
-                div.innerHTML = `<span><strong>${item.name}</strong></span> <span style="color:var(--muted-text); font-family:monospace;">#${item.id}</span>`;
+                const tag = item.is_form ? `#${item.pokemon_id} (form: ${item.id})` : `#${item.id}`;
+                div.innerHTML = `<span><strong>${item.name}</strong></span> <span style="color:var(--muted-text); font-family:monospace;">${tag}</span>`;
                 div.addEventListener('click', () => {
-                    searchInput.value = item.id;
+                    searchInput.value = (searchType === 'type') ? item.name : item.id;
                     closeAllLists();
                     handleSearch();
                 });
@@ -316,9 +386,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         const q = String(query).toLowerCase().trim();
         const list = spriteIndex.pokemon_list || [];
 
-        let entity = list.find(p => p.is_form === isForm && (String(p.id) === q || p.name === q));
+        let entity = list.find(p => p.is_form === isForm && (String(p.id) === q || p.name === q || (p.form_id && String(p.form_id) === q)));
         if (!entity && !isForm) {
             entity = list.find(p => String(p.id) === q || p.name === q);
+        }
+        if (!entity && isForm) {
+            entity = list.find(p => p.is_form && (p.name === q || String(p.form_id) === q || String(p.id) === q));
         }
 
         if (!entity) {
@@ -329,126 +402,126 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
 
-        const idStr = String(entity.id);
-        searchId.textContent = `#${entity.id} - ${entity.name}`;
+        const candidateStems = entity.candidate_stems || [String(entity.id)];
+        const getMatchingStem = (folder) => {
+            const set = folderSets[folder];
+            if (!set) return null;
+            for (const s of candidateStems) {
+                if (set.has(String(s))) return String(s);
+            }
+            return null;
+        };
+        const defaultStem = candidateStems[0] || String(entity.id);
+
+        if (entity.is_form) {
+            const formNum = entity.form_id || entity.id;
+            searchId.textContent = `#${entity.pokemon_id} - ${entity.name} (Form #${formNum})`;
+        } else {
+            searchId.textContent = `#${entity.id} - ${entity.name}`;
+        }
+
+        // Shared helper to render a list of sprite views
+        const renderViews = (grid, views, isLarge = false) => {
+            views.forEach(v => {
+                const stem = v.stem || getMatchingStem(v.folder);
+                const hasSprite = (v.hasSprite !== undefined) ? v.hasSprite : (stem !== null);
+                const isFemale = v.female || v.label.includes('Female') || (v.subpath && v.subpath.includes('female'));
+                if (isFemale && !entity.has_gender_diff && !hasSprite) return;
+                const isShiny = v.label.includes('Shiny') || (v.folder && v.folder.includes('shiny')) || (v.subpath && v.subpath.includes('shiny'));
+                const url = hasSprite ? getSpriteUrl(`${v.folder}/${stem || defaultStem}${viewExt(v)}`) : '';
+                renderCard(grid, url, v.label, !hasSprite, isLarge, isShiny, isFemale);
+            });
+        };
+
+        const appendCount = (headerEl, passed, total, extraStyle = false) => {
+            if (!headerEl) return;
+            const count = document.createElement('span');
+            count.className = 'game-subcat-count';
+            if (extraStyle) count.style.marginLeft = 'auto';
+            count.textContent = `${passed}/${total} available`;
+            headerEl.appendChild(count);
+        };
 
         // 1. Root Sprites (Default pixel art)
-        const rootGroup = createGroup(resultsContainer, 'Root Sprites (Default)', 'sprites/pokemon/');
+        const rootGroup = createGroup(resultsContainer, 'Root Sprites (Default)', 'sprites/pokemon/', 'category-default');
+        rootGroup.dataset.category = 'default';
         const rootGrid = createSubgroup(rootGroup, 'Standard Gen 5 Pixel Art');
-
-        (spriteIndex.root_views || []).forEach(view => {
-            const hasSprite = folderSets[view.folder]?.has(idStr);
-            // If Pokémon has no gender differences, only render female cards if an asset actually exists
-            if (view.female && !entity.has_gender_diff && !hasSprite) {
-                return;
-            }
-            const isShiny = view.label.includes('Shiny');
-            if (hasSprite) {
-                renderCard(rootGrid, getSpriteUrl(`${view.folder}/${idStr}${view.ext}`), view.label, false, false, isShiny, view.female);
-            } else {
-                renderCard(rootGrid, '', view.label, true, false, isShiny, view.female);
-            }
-        });
+        renderViews(rootGrid, spriteIndex.root_views || []);
 
         // 2. Other Sprite Collections (Official Artwork, HOME 3D, Showdown GIFs, Dream World)
         let otherGroup = null;
         (spriteIndex.other_categories || []).forEach(cat => {
-            const hasAnyInCat = (cat.views || []).some(v => folderSets[v.folder]?.has(idStr));
+            const hasAnyInCat = (cat.views || []).some(v => getMatchingStem(v.folder) !== null);
             if (hasAnyInCat) {
                 if (!otherGroup) {
-                    otherGroup = createGroup(resultsContainer, 'Other Sprite Collections', 'sprites/pokemon/other/');
+                    otherGroup = createGroup(resultsContainer, 'Other Sprite Collections', 'sprites/pokemon/other/', 'category-other');
+                    otherGroup.dataset.category = 'other';
                 }
-                const grid = createSubgroup(otherGroup, cat.name, cat.badge);
-                (cat.views || []).forEach(v => {
-                    const hasSprite = folderSets[v.folder]?.has(idStr);
-                    const isFemale = v.female || v.label.includes('Female');
-                    if (isFemale && !entity.has_gender_diff && !hasSprite) {
-                        return;
-                    }
-                    const isShiny = v.label.includes('Shiny') || (v.folder && v.folder.includes('shiny'));
-                    if (hasSprite) {
-                        renderCard(grid, getSpriteUrl(`${v.folder}/${idStr}${viewExt(v)}`), v.label, false, cat.is_large, isShiny, isFemale);
-                    } else {
-                        renderCard(grid, '', v.label, true, cat.is_large, isShiny, isFemale);
-                    }
-                });
+                const catId = `category-${cat.badge}`;
+                const grid = createSubgroup(otherGroup, cat.name, cat.badge, catId);
+                grid.parentElement.dataset.category = cat.badge;
+                renderViews(grid, cat.views || [], cat.is_large);
             }
         });
 
         const introGen = entity.generation_id || 1;
 
-        // 3. Version Sprites - Dynamically discovered and pre-categorized by Generation & Game Groups
+        // 3. Version Sprites - Pre-categorized by Generation & Game Groups
         (spriteIndex.generations || []).forEach(gen => {
             const genNum = gen.gen_num || 1;
             const isDebuted = genNum >= introGen;
 
-            const activeGames = [];
-            (gen.games || []).forEach(game => {
-                const hasAnyInGame = (game.views || []).some(v => folderSets[v.folder]?.has(idStr));
-                if (isDebuted || hasAnyInGame) {
-                    activeGames.push(game);
-                }
-            });
+            const activeGames = (gen.games || []).filter(game => 
+                isDebuted || (game.views || []).some(v => getMatchingStem(v.folder) !== null)
+            );
 
             const activeIcons = isDebuted 
                 ? (gen.icons || []) 
-                : (gen.icons || []).filter(icon => folderSets[icon.folder]?.has(idStr));
+                : (gen.icons || []).filter(icon => getMatchingStem(icon.folder) !== null);
 
-            // Skip generation if no assets exist for this Pokémon AND Pokémon has not debuted yet
-            if (activeGames.length === 0 && activeIcons.length === 0) {
-                return;
-            }
+            if (activeGames.length === 0 && activeIcons.length === 0) return;
 
-            const genGroup = createGroup(resultsContainer, gen.title, gen.id);
+            const genId = `generation-${gen.id}`;
+            const genGroup = createGroup(resultsContainer, gen.title, gen.id, genId);
+            genGroup.dataset.generation = gen.id;
 
-            // Render game groups (flat if only 1 subcategory, subcategorized if multiple)
             activeGames.forEach(game => {
-                // Group views by subcategory (Default, Gray, Transparent, Animated, etc.)
+                const gameKey = game.id || (game.folder ? game.folder.split('/').pop() : '');
+                const gameSubgroupId = gameKey ? `game-${gameKey}` : null;
+
                 const subcatMap = new Map();
                 (game.views || []).forEach(v => {
                     const isFemale = v.female || v.label.includes('Female') || (v.subpath && v.subpath.includes('female'));
-                    const hasSprite = folderSets[v.folder]?.has(idStr);
-                    // Omit female view if species has no gender difference AND sprite does not exist
-                    if (isFemale && !entity.has_gender_diff && !hasSprite) {
-                        return;
-                    }
+                    const stem = getMatchingStem(v.folder);
+                    const hasSprite = stem !== null;
+                    if (isFemale && !entity.has_gender_diff && !hasSprite) return;
                     const subName = v.subcategory || 'Default';
                     if (!subcatMap.has(subName)) subcatMap.set(subName, []);
-                    subcatMap.get(subName).push({ ...v, hasSprite: !!hasSprite });
+                    subcatMap.get(subName).push({ ...v, hasSprite, stem: stem || defaultStem });
                 });
 
                 if (subcatMap.size <= 1) {
-                    // Only one subcategory -> keep flat
-                    const grid = createSubgroup(genGroup, game.name, game.folder);
+                    const grid = createSubgroup(genGroup, game.name, game.folder, gameSubgroupId);
+                    if (gameKey) grid.parentElement.dataset.game = gameKey;
                     const allViews = subcatMap.size === 1 ? Array.from(subcatMap.values())[0] : [];
                     if (allViews.length > 0) {
-                        const availableCount = allViews.filter(v => v.hasSprite).length;
-                        const h3 = grid.previousElementSibling;
-                        if (h3 && h3.classList.contains('subgroup-title')) {
-                            const count = document.createElement('span');
-                            count.className = 'game-subcat-count';
-                            count.style.marginLeft = 'auto';
-                            count.textContent = `${availableCount}/${allViews.length} available`;
-                            h3.appendChild(count);
-                        }
+                        appendCount(grid.previousElementSibling, allViews.filter(v => v.hasSprite).length, allViews.length, true);
                     }
-                    allViews.forEach(v => {
-                        const isShiny = v.label.includes('Shiny') || (v.subpath && v.subpath.includes('shiny'));
-                        const isFemale = v.female || v.label.includes('Female') || (v.subpath && v.subpath.includes('female'));
-                        if (v.hasSprite) {
-                            renderCard(grid, getSpriteUrl(`${v.folder}/${idStr}${viewExt(v)}`), v.label, false, false, isShiny, isFemale);
-                        } else {
-                            renderCard(grid, '', v.label, true, false, isShiny, isFemale);
-                        }
-                    });
+                    renderViews(grid, allViews);
                 } else {
-                    // Multiple subcategories -> render structured 2-column grid sections
                     const gameSubgroup = document.createElement('div');
                     gameSubgroup.className = 'subgroup';
+                    if (gameSubgroupId) {
+                        gameSubgroup.id = gameSubgroupId;
+                        gameSubgroup.dataset.game = gameKey;
+                    }
 
                     const h3 = document.createElement('h3');
                     h3.className = 'subgroup-title';
-                    h3.textContent = game.name;
+                    const titleSpan = document.createElement('span');
+                    titleSpan.textContent = game.name;
+                    h3.appendChild(titleSpan);
+                    if (gameSubgroupId) h3.appendChild(createAnchorBtn(gameSubgroupId));
                     if (game.folder) {
                         const tag = document.createElement('span');
                         tag.className = 'badge-tag';
@@ -466,33 +539,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
                         const header = document.createElement('div');
                         header.className = 'game-subcat-header';
-
                         const subH4 = document.createElement('h4');
                         subH4.className = 'game-subcat-title';
                         subH4.textContent = subName;
                         header.appendChild(subH4);
-
-                        const availableCount = views.filter(v => v.hasSprite).length;
-                        const count = document.createElement('span');
-                        count.className = 'game-subcat-count';
-                        count.textContent = `${availableCount}/${views.length} available`;
-                        header.appendChild(count);
-
+                        appendCount(header, views.filter(v => v.hasSprite).length, views.length);
                         section.appendChild(header);
 
                         const grid = document.createElement('div');
                         grid.className = 'sprite-grid';
-                        views.forEach(v => {
-                            const isShiny = v.label.includes('Shiny') || (v.subpath && v.subpath.includes('shiny'));
-                            const isFemale = v.female || v.label.includes('Female') || (v.subpath && v.subpath.includes('female'));
-                            if (v.hasSprite) {
-                                renderCard(grid, getSpriteUrl(`${v.folder}/${idStr}${viewExt(v)}`), v.label, false, false, isShiny, isFemale);
-                            } else {
-                                renderCard(grid, '', v.label, true, false, isShiny, isFemale);
-                            }
-                        });
+                        renderViews(grid, views);
                         section.appendChild(grid);
-
                         subcatsGrid.appendChild(section);
                     });
 
@@ -501,32 +558,18 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
             });
 
-            // Render generation menu icons
             if (activeIcons.length > 0) {
-                const grid = createSubgroup(genGroup, '🏷️ Box & Party Icons', `versions/${gen.id}/icons`);
-                const availableIcons = activeIcons.filter(icon => folderSets[icon.folder]?.has(idStr)).length;
-                const h3 = grid.previousElementSibling;
-                if (h3 && h3.classList.contains('subgroup-title')) {
-                    const count = document.createElement('span');
-                    count.className = 'game-subcat-count';
-                    count.style.marginLeft = 'auto';
-                    count.textContent = `${availableIcons}/${activeIcons.length} available`;
-                    h3.appendChild(count);
-                }
-                activeIcons.forEach(icon => {
-                    const isFemale = icon.female || icon.label.includes('Female') || (icon.subpath && icon.subpath.includes('female'));
-                    const hasSprite = folderSets[icon.folder]?.has(idStr);
-                    if (isFemale && !entity.has_gender_diff && !hasSprite) {
-                        return;
-                    }
-                    if (hasSprite) {
-                        renderCard(grid, getSpriteUrl(`${icon.folder}/${idStr}${viewExt(icon)}`), icon.label, false, false, false, isFemale);
-                    } else {
-                        renderCard(grid, '', icon.label, true, false, false, isFemale);
-                    }
-                });
+                const iconId = `game-${gen.id}-icons`;
+                const grid = createSubgroup(genGroup, '🏷️ Box & Party Icons', `versions/${gen.id}/icons`, iconId);
+                grid.parentElement.dataset.game = `${gen.id}-icons`;
+                const availableCount = activeIcons.filter(icon => getMatchingStem(icon.folder) !== null).length;
+                appendCount(grid.previousElementSibling, availableCount, activeIcons.length, true);
+                renderViews(grid, activeIcons);
             }
         });
+
+        // Auto-scroll to deep-linked anchor if specified in URL (?game= or ?cat= or ?target=)
+        scrollToTarget(getDeepLinkTarget());
     };
 
     // 5.2 Badges Renderer
@@ -584,25 +627,63 @@ document.addEventListener('DOMContentLoaded', async () => {
     const displayType = (query) => {
         if (!spriteIndex || !spriteIndex.types_dict) return;
 
-        const q = String(query).toLowerCase().trim();
-        searchId.textContent = `Type: ${q}`;
+        const q = String(query || '').toLowerCase().trim();
+        const typesList = spriteIndex.types_list || [];
 
-        const group = createGroup(resultsContainer, `Type Sprites: ${q}`, 'sprites/types/');
+        let matchedType = null;
+        if (/^\d+$/.test(q)) {
+            const numId = parseInt(q, 10);
+            matchedType = typesList.find(t => t.id === numId);
+        } else if (q) {
+            matchedType = typesList.find(t => t.name.toLowerCase() === q) ||
+                          typesList.find(t => t.name.toLowerCase().includes(q));
+        }
+
+        const typeIdStr = matchedType ? String(matchedType.id) : q;
+        const typeDisplayName = matchedType 
+            ? (matchedType.name.charAt(0).toUpperCase() + matchedType.name.slice(1)) 
+            : (q ? (q.charAt(0).toUpperCase() + q.slice(1)) : '');
+        const displayTitle = matchedType ? `${typeDisplayName} (#${typeIdStr})` : q;
+
+        searchId.textContent = `Type: ${displayTitle}`;
+
+        const group = createGroup(resultsContainer, `Type Sprites: ${displayTitle}`, 'sprites/types/');
         let renderedCount = 0;
 
         for (const [gen, games] of Object.entries(spriteIndex.types_dict)) {
             for (const [game, files] of Object.entries(games)) {
-                const matchFile = files.find(f => f.toLowerCase().includes(q));
+                const matchFile = files.find(f => {
+                    const stem = f.substring(0, f.lastIndexOf('.')) || f;
+                    return stem === typeIdStr || (q && f.toLowerCase().includes(q));
+                });
                 if (matchFile) {
                     renderedCount++;
-                    const grid = createSubgroup(group, `${gen} / ${game}`);
-                    renderCard(grid, getSpriteUrl(`sprites/types/${gen}/${game}/${matchFile}`), matchFile);
+                    const genTitle = (spriteIndex.generations || []).find(g => g.id === gen)?.title || gen;
+                    const gameTitle = game.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+                    const grid = createSubgroup(group, `${genTitle} • ${gameTitle}`);
+                    renderCard(grid, getSpriteUrl(`sprites/types/${gen}/${game}/${matchFile}`), `${typeDisplayName}`);
                 }
             }
         }
 
         if (renderedCount === 0) {
             resultsContainer.innerHTML = `<div class="sprite-group"><p style="color:var(--muted-text);">No type icon found for "${query}".</p></div>`;
+        }
+    };
+
+    // Helper: Dynamic search placeholder
+    const updatePlaceholder = (searchType) => {
+        if (searchType === 'badge') {
+            const maxBadge = (spriteIndex && spriteIndex.badges_list && spriteIndex.badges_list.length)
+                ? Math.max(...spriteIndex.badges_list)
+                : 77;
+            searchInput.placeholder = `Enter badge number (1-${maxBadge}) or leave empty for all...`;
+        } else if (searchType === 'item') {
+            searchInput.placeholder = 'Enter item name (e.g. poke-ball, master-ball)...';
+        } else if (searchType === 'type') {
+            searchInput.placeholder = 'Enter type name (e.g. grass, fire, water)...';
+        } else {
+            searchInput.placeholder = 'Search by name (e.g. pikachu) or ID (#25)...';
         }
     };
 
@@ -638,27 +719,25 @@ document.addEventListener('DOMContentLoaded', async () => {
             searchInput.value = '';
             if (clearSearchBtn) clearSearchBtn.style.display = 'none';
             closeAllLists();
-            if (radio.value === 'badge') {
-                searchInput.placeholder = 'Enter badge number (1-77) or leave empty for all...';
-            } else if (radio.value === 'item') {
-                searchInput.placeholder = 'Enter item name (e.g. poke-ball, master-ball)...';
-            } else if (radio.value === 'type') {
-                searchInput.placeholder = 'Enter type name (e.g. grass, fire, water)...';
-            } else {
-                searchInput.placeholder = 'Search by name (e.g. pikachu) or ID (#25)...';
-            }
+            updatePlaceholder(radio.value);
         });
     });
 
     // --- 7. Hash Routing ---
     const handleHash = () => {
-        const parts = window.location.hash.substring(1).split('/').filter(Boolean);
+        let rawHash = window.location.hash.substring(1);
+        const qIdx = rawHash.indexOf('?');
+        if (qIdx !== -1) {
+            rawHash = rawHash.substring(0, qIdx);
+        }
+        const parts = rawHash.split('/').filter(Boolean);
         if (parts.length >= 1) {
             const type = parts[0];
             const query = parts[1] || '';
 
             const radio = document.querySelector(`input[value="${type}"]`);
             if (radio) radio.checked = true;
+            updatePlaceholder(type);
             searchInput.value = query;
 
             clearResults();

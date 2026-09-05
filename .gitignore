@@ -19,11 +19,20 @@ scripts/downloads/
 
 # Generated Reports & Manifests
 scripts/sprite_audit_report.csv
+scripts/sprite_audit_versions.csv
 scripts/tracker/sprite_audit_report.csv
+scripts/tracker/sprite_audit_versions.csv
 website/audit.html
 website/audit_data.json
+website/audit_data_versions.json
 website/audit_report.csv
+website/audit_report_versions.csv
 website/data/sprite_index.json
+website/data/audit_data.json
+website/data/version_audit_data.json
+
+# Cache
+.cache/
 
 # Pycache
 __pycache__/
