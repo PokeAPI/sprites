@@ -75,6 +75,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (isLocal) {
             return `../${path}`;
         }
+
+        // If hosted on a GitHub Pages fork (e.g. <username>.github.io/<repo>)
+        if (window.location.hostname.endsWith('github.io')) {
+            const user = window.location.hostname.split('.')[0];
+            const repo = window.location.pathname.split('/')[1] || 'sprites';
+            // Primary source: check user's fork/branch first, fallback to upstream PokeAPI
+            if (user.toLowerCase() !== 'pokeapi') {
+                return `https://raw.githubusercontent.com/${user}/${repo}/gen2-transparent/${path}`;
+            }
+        }
+
         return `https://raw.githubusercontent.com/PokeAPI/sprites/master/${path}`;
     };
 
