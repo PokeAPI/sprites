@@ -270,8 +270,8 @@ def get_symmetric_subpaths_for_subcat(subcat: str, gen_num: int, has_female: boo
         if gen_num >= 2:
             results.append(combine(front_base, "shiny/female"))
 
-    # In Gen 2 (Crystal), animated sprites only existed for the front battle entrance; back sprites were purely static in-game
-    if subcat == "Animated" and gen_num == 2:
+    # In Gen 2 (Crystal) and Gen 4 (Diamond/Pearl, Platinum, HeartGold/SoulSilver), animated sprites only existed for the front battle entrance; back sprites were purely static in-game
+    if subcat == "Animated" and (gen_num == 2 or gen_num == 4):
         return results
 
     # Back perspectives (battle sprites)
