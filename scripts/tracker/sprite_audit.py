@@ -438,7 +438,6 @@ def audit_version_sprites(
                         game_pokemon.append(p)
 
             for p in game_pokemon:
-                p_id = p["id"]
                 p_name = p["name"]
                 is_dimorphic = bool(p.get("has_gender_diff", False))
 
@@ -605,7 +604,9 @@ def generate_html_report(
             json.dump(version_issues or [], f, separators=(",", ":"))
         print(f"[DATA] Externalized datasets to {data_dir / 'audit_data.json'} and {data_dir / 'version_audit_data.json'}")
 
-    fmt_pct = lambda r: f"{r:.2f}".rstrip("0").rstrip(".") if r != 100 else "100"
+    def fmt_pct(r: float) -> str:
+        return f"{r:.2f}".rstrip("0").rstrip(".") if r != 100 else "100"
+
     ctx = {
         "completion_rate": fmt_pct(completion_rate),
         "total_passed_assets": f"{total_passed_assets:,}",

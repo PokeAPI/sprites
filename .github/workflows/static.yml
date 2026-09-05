@@ -37,7 +37,7 @@ jobs:
 
       - name: Install audit dependencies
         run: |
-          pip install pandas pillow requests jinja2
+          pip install pillow jinja2
 
       - name: Run Sprite Audit & Build Dashboard
         run: |

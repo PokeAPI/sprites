@@ -10,7 +10,6 @@ from __future__ import annotations
 import argparse
 import json
 import re
-import sys
 import time
 from collections import defaultdict
 from pathlib import Path
@@ -198,21 +197,6 @@ SUBCATEGORY_ORDER: list[str] = [
     "Animated",
     "Icons",
 ]
-
-
-def roman_to_int(s: str) -> int:
-    """Converts a roman numeral string to integer (e.g. 'viii' -> 8, 'x' -> 10, etc.)."""
-    vals = {"i": 1, "v": 5, "x": 10, "l": 50, "c": 100, "d": 500, "m": 1000}
-    total = 0
-    prev = 0
-    for char in reversed(s.lower()):
-        val = vals.get(char, 0)
-        if val < prev:
-            total -= val
-        else:
-            total += val
-            prev = val
-    return total
 
 
 def parse_gen_num(gen_str: str) -> int:
