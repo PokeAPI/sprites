@@ -67,8 +67,8 @@ sprites
             \- icons (PNGs with female variants)
             \- brilliant-diamond-shining-pearl (PNGs)
         \- generation ix
-            \- scarlet-violet (PNGs with female)
-            \- champions (PNGs)
+            \- scarlet-violet (PNGs with female variants)
+            \- champions (PNGs with shiny variants)
     \- default PokeAPI sprites (PNGs with back, female, shiny, back-female, back-shiny, shiny-female variants)
 \- items
     \- default PokeAPI items (PNGs)
@@ -301,10 +301,10 @@ Animated
 
 ###### `champions`
 
-| Front |
-| --- |
-| PNG<br>_128x128_ |
-| <img src="sprites/pokemon/versions/generation-ix/champions/25.png" width="100"/> |
+| Front | Front shiny |
+| --- | --- |
+| PNG<br>_128x128_ | PNG<br>_128x128_ |
+| <img src="sprites/pokemon/versions/generation-ix/champions/25.png" width="100"/> | <img src="sprites/pokemon/versions/generation-ix/champions/shiny/25.png" width="100"/> |
 
 ## Special Thanks
 
