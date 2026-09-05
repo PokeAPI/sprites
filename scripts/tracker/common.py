@@ -2,12 +2,10 @@ from __future__ import annotations
 
 import csv
 import io
-import os
 import sys
 import time
 import urllib.request
 from pathlib import Path
-from typing import Any
 
 # Ensure UTF-8 output encoding across all terminals
 def reconfigure_utf8() -> None:
