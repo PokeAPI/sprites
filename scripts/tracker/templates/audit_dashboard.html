@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokéAPI Sprite Audit Dashboard</title>
+    <script>
+        // Init theme early to prevent flash
+        if (localStorage.getItem('theme') === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            950: '#09090b', // shadcn zinc/slate deep dark
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 3px; }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #27272a; }
+    </style>
+</head>
+<body class="min-h-full flex flex-col font-sans antialiased bg-slate-50 text-slate-900 dark:bg-[#09090b] dark:text-zinc-100 transition-colors duration-150">
+    <!-- Navbar -->
+    <header class="bg-white/95 dark:bg-[#09090b]/95 border-b border-slate-200 dark:border-zinc-800 sticky top-0 z-50 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-2">
+            <div class="flex items-center space-x-2.5 sm:space-x-3 min-w-0">
+                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-md bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 flex items-center justify-center font-bold text-xs sm:text-sm border border-zinc-800 dark:border-zinc-200 shadow-sm shrink-0">
+                    PA
+                </div>
+                <div class="min-w-0">
+                    <h1 class="font-semibold text-xs sm:text-sm text-slate-900 dark:text-zinc-100 tracking-tight truncate">PokéAPI Sprite Audit</h1>
+                    <p class="hidden sm:block text-xs text-slate-500 dark:text-zinc-400">Asset Verification & Quality Dashboard</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
+                <a href="index.html" class="inline-flex items-center space-x-1.5 text-xs font-medium text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white px-2.5 sm:px-3 py-1.5 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-200 dark:border-zinc-800 transition shadow-sm" title="Sprite Finder">
+                    <svg class="w-3.5 h-3.5 opacity-70 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <span class="hidden sm:inline">Sprite Finder</span>
+                </a>
+                <a id="downloadCsvBtn" href="audit_report.csv" download="sprite_audit_report.csv" class="inline-flex items-center space-x-1.5 text-xs font-medium text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white px-2.5 sm:px-3 py-1.5 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-200 dark:border-zinc-800 transition shadow-sm" title="Download CSV">
+                    <svg class="w-3.5 h-3.5 opacity-70 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    <span id="downloadCsvText" class="hidden sm:inline">Download CSV</span>
+                </a>
+                <!-- Theme Toggle Button -->
+                <button id="themeToggleBtn" class="flex items-center space-x-1.5 text-xs font-medium text-slate-700 dark:text-zinc-300 hover:text-slate-900 dark:hover:text-white px-2 sm:px-2.5 py-1.5 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-200 dark:border-zinc-800 transition shadow-sm" title="Toggle theme">
+                    <span id="themeToggleIcon">🌙</span>
+                    <span id="themeToggleText" class="hidden sm:inline">Dark</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 space-y-5 sm:space-y-8">
+        <!-- Top Tab Switcher -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 border-b border-slate-200 dark:border-zinc-800 pb-3 sm:pb-4">
+            <div>
+                <h2 class="text-sm sm:text-base font-semibold text-slate-900 dark:text-zinc-100 tracking-tight">Audit Dashboard</h2>
+                <p class="text-[11px] sm:text-xs text-slate-500 dark:text-zinc-400">Switch between artwork collections and game version sprites</p>
+            </div>
+            <!-- Segmented Tab Controls -->
+            <div class="inline-flex p-1 bg-slate-200/70 dark:bg-zinc-900 rounded-lg border border-slate-300/80 dark:border-zinc-800 text-xs font-medium w-full sm:w-auto shadow-inner">
+                <button id="tabBtnArtwork" onclick="switchTab('artwork')" class="tab-main-btn flex-1 sm:flex-initial justify-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-md transition shadow-sm bg-white dark:bg-zinc-800 text-slate-900 dark:text-zinc-100 font-semibold flex items-center space-x-1.5 sm:space-x-2">
+                    <svg class="w-3.5 h-3.5 opacity-80 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span class="truncate">Modern & Artwork Collections</span>
+                </button>
+                <button id="tabBtnVersions" onclick="switchTab('versions')" class="tab-main-btn flex-1 sm:flex-initial justify-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-md transition text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-zinc-100 flex items-center space-x-1.5 sm:space-x-2">
+                    <svg class="w-3.5 h-3.5 opacity-80 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                    <span class="truncate">Game Version Sprites</span>
+                    <span class="hidden sm:inline px-1.5 py-0.5 rounded text-[10px] bg-slate-300 dark:bg-zinc-800 text-slate-800 dark:text-zinc-300 font-mono font-normal">Gen I–IX</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- TAB 1: MODERN & ARTWORK COLLECTIONS -->
+        <div id="tabContentArtwork" class="space-y-5 sm:space-y-8">
+            <!-- Scope Banner -->
+            <div class="bg-white dark:bg-zinc-900/70 border border-slate-200 dark:border-zinc-800 rounded-lg p-3.5 sm:p-4 text-xs text-slate-700 dark:text-zinc-300 flex items-start space-x-2.5 sm:space-x-3 shadow-sm">
+                <span class="text-zinc-500 dark:text-zinc-400 text-base leading-none mt-0.5 shrink-0">ℹ️</span>
+                <div class="space-y-1 flex-1 min-w-0">
+                    <div>
+                        <span class="font-semibold text-slate-900 dark:text-zinc-100">Audit Scope:</span>
+                        This tab audits root pixel sprites (<code class="bg-slate-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-slate-800 dark:text-zinc-200 font-mono break-all">sprites/pokemon/</code>) and official artwork renders (HOME, Showdown, Official Artwork, Dream World).
+                    </div>
+                    <div class="text-slate-500 dark:text-zinc-400">
+                        To view coverage of game-specific battle sprites and menu icons across Generations I through IX, switch to the <strong>Game Version Sprites</strong> tab above.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Metrics Cards -->
+            <section class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-4">
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Completion</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-slate-900 dark:text-zinc-100 font-mono">{{ completion_rate }}%</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1 font-mono truncate">{{ total_passed_assets }} / {{ total_asset_targets }} passed</div>
+                </div>
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Targets Checked</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-slate-900 dark:text-zinc-100 font-mono">{{ total_asset_targets }}</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1">total assets</div>
+                </div>
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Affected Entries</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-slate-900 dark:text-zinc-100 font-mono">{{ affected_entries_count }}</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1">Pokémon / forms</div>
+                </div>
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Missing Files</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-rose-600 dark:text-rose-400 font-mono">{{ total_missing_assets }}</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1">unfound files</div>
+                </div>
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Wrong Size</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-amber-600 dark:text-amber-400 font-mono">{{ total_wrong_size_assets }}</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1 truncate">dimension mismatches</div>
+                </div>
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Corrupt Files</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-purple-600 dark:text-purple-400 font-mono">{{ total_corrupt_assets }}</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1">unreadable files</div>
+                </div>
+            </section>
+
+            <!-- Category Coverage Progress Breakdown -->
+            <section class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 rounded-lg p-3.5 sm:p-6 shadow-sm space-y-3 sm:space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-2">
+                    <div>
+                        <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-zinc-100">Category Coverage Breakdown</h2>
+                        <span class="text-xs text-slate-500 dark:text-zinc-400">Aggregated by sprite collection</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4" id="category-cards">
+                    <!-- Dynamically populated via JS -->
+                </div>
+            </section>
+
+            <!-- Interactive Filter & Table Section -->
+            <section class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 rounded-lg shadow-sm overflow-hidden flex flex-col">
+                <!-- Controls Bar -->
+                <div class="p-3 sm:p-4 border-b border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-950/70 space-y-2.5 sm:space-y-3">
+                    <div class="flex flex-col lg:flex-row gap-2.5 sm:gap-3 items-start lg:items-center justify-between">
+                        <!-- Search Input with Clear Button -->
+                        <div class="relative flex-1 w-full lg:max-w-md">
+                            <input type="text" id="searchInput" placeholder="Search by name, ID, form slug, or issue details..." 
+                                class="w-full pl-3 pr-8 py-1.5 sm:py-2 bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md text-[11px] sm:text-xs text-slate-900 dark:text-zinc-100 placeholder-slate-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 transition">
+                            <button id="clearSearchBtn" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-500 hover:text-slate-600 dark:hover:text-zinc-300 text-xs font-bold font-mono">×</button>
+                        </div>
+
+                        <!-- Filter Dropdowns -->
+                        <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 w-full lg:w-auto">
+                            <!-- Issue Filter -->
+                            <select id="issueFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2 py-1.5 text-[11px] sm:text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 w-full sm:w-auto flex-1 sm:flex-initial min-w-[120px]">
+                                <option value="ALL">All Issues</option>
+                                <option value="missing">Missing Files Only</option>
+                                <option value="wrong_size">Wrong Size Only</option>
+                                <option value="corrupt">Corrupt Files Only</option>
+                                <option value="multiple">Multiple Issues (>1)</option>
+                            </select>
+
+                            <!-- Entity Type Filter -->
+                            <select id="entityFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2 py-1.5 text-[11px] sm:text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 w-full sm:w-auto flex-1 sm:flex-initial min-w-[120px]">
+                                <option value="ALL">All Entities</option>
+                                <option value="pokemon">Pokémon Only</option>
+                                <option value="form">Cosmetic Forms Only</option>
+                            </select>
+
+                            <!-- Gender Differences Filter -->
+                            <select id="genderFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2 py-1.5 text-[11px] sm:text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 w-full sm:w-auto flex-1 sm:flex-initial min-w-[120px]">
+                                <option value="ALL">All Genders</option>
+                                <option value="dimorphic">Gender Dimorphic Only</option>
+                                <option value="standard">Standard (No Gender Diff)</option>
+                            </select>
+
+                            <!-- Sort By -->
+                            <select id="sortFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2 py-1.5 text-[11px] sm:text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 w-full sm:w-auto flex-1 sm:flex-initial min-w-[120px]">
+                                <option value="id_asc">Sort: ID (Low to High)</option>
+                                <option value="id_desc">Sort: ID (High to Low)</option>
+                                <option value="name_asc">Sort: Name (A to Z)</option>
+                                <option value="name_desc">Sort: Name (Z to A)</option>
+                                <option value="issues_desc">Sort: Most Issues First</option>
+                            </select>
+
+                            <!-- Reset Filters Button -->
+                            <button id="resetFiltersBtn" class="px-2.5 py-1.5 rounded-md text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-slate-700 dark:text-zinc-300 border border-slate-300 dark:border-zinc-700 transition shrink-0">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Category Tabs -->
+                    <div class="flex flex-wrap gap-1.5 border-t border-slate-200 dark:border-zinc-800 pt-3" id="categoryTabs">
+                        <button data-cat="ALL" class="cat-tab px-3 py-1 rounded-md text-xs font-medium bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 border border-zinc-900 dark:border-zinc-100 transition shadow-sm">All Categories</button>
+                    </div>
+                </div>
+
+                <!-- Table Info Bar & Page Size Selector -->
+                <div class="px-3 sm:px-4 py-2 bg-slate-100/60 dark:bg-zinc-950/60 border-b border-slate-200 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 text-xs text-slate-500 dark:text-zinc-400">
+                    <div class="flex items-center space-x-2">
+                        <span id="resultsCount">Showing {{ affected_entries_count }} affected entries</span>
+                        <span id="activeFiltersBadge" class="hidden text-[10px] px-2 py-0.5 rounded bg-zinc-200 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200 border border-zinc-300 dark:border-zinc-700 font-mono">Filtered</span>
+                    </div>
+
+                    <div class="flex items-center space-x-3 sm:space-x-4">
+                        <!-- Page Size Selector -->
+                        <div class="flex items-center space-x-1.5">
+                            <label for="pageSizeSelect" class="text-slate-600 dark:text-zinc-400 text-xs">Show:</label>
+                            <select id="pageSizeSelect" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded px-2 py-1 text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 font-mono">
+                                <option value="15">15</option>
+                                <option value="25">25</option>
+                                <option value="50" selected>50</option>
+                                <option value="100">100</option>
+                                <option value="250">250</option>
+                                <option value="ALL">All</option>
+                            </select>
+                            <span class="text-slate-600 dark:text-zinc-400 text-xs hidden sm:inline">entries</span>
+                        </div>
+
+                        <div class="text-slate-500 dark:text-zinc-400 font-mono text-xs">
+                            Page <span id="currentPage" class="font-semibold text-slate-900 dark:text-zinc-100">1</span> of <span id="totalPages" class="font-semibold text-slate-900 dark:text-zinc-100">1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Issues Table -->
+                <div class="overflow-x-auto custom-scrollbar flex-1 min-h-[420px]">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-100/90 dark:bg-zinc-950/90 text-slate-600 dark:text-zinc-400 uppercase text-[10px] sm:text-[11px] font-semibold border-b border-slate-200 dark:border-zinc-800 tracking-wider">
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-36 sm:w-40">Category</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-28 sm:w-36">ID</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-40 sm:w-48">Identifier</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-20 text-center whitespace-nowrap">Type</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-20 text-center whitespace-nowrap">Finder</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4">Flawed Assets Breakdown</th>
+                            </tr>
+                        </thead>
+                        <tbody id="issuesTableBody" class="divide-y divide-slate-200 dark:divide-zinc-800/60 font-mono text-xs">
+                            <!-- Rows rendered by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination Controls -->
+                <div class="p-2.5 sm:p-3.5 bg-slate-50 dark:bg-zinc-950 border-t border-slate-200 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-2 sm:gap-3">
+                    <div class="flex items-center space-x-1.5">
+                        <button id="firstBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">First</button>
+                        <button id="prevBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">Previous</button>
+                    </div>
+
+                    <div class="text-xs text-slate-500 dark:text-zinc-400 font-mono" id="paginationInfo"></div>
+
+                    <div class="flex items-center space-x-1.5">
+                        <button id="nextBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">Next</button>
+                        <button id="lastBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">Last</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- TAB 2: GAME VERSION SPRITES -->
+        <div id="tabContentVersions" class="hidden space-y-5 sm:space-y-8">
+            <!-- Scope Banner -->
+            <div class="bg-white dark:bg-zinc-900/70 border border-slate-200 dark:border-zinc-800 rounded-lg p-3.5 sm:p-4 text-xs text-slate-700 dark:text-zinc-300 flex items-start space-x-2.5 sm:space-x-3 shadow-sm">
+                <span class="text-zinc-500 dark:text-zinc-400 text-base leading-none mt-0.5 shrink-0">🎮</span>
+                <div class="space-y-1 flex-1 min-w-0">
+                    <div>
+                        <span class="font-semibold text-slate-900 dark:text-zinc-100">Game Version Audit Scope:</span>
+                        Tracking official core game versions across Generations I through IX based on PokéAPI game indices (<code class="bg-slate-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-slate-800 dark:text-zinc-200 font-mono break-all">sprites/pokemon/versions/</code>).
+                        Progress tracked against
+                        <a href="https://github.com/PokeAPI/sprites/issues/258" target="_blank" rel="noopener noreferrer" class="font-medium text-blue-600 dark:text-blue-400 hover:underline underline-offset-2 inline-flex items-center gap-0.5">Issue #258<svg class="w-3 h-3 opacity-70 inline ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>.
+                    </div>
+                    <div class="text-slate-500 dark:text-zinc-400">
+                        Each game's Pokémon target scope is sourced from PokéAPI game indices and debut generations. Menu icons were unified at generation level through Gen VI; starting in Gen VII, icons diverged per individual game in official releases, but this repository currently organizes them under generation-level folders as an open restructuring tracked in <a href="https://github.com/PokeAPI/sprites/issues/258" target="_blank" rel="noopener noreferrer" class="font-medium text-blue-600 dark:text-blue-400 hover:underline underline-offset-2">Issue #258</a>.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Metrics Cards -->
+            <section class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4">
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Version Completion</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-slate-900 dark:text-zinc-100 font-mono">{{ version_completion_rate }}%</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1 font-mono truncate">{{ total_version_passed }} / {{ total_version_targets }} passed</div>
+                </div>
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Targets Checked</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-slate-900 dark:text-zinc-100 font-mono">{{ total_version_targets }}</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1">total game version sprites</div>
+                </div>
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Affected Entries</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-slate-900 dark:text-zinc-100 font-mono">{{ version_affected_entries_count }}</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1">Pokémon / games</div>
+                </div>
+                <div class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 p-3 sm:p-4 rounded-lg shadow-sm">
+                    <div class="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-400">Missing Sprites</div>
+                    <div class="mt-1 sm:mt-2 text-xl sm:text-2xl font-bold text-rose-600 dark:text-rose-400 font-mono">{{ total_version_missing }}</div>
+                    <div class="text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-0.5 sm:mt-1">unfound version sprites</div>
+                </div>
+            </section>
+
+            <!-- Game Coverage Progress Breakdown -->
+            <section class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 rounded-lg p-3.5 sm:p-6 shadow-sm space-y-3 sm:space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3">
+                    <div>
+                        <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-900 dark:text-zinc-100">Game Coverage Breakdown</h2>
+                        <span class="text-[11px] sm:text-xs text-slate-500 dark:text-zinc-400">Click any game card to filter the missing sprites table below</span>
+                    </div>
+                    <!-- Generation Filter Pills -->
+                    <div class="flex flex-wrap gap-1" id="versionGenPills">
+                        <button data-gen="ALL" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 border border-zinc-900 dark:border-zinc-100 transition shadow-sm">All Generations</button>
+                        <button data-gen="1" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen I</button>
+                        <button data-gen="2" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen II</button>
+                        <button data-gen="3" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen III</button>
+                        <button data-gen="4" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen IV</button>
+                        <button data-gen="5" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen V</button>
+                        <button data-gen="6" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen VI</button>
+                        <button data-gen="7" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen VII</button>
+                        <button data-gen="8" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen VIII</button>
+                        <button data-gen="9" class="v-gen-pill px-2 py-1 rounded text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 text-slate-700 dark:text-zinc-300 hover:bg-slate-100 dark:hover:bg-zinc-800 border border-slate-300 dark:border-zinc-700 transition">Gen IX</button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-3.5" id="version-game-cards">
+                    <!-- Dynamically populated via JS -->
+                </div>
+            </section>
+
+            <!-- Version Sprites Interactive Filter & Table Section -->
+            <section class="bg-white dark:bg-zinc-900/90 border border-slate-200 dark:border-zinc-800 rounded-lg shadow-sm overflow-hidden flex flex-col">
+                <!-- Controls Bar -->
+                <div class="p-3 sm:p-4 border-b border-slate-200 dark:border-zinc-800 bg-slate-50/70 dark:bg-zinc-950/70 space-y-2.5 sm:space-y-3">
+                    <div class="flex flex-col lg:flex-row gap-2.5 sm:gap-3 items-start lg:items-center justify-between">
+                        <!-- Search Input with Clear Button -->
+                        <div class="relative flex-1 w-full lg:max-w-md">
+                            <input type="text" id="versionSearchInput" placeholder="Search by Pokémon name, Dex ID, game, or missing view..." 
+                                class="w-full pl-3 pr-8 py-2 bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md text-xs text-slate-900 dark:text-zinc-100 placeholder-slate-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 transition">
+                            <button id="clearVersionSearchBtn" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-500 hover:text-slate-600 dark:hover:text-zinc-300 text-xs font-bold font-mono">×</button>
+                        </div>
+
+                        <!-- Filter Dropdowns -->
+                        <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 w-full lg:w-auto">
+                            <!-- Game Filter -->
+                            <select id="versionGameFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2 py-1.5 text-[11px] sm:text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 w-full sm:w-auto flex-1 sm:flex-initial min-w-[130px]">
+                                <option value="ALL">All Games & Icons</option>
+                                <!-- Populated by JS -->
+                            </select>
+
+                            <!-- Gender Differences Filter -->
+                            <select id="versionGenderFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2 py-1.5 text-[11px] sm:text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 w-full sm:w-auto flex-1 sm:flex-initial min-w-[130px]">
+                                <option value="ALL">All Genders</option>
+                                <option value="dimorphic">Gender Dimorphic Only</option>
+                                <option value="standard">Standard (No Gender Diff)</option>
+                            </select>
+
+                            <!-- Sort By -->
+                            <select id="versionSortFilter" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-md px-2 py-1.5 text-[11px] sm:text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 dark:focus:ring-zinc-500 w-full sm:w-auto flex-1 sm:flex-initial min-w-[130px]">
+                                <option value="id_asc">Sort: ID (Low to High)</option>
+                                <option value="id_desc">Sort: ID (High to Low)</option>
+                                <option value="name_asc">Sort: Name (A to Z)</option>
+                                <option value="name_desc">Sort: Name (Z to A)</option>
+                                <option value="missing_desc">Sort: Most Missing First</option>
+                            </select>
+
+                            <!-- Reset Filters Button -->
+                            <button id="resetVersionFiltersBtn" class="px-2.5 py-1.5 rounded-md text-[11px] sm:text-xs font-medium bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-slate-700 dark:text-zinc-300 border border-slate-300 dark:border-zinc-700 transition shrink-0">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Table Info Bar & Page Size Selector -->
+                <div class="px-3 sm:px-4 py-2 bg-slate-100/60 dark:bg-zinc-950/60 border-b border-slate-200 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-2.5 sm:gap-3 text-xs text-slate-500 dark:text-zinc-400">
+                    <div class="flex items-center space-x-2">
+                        <span id="versionResultsCount">Showing {{ version_affected_entries_count }} affected entries</span>
+                        <span id="activeVersionFiltersBadge" class="hidden text-[10px] px-2 py-0.5 rounded bg-zinc-200 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200 border border-zinc-300 dark:border-zinc-700 font-mono">Filtered</span>
+                    </div>
+
+                    <div class="flex items-center space-x-3 sm:space-x-4">
+                        <!-- Page Size Selector -->
+                        <div class="flex items-center space-x-1.5">
+                            <label for="versionPageSizeSelect" class="text-slate-600 dark:text-zinc-400 text-xs">Show:</label>
+                            <select id="versionPageSizeSelect" class="bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded px-2 py-1 text-xs text-slate-700 dark:text-zinc-300 focus:outline-none focus:ring-1 focus:ring-zinc-400 font-mono">
+                                <option value="15">15</option>
+                                <option value="25">25</option>
+                                <option value="50" selected>50</option>
+                                <option value="100">100</option>
+                                <option value="250">250</option>
+                                <option value="ALL">All</option>
+                            </select>
+                            <span class="text-slate-600 dark:text-zinc-400 text-xs hidden sm:inline">entries</span>
+                        </div>
+
+                        <div class="text-slate-500 dark:text-zinc-400 font-mono text-xs">
+                            Page <span id="versionCurrentPage" class="font-semibold text-slate-900 dark:text-zinc-100">1</span> of <span id="versionTotalPages" class="font-semibold text-slate-900 dark:text-zinc-100">1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Version Issues Table -->
+                <div class="overflow-x-auto custom-scrollbar flex-1 min-h-[420px]">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-slate-100/90 dark:bg-zinc-950/90 text-slate-600 dark:text-zinc-400 uppercase text-[10px] sm:text-[11px] font-semibold border-b border-slate-200 dark:border-zinc-800 tracking-wider">
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-24 sm:w-28 min-w-[88px] text-center whitespace-nowrap">Gen</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-36 sm:w-48">Game</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-28 sm:w-32">Dex ID</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-36 sm:w-44">Pokémon</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-20 text-center whitespace-nowrap">Type</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4 w-20 text-center whitespace-nowrap">Finder</th>
+                                <th class="py-2.5 px-3 sm:py-3 sm:px-4">Missing Sprites Breakdown</th>
+                            </tr>
+                        </thead>
+                        <tbody id="versionTableBody" class="divide-y divide-slate-200 dark:divide-zinc-800/60 font-mono text-xs">
+                            <!-- Rows rendered by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination Controls -->
+                <div class="p-2.5 sm:p-3.5 bg-slate-50 dark:bg-zinc-950 border-t border-slate-200 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-2 sm:gap-3">
+                    <div class="flex items-center space-x-1.5">
+                        <button id="versionFirstBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">First</button>
+                        <button id="versionPrevBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">Previous</button>
+                    </div>
+
+                    <div class="text-xs text-slate-500 dark:text-zinc-400 font-mono" id="versionPaginationInfo"></div>
+
+                    <div class="flex items-center space-x-1.5">
+                        <button id="versionNextBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">Next</button>
+                        <button id="versionLastBtn" class="px-2.5 py-1 rounded-md bg-white dark:bg-zinc-900 hover:bg-slate-100 dark:hover:bg-zinc-800 text-xs font-medium text-slate-700 dark:text-zinc-300 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-300 dark:border-zinc-700 transition shadow-sm">Last</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-slate-100 dark:bg-zinc-950 border-t border-slate-200 dark:border-zinc-800 py-6 text-center text-xs text-slate-500 dark:text-zinc-500 font-mono">
+        PokéAPI Sprites Repository Audit Dashboard • Generated by scripts/tracker/sprite_audit.py
+    </footer>
+
+    <!-- Data & Script Bootstrap -->
+    <script>
+        window.AUDIT_DATA = {{ issues_json }};
+        window.CATEGORIES_DATA = {{ categories_json }};
+        window.VERSION_STATS = {{ version_stats_json }};
+        window.VERSION_ISSUES = {{ version_issues_json }};
+    </script>
+    <script src="audit.js"></script>
+</body>
+</html>
