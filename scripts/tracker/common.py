@@ -58,7 +58,7 @@ def roman_to_int(s: str) -> int:
     return total or 1
 
 # Species where cosmetic forms have no visual differences across patterns in official games
-VISUALLY_INVARIANT_FORM_SPECIES: set[str] = {"664", "665"}
+VISUALLY_INVARIANT_FORM_SPECIES: set[str] = {"414", "664", "665"}
 
 
 def get_candidate_stems(
