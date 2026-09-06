@@ -57,6 +57,9 @@ def roman_to_int(s: str) -> int:
         prev = curr
     return total or 1
 
+# Species where cosmetic forms have no visual differences across patterns in official games
+VISUALLY_INVARIANT_FORM_SPECIES: set[str] = {"414", "664", "665"}
+
 
 def get_candidate_stems(
     pokemon_id: int | str,
@@ -82,6 +85,10 @@ def get_candidate_stems(
 
     if is_form and name and name not in stems:
         stems.append(name)
+
+    # Fallback to base species stem for visually invariant forms (e.g. Scatterbug and Spewpa)
+    if is_form and p_id in VISUALLY_INVARIANT_FORM_SPECIES and p_id not in stems:
+        stems.append(p_id)
 
     return stems
 
