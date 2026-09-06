@@ -392,6 +392,31 @@ def build_index(output_file: Path | None = None) -> Path:
             else:
                 pk_debut_gen[p_id] = species_generation.get(s_id, 1)
 
+    def is_dimorphic_entity(pk_id: int, identifier: str, sp_id: int | str) -> bool:
+        if not species_gender_diff.get(str(sp_id), False):
+            return False
+        name = identifier.lower()
+        if "-mega" in name:
+            return False
+        matching_forms = forms_by_pk.get(str(pk_id), [])
+        if any(f.get("is_mega") == "1" for f in matching_forms):
+            return False
+        if "-gmax" in name:
+            return False
+        if name.endswith("-female"):
+            return False
+        if name in ("basculegion-male", "oinkologne-male"):
+            return False
+        if name.startswith("pikachu-") or name == "eevee-starter":
+            return False
+        if any(reg in name for reg in ("-alola", "-galar", "-paldea")):
+            return False
+        if "-hisui" in name and name != "sneasel-hisui":
+            return False
+        if "-totem" in name:
+            return False
+        return True
+
     pokemon_list: list[dict[str, Any]] = []
     for r in df_pk:
         pk_id = int(r["id"])
@@ -401,7 +426,7 @@ def build_index(output_file: Path | None = None) -> Path:
             "id": pk_id,
             "name": str(r["identifier"]),
             "species_id": sp_id,
-            "has_gender_diff": bool(species_gender_diff.get(str(sp_id), False)),
+            "has_gender_diff": is_dimorphic_entity(pk_id, str(r["identifier"]), sp_id),
             "generation_id": int(gen_id),
             "is_form": False,
             "file_stem": str(pk_id),
