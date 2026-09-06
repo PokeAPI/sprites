@@ -9,7 +9,9 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
+import subprocess
 import time
 from collections import defaultdict
 from pathlib import Path
@@ -737,8 +739,27 @@ def build_index(output_file: Path | None = None) -> Path:
             if len(parts) >= 3:
                 types_dict[parts[0]][parts[1]].append("/".join(parts[2:]))
 
-    manifest = {
+    def get_current_branch() -> str:
+        """Detects current Git branch from CI environment or local Git repo."""
+        if os.environ.get("GITHUB_REF_NAME"):
+            return os.environ["GITHUB_REF_NAME"]
+        try:
+            res = subprocess.run(
+                ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+                capture_output=True,
+                text=True,
+                check=True,
+            )
+            branch = res.stdout.strip()
+            if branch and branch != "HEAD":
+                return branch
+        except Exception:
+            pass
+        return "master"
+
+    manifest: dict[str, Any] = {
         "version": "2.0",
+        "branch": get_current_branch(),
         "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "counts": {
             "pokemon_entities": len(pokemon_list),
