@@ -949,6 +949,11 @@ def parse_args_and_run() -> None:
     )
 
     args = parser.parse_args()
+
+    if args.build_index:
+        from build_sprite_index import build_index
+        build_index()
+
     check_assets(
         category=args.category,
         include_forms=args.include_forms,
@@ -958,10 +963,6 @@ def parse_args_and_run() -> None:
         no_csv=args.no_csv,
         standalone=args.standalone,
     )
-
-    if args.build_index:
-        from build_sprite_index import build_index
-        build_index()
 
 
 if __name__ == "__main__":
