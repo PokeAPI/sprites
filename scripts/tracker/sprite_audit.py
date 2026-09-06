@@ -16,6 +16,7 @@ from common import (
     PROJECT_ROOT,
     SCRIPT_DIR,
     TEMPLATES_DIR,
+    VISUALLY_INVARIANT_FORM_SPECIES,
     WEBSITE_DIR,
     load_csv,
     reconfigure_utf8,
@@ -256,6 +257,8 @@ def scan_category(
             candidate_stems = [f"{p_id}-{form_ident}"] if (is_form and form_ident) else [str(f_id if is_form else p_id)]
         if is_form and name and name not in candidate_stems:
             candidate_stems.append(name)
+        if is_form and str(p_id) in VISUALLY_INVARIANT_FORM_SPECIES and str(p_id) not in candidate_stems:
+            candidate_stems.append(str(p_id))
 
         missing_types: list[str] = []
         wrong_size_types: list[str] = []
