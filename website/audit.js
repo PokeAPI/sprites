@@ -23,6 +23,7 @@ let pageSize = 50;
 // State for Game Version Sprites
 let selectedVersionGen = 'ALL';
 let selectedVersionGame = 'ALL';
+let selectedVersionAnim = 'ALL';
 let selectedVersionGender = 'ALL';
 let selectedVersionSort = 'id_asc';
 let versionSearchQuery = '';
@@ -480,24 +481,46 @@ function renderVersionGameCards() {
 function getFilteredVersionData() {
     if (!VERSION_ISSUES) return [];
 
-    let result = VERSION_ISSUES.filter(item => {
-        if (selectedVersionGen !== 'ALL' && String(item.gen_num) !== String(selectedVersionGen)) return false;
-        if (selectedVersionGame !== 'ALL' && item.game_id !== selectedVersionGame) return false;
+    let result = [];
+    for (const rawItem of VERSION_ISSUES) {
+        if (selectedVersionGen !== 'ALL' && String(rawItem.gen_num) !== String(selectedVersionGen)) continue;
+        if (selectedVersionGame !== 'ALL' && rawItem.game_id !== selectedVersionGame) continue;
 
-        if (selectedVersionGender === 'dimorphic' && (!item.has_gender_differences || item.has_gender_differences === 0)) return false;
-        if (selectedVersionGender === 'standard' && item.has_gender_differences === 1) return false;
+        if (selectedVersionGender === 'dimorphic' && (!rawItem.has_gender_differences || rawItem.has_gender_differences === 0)) continue;
+        if (selectedVersionGender === 'standard' && rawItem.has_gender_differences === 1) continue;
+
+        let missingSprites = rawItem.missing_sprites || [];
+        let missingCount = rawItem.missing_count || missingSprites.length;
+        let missingStr = rawItem.missing_str || missingSprites.join(', ');
+
+        if (selectedVersionAnim === 'exclude_animated') {
+            missingSprites = missingSprites.filter(s => !s.toLowerCase().includes('anim'));
+            if (missingSprites.length === 0) continue;
+            missingCount = missingSprites.length;
+            missingStr = missingSprites.join(', ');
+        } else if (selectedVersionAnim === 'animated_only') {
+            missingSprites = missingSprites.filter(s => s.toLowerCase().includes('anim'));
+            if (missingSprites.length === 0) continue;
+            missingCount = missingSprites.length;
+            missingStr = missingSprites.join(', ');
+        }
 
         if (versionSearchQuery) {
             const q = versionSearchQuery.toLowerCase();
-            const matchName = item.identifier && item.identifier.toLowerCase().includes(q);
-            const matchId = String(item.pokemon_id).includes(q);
-            const matchGame = item.game_name && item.game_name.toLowerCase().includes(q);
-            const matchMissing = item.missing_str && item.missing_str.toLowerCase().includes(q);
-            if (!matchName && !matchId && !matchGame && !matchMissing) return false;
+            const matchName = rawItem.identifier && rawItem.identifier.toLowerCase().includes(q);
+            const matchId = String(rawItem.pokemon_id).includes(q);
+            const matchGame = rawItem.game_name && rawItem.game_name.toLowerCase().includes(q);
+            const matchMissing = missingStr && missingStr.toLowerCase().includes(q);
+            if (!matchName && !matchId && !matchGame && !matchMissing) continue;
         }
 
-        return true;
-    });
+        result.push({
+            ...rawItem,
+            missing_sprites: missingSprites,
+            missing_count: missingCount,
+            missing_str: missingStr
+        });
+    }
 
     result.sort((a, b) => {
         if (selectedVersionSort === 'id_asc') return Number(a.pokemon_id) - Number(b.pokemon_id);
@@ -521,7 +544,7 @@ function renderVersionTable() {
     }
 
     const filtered = getFilteredVersionData();
-    const isFiltered = (selectedVersionGen !== 'ALL' || selectedVersionGame !== 'ALL' || selectedVersionGender !== 'ALL' || versionSearchQuery !== '' || selectedVersionSort !== 'id_asc');
+    const isFiltered = (selectedVersionGen !== 'ALL' || selectedVersionGame !== 'ALL' || selectedVersionAnim !== 'ALL' || selectedVersionGender !== 'ALL' || versionSearchQuery !== '' || selectedVersionSort !== 'id_asc');
     document.getElementById('activeVersionFiltersBadge')?.classList.toggle('hidden', !isFiltered);
 
     const totalMissingSprites = filtered.reduce((acc, item) => acc + (item.missing_count || 0), 0);
@@ -702,6 +725,12 @@ function setupListeners() {
         renderVersionTable();
         syncUrlState();
     });
+    document.getElementById('versionAnimFilter')?.addEventListener('change', (e) => {
+        selectedVersionAnim = e.target.value;
+        versionCurrentPageNum = 1;
+        renderVersionTable();
+        syncUrlState();
+    });
     document.getElementById('versionGenderFilter')?.addEventListener('change', (e) => {
         selectedVersionGender = e.target.value;
         versionCurrentPageNum = 1;
@@ -722,6 +751,7 @@ function setupListeners() {
     document.getElementById('resetVersionFiltersBtn')?.addEventListener('click', () => {
         selectedVersionGen = 'ALL';
         selectedVersionGame = 'ALL';
+        selectedVersionAnim = 'ALL';
         selectedVersionGender = 'ALL';
         selectedVersionSort = 'id_asc';
         versionSearchQuery = '';
@@ -730,6 +760,8 @@ function setupListeners() {
         if (versionSearchInput) versionSearchInput.value = '';
         clearVersionSearchBtn?.classList.add('hidden');
         document.getElementById('versionGameFilter').value = 'ALL';
+        const vaf = document.getElementById('versionAnimFilter');
+        if (vaf) vaf.value = 'ALL';
         document.getElementById('versionGenderFilter').value = 'ALL';
         document.getElementById('versionSortFilter').value = 'id_asc';
         document.getElementById('versionPageSizeSelect').value = '50';
@@ -773,6 +805,7 @@ function syncUrlState() {
     if (isVersions) {
         if (selectedVersionGen !== 'ALL') params.set('gen', selectedVersionGen);
         if (selectedVersionGame !== 'ALL') params.set('game', selectedVersionGame);
+        if (selectedVersionAnim !== 'ALL') params.set('v_anim', selectedVersionAnim);
         if (selectedVersionGender !== 'ALL') params.set('v_gender', selectedVersionGender);
         if (selectedVersionSort !== 'id_asc') params.set('v_sort', selectedVersionSort);
         if (versionSearchQuery) params.set('q', versionSearchQuery);
@@ -796,6 +829,7 @@ function initRouting() {
     const params = new URLSearchParams(window.location.search);
     const gen = params.get('gen');
     const game = params.get('game');
+    const anim = params.get('v_anim') || params.get('anim');
     const q = params.get('q');
     const cat = params.get('cat');
     const issue = params.get('issue');
@@ -804,6 +838,12 @@ function initRouting() {
     const sort = params.get('sort') || params.get('v_sort');
 
     const isVersionTab = window.location.hash.includes('version');
+
+    if (anim) {
+        selectedVersionAnim = anim;
+        const vaf = document.getElementById('versionAnimFilter');
+        if (vaf) vaf.value = anim;
+    }
 
     if (cat) {
         selectedCategory = cat;
