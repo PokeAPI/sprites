@@ -409,7 +409,7 @@ def build_index(output_file: Path | None = None) -> Path:
             return False
         if name in ("basculegion-male", "oinkologne-male"):
             return False
-        if name.startswith("pikachu-") or name == "eevee-starter":
+        if name.startswith("pikachu-") and name != "pikachu-starter":
             return False
         if any(reg in name for reg in ("-alola", "-galar", "-paldea")):
             return False
