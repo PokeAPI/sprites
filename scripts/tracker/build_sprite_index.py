@@ -774,6 +774,7 @@ def build_index(output_file: Path | None = None) -> Path:
         "other_categories": other_categories,
         "generations": generations_data,
         "folder_files": folder_files,
+        "folder_exts": folder_exts,
         "badges_list": badges_list,
         "items_dict": items_dict,
         "types_dict": types_dict,
