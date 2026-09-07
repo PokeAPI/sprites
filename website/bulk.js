@@ -52,8 +52,29 @@ function getExtension(folder) {
 function spriteUrl(path) {
     const local = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:';
     if (local) return `../${path}`;
+
+    if (location.hostname.endsWith('github.io')) {
+        const user = location.hostname.split('.')[0];
+        const repo = location.pathname.split('/')[1] || 'sprites';
+        const branch = new URLSearchParams(location.search).get('branch') || state.index.branch || 'master';
+        if (user.toLowerCase() !== 'pokeapi') {
+            return `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${path}`;
+        }
+    }
+
     const branch = state.index.branch || 'master';
     return `https://raw.githubusercontent.com/PokeAPI/sprites/${branch}/${path}`;
+}
+
+function handleImageError(image, path) {
+    if (!image.dataset.fallback && image.src.includes('raw.githubusercontent.com') && !image.src.includes('/PokeAPI/sprites/')) {
+        image.dataset.fallback = '1';
+        image.src = `https://raw.githubusercontent.com/PokeAPI/sprites/${state.index.branch || 'master'}/${path}`;
+        return;
+    }
+
+    image.hidden = true;
+    image.nextElementSibling.classList.add('is-visible');
 }
 
 function createFolderMap() {
@@ -163,10 +184,7 @@ function selectFolder(folder, updateUrl = true) {
         card.innerHTML = `<span class="bulk-image"><img src="${spriteUrl(path)}" alt="${stem}" loading="lazy"><span class="placeholder">Not Available</span></span><span class="bulk-file">${stem}</span>`;
         const image = card.querySelector('img');
         const placeholder = card.querySelector('.placeholder');
-        image.addEventListener('error', () => {
-            image.hidden = true;
-            placeholder.classList.add('is-visible');
-        });
+        image.addEventListener('error', () => handleImageError(image, path));
         fragment.appendChild(card);
     });
     grid.appendChild(fragment);
