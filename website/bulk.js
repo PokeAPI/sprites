@@ -25,6 +25,9 @@ $('themeToggle').addEventListener('click', () => {
 applyTheme(localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
 
 function numericSort(a, b) {
+    const aZero = a === '0';
+    const bZero = b === '0';
+    if (aZero !== bZero) return aZero ? 1 : -1;
     const aMatch = /^(\d+)(?:-(.*))?$/.exec(a);
     const bMatch = /^(\d+)(?:-(.*))?$/.exec(b);
     const aNumber = aMatch ? Number(aMatch[1]) : Infinity;
