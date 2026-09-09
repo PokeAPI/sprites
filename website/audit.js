@@ -23,6 +23,7 @@ let pageSize = 50;
 // State for Game Version Sprites
 let selectedVersionGen = 'ALL';
 let selectedVersionGame = 'ALL';
+let selectedVersionAnim = 'ALL';
 let selectedVersionGender = 'ALL';
 let selectedVersionSort = 'id_asc';
 let versionSearchQuery = '';
@@ -72,18 +73,26 @@ function createCommonCells(item, queryParam) {
     return { idHtml, formBadge, finderLink };
 }
 
+function getPaginationEl(prefix, name) {
+    if (!prefix) {
+        const lower = name.charAt(0).toLowerCase() + name.slice(1);
+        return document.getElementById(lower) || document.getElementById(name);
+    }
+    return document.getElementById(`${prefix}${name}`) || document.getElementById(`${prefix}${name.charAt(0).toLowerCase() + name.slice(1)}`);
+}
+
 function applyPagination(prefix, totalItems, curPageSize, pageNum) {
     const limit = curPageSize === 'ALL' ? (totalItems || 1) : Number(curPageSize);
     const totalPages = Math.ceil(totalItems / limit) || 1;
     const page = Math.min(Math.max(1, pageNum), totalPages);
 
-    const firstBtn = document.getElementById(`${prefix}FirstBtn`);
-    const prevBtn = document.getElementById(`${prefix}PrevBtn`);
-    const nextBtn = document.getElementById(`${prefix}NextBtn`);
-    const lastBtn = document.getElementById(`${prefix}LastBtn`);
-    const curSpan = document.getElementById(`${prefix}CurrentPage`);
-    const totSpan = document.getElementById(`${prefix}TotalPages`);
-    const infoSpan = document.getElementById(`${prefix}PaginationInfo`);
+    const firstBtn = getPaginationEl(prefix, 'FirstBtn');
+    const prevBtn = getPaginationEl(prefix, 'PrevBtn');
+    const nextBtn = getPaginationEl(prefix, 'NextBtn');
+    const lastBtn = getPaginationEl(prefix, 'LastBtn');
+    const curSpan = getPaginationEl(prefix, 'CurrentPage');
+    const totSpan = getPaginationEl(prefix, 'TotalPages');
+    const infoSpan = getPaginationEl(prefix, 'PaginationInfo');
 
     if (curSpan) curSpan.textContent = page;
     if (totSpan) totSpan.textContent = totalPages;
@@ -99,10 +108,10 @@ function applyPagination(prefix, totalItems, curPageSize, pageNum) {
 }
 
 function bindPaginationEvents(prefix, getPage, setPage, getTotalPages, onChange) {
-    document.getElementById(`${prefix}FirstBtn`)?.addEventListener('click', () => { setPage(1); onChange(); });
-    document.getElementById(`${prefix}PrevBtn`)?.addEventListener('click', () => { setPage(Math.max(1, getPage() - 1)); onChange(); });
-    document.getElementById(`${prefix}NextBtn`)?.addEventListener('click', () => { setPage(Math.min(getTotalPages(), getPage() + 1)); onChange(); });
-    document.getElementById(`${prefix}LastBtn`)?.addEventListener('click', () => { setPage(getTotalPages()); onChange(); });
+    getPaginationEl(prefix, 'FirstBtn')?.addEventListener('click', () => { setPage(1); onChange(); });
+    getPaginationEl(prefix, 'PrevBtn')?.addEventListener('click', () => { setPage(Math.max(1, getPage() - 1)); onChange(); });
+    getPaginationEl(prefix, 'NextBtn')?.addEventListener('click', () => { setPage(Math.min(getTotalPages(), getPage() + 1)); onChange(); });
+    getPaginationEl(prefix, 'LastBtn')?.addEventListener('click', () => { setPage(getTotalPages()); onChange(); });
 }
 
 // ==================== ASYNCHRONOUS DATA LOADER ====================
@@ -164,7 +173,6 @@ function switchTab(tab) {
 
         downloadCsvBtn.href = 'audit_report_versions.csv';
         downloadCsvBtn.download = 'sprite_audit_versions.csv';
-        window.location.hash = '/versions';
     } else {
         versionsBtn.className = 'tab-main-btn px-4 py-2 rounded-md transition text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-zinc-100 flex items-center space-x-2';
         artworkBtn.className = 'tab-main-btn px-4 py-2 rounded-md transition shadow-sm bg-white dark:bg-zinc-800 text-slate-900 dark:text-zinc-100 font-semibold flex items-center space-x-2';
@@ -173,8 +181,8 @@ function switchTab(tab) {
 
         downloadCsvBtn.href = 'audit_report.csv';
         downloadCsvBtn.download = 'sprite_audit_report.csv';
-        window.location.hash = '/artwork';
     }
+    syncUrlState();
 }
 
 // ==================== ARTWORK TAB LOGIC ====================
@@ -194,8 +202,9 @@ function renderCategoryCards() {
         const wrongSizeCount = stats.wrong_size_targets ?? catIssues.reduce((acc, i) => acc + (i.wrong_size_sprites?.length || 0), 0);
         const corruptCount = stats.corrupt_targets ?? catIssues.reduce((acc, i) => acc + (i.corrupt_sprites?.length || 0), 0);
 
+        const isSelected = (selectedCategory === key);
         const card = document.createElement('div');
-        card.className = 'bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-md p-3 sm:p-4 flex flex-col justify-between shadow-sm';
+        card.className = `cursor-pointer bg-slate-50 dark:bg-zinc-950 border ${isSelected ? 'border-zinc-900 dark:border-zinc-100 ring-1 ring-zinc-900 dark:ring-zinc-100' : 'border-slate-200 dark:border-zinc-800 hover:border-slate-400 dark:hover:border-zinc-600'} rounded-md p-3 sm:p-4 flex flex-col justify-between shadow-sm transition`;
         card.innerHTML = `
             <div>
                 <div class="flex items-center justify-between">
@@ -208,7 +217,7 @@ function renderCategoryCards() {
             </div>
             <div class="mt-3 sm:mt-4">
                 <div class="w-full bg-slate-200 dark:bg-zinc-800 h-1.5 rounded-full overflow-hidden">
-                    <div class="bg-zinc-800 dark:bg-zinc-200 h-full rounded-full" style="width: ${pct}%"></div>
+                    <div class="bg-zinc-800 dark:bg-zinc-200 h-full rounded-full transition-all" style="width: ${pct}%"></div>
                 </div>
                 <div class="flex justify-between text-[10px] sm:text-[11px] text-slate-500 dark:text-zinc-400 mt-2 font-mono">
                     <span>Passed: ${stats.passed_targets.toLocaleString()}</span>
@@ -228,6 +237,16 @@ function renderCategoryCards() {
                 </div>
             </div>
         `;
+
+        card.onclick = () => {
+            selectedCategory = (selectedCategory === key) ? 'ALL' : key;
+            toggleActivePills(document.querySelectorAll('.cat-tab'), selectedCategory, 'cat');
+            currentPageNum = 1;
+            renderCategoryCards();
+            renderTable();
+            syncUrlState();
+        };
+
         cardsContainer.appendChild(card);
 
         if (!tabsContainer.querySelector(`[data-cat="${key}"]`)) {
@@ -239,7 +258,9 @@ function renderCategoryCards() {
                 selectedCategory = key;
                 toggleActivePills(document.querySelectorAll('.cat-tab'), key, 'cat');
                 currentPageNum = 1;
+                renderCategoryCards();
                 renderTable();
+                syncUrlState();
             };
             tabsContainer.appendChild(tab);
         }
@@ -251,9 +272,13 @@ function renderCategoryCards() {
             selectedCategory = 'ALL';
             toggleActivePills(document.querySelectorAll('.cat-tab'), 'ALL', 'cat');
             currentPageNum = 1;
+            renderCategoryCards();
             renderTable();
+            syncUrlState();
         };
     }
+
+    toggleActivePills(tabsContainer.querySelectorAll('.cat-tab'), selectedCategory, 'cat');
 }
 
 function getFilteredData() {
@@ -446,6 +471,7 @@ function renderVersionGameCards() {
             versionCurrentPageNum = 1;
             renderVersionGameCards();
             renderVersionTable();
+            syncUrlState();
         };
 
         cardsContainer.appendChild(card);
@@ -455,24 +481,46 @@ function renderVersionGameCards() {
 function getFilteredVersionData() {
     if (!VERSION_ISSUES) return [];
 
-    let result = VERSION_ISSUES.filter(item => {
-        if (selectedVersionGen !== 'ALL' && String(item.gen_num) !== String(selectedVersionGen)) return false;
-        if (selectedVersionGame !== 'ALL' && item.game_id !== selectedVersionGame) return false;
+    let result = [];
+    for (const rawItem of VERSION_ISSUES) {
+        if (selectedVersionGen !== 'ALL' && String(rawItem.gen_num) !== String(selectedVersionGen)) continue;
+        if (selectedVersionGame !== 'ALL' && rawItem.game_id !== selectedVersionGame) continue;
 
-        if (selectedVersionGender === 'dimorphic' && (!item.has_gender_differences || item.has_gender_differences === 0)) return false;
-        if (selectedVersionGender === 'standard' && item.has_gender_differences === 1) return false;
+        if (selectedVersionGender === 'dimorphic' && (!rawItem.has_gender_differences || rawItem.has_gender_differences === 0)) continue;
+        if (selectedVersionGender === 'standard' && rawItem.has_gender_differences === 1) continue;
+
+        let missingSprites = rawItem.missing_sprites || [];
+        let missingCount = rawItem.missing_count || missingSprites.length;
+        let missingStr = rawItem.missing_str || missingSprites.join(', ');
+
+        if (selectedVersionAnim === 'exclude_animated') {
+            missingSprites = missingSprites.filter(s => !s.toLowerCase().includes('anim'));
+            if (missingSprites.length === 0) continue;
+            missingCount = missingSprites.length;
+            missingStr = missingSprites.join(', ');
+        } else if (selectedVersionAnim === 'animated_only') {
+            missingSprites = missingSprites.filter(s => s.toLowerCase().includes('anim'));
+            if (missingSprites.length === 0) continue;
+            missingCount = missingSprites.length;
+            missingStr = missingSprites.join(', ');
+        }
 
         if (versionSearchQuery) {
             const q = versionSearchQuery.toLowerCase();
-            const matchName = item.identifier && item.identifier.toLowerCase().includes(q);
-            const matchId = String(item.pokemon_id).includes(q);
-            const matchGame = item.game_name && item.game_name.toLowerCase().includes(q);
-            const matchMissing = item.missing_str && item.missing_str.toLowerCase().includes(q);
-            if (!matchName && !matchId && !matchGame && !matchMissing) return false;
+            const matchName = rawItem.identifier && rawItem.identifier.toLowerCase().includes(q);
+            const matchId = String(rawItem.pokemon_id).includes(q);
+            const matchGame = rawItem.game_name && rawItem.game_name.toLowerCase().includes(q);
+            const matchMissing = missingStr && missingStr.toLowerCase().includes(q);
+            if (!matchName && !matchId && !matchGame && !matchMissing) continue;
         }
 
-        return true;
-    });
+        result.push({
+            ...rawItem,
+            missing_sprites: missingSprites,
+            missing_count: missingCount,
+            missing_str: missingStr
+        });
+    }
 
     result.sort((a, b) => {
         if (selectedVersionSort === 'id_asc') return Number(a.pokemon_id) - Number(b.pokemon_id);
@@ -496,7 +544,7 @@ function renderVersionTable() {
     }
 
     const filtered = getFilteredVersionData();
-    const isFiltered = (selectedVersionGen !== 'ALL' || selectedVersionGame !== 'ALL' || selectedVersionGender !== 'ALL' || versionSearchQuery !== '' || selectedVersionSort !== 'id_asc');
+    const isFiltered = (selectedVersionGen !== 'ALL' || selectedVersionGame !== 'ALL' || selectedVersionAnim !== 'ALL' || selectedVersionGender !== 'ALL' || versionSearchQuery !== '' || selectedVersionSort !== 'id_asc');
     document.getElementById('activeVersionFiltersBadge')?.classList.toggle('hidden', !isFiltered);
 
     const totalMissingSprites = filtered.reduce((acc, item) => acc + (item.missing_count || 0), 0);
@@ -546,17 +594,19 @@ function renderVersionTable() {
 // ==================== EVENT LISTENERS SETUP ====================
 
 function setupListeners() {
+    // Tab Switcher Buttons
+    document.getElementById('tabBtnArtwork')?.addEventListener('click', () => switchTab('artwork'));
+    document.getElementById('tabBtnVersions')?.addEventListener('click', () => switchTab('versions'));
+
     // Artwork Filters
-    document.querySelectorAll('.issue-filter-pill').forEach(btn => {
-        btn.addEventListener('click', () => {
-            selectedIssue = btn.dataset.issue;
-            toggleActivePills(document.querySelectorAll('.issue-filter-pill'), selectedIssue, 'issue');
-            currentPageNum = 1;
-            renderTable();
-        });
+    document.getElementById('issueFilter')?.addEventListener('change', (e) => {
+        selectedIssue = e.target.value;
+        currentPageNum = 1;
+        renderTable();
+        syncUrlState();
     });
 
-    const searchInput = document.getElementById('issueSearchInput');
+    const searchInput = document.getElementById('searchInput');
     const clearSearchBtn = document.getElementById('clearSearchBtn');
     let debounceTimer;
     searchInput?.addEventListener('input', (e) => {
@@ -566,6 +616,7 @@ function setupListeners() {
             clearSearchBtn?.classList.toggle('hidden', !searchQuery);
             currentPageNum = 1;
             renderTable();
+            syncUrlState();
         }, 200);
     });
 
@@ -575,22 +626,26 @@ function setupListeners() {
         clearSearchBtn.classList.add('hidden');
         currentPageNum = 1;
         renderTable();
+        syncUrlState();
     });
 
     document.getElementById('entityFilter')?.addEventListener('change', (e) => {
         selectedEntity = e.target.value;
         currentPageNum = 1;
         renderTable();
+        syncUrlState();
     });
     document.getElementById('genderFilter')?.addEventListener('change', (e) => {
         selectedGender = e.target.value;
         currentPageNum = 1;
         renderTable();
+        syncUrlState();
     });
     document.getElementById('sortFilter')?.addEventListener('change', (e) => {
         selectedSort = e.target.value;
         currentPageNum = 1;
         renderTable();
+        syncUrlState();
     });
     document.getElementById('pageSizeSelect')?.addEventListener('change', (e) => {
         pageSize = e.target.value === 'ALL' ? 'ALL' : Number(e.target.value);
@@ -608,15 +663,18 @@ function setupListeners() {
 
         if (searchInput) searchInput.value = '';
         clearSearchBtn?.classList.add('hidden');
+        const issueFilterEl = document.getElementById('issueFilter');
+        if (issueFilterEl) issueFilterEl.value = 'ALL';
         document.getElementById('entityFilter').value = 'ALL';
         document.getElementById('genderFilter').value = 'ALL';
         document.getElementById('sortFilter').value = 'id_asc';
         document.getElementById('pageSizeSelect').value = '50';
         toggleActivePills(document.querySelectorAll('.cat-tab'), 'ALL', 'cat');
-        toggleActivePills(document.querySelectorAll('.issue-filter-pill'), 'ALL', 'issue');
 
         currentPageNum = 1;
+        renderCategoryCards();
         renderTable();
+        syncUrlState();
     });
 
     bindPaginationEvents('', () => currentPageNum, (v) => { currentPageNum = v; },
@@ -633,6 +691,7 @@ function setupListeners() {
             versionCurrentPageNum = 1;
             renderVersionGameCards();
             renderVersionTable();
+            syncUrlState();
         });
     });
 
@@ -646,6 +705,7 @@ function setupListeners() {
             clearVersionSearchBtn?.classList.toggle('hidden', !versionSearchQuery);
             versionCurrentPageNum = 1;
             renderVersionTable();
+            syncUrlState();
         }, 200);
     });
 
@@ -655,6 +715,7 @@ function setupListeners() {
         clearVersionSearchBtn.classList.add('hidden');
         versionCurrentPageNum = 1;
         renderVersionTable();
+        syncUrlState();
     });
 
     document.getElementById('versionGameFilter')?.addEventListener('change', (e) => {
@@ -662,16 +723,25 @@ function setupListeners() {
         versionCurrentPageNum = 1;
         renderVersionGameCards();
         renderVersionTable();
+        syncUrlState();
+    });
+    document.getElementById('versionAnimFilter')?.addEventListener('change', (e) => {
+        selectedVersionAnim = e.target.value;
+        versionCurrentPageNum = 1;
+        renderVersionTable();
+        syncUrlState();
     });
     document.getElementById('versionGenderFilter')?.addEventListener('change', (e) => {
         selectedVersionGender = e.target.value;
         versionCurrentPageNum = 1;
         renderVersionTable();
+        syncUrlState();
     });
     document.getElementById('versionSortFilter')?.addEventListener('change', (e) => {
         selectedVersionSort = e.target.value;
         versionCurrentPageNum = 1;
         renderVersionTable();
+        syncUrlState();
     });
     document.getElementById('versionPageSizeSelect')?.addEventListener('change', (e) => {
         versionPageSize = e.target.value === 'ALL' ? 'ALL' : Number(e.target.value);
@@ -681,6 +751,7 @@ function setupListeners() {
     document.getElementById('resetVersionFiltersBtn')?.addEventListener('click', () => {
         selectedVersionGen = 'ALL';
         selectedVersionGame = 'ALL';
+        selectedVersionAnim = 'ALL';
         selectedVersionGender = 'ALL';
         selectedVersionSort = 'id_asc';
         versionSearchQuery = '';
@@ -689,6 +760,8 @@ function setupListeners() {
         if (versionSearchInput) versionSearchInput.value = '';
         clearVersionSearchBtn?.classList.add('hidden');
         document.getElementById('versionGameFilter').value = 'ALL';
+        const vaf = document.getElementById('versionAnimFilter');
+        if (vaf) vaf.value = 'ALL';
         document.getElementById('versionGenderFilter').value = 'ALL';
         document.getElementById('versionSortFilter').value = 'id_asc';
         document.getElementById('versionPageSizeSelect').value = '50';
@@ -698,6 +771,7 @@ function setupListeners() {
         versionCurrentPageNum = 1;
         renderVersionGameCards();
         renderVersionTable();
+        syncUrlState();
     });
 
     bindPaginationEvents('version', () => versionCurrentPageNum, (v) => { versionCurrentPageNum = v; },
@@ -722,12 +796,91 @@ function setupListeners() {
     updateThemeUI(document.documentElement.classList.contains('dark'));
 }
 
+// ==================== URL STATE SYNCHRONIZATION ====================
+
+function syncUrlState() {
+    const params = new URLSearchParams();
+    const isVersions = !document.getElementById('tabContentVersions')?.classList.contains('hidden');
+
+    if (isVersions) {
+        if (selectedVersionGen !== 'ALL') params.set('gen', selectedVersionGen);
+        if (selectedVersionGame !== 'ALL') params.set('game', selectedVersionGame);
+        if (selectedVersionAnim !== 'ALL') params.set('v_anim', selectedVersionAnim);
+        if (selectedVersionGender !== 'ALL') params.set('v_gender', selectedVersionGender);
+        if (selectedVersionSort !== 'id_asc') params.set('v_sort', selectedVersionSort);
+        if (versionSearchQuery) params.set('q', versionSearchQuery);
+    } else {
+        if (selectedCategory !== 'ALL') params.set('cat', selectedCategory);
+        if (selectedIssue !== 'ALL') params.set('issue', selectedIssue);
+        if (selectedEntity !== 'ALL') params.set('entity', selectedEntity);
+        if (selectedGender !== 'ALL') params.set('gender', selectedGender);
+        if (selectedSort !== 'id_asc') params.set('sort', selectedSort);
+        if (searchQuery) params.set('q', searchQuery);
+    }
+
+    const qs = params.toString() ? `?${params.toString()}` : '';
+    const hash = isVersions ? '#/versions' : '#/artwork';
+    const newUrl = `${window.location.pathname}${qs}${hash}`;
+    window.history.replaceState(null, '', newUrl);
+}
+
 // Deep linking parameters & hash routes
 function initRouting() {
     const params = new URLSearchParams(window.location.search);
     const gen = params.get('gen');
     const game = params.get('game');
+    const anim = params.get('v_anim') || params.get('anim');
     const q = params.get('q');
+    const cat = params.get('cat');
+    const issue = params.get('issue');
+    const entity = params.get('entity');
+    const gender = params.get('gender') || params.get('v_gender');
+    const sort = params.get('sort') || params.get('v_sort');
+
+    const isVersionTab = window.location.hash.includes('version');
+
+    if (anim) {
+        selectedVersionAnim = anim;
+        const vaf = document.getElementById('versionAnimFilter');
+        if (vaf) vaf.value = anim;
+    }
+
+    if (cat) {
+        selectedCategory = cat;
+        toggleActivePills(document.querySelectorAll('.cat-tab'), cat, 'cat');
+    }
+    if (issue) {
+        selectedIssue = issue;
+        const ifEl = document.getElementById('issueFilter');
+        if (ifEl) ifEl.value = issue;
+    }
+    if (entity) {
+        selectedEntity = entity;
+        const ef = document.getElementById('entityFilter');
+        if (ef) ef.value = entity;
+    }
+    if (gender) {
+        if (isVersionTab) {
+            selectedVersionGender = gender;
+            const vgf = document.getElementById('versionGenderFilter');
+            if (vgf) vgf.value = gender;
+        } else {
+            selectedGender = gender;
+            const gf = document.getElementById('genderFilter');
+            if (gf) gf.value = gender;
+        }
+    }
+    if (sort) {
+        if (isVersionTab) {
+            selectedVersionSort = sort;
+            const vsf = document.getElementById('versionSortFilter');
+            if (vsf) vsf.value = sort;
+        } else {
+            selectedSort = sort;
+            const sf = document.getElementById('sortFilter');
+            if (sf) sf.value = sort;
+        }
+    }
 
     if (gen) {
         selectedVersionGen = gen;
@@ -740,10 +893,17 @@ function initRouting() {
         if (gf) gf.value = game;
     }
     if (q) {
-        versionSearchQuery = q;
-        const vi = document.getElementById('versionSearchInput');
-        if (vi) vi.value = q;
-        document.getElementById('clearVersionSearchBtn')?.classList.remove('hidden');
+        if (isVersionTab) {
+            versionSearchQuery = q;
+            const vi = document.getElementById('versionSearchInput');
+            if (vi) vi.value = q;
+            document.getElementById('clearVersionSearchBtn')?.classList.remove('hidden');
+        } else {
+            searchQuery = q;
+            const si = document.getElementById('searchInput');
+            if (si) si.value = q;
+            document.getElementById('clearSearchBtn')?.classList.remove('hidden');
+        }
     }
 
     const initHash = () => {
@@ -761,10 +921,10 @@ function initRouting() {
 // Initialize on DOM ready
 function initApp() {
     setupListeners();
-    renderCategoryCards();
-    renderTable();
     populateVersionGameFilter();
     initRouting();
+    renderCategoryCards();
+    renderTable();
     renderVersionGameCards();
     renderVersionTable();
     loadExternalDataIfNeeded();

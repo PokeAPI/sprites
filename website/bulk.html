@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Sprite Browser - PokéAPI Repositories</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bulk-page">
+    <header class="header">
+        <div class="header-brand">
+            <div class="brand-badge">SF</div>
+            <div>
+                <h1 class="brand-title">Bulk Sprite Browser</h1>
+                <p class="brand-sub">Browse every repository asset by folder</p>
+            </div>
+        </div>
+        <div class="header-actions">
+            <a href="index.html" class="btn btn-outline" title="Open Sprite Finder">
+                <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <span>Sprite Finder</span>
+            </a>
+            <button id="themeToggle" class="btn btn-outline" title="Toggle theme">
+                <span id="themeToggleIcon">🌙</span>
+                <span id="themeToggleText">Dark</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="bulk-shell">
+        <section class="bulk-toolbar" aria-label="Bulk browser controls">
+            <div>
+                <p class="eyebrow">Repository tree</p>
+                <h2>All sprites, one filesystem view</h2>
+                <p class="bulk-description">Open a folder to preview its assets. Numeric filenames are ordered by face value, with IDs 10,000 and above kept at the end.</p>
+            </div>
+            <div class="bulk-controls">
+                <label class="bulk-search">
+                    <span class="sr-only">Filter folders and files</span>
+                    <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <input id="bulkSearch" type="search" placeholder="Filter folders or files..." autocomplete="off">
+                </label>
+                <button id="expandAll" class="btn btn-outline" type="button">Expand tree</button>
+            </div>
+        </section>
+
+        <section class="bulk-layout">
+            <aside class="file-tree-panel" aria-label="Sprite folders">
+                <div class="panel-heading">
+                    <span>sprites/</span>
+                    <span id="treeCount" class="panel-count">Loading...</span>
+                </div>
+                <nav id="fileTree" class="file-tree" aria-label="Sprite file tree"></nav>
+            </aside>
+            <section class="bulk-content" aria-live="polite">
+                <div id="bulkState" class="bulk-empty">
+                    <div class="empty-icon">▦</div>
+                    <h2>Choose a folder</h2>
+                    <p>Use the tree to open root sprites, game versions, artwork, items, badges, and types.</p>
+                </div>
+                <div id="bulkResults" hidden>
+                    <div class="bulk-results-header">
+                        <div>
+                            <p class="eyebrow">Selected folder</p>
+                            <h2 id="selectedFolder">sprites/</h2>
+                        </div>
+                        <span id="selectedCount" class="badge-tag"></span>
+                    </div>
+                    <div id="bulkGrid" class="bulk-grid"></div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>PokéAPI Sprite Browser • Powered by direct repository index</p>
+    </footer>
+    <script type="module" src="bulk.js"></script>
+</body>
+</html>

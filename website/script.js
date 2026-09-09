@@ -67,6 +67,20 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     };
 
+    // Global error handler for sprite images: falls back from fork CDN to upstream PokeAPI master CDN
+    window.handleSpriteImgError = (img) => {
+        if (!img.dataset.fallback && img.src.includes('raw.githubusercontent.com') && !img.src.includes('/PokeAPI/sprites/master/')) {
+            img.dataset.fallback = '1';
+            const parts = img.src.split('/');
+            if (parts.length > 6) {
+                const relPath = parts.slice(6).join('/');
+                img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/${relPath}`;
+                return;
+            }
+        }
+        img.parentElement.innerHTML = '<div class="placeholder">Not Available</div>';
+    };
+
     // Helper: Get sprite URL (relative for local/dev, GitHub raw CDN when deployed to Pages)
     const getSpriteUrl = (path) => {
         const isLocal = window.location.hostname === 'localhost' || 
@@ -80,9 +94,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (window.location.hostname.endsWith('github.io')) {
             const user = window.location.hostname.split('.')[0];
             const repo = window.location.pathname.split('/')[1] || 'sprites';
+            const urlParams = new URLSearchParams(window.location.search);
+            const branch = urlParams.get('branch') || (spriteIndex && spriteIndex.branch) || 'master';
             // Primary source: check user's fork/branch first, fallback to upstream PokeAPI
             if (user.toLowerCase() !== 'pokeapi') {
-                return `https://raw.githubusercontent.com/${user}/${repo}/gen2-transparent/${path}`;
+                return `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${path}`;
             }
         }
 
@@ -313,7 +329,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const imgHtml = (isPlaceholder || !url)
             ? `<div class="placeholder">Not Available</div>`
-            : `<img src="${url}" alt="${cleanLabel}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'placeholder\\'>Not Available</div>'">`;
+            : `<img src="${url}" alt="${cleanLabel}" loading="lazy" onerror="window.handleSpriteImgError(this)">`;
 
         const prefixHtml = (shiny || female) ? `
             <span class="prefix-group">

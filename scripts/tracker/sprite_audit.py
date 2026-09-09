@@ -16,12 +16,20 @@ from common import (
     PROJECT_ROOT,
     SCRIPT_DIR,
     TEMPLATES_DIR,
+    VISUALLY_INVARIANT_FORM_SPECIES,
     WEBSITE_DIR,
     load_csv,
     reconfigure_utf8,
 )
 
 reconfigure_utf8()
+
+# Species that officially have distinct female menu icons in core games
+GEN_ICON_FEMALE_SPECIES = {
+    6: {521, 592, 593, 668},
+    7: {521, 592, 593, 668, 678},
+    8: {25, 449, 450, 521, 592, 593, 668, 678, 876},
+}
 
 # CATEGORY REGISTRY (Dynamically discovered from repository directories)
 def discover_categories(base_path: Path) -> dict[str, dict[str, Any]]:
@@ -256,6 +264,8 @@ def scan_category(
             candidate_stems = [f"{p_id}-{form_ident}"] if (is_form and form_ident) else [str(f_id if is_form else p_id)]
         if is_form and name and name not in candidate_stems:
             candidate_stems.append(name)
+        if is_form and str(p_id) in VISUALLY_INVARIANT_FORM_SPECIES and str(p_id) not in candidate_stems:
+            candidate_stems.append(str(p_id))
 
         missing_types: list[str] = []
         wrong_size_types: list[str] = []
@@ -518,8 +528,13 @@ def audit_version_sprites(
                 checked_for_p = 0
 
                 for icon in gen_icons:
-                    if "female" in icon.get("label", "").lower() and not is_dimorphic:
-                        continue
+                    if "female" in icon.get("label", "").lower():
+                        if not is_dimorphic:
+                            continue
+                        p_species = p.get("species_id", p.get("pokemon_id", p["id"]))
+                        allowed = GEN_ICON_FEMALE_SPECIES.get(gen_num)
+                        if allowed and p_species not in allowed:
+                            continue
 
                     folder = icon.get("folder", "")
                     i_targets += 1
@@ -949,6 +964,11 @@ def parse_args_and_run() -> None:
     )
 
     args = parser.parse_args()
+
+    if args.build_index:
+        from build_sprite_index import build_index
+        build_index()
+
     check_assets(
         category=args.category,
         include_forms=args.include_forms,
@@ -958,10 +978,6 @@ def parse_args_and_run() -> None:
         no_csv=args.no_csv,
         standalone=args.standalone,
     )
-
-    if args.build_index:
-        from build_sprite_index import build_index
-        build_index()
 
 
 if __name__ == "__main__":
