@@ -24,6 +24,13 @@ from common import (
 
 reconfigure_utf8()
 
+# Species that officially have distinct female menu icons in core games
+GEN_ICON_FEMALE_SPECIES = {
+    6: {521, 592, 593, 668},
+    7: {521, 592, 593, 668, 678},
+    8: {25, 449, 450, 521, 592, 593, 668, 678, 876},
+}
+
 # CATEGORY REGISTRY (Dynamically discovered from repository directories)
 def discover_categories(base_path: Path) -> dict[str, dict[str, Any]]:
     """Dynamically registers default root category and discovers all subcategories in sprites/pokemon/other/."""
@@ -521,8 +528,13 @@ def audit_version_sprites(
                 checked_for_p = 0
 
                 for icon in gen_icons:
-                    if "female" in icon.get("label", "").lower() and not is_dimorphic:
-                        continue
+                    if "female" in icon.get("label", "").lower():
+                        if not is_dimorphic:
+                            continue
+                        p_species = p.get("species_id", p.get("pokemon_id", p["id"]))
+                        allowed = GEN_ICON_FEMALE_SPECIES.get(gen_num)
+                        if allowed and p_species not in allowed:
+                            continue
 
                     folder = icon.get("folder", "")
                     i_targets += 1
