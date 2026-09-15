@@ -6,6 +6,7 @@ import sys
 import time
 import urllib.request
 from pathlib import Path
+from typing import Any
 
 # Ensure UTF-8 output encoding across all terminals
 def reconfigure_utf8() -> None:
@@ -134,3 +135,113 @@ def load_csv(url: str, cache_name: str | None = None, max_age_seconds: int = 604
 
     reader = csv.DictReader(io.StringIO(content))
     return list(reader)
+
+
+# ---------------------------------------------------------------------------
+# Intentional sprite absence rules — shared by sprite_audit.py and
+# build_sprite_index.py to prevent false negatives in the coverage tracker.
+#
+# Each rule is a dict with:
+#   pokemon_id    : int        – PokéAPI Pokémon or Form ID
+#   labels        : list[str]  – View labels to treat as intentionally absent
+#   max_gen       : int        – (optional) apply rule when game gen_num <= max_gen
+#   games         : list[str]  – (optional) apply rule ONLY for these game IDs
+#   exclude_games : list[str]  – (optional) apply rule for all games EXCEPT these game IDs
+# ---------------------------------------------------------------------------
+SPRITE_EXCL_FEMALE_VIEWS: list[str] = [
+    "Front Female", "Front Shiny Female", "Back Female", "Back Shiny Female",
+    "Front Animated Female", "Front Animated Shiny Female",
+    "Back Animated Female", "Back Animated Shiny Female",
+]
+SPRITE_EXCL_SHINY_VIEWS: list[str] = [
+    "Front Shiny", "Front Shiny Female", "Back Shiny", "Back Shiny Female",
+    "Front Animated Shiny", "Front Animated Shiny Female",
+    "Back Animated Shiny", "Back Animated Shiny Female",
+]
+SPRITE_EXCL_ALL_VIEWS: list[str] = [
+    "Front Default", "Front Shiny", "Front Female", "Front Shiny Female",
+    "Back Default", "Back Shiny", "Back Female", "Back Shiny Female",
+    "Front Animated", "Front Animated Default", "Front Animated Shiny",
+    "Front Animated Female", "Front Animated Shiny Female",
+    "Back Animated", "Back Animated Default", "Back Animated Shiny",
+    "Back Animated Female", "Back Animated Shiny Female",
+    "Menu Icon", "Menu Icon Female",
+]
+
+KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
+    # Eevee (#133): no female sprite differences before Gen VIII (SWSH)
+    {
+        "pokemon_id": 133,
+        "labels": SPRITE_EXCL_FEMALE_VIEWS,
+        "max_gen": 7,
+    },
+    # Pichu spiky-eared (form 10065): sprite only existed in HGSS
+    {
+        "pokemon_id": 10065,
+        "labels": SPRITE_EXCL_ALL_VIEWS,
+        "exclude_games": ["heartgold-soulsilver"],
+    },
+    # Arceus-unknown (form 10057): ??? type only existed in Gen IV (DP/Pt/HGSS)
+    {
+        "pokemon_id": 10057,
+        "labels": SPRITE_EXCL_ALL_VIEWS,
+        "exclude_games": ["diamond-pearl", "platinum", "heartgold-soulsilver"],
+    },
+    # Cherrim-sunshine (form 10038): battle-only form, has no separate menu icon
+    {
+        "pokemon_id": 10038,
+        "labels": ["Menu Icon"],
+    },
+    # All castform weather forms (forms 10013, 10014, 10015): battle-only forms, have no separate menu icons
+    {
+        "pokemon_id": 10013,
+        "labels": ["Menu Icon"],
+    },
+    {
+        "pokemon_id": 10014,
+        "labels": ["Menu Icon"],
+    },
+    {
+        "pokemon_id": 10015,
+        "labels": ["Menu Icon"],
+    },
+    # Partner Pikachu (#10158): shiny-locked in LGPE
+    {
+        "pokemon_id": 10158,
+        "labels": SPRITE_EXCL_SHINY_VIEWS,
+        "games": ["lets-go-pikachu-lets-go-eevee"],
+    },
+    # Partner Eevee (#10159): shiny-locked in LGPE
+    {
+        "pokemon_id": 10159,
+        "labels": SPRITE_EXCL_SHINY_VIEWS,
+        "games": ["lets-go-pikachu-lets-go-eevee"],
+    },
+]
+
+
+def compile_exclusions(game_id: str, gen_num: int) -> dict[int, frozenset[str]]:
+    """Build a {pokemon_id -> frozenset(labels)} exclusion lookup for a specific game.
+
+    Evaluates each rule in KNOWN_SPRITE_EXCLUSION_RULES and returns the labels
+    that apply to this game based on max_gen, games, and exclude_games conditions.
+    """
+    result: dict[int, set[str]] = {}
+    for rule in KNOWN_SPRITE_EXCLUSION_RULES:
+        max_gen = rule.get("max_gen")
+        games = rule.get("games")
+        exclude_games = rule.get("exclude_games")
+
+        applies = True
+        if max_gen is not None and gen_num > max_gen:
+            applies = False
+        if games is not None and game_id not in games:
+            applies = False
+        if exclude_games is not None and game_id in exclude_games:
+            applies = False
+
+        if applies:
+            pk_id = rule["pokemon_id"]
+            result.setdefault(pk_id, set()).update(rule["labels"])
+
+    return {pk_id: frozenset(labels) for pk_id, labels in result.items()}
