@@ -18,6 +18,7 @@ from common import (
     TEMPLATES_DIR,
     VISUALLY_INVARIANT_FORM_SPECIES,
     WEBSITE_DIR,
+    compile_exclusions,
     load_csv,
     reconfigure_utf8,
 )
@@ -30,6 +31,7 @@ GEN_ICON_FEMALE_SPECIES = {
     7: {521, 592, 593, 668, 678},
     8: {25, 449, 450, 521, 592, 593, 668, 678, 876},
 }
+
 
 # CATEGORY REGISTRY (Dynamically discovered from repository directories)
 def discover_categories(base_path: Path) -> dict[str, dict[str, Any]]:
@@ -351,6 +353,21 @@ def scan_category(
     )
 
 
+def get_excluded_labels(p: dict[str, Any], exclusions_map: dict[int, frozenset[str]]) -> set[str]:
+    """Retrieve all excluded view labels for an entity p, checking id, pokemon_id, form_id, and species_id."""
+    labels: set[str] = set()
+    for key in ("id", "pokemon_id", "form_id", "species_id"):
+        val = p.get(key)
+        if val is not None:
+            try:
+                ival = int(val)
+                if ival in exclusions_map:
+                    labels.update(exclusions_map[ival])
+            except (ValueError, TypeError):
+                pass
+    return labels
+
+
 def audit_version_sprites(
     include_forms: bool = False,
 ) -> tuple[dict[str, dict[str, Any]], list[dict[str, Any]], int, int, int]:
@@ -390,6 +407,21 @@ def audit_version_sprites(
             if "sun-moon" in game_pokemon_ids:
                 game_pokemon_ids.setdefault("ultra-sun-ultra-moon", set()).update(game_pokemon_ids["sun-moon"])
 
+            # Override lets-go-pikachu-lets-go-eevee game indices using pokedex_id 26 (letsgo-kanto)
+            try:
+                pdx_vg_rows = load_csv(f"{GITHUB_BASE_URL}/pokedex_version_groups.csv")
+                pdx_num_rows = load_csv(f"{GITHUB_BASE_URL}/pokemon_dex_numbers.csv")
+                pk_rows = load_csv(f"{GITHUB_BASE_URL}/pokemon.csv")
+                lgpe_pdx_ids = {r["pokedex_id"] for r in pdx_vg_rows if r.get("version_group_id") == "19"}
+                if lgpe_pdx_ids:
+                    sp_to_pk = {r["species_id"]: int(r["id"]) for r in pk_rows if r.get("is_default") == "1"}
+                    lgpe_sp_ids = {r["species_id"] for r in pdx_num_rows if r.get("pokedex_id") in lgpe_pdx_ids}
+                    lgpe_pks = {sp_to_pk[sp] for sp in lgpe_sp_ids if sp in sp_to_pk}
+                    if lgpe_pks:
+                        game_pokemon_ids["lets-go-pikachu-lets-go-eevee"] = lgpe_pks
+            except Exception:
+                pass
+
             print(f"[INFO] Loaded game indices for {len(game_pokemon_ids)} version groups via CSV.")
         except Exception as e:
             print(f"[WARN] Could not load game indices ({e}); falling back to generation-based filtering.")
@@ -426,83 +458,187 @@ def audit_version_sprites(
             if not views:
                 continue
 
-            g_targets = 0
-            g_passed = 0
-            g_missing = 0
-            g_issues_count = 0
+            # Separate battle views from game-nested icon views (e.g. lets-go-pikachu-lets-go-eevee/icons)
+            battle_views = [v for v in views if v.get("subcategory") != "Icons"]
+            game_icon_views = [v for v in views if v.get("subcategory") == "Icons"]
 
-            indexed_ids = game_pokemon_ids.get(game_id)
-            game_pokemon = []
-            for p in pokemon_list:
-                p_base_id = p.get("pokemon_id", p["id"])
-                p_gen = p.get("generation_id", 1)
-                has_files_in_game = any(check_has_sprite(v.get("folder", ""), p) for v in views)
+            # Audit battle views for the game
+            if battle_views:
+                g_targets = 0
+                g_passed = 0
+                g_missing = 0
+                g_issues_count = 0
 
-                if indexed_ids is not None:
-                    # In game if base variety is indexed AND form/variety has debuted on or before this generation,
-                    # OR if assets physically exist in this game's folder
-                    if (p_base_id in indexed_ids and p_gen <= gen_num) or has_files_in_game:
-                        game_pokemon.append(p)
-                else:
-                    if p_gen <= gen_num or has_files_in_game:
-                        game_pokemon.append(p)
+                # Build per-pokemon exclusion map for this specific game once
+                game_exclusions = compile_exclusions(game_id, gen_num)
 
-            for p in game_pokemon:
-                p_name = p["name"]
-                is_dimorphic = bool(p.get("has_gender_diff", False))
+                indexed_ids = game_pokemon_ids.get(game_id)
+                game_pokemon = []
+                for p in pokemon_list:
+                    p_base_id = p.get("pokemon_id", p["id"])
+                    p_gen = p.get("generation_id", 1)
+                    has_files_in_game = any(check_has_sprite(v.get("folder", ""), p) for v in battle_views)
 
-                missing_for_p: list[str] = []
-                checked_for_p = 0
-
-                for v in views:
-                    if v.get("female", False) and not is_dimorphic:
-                        continue
-
-                    v_folder = v.get("folder", "")
-                    g_targets += 1
-                    checked_for_p += 1
-
-                    if check_has_sprite(v_folder, p):
-                        g_passed += 1
+                    if indexed_ids is not None:
+                        if (p_base_id in indexed_ids and p_gen <= gen_num) or has_files_in_game:
+                            game_pokemon.append(p)
                     else:
-                        g_missing += 1
-                        missing_for_p.append(v.get("label", "Unknown View"))
+                        if p_gen <= gen_num or has_files_in_game:
+                            game_pokemon.append(p)
 
-                if missing_for_p:
-                    g_issues_count += 1
-                    all_version_issues.append({
-                        "gen_id": gen_id,
-                        "gen_name": gen_title,
-                        "gen_num": gen_num,
-                        "game_id": game_id,
-                        "game_name": game_name,
-                        "pokemon_id": p.get("pokemon_id", p["id"]),
-                        "form_id": p.get("form_id", "") if p.get("is_form") else "",
-                        "identifier": p_name,
-                        "is_form": 1 if p.get("is_form") else 0,
-                        "has_gender_differences": 1 if is_dimorphic else 0,
-                        "missing_sprites": missing_for_p,
-                        "missing_count": len(missing_for_p),
-                        "total_expected": checked_for_p,
-                        "missing_str": ", ".join(missing_for_p),
-                    })
+                for p in game_pokemon:
+                    p_name = p["name"]
+                    is_dimorphic = bool(p.get("has_gender_diff", False))
 
-            pct = (g_passed / g_targets * 100) if g_targets > 0 else 0
-            game_stats[game_id] = {
-                "gen_id": gen_id,
-                "gen_name": gen_title,
-                "gen_num": gen_num,
-                "game_id": game_id,
-                "game_name": game_name,
-                "total_targets": g_targets,
-                "passed_targets": g_passed,
-                "missing_targets": g_missing,
-                "affected_entries": g_issues_count,
-                "completion_rate": round(pct, 2),
-            }
-            total_targets += g_targets
-            total_passed += g_passed
-            total_missing += g_missing
+                    # Intentionally absent sprites for this game (false-negative exclusions)
+                    excluded_labels = get_excluded_labels(p, game_exclusions)
+
+                    missing_for_p: list[str] = []
+                    checked_for_p = 0
+
+                    for v in battle_views:
+                        v_label = v.get("label", "Unknown View")
+                        if v.get("female", False) and not is_dimorphic:
+                            continue
+                        if v_label in excluded_labels:
+                            # Known intentional absence — count as passed, skip missing flag
+                            g_targets += 1
+                            g_passed += 1
+                            continue
+
+                        v_folder = v.get("folder", "")
+                        g_targets += 1
+                        checked_for_p += 1
+
+                        if check_has_sprite(v_folder, p):
+                            g_passed += 1
+                        else:
+                            g_missing += 1
+                            missing_for_p.append(v_label)
+
+                    if missing_for_p:
+                        g_issues_count += 1
+                        all_version_issues.append({
+                            "gen_id": gen_id,
+                            "gen_name": gen_title,
+                            "gen_num": gen_num,
+                            "game_id": game_id,
+                            "game_name": game_name,
+                            "pokemon_id": p.get("pokemon_id", p["id"]),
+                            "form_id": p.get("form_id", "") if p.get("is_form") else "",
+                            "identifier": p_name,
+                            "is_form": 1 if p.get("is_form") else 0,
+                            "has_gender_differences": 1 if is_dimorphic else 0,
+                            "missing_sprites": missing_for_p,
+                            "missing_count": len(missing_for_p),
+                            "total_expected": checked_for_p,
+                            "missing_str": ", ".join(missing_for_p),
+                        })
+
+                pct = (g_passed / g_targets * 100) if g_targets > 0 else 0
+                game_stats[game_id] = {
+                    "gen_id": gen_id,
+                    "gen_name": gen_title,
+                    "gen_num": gen_num,
+                    "game_id": game_id,
+                    "game_name": game_name,
+                    "total_targets": g_targets,
+                    "passed_targets": g_passed,
+                    "missing_targets": g_missing,
+                    "affected_entries": g_issues_count,
+                    "completion_rate": round(pct, 2),
+                }
+                total_targets += g_targets
+                total_passed += g_passed
+                total_missing += g_missing
+
+            # Audit game-nested icon views under a dedicated <game_id>-icons card (e.g. lets-go-pikachu-lets-go-eevee-icons)
+            if game_icon_views:
+                gi_key = f"{game_id}-icons"
+                gi_name = f"{game_name} Icons"
+                gi_targets = 0
+                gi_passed = 0
+                gi_missing = 0
+                gi_issues_count = 0
+
+                gi_exclusions = compile_exclusions(gi_key, gen_num)
+
+                indexed_ids = game_pokemon_ids.get(game_id)
+                game_pokemon = []
+                for p in pokemon_list:
+                    p_base_id = p.get("pokemon_id", p["id"])
+                    p_gen = p.get("generation_id", 1)
+                    has_files_in_game = any(check_has_sprite(v.get("folder", ""), p) for v in game_icon_views)
+
+                    if indexed_ids is not None:
+                        if (p_base_id in indexed_ids and p_gen <= gen_num) or has_files_in_game:
+                            game_pokemon.append(p)
+                    else:
+                        if p_gen <= gen_num or has_files_in_game:
+                            game_pokemon.append(p)
+
+                for p in game_pokemon:
+                    p_name = p["name"]
+                    is_dimorphic = bool(p.get("has_gender_diff", False))
+                    excluded_labels = get_excluded_labels(p, gi_exclusions)
+
+                    missing_for_p: list[str] = []
+                    checked_for_p = 0
+
+                    for v in game_icon_views:
+                        v_label = v.get("label", "Menu Icon")
+                        if v.get("female", False) and not is_dimorphic:
+                            continue
+                        if v_label in excluded_labels:
+                            gi_targets += 1
+                            gi_passed += 1
+                            continue
+
+                        v_folder = v.get("folder", "")
+                        gi_targets += 1
+                        checked_for_p += 1
+
+                        if check_has_sprite(v_folder, p):
+                            gi_passed += 1
+                        else:
+                            gi_missing += 1
+                            missing_for_p.append(v_label)
+
+                    if missing_for_p:
+                        gi_issues_count += 1
+                        all_version_issues.append({
+                            "gen_id": gen_id,
+                            "gen_name": gen_title,
+                            "gen_num": gen_num,
+                            "game_id": gi_key,
+                            "game_name": gi_name,
+                            "pokemon_id": p.get("pokemon_id", p["id"]),
+                            "form_id": p.get("form_id", "") if p.get("is_form") else "",
+                            "identifier": p_name,
+                            "is_form": 1 if p.get("is_form") else 0,
+                            "has_gender_differences": 1 if is_dimorphic else 0,
+                            "missing_sprites": missing_for_p,
+                            "missing_count": len(missing_for_p),
+                            "total_expected": checked_for_p,
+                            "missing_str": ", ".join(missing_for_p),
+                        })
+
+                pct = (gi_passed / gi_targets * 100) if gi_targets > 0 else 0
+                game_stats[gi_key] = {
+                    "gen_id": gen_id,
+                    "gen_name": gen_title,
+                    "gen_num": gen_num,
+                    "game_id": gi_key,
+                    "game_name": gi_name,
+                    "total_targets": gi_targets,
+                    "passed_targets": gi_passed,
+                    "missing_targets": gi_missing,
+                    "affected_entries": gi_issues_count,
+                    "completion_rate": round(pct, 2),
+                }
+                total_targets += gi_targets
+                total_passed += gi_passed
+                total_missing += gi_missing
 
         # 2. Audit generation-level icons (e.g. Gen 5, Gen 7, Gen 8)
         gen_icons = gen.get("icons", [])
@@ -514,10 +650,14 @@ def audit_version_sprites(
             i_missing = 0
             i_issues_count = 0
 
+            # Build exclusion map for this gen's icon context
+            icon_exclusions = compile_exclusions(icon_key, gen_num)
+
             for p in pokemon_list:
                 p_name = p["name"]
                 p_gen = p.get("generation_id", 1)
                 is_dimorphic = bool(p.get("has_gender_diff", False))
+                excluded_labels = get_excluded_labels(p, icon_exclusions)
 
                 has_files = any(check_has_sprite(icon.get("folder", ""), p) for icon in gen_icons)
 
@@ -528,13 +668,20 @@ def audit_version_sprites(
                 checked_for_p = 0
 
                 for icon in gen_icons:
-                    if "female" in icon.get("label", "").lower():
+                    i_label = icon.get("label", "Menu Icon")
+                    if "female" in i_label.lower():
                         if not is_dimorphic:
                             continue
                         p_species = p.get("species_id", p.get("pokemon_id", p["id"]))
                         allowed = GEN_ICON_FEMALE_SPECIES.get(gen_num)
                         if allowed and p_species not in allowed:
                             continue
+
+                    if i_label in excluded_labels:
+                        # Known intentional absence — count as passed
+                        i_targets += 1
+                        i_passed += 1
+                        continue
 
                     folder = icon.get("folder", "")
                     i_targets += 1
@@ -544,7 +691,7 @@ def audit_version_sprites(
                         i_passed += 1
                     else:
                         i_missing += 1
-                        missing_for_p.append(icon.get("label", "Menu Icon"))
+                        missing_for_p.append(i_label)
 
                 if missing_for_p:
                     i_issues_count += 1
