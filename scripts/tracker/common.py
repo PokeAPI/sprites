@@ -165,7 +165,7 @@ SPRITE_EXCL_ALL_VIEWS: list[str] = [
     "Front Animated Female", "Front Animated Shiny Female",
     "Back Animated", "Back Animated Default", "Back Animated Shiny",
     "Back Animated Female", "Back Animated Shiny Female",
-    "Menu Icon", "Menu Icon Female",
+    "Menu Icon", "Menu Icon Female", "Icons", "Icon",
 ]
 
 KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
@@ -217,6 +217,54 @@ KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
         "labels": SPRITE_EXCL_SHINY_VIEWS,
         "games": ["lets-go-pikachu-lets-go-eevee"],
     },
+    # Gen 3 Deoxys version-exclusivity:
+    # RS: Normal form only (386). Speed (10003), Attack (10001), Defense (10002) not in RS.
+    # FRLG: Attack (10001) in FR, Defense (10002) in LG. Speed (10003) only debuted in Emerald.
+    # Emerald: Speed form (10003) only. Attack (10001) and Defense (10002) not in Emerald.
+    {
+        "pokemon_id": 10003,
+        "labels": SPRITE_EXCL_ALL_VIEWS,
+        "games": ["ruby-sapphire", "firered-leafgreen"],
+    },
+    {
+        "pokemon_id": 10001,
+        "labels": SPRITE_EXCL_ALL_VIEWS,
+        "games": ["ruby-sapphire", "emerald"],
+    },
+    {
+        "pokemon_id": 10002,
+        "labels": SPRITE_EXCL_ALL_VIEWS,
+        "games": ["ruby-sapphire", "emerald"],
+    },
+    # Cosplay Pikachu forms (10080-10085): only existed in ORAS (Gen 6), cannot be transferred
+    *[
+        {
+            "pokemon_id": pid,
+            "labels": SPRITE_EXCL_ALL_VIEWS,
+            "exclude_games": ["omega-ruby-alpha-sapphire"],
+        }
+        for pid in (10080, 10081, 10082, 10083, 10084, 10085)
+    ],
+    # Cap Pikachu forms: event gifts in SM / USUM / SwSh / SV, intentionally absent in LGPE
+    *[
+        {
+            "pokemon_id": pid,
+            "labels": SPRITE_EXCL_ALL_VIEWS,
+            "games": ["lets-go-pikachu-lets-go-eevee"],
+        }
+        for pid in (10094, 10095, 10096, 10097, 10098, 10099, 10148, 10160)
+    ],
+    # Totem Pokémon forms: SM / USUM exclusive, absent in LGPE and other games
+    *[
+        {
+            "pokemon_id": pid,
+            "labels": SPRITE_EXCL_ALL_VIEWS,
+            "exclude_games": ["sun-moon", "ultra-sun-ultra-moon"],
+        }
+        for pid in (
+            10093, 10121, 10122, 10128, 10129, 10144, 10145, 10146, 10149, 10150, 10153, 10154
+        )
+    ],
 ]
 
 
@@ -226,6 +274,7 @@ def compile_exclusions(game_id: str, gen_num: int) -> dict[int, frozenset[str]]:
     Evaluates each rule in KNOWN_SPRITE_EXCLUSION_RULES and returns the labels
     that apply to this game based on max_gen, games, and exclude_games conditions.
     """
+    base_game_id = game_id.replace("-icons", "")
     result: dict[int, set[str]] = {}
     for rule in KNOWN_SPRITE_EXCLUSION_RULES:
         max_gen = rule.get("max_gen")
@@ -235,9 +284,9 @@ def compile_exclusions(game_id: str, gen_num: int) -> dict[int, frozenset[str]]:
         applies = True
         if max_gen is not None and gen_num > max_gen:
             applies = False
-        if games is not None and game_id not in games:
+        if games is not None and game_id not in games and base_game_id not in games:
             applies = False
-        if exclude_games is not None and game_id in exclude_games:
+        if exclude_games is not None and (game_id in exclude_games or base_game_id in exclude_games):
             applies = False
 
         if applies:
