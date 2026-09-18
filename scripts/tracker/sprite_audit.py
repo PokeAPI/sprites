@@ -422,6 +422,47 @@ def audit_version_sprites(
             except Exception:
                 pass
 
+            # Expand game indices to include valid 10k+ varieties (Megas, regional forms, battle forms)
+            try:
+                vg_order_map = {r["id"]: int(r.get("order", 0)) for r in vg_rows}
+                pk_rows = load_csv(f"{GITHUB_BASE_URL}/pokemon.csv")
+                form_rows = load_csv(f"{GITHUB_BASE_URL}/pokemon_forms.csv")
+                pk_by_id_map = {int(r["id"]): r for r in pk_rows}
+                forms_by_pk_id = {}
+                for f in form_rows:
+                    forms_by_pk_id.setdefault(int(f["pokemon_id"]), []).append(f)
+
+                for vg_id, vg_key in vg_ident.items():
+                    cur_order = vg_order_map.get(vg_id, 0)
+                    current_set = game_pokemon_ids.get(vg_key, set())
+                    if not current_set:
+                        continue
+                    base_species = {int(pk_by_id_map[pid]["species_id"]) for pid in current_set if pid in pk_by_id_map}
+
+                    for pid, p in pk_by_id_map.items():
+                        if pid < 10000:
+                            continue
+                        sid = int(p["species_id"])
+                        if sid not in base_species:
+                            continue
+                        p_forms = forms_by_pk_id.get(pid, [])
+                        is_valid = False
+                        if not p_forms:
+                            is_valid = True
+                        else:
+                            for f in p_forms:
+                                intro = f.get("introduced_in_version_group_id")
+                                if not intro:
+                                    is_valid = True
+                                    break
+                                if vg_order_map.get(intro, 999) <= cur_order:
+                                    is_valid = True
+                                    break
+                        if is_valid:
+                            current_set.add(pid)
+            except Exception:
+                pass
+
             print(f"[INFO] Loaded game indices for {len(game_pokemon_ids)} version groups via CSV.")
         except Exception as e:
             print(f"[WARN] Could not load game indices ({e}); falling back to generation-based filtering.")
