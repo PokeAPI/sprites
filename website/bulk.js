@@ -1,9 +1,13 @@
+const savedRes = localStorage.getItem('gridResolution') || 'medium';
+const normRes = (savedRes === 'low' || savedRes === 'small') ? 'small' : (savedRes === 'original' || savedRes === 'large') ? 'large' : 'medium';
+
 const state = {
     index: null,
     folders: new Map(),
     selected: null,
     expanded: new Set(),
-    filter: ''
+    filter: '',
+    resolution: normRes
 };
 
 const $ = (id) => document.getElementById(id);
@@ -23,6 +27,29 @@ $('themeToggle').addEventListener('click', () => {
     applyTheme(current === 'dark' ? 'light' : 'dark');
 });
 applyTheme(localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+
+function applyResolution(res) {
+    state.resolution = res;
+    document.documentElement.setAttribute('data-resolution', res);
+    localStorage.setItem('gridResolution', res);
+    document.querySelectorAll('.res-btn').forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.res === res);
+    });
+}
+
+// Initialize resolution buttons
+applyResolution(state.resolution);
+document.querySelectorAll('.res-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+        const res = btn.dataset.res;
+        if (res && res !== state.resolution) {
+            applyResolution(res);
+            if (state.selected && state.folders.has(state.selected)) {
+                selectFolder(state.folders.get(state.selected), false);
+            }
+        }
+    });
+});
 
 function numericSort(a, b) {
     const aZero = a === '0';
@@ -52,24 +79,39 @@ function getExtension(folder) {
     return state.index.folder_exts?.[folder] || (folder.includes('official-artwork') ? '.svg' : '.png');
 }
 
-function spriteUrl(path) {
+function spriteUrl(path, resolution = state.resolution) {
     const local = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:';
     if (local) return `../${path}`;
 
+    let rawUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/${path}`;
     if (location.hostname.endsWith('github.io')) {
         const user = location.hostname.split('.')[0];
         const repo = location.pathname.split('/')[1] || 'sprites';
         const branch = new URLSearchParams(location.search).get('branch') || state.index.branch || 'master';
         if (user.toLowerCase() !== 'pokeapi') {
-            return `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${path}`;
+            rawUrl = `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${path}`;
         }
+    } else if (state.index && state.index.branch) {
+        rawUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/${state.index.branch}/${path}`;
     }
 
-    const branch = state.index.branch || 'master';
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/${branch}/${path}`;
+    if (resolution === 'small' || resolution === 'low') {
+        return `https://images.weserv.nl/?url=${encodeURIComponent(rawUrl)}&w=120&output=webp&q=70`;
+    }
+    if (resolution === 'medium' || resolution === true) {
+        return `https://images.weserv.nl/?url=${encodeURIComponent(rawUrl)}&w=240&output=webp&q=80`;
+    }
+
+    return rawUrl;
 }
 
 function handleImageError(image, path) {
+    // If CDN thumbnail failed, fallback to direct raw URL
+    if (image.src.includes('images.weserv.nl')) {
+        image.src = spriteUrl(path, 'original');
+        return;
+    }
+
     if (!image.dataset.fallback && image.src.includes('raw.githubusercontent.com') && !image.src.includes('/PokeAPI/sprites/')) {
         image.dataset.fallback = '1';
         image.src = `https://raw.githubusercontent.com/PokeAPI/sprites/${state.index.branch || 'master'}/${path}`;
@@ -180,11 +222,11 @@ function selectFolder(folder, updateUrl = true) {
         const card = document.createElement('a');
         const path = `${folder.path}/${stem}${getExtension(folder.path)}`;
         card.className = 'bulk-sprite-card';
-        card.href = spriteUrl(path);
+        card.href = spriteUrl(path, 'original');
         card.target = '_blank';
         card.rel = 'noopener';
         card.title = `Open ${path}`;
-        card.innerHTML = `<span class="bulk-image"><img src="${spriteUrl(path)}" alt="${stem}" loading="lazy"><span class="placeholder">Not Available</span></span><span class="bulk-file">${stem}</span>`;
+        card.innerHTML = `<span class="bulk-image"><img src="${spriteUrl(path, state.resolution)}" alt="${stem}" loading="lazy"><span class="placeholder">Not Available</span></span><span class="bulk-file">${stem}</span>`;
         const image = card.querySelector('img');
         const placeholder = card.querySelector('.placeholder');
         image.addEventListener('error', () => handleImageError(image, path));
