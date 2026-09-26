@@ -527,7 +527,7 @@ def build_index(output_file: Path | None = None) -> Path:
 
     if base_pk.exists():
         for p in base_pk.rglob("*"):
-            if p.is_file() and p.suffix.lower() in (".png", ".gif", ".svg", ".jpg"):
+            if p.is_file() and p.suffix.lower() in (".png", ".gif", ".svg", ".jpg", ".webp"):
                 rel_folder = p.parent.relative_to(PROJECT_ROOT).as_posix()
                 folder_files[rel_folder].append(int(p.stem) if p.stem.isdigit() else p.stem)
                 folder_exts.setdefault(rel_folder, p.suffix.lower())
@@ -743,8 +743,10 @@ def build_index(output_file: Path | None = None) -> Path:
                         existing_subpaths = {v["subpath"] for v in views if v["subcategory"] == subcat}
                         for subp in expected_subpaths:
                             if subp not in existing_subpaths:
-                                ext = ".gif" if "animated" in subp.split("/") else ".png"
                                 rel_folder = f"sprites/pokemon/versions/{gen_id}/{game_key}/{subp}".rstrip("/")
+                                base_game_rel = f"sprites/pokemon/versions/{gen_id}/{game_key}"
+                                default_ext = folder_exts.get(base_game_rel, ".gif" if "animated" in subp.split("/") else ".png")
+                                ext = folder_exts.get(rel_folder, default_ext)
                                 views.append({
                                     "label": format_subpath_label(subp, is_icon=False),
                                     "folder": rel_folder,
