@@ -41,6 +41,34 @@
                     <input id="bulkSearch" type="search" placeholder="Filter folders or files..." autocomplete="off">
                 </label>
                 <button id="expandAll" class="btn btn-outline" type="button">Expand tree</button>
+                <div class="res-segmented" role="group" aria-label="Icon View Size">
+                    <button type="button" class="res-btn" data-res="small" title="Small icons (120px)" aria-label="Small icons">
+                        <svg viewBox="0 0 16 16" fill="currentColor">
+                            <rect x="1" y="1" width="3.2" height="3.2" rx="0.6"/>
+                            <rect x="6.4" y="1" width="3.2" height="3.2" rx="0.6"/>
+                            <rect x="11.8" y="1" width="3.2" height="3.2" rx="0.6"/>
+                            <rect x="1" y="6.4" width="3.2" height="3.2" rx="0.6"/>
+                            <rect x="6.4" y="6.4" width="3.2" height="3.2" rx="0.6"/>
+                            <rect x="11.8" y="6.4" width="3.2" height="3.2" rx="0.6"/>
+                            <rect x="1" y="11.8" width="3.2" height="3.2" rx="0.6"/>
+                            <rect x="6.4" y="11.8" width="3.2" height="3.2" rx="0.6"/>
+                            <rect x="11.8" y="11.8" width="3.2" height="3.2" rx="0.6"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="res-btn active" data-res="medium" title="Medium icons (240px)" aria-label="Medium icons">
+                        <svg viewBox="0 0 16 16" fill="currentColor">
+                            <rect x="1" y="1" width="6.2" height="6.2" rx="1"/>
+                            <rect x="8.8" y="1" width="6.2" height="6.2" rx="1"/>
+                            <rect x="1" y="8.8" width="6.2" height="6.2" rx="1"/>
+                            <rect x="8.8" y="8.8" width="6.2" height="6.2" rx="1"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="res-btn" data-res="large" title="Large icons (Full resolution)" aria-label="Large icons">
+                        <svg viewBox="0 0 16 16" fill="currentColor">
+                            <rect x="1" y="1" width="14" height="14" rx="1.5"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </section>
 
