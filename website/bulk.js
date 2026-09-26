@@ -95,14 +95,17 @@ function spriteUrl(path, resolution = state.resolution) {
         rawUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/${state.index.branch}/${path}`;
     }
 
-    const isAnimated = path.endsWith('.gif') || path.includes('/animated/') || path.includes('/sword-shield/') || path.endsWith('.webp') || path.endsWith('.svg');
-    if (!isAnimated) {
-        if (resolution === 'small' || resolution === 'low') {
-            return `https://images.weserv.nl/?url=${encodeURIComponent(rawUrl)}&w=120&output=webp&q=70`;
-        }
-        if (resolution === 'medium' || resolution === true) {
-            return `https://images.weserv.nl/?url=${encodeURIComponent(rawUrl)}&w=240&output=webp&q=80`;
-        }
+    if (path.endsWith('.svg')) return rawUrl;
+
+    if (resolution === 'small' || resolution === 'low') {
+        const isAnim = path.endsWith('.gif') || path.includes('/animated/') || path.includes('/sword-shield/') || path.endsWith('.webp');
+        const outputParam = isAnim ? '' : '&output=webp';
+        return `https://images.weserv.nl/?url=${encodeURIComponent(rawUrl)}&w=120&n=-1&q=70${outputParam}`;
+    }
+    if (resolution === 'medium' || resolution === true) {
+        const isAnim = path.endsWith('.gif') || path.includes('/animated/') || path.includes('/sword-shield/') || path.endsWith('.webp');
+        const outputParam = isAnim ? '' : '&output=webp';
+        return `https://images.weserv.nl/?url=${encodeURIComponent(rawUrl)}&w=240&n=-1&q=80${outputParam}`;
     }
 
     return rawUrl;
