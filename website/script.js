@@ -132,7 +132,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }
 
-        if (isThumbnail && currentResolution !== 'large' && currentResolution !== 'original') {
+        const isAnimated = path.endsWith('.gif') || path.includes('/animated/') || path.includes('/sword-shield/') || path.endsWith('.webp') || path.endsWith('.svg');
+        if (!isAnimated && isThumbnail && currentResolution !== 'large' && currentResolution !== 'original') {
             const w = (currentResolution === 'small' || currentResolution === 'low') ? 120 : 240;
             const q = (currentResolution === 'small' || currentResolution === 'low') ? 70 : 80;
             return `https://images.weserv.nl/?url=${encodeURIComponent(rawUrl)}&w=${w}&output=webp&q=${q}`;

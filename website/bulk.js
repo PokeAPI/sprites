@@ -95,11 +95,14 @@ function spriteUrl(path, resolution = state.resolution) {
         rawUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/${state.index.branch}/${path}`;
     }
 
-    if (resolution === 'small' || resolution === 'low') {
-        return `https://images.weserv.nl/?url=${encodeURIComponent(rawUrl)}&w=120&output=webp&q=70`;
-    }
-    if (resolution === 'medium' || resolution === true) {
-        return `https://images.weserv.nl/?url=${encodeURIComponent(rawUrl)}&w=240&output=webp&q=80`;
+    const isAnimated = path.endsWith('.gif') || path.includes('/animated/') || path.includes('/sword-shield/') || path.endsWith('.webp') || path.endsWith('.svg');
+    if (!isAnimated) {
+        if (resolution === 'small' || resolution === 'low') {
+            return `https://images.weserv.nl/?url=${encodeURIComponent(rawUrl)}&w=120&output=webp&q=70`;
+        }
+        if (resolution === 'medium' || resolution === true) {
+            return `https://images.weserv.nl/?url=${encodeURIComponent(rawUrl)}&w=240&output=webp&q=80`;
+        }
     }
 
     return rawUrl;
