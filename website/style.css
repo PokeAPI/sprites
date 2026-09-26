@@ -544,7 +544,15 @@ body {
     height: 142px;
     box-sizing: border-box;
     text-align: center;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
     transition: all 0.15s ease;
+}
+
+.sprite-card.is-placeholder {
+    cursor: default;
+    pointer-events: none;
 }
 
 .sprite-card:hover {

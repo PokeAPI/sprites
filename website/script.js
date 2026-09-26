@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     // Helper: Get sprite URL (relative for local/dev, GitHub raw CDN when deployed to Pages)
-    const getSpriteUrl = (path, isThumbnail = false) => {
+    const getSpriteUrl = (path) => {
         const isLocal = window.location.hostname === 'localhost' || 
                         window.location.hostname === '127.0.0.1' || 
                         window.location.protocol === 'file:';
@@ -130,16 +130,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (user.toLowerCase() !== 'pokeapi') {
                 rawUrl = `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${path}`;
             }
-        }
-
-        if (path.endsWith('.svg')) return rawUrl;
-
-        if (isThumbnail && currentResolution !== 'large' && currentResolution !== 'original') {
-            const w = (currentResolution === 'small' || currentResolution === 'low') ? 120 : 240;
-            const q = (currentResolution === 'small' || currentResolution === 'low') ? 70 : 80;
-            const isAnim = path.endsWith('.gif') || path.includes('/animated/') || path.includes('/sword-shield/') || path.endsWith('.webp');
-            const outputParam = isAnim ? '' : '&output=webp';
-            return `https://images.weserv.nl/?url=${encodeURIComponent(rawUrl)}&w=${w}&n=-1&q=${q}${outputParam}`;
         }
 
         return rawUrl;
@@ -358,8 +348,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             : (labelLower.includes('female') || urlLower.includes('female'));
         const cleanLabel = cleanCardLabel(rawLabel);
 
-        const card = document.createElement('div');
-        card.className = `sprite-card${isHires ? ' hires' : ''}`;
+        const isUnavailable = isPlaceholder || !url;
+        const card = document.createElement(isUnavailable ? 'div' : 'a');
+        card.className = `sprite-card${isHires ? ' hires' : ''}${isUnavailable ? ' is-placeholder' : ''}`;
+        if (!isUnavailable) {
+            const targetUrl = rawUrl || url;
+            card.href = targetUrl;
+            card.target = '_blank';
+            card.rel = 'noopener';
+            card.title = `Open ${cleanLabel} in new tab`;
+        }
 
         const indicatorsHtml = (shiny || female) ? `
             <div class="sprite-indicators">
@@ -368,7 +366,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             </div>` : '';
 
         const dataRawAttr = rawUrl ? ` data-raw-src="${rawUrl}"` : '';
-        const imgHtml = (isPlaceholder || !url)
+        const imgHtml = isUnavailable
             ? `<div class="placeholder">Not Available</div>`
             : `<img src="${url}" alt="${cleanLabel}" loading="lazy"${dataRawAttr} onerror="window.handleSpriteImgError(this)">`;
 
