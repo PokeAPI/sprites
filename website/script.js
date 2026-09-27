@@ -67,8 +67,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     };
 
-    // Global error handler for sprite images: falls back from fork CDN to upstream PokeAPI master CDN
+    // Global error handler for sprite images: falls back from CDN or fork to upstream PokeAPI master CDN
     window.handleSpriteImgError = (img) => {
+        if (img.dataset.rawSrc && img.src !== img.dataset.rawSrc) {
+            img.src = img.dataset.rawSrc;
+            return;
+        }
+
         if (!img.dataset.fallback && img.src.includes('raw.githubusercontent.com') && !img.src.includes('/PokeAPI/sprites/master/')) {
             img.dataset.fallback = '1';
             const parts = img.src.split('/');
@@ -81,6 +86,30 @@ document.addEventListener('DOMContentLoaded', async () => {
         img.parentElement.innerHTML = '<div class="placeholder">Not Available</div>';
     };
 
+    // Resolution / Icon size state
+    const savedRes = localStorage.getItem('gridResolution') || 'medium';
+    let currentResolution = (savedRes === 'low' || savedRes === 'small') ? 'small' : (savedRes === 'original' || savedRes === 'large') ? 'large' : 'medium';
+    const applyResolution = (res) => {
+        currentResolution = res;
+        document.documentElement.setAttribute('data-resolution', res);
+        localStorage.setItem('gridResolution', res);
+        document.querySelectorAll('.res-btn').forEach((btn) => {
+            btn.classList.toggle('active', btn.dataset.res === res);
+        });
+    };
+    applyResolution(currentResolution);
+    document.querySelectorAll('.res-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const res = btn.dataset.res;
+            if (res && res !== currentResolution) {
+                applyResolution(res);
+                if (window.location.hash) {
+                    handleHash();
+                }
+            }
+        });
+    });
+
     // Helper: Get sprite URL (relative for local/dev, GitHub raw CDN when deployed to Pages)
     const getSpriteUrl = (path) => {
         const isLocal = window.location.hostname === 'localhost' || 
@@ -90,6 +119,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             return `../${path}`;
         }
 
+        let rawUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/${path}`;
         // If hosted on a GitHub Pages fork (e.g. <username>.github.io/<repo>)
         if (window.location.hostname.endsWith('github.io')) {
             const user = window.location.hostname.split('.')[0];
@@ -98,11 +128,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             const branch = urlParams.get('branch') || (spriteIndex && spriteIndex.branch) || 'master';
             // Primary source: check user's fork/branch first, fallback to upstream PokeAPI
             if (user.toLowerCase() !== 'pokeapi') {
-                return `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${path}`;
+                rawUrl = `https://raw.githubusercontent.com/${user}/${repo}/${branch}/${path}`;
             }
         }
 
-        return `https://raw.githubusercontent.com/PokeAPI/sprites/master/${path}`;
+        return rawUrl;
     };
 
     const viewExt = (v) => (v && v.ext) ? v.ext : '.png';
@@ -307,7 +337,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         return t || raw;
     };
 
-    const renderCard = (grid, url, rawLabel, isPlaceholder = false, isHires = false, isShiny = null, isFemale = null) => {
+    const renderCard = (grid, url, rawLabel, isPlaceholder = false, isHires = false, isShiny = null, isFemale = null, rawUrl = '') => {
         const labelLower = (rawLabel || '').toLowerCase();
         const urlLower = (url || '').toLowerCase();
         const shiny = (typeof isShiny === 'boolean') 
@@ -318,8 +348,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             : (labelLower.includes('female') || urlLower.includes('female'));
         const cleanLabel = cleanCardLabel(rawLabel);
 
-        const card = document.createElement('div');
-        card.className = `sprite-card${isHires ? ' hires' : ''}`;
+        const isUnavailable = isPlaceholder || !url;
+        const card = document.createElement(isUnavailable ? 'div' : 'a');
+        card.className = `sprite-card${isHires ? ' hires' : ''}${isUnavailable ? ' is-placeholder' : ''}`;
+        if (!isUnavailable) {
+            const targetUrl = rawUrl || url;
+            card.href = targetUrl;
+            card.target = '_blank';
+            card.rel = 'noopener';
+            card.title = `Open ${cleanLabel} in new tab`;
+        }
 
         const indicatorsHtml = (shiny || female) ? `
             <div class="sprite-indicators">
@@ -327,9 +365,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 ${female ? `<span class="indicator-female" title="Female"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><line x1="12" y1="15" x2="12" y2="23"/><line x1="8" y1="19" x2="16" y2="19"/></svg></span>` : ''}
             </div>` : '';
 
-        const imgHtml = (isPlaceholder || !url)
+        const dataRawAttr = rawUrl ? ` data-raw-src="${rawUrl}"` : '';
+        const imgHtml = isUnavailable
             ? `<div class="placeholder">Not Available</div>`
-            : `<img src="${url}" alt="${cleanLabel}" loading="lazy" onerror="window.handleSpriteImgError(this)">`;
+            : `<img src="${url}" alt="${cleanLabel}" loading="lazy"${dataRawAttr} onerror="window.handleSpriteImgError(this)">`;
 
         const prefixHtml = (shiny || female) ? `
             <span class="prefix-group">
@@ -455,8 +494,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const isFemale = v.female || v.label.includes('Female') || (v.subpath && v.subpath.includes('female'));
                 if (isFemale && !entity.has_gender_diff && !hasSprite) return;
                 const isShiny = v.label.includes('Shiny') || (v.folder && v.folder.includes('shiny')) || (v.subpath && v.subpath.includes('shiny'));
-                const url = hasSprite ? getSpriteUrl(`${v.folder}/${stem || defaultStem}${viewExt(v)}`) : '';
-                renderCard(grid, url, v.label, !hasSprite, isLarge, isShiny, isFemale);
+                const rawUrl = hasSprite ? getSpriteUrl(`${v.folder}/${stem || defaultStem}${viewExt(v)}`, false) : '';
+                const thumbUrl = hasSprite ? getSpriteUrl(`${v.folder}/${stem || defaultStem}${viewExt(v)}`, true) : '';
+                renderCard(grid, thumbUrl, v.label, !hasSprite, isLarge, isShiny, isFemale, rawUrl);
             });
         };
 
@@ -622,7 +662,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         const grid = createSubgroup(group, 'Official Gym Badges (Gens 1-8)');
 
         badgesToShow.forEach(badgeId => {
-            renderCard(grid, getSpriteUrl(`sprites/badges/${badgeId}.png`), `Badge #${badgeId}`);
+            const raw = getSpriteUrl(`sprites/badges/${badgeId}.png`, false);
+            const thumb = getSpriteUrl(`sprites/badges/${badgeId}.png`, true);
+            renderCard(grid, thumb, `Badge #${badgeId}`, false, false, null, null, raw);
         });
     };
 
@@ -646,7 +688,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         items[matchKey].forEach(relPath => {
             const folderPart = relPath.includes('/') ? relPath.substring(0, relPath.lastIndexOf('/')) : 'default';
-            renderCard(grid, getSpriteUrl(`sprites/items/${relPath}`), folderPart);
+            const raw = getSpriteUrl(`sprites/items/${relPath}`, false);
+            const thumb = getSpriteUrl(`sprites/items/${relPath}`, true);
+            renderCard(grid, thumb, folderPart, false, false, null, null, raw);
         });
     };
 
@@ -688,7 +732,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                     const genTitle = (spriteIndex.generations || []).find(g => g.id === gen)?.title || gen;
                     const gameTitle = game.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
                     const grid = createSubgroup(group, `${genTitle} • ${gameTitle}`);
-                    renderCard(grid, getSpriteUrl(`sprites/types/${gen}/${game}/${matchFile}`), `${typeDisplayName}`);
+                    const raw = getSpriteUrl(`sprites/types/${gen}/${game}/${matchFile}`, false);
+                    const thumb = getSpriteUrl(`sprites/types/${gen}/${game}/${matchFile}`, true);
+                    renderCard(grid, thumb, `${typeDisplayName}`, false, false, null, null, raw);
                 }
             }
         }

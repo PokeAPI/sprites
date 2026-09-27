@@ -265,6 +265,49 @@ KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
             10093, 10121, 10122, 10128, 10129, 10144, 10145, 10146, 10149, 10150, 10153, 10154
         )
     ],
+    # Mega Evolutions, Primals, and Ultra Necrozma: only existed in Gen 6-7, removed in Gen 8+
+    *[
+        {
+            "pokemon_id": pid,
+            "labels": SPRITE_EXCL_ALL_VIEWS,
+            "min_gen": 8,
+        }
+        for pid in (
+            *range(10033, 10061),  # Gen 6 Megas (Venusaur through Abomasnow)
+            *range(10062, 10065),  # Latias, Latios, Swampert
+            *range(10066, 10080),  # Sableye through Rayquaza
+            *range(10087, 10091),  # Camerupt through Beedrill
+            10157,                 # Ultra Necrozma
+            *range(10278, 10327),  # Modern / Extended Megas
+        )
+    ],
+    # Partner Pikachu and Eevee (#10158, #10159): only exist in LGPE
+    {
+        "pokemon_id": 10158,
+        "labels": SPRITE_EXCL_ALL_VIEWS,
+        "exclude_games": ["lets-go-pikachu-lets-go-eevee"],
+    },
+    {
+        "pokemon_id": 10159,
+        "labels": SPRITE_EXCL_ALL_VIEWS,
+        "exclude_games": ["lets-go-pikachu-lets-go-eevee"],
+    },
+    # Rockruff Own Tempo & Zygarde Power Construct forms in SWSH
+    {
+        "pokemon_id": 10151,
+        "labels": SPRITE_EXCL_ALL_VIEWS,
+        "games": ["sword-shield"],
+    },
+    {
+        "pokemon_id": 10119,
+        "labels": SPRITE_EXCL_ALL_VIEWS,
+        "games": ["sword-shield"],
+    },
+    {
+        "pokemon_id": 10181,
+        "labels": SPRITE_EXCL_ALL_VIEWS,
+        "games": ["sword-shield"],
+    },
 ]
 
 
@@ -272,17 +315,20 @@ def compile_exclusions(game_id: str, gen_num: int) -> dict[int, frozenset[str]]:
     """Build a {pokemon_id -> frozenset(labels)} exclusion lookup for a specific game.
 
     Evaluates each rule in KNOWN_SPRITE_EXCLUSION_RULES and returns the labels
-    that apply to this game based on max_gen, games, and exclude_games conditions.
+    that apply to this game based on max_gen, min_gen, games, and exclude_games conditions.
     """
     base_game_id = game_id.replace("-icons", "")
     result: dict[int, set[str]] = {}
     for rule in KNOWN_SPRITE_EXCLUSION_RULES:
         max_gen = rule.get("max_gen")
+        min_gen = rule.get("min_gen")
         games = rule.get("games")
         exclude_games = rule.get("exclude_games")
 
         applies = True
         if max_gen is not None and gen_num > max_gen:
+            applies = False
+        if min_gen is not None and gen_num < min_gen:
             applies = False
         if games is not None and game_id not in games and base_game_id not in games:
             applies = False

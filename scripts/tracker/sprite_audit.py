@@ -296,7 +296,7 @@ def scan_category(
                 total_missing += 1
             else:
                 issue_found = False
-                if found_path.suffix.lower() in (".png", ".jpg", ".jpeg", ".gif"):
+                if found_path.suffix.lower() in (".png", ".jpg", ".jpeg", ".gif", ".webp"):
                     try:
                         with Image.open(found_path) as img:
                             if check_dimensions and standard_size and img.size != standard_size:
