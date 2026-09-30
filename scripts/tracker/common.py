@@ -245,12 +245,12 @@ KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
         }
         for pid in (10080, 10081, 10082, 10083, 10084, 10085)
     ],
-    # Cap Pikachu forms: event gifts in SM / USUM / SwSh / SV, intentionally absent in LGPE
+    # Cap Pikachu forms: event gifts in SM / USUM / SwSh / SV, intentionally absent in LGPE and BDSP
     *[
         {
             "pokemon_id": pid,
             "labels": SPRITE_EXCL_ALL_VIEWS,
-            "games": ["lets-go-pikachu-lets-go-eevee"],
+            "games": ["lets-go-pikachu-lets-go-eevee", "brilliant-diamond-shining-pearl"],
         }
         for pid in (10094, 10095, 10096, 10097, 10098, 10099, 10148, 10160)
     ],
@@ -308,6 +308,30 @@ KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
         "labels": SPRITE_EXCL_ALL_VIEWS,
         "games": ["sword-shield"],
     },
+    # Gigantamax forms (10195..10228): SWSH-exclusive battle mechanic, absent in BDSP, Legends Arceus, SV
+    *[
+        {
+            "pokemon_id": pid,
+            "labels": SPRITE_EXCL_ALL_VIEWS,
+            "exclude_games": ["sword-shield"],
+        }
+        for pid in range(10195, 10229)
+    ],
+    # Regional forms: Alolan, Galarian, Hisuian, and Paldean forms are absent in BDSP
+    *[
+        {
+            "pokemon_id": pid,
+            "labels": SPRITE_EXCL_ALL_VIEWS,
+            "games": ["brilliant-diamond-shining-pearl"],
+        }
+        for pid in (
+            *range(10091, 10116),  # Alolan forms
+            *range(10161, 10181),  # Galarian forms
+            *range(10186, 10195),  # Galarian battle/zen forms
+            *range(10229, 10245),  # Hisuian forms
+            *range(10250, 10254),  # Paldean forms
+        )
+    ],
 ]
 
 
