@@ -42,49 +42,50 @@ def process_folders(root_path):
         print(f"Error: Folder '{root_path}' not found.")
         return
 
-    for file_path in root_path.rglob("*.png"):
-        filename = file_path.name
+    for ext in ("*.png", "*.webp", "*.gif"):
+        for file_path in root_path.rglob(ext):
+            filename = file_path.name
 
-        if "-" in filename:
-            basename = file_path.stem
+            if "-" in filename:
+                basename = file_path.stem
 
-            # Split only ONCE to handle names like 1011-dudunsparce-three-segment
-            parts = basename.split("-", 1)
+                # Split only ONCE to handle names like 1011-dudunsparce-three-segment
+                parts = basename.split("-", 1)
 
-            pokedex_num = parts[0]
-            variety_suffix = parts[1].lower()
+                pokedex_num = parts[0]
+                variety_suffix = parts[1].lower()
 
-            species_data = get_species_data(pokedex_num)
+                species_data = get_species_data(pokedex_num)
 
-            if species_data:
-                species_name = species_data["name"]
-                varieties = species_data["varieties"]
+                if species_data:
+                    species_name = species_data["name"]
+                    varieties = species_data["varieties"]
 
-                # Target name logic: "species-variety" (e.g., "morpeko-hangry")
-                target_match_name = f"{species_name}-{variety_suffix}"
+                    # Target name logic: "species-variety" (e.g., "morpeko-hangry")
+                    target_match_name = f"{species_name}-{variety_suffix}"
 
-                new_id = None
-                for v in varieties:
-                    if v["pokemon"]["name"] == target_match_name:
-                        # Extract numeric ID from the PokeAPI URL
-                        url_parts = v["pokemon"]["url"].strip("/").split("/")
-                        new_id = url_parts[-1]
-                        break
+                    new_id = None
+                    for v in varieties:
+                        if v["pokemon"]["name"] == target_match_name:
+                            # Extract numeric ID from the PokeAPI URL
+                            url_parts = v["pokemon"]["url"].strip("/").split("/")
+                            new_id = url_parts[-1]
+                            break
 
-                if new_id:
-                    new_filename = f"{new_id}.png"
-                    new_file_path = file_path.with_name(new_filename)
+                    if new_id:
+                        new_filename = f"{new_id}{file_path.suffix}"
+                        new_file_path = file_path.with_name(new_filename)
 
-                    if new_file_path.exists():
-                        file_path.unlink()  # Remove the old file since the new one already exists
-                        print(
-                            f"!!! Skipping {filename} -> {new_filename} (already exists, old file removed)"
-                        )
-                    else:
-                        file_path.replace(new_file_path)
-                        print(
-                            f"Success: [{file_path.parent}] {filename} -> {new_filename}"
-                        )
+                        if new_file_path.exists():
+                            file_path.unlink()  # Remove the old file since the new one already exists
+                            print(
+                                f"!!! Skipping {filename} -> {new_filename} (already exists, old file removed)"
+                            )
+                        else:
+                            file_path.replace(new_file_path)
+                            print(
+                                f"Success: [{file_path.parent}] {filename} -> {new_filename}"
+                            )
 
 
 if __name__ == "__main__":
