@@ -422,6 +422,16 @@ def audit_version_sprites(
             except Exception:
                 pass
 
+            # Override brilliant-diamond-shining-pearl game indices to National Dex 1..493 (Gen 1-4)
+            # to fix PokéAPI's faulty pokemon_game_indices.csv (which contains dummy entries 1..898)
+            try:
+                pk_rows = load_csv(f"{GITHUB_BASE_URL}/pokemon.csv")
+                bdsp_pks = {int(r["id"]) for r in pk_rows if int(r["species_id"]) <= 493 and int(r["id"]) <= 493}
+                if bdsp_pks:
+                    game_pokemon_ids["brilliant-diamond-shining-pearl"] = bdsp_pks
+            except Exception:
+                pass
+
             # Expand game indices to include valid 10k+ varieties (Megas, regional forms, battle forms)
             try:
                 vg_order_map = {r["id"]: int(r.get("order", 0)) for r in vg_rows}

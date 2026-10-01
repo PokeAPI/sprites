@@ -384,6 +384,15 @@ def build_index(output_file: Path | None = None) -> Path:
         except Exception as ex_lgpe:
             print(f"[WARN] Failed to override LGPE pokedex indices ({ex_lgpe})")
 
+        # Override brilliant-diamond-shining-pearl game indices to National Dex 1..493 (Gen 1-4)
+        # to fix PokéAPI's faulty pokemon_game_indices.csv (which contains dummy entries 1..898)
+        try:
+            bdsp_pks = {int(r["id"]) for r in df_pk if int(r["species_id"]) <= 493 and int(r["id"]) <= 493}
+            if bdsp_pks:
+                game_poke_sets["brilliant-diamond-shining-pearl"] = bdsp_pks
+        except Exception as ex_bdsp:
+            print(f"[WARN] Failed to override BDSP pokedex indices ({ex_bdsp})")
+
         # Expand game indices to include valid 10k+ varieties (Megas, regional forms, battle forms)
         # whose species is present in that game and whose forms were introduced in or before that version group.
         vg_order_map = {r["id"]: int(r.get("order", 0)) for r in vg_rows}
