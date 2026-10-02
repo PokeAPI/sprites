@@ -165,7 +165,7 @@ SPRITE_EXCL_ALL_VIEWS: list[str] = [
     "Front Animated Female", "Front Animated Shiny Female",
     "Back Animated", "Back Animated Default", "Back Animated Shiny",
     "Back Animated Female", "Back Animated Shiny Female",
-    "Menu Icon", "Menu Icon (Shiny)", "Menu Icon Female", "Menu Icon (Female)", "Menu Icon (Shiny Female)", "Icons", "Icon",
+    "Menu Icon", "Menu Icon (Shiny)", "Menu Icon Female", "Menu Icon (Female)", "Menu Icon (Shiny Female)", "Icons", "Icons Female", "Icon",
 ]
 
 KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
@@ -291,6 +291,23 @@ KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
         "pokemon_id": 10159,
         "labels": SPRITE_EXCL_ALL_VIEWS,
         "exclude_games": ["lets-go-pikachu-lets-go-eevee"],
+    },
+    # Floette Eternal (form 10061): unreleased form from Gen VI, completely absent in all official games
+    {
+        "pokemon_id": 10061,
+        "labels": SPRITE_EXCL_ALL_VIEWS,
+    },
+    # Ash-Greninja (#10117): only existed in Gen VII (SM / USUM), removed in Gen VIII+ / SV
+    {
+        "pokemon_id": 10117,
+        "labels": SPRITE_EXCL_ALL_VIEWS,
+        "exclude_games": ["sun-moon", "ultra-sun-ultra-moon"],
+    },
+    # Eternamax Eternatus (#10190): boss-only battle form in SWSH, absent in SV and other games
+    {
+        "pokemon_id": 10190,
+        "labels": SPRITE_EXCL_ALL_VIEWS,
+        "exclude_games": ["sword-shield"],
     },
     # Rockruff Own Tempo & Zygarde Power Construct forms in SWSH
     {
