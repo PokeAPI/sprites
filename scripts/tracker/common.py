@@ -165,7 +165,7 @@ SPRITE_EXCL_ALL_VIEWS: list[str] = [
     "Front Animated Female", "Front Animated Shiny Female",
     "Back Animated", "Back Animated Default", "Back Animated Shiny",
     "Back Animated Female", "Back Animated Shiny Female",
-    "Menu Icon", "Menu Icon Female", "Icons", "Icon",
+    "Menu Icon", "Menu Icon (Shiny)", "Menu Icon Female", "Menu Icon (Female)", "Menu Icon (Shiny Female)", "Icons", "Icon",
 ]
 
 KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
@@ -245,12 +245,12 @@ KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
         }
         for pid in (10080, 10081, 10082, 10083, 10084, 10085)
     ],
-    # Cap Pikachu forms: event gifts in SM / USUM / SwSh / SV, intentionally absent in LGPE and BDSP
+    # Cap Pikachu forms: event gifts in SM / USUM / SwSh / SV, intentionally absent in LGPE, BDSP, PLA
     *[
         {
             "pokemon_id": pid,
             "labels": SPRITE_EXCL_ALL_VIEWS,
-            "games": ["lets-go-pikachu-lets-go-eevee", "brilliant-diamond-shining-pearl"],
+            "games": ["lets-go-pikachu-lets-go-eevee", "brilliant-diamond-shining-pearl", "legends-arceus"],
         }
         for pid in (10094, 10095, 10096, 10097, 10098, 10099, 10148, 10160)
     ],
@@ -317,7 +317,7 @@ KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
         }
         for pid in range(10195, 10229)
     ],
-    # Regional forms: Alolan, Galarian, Hisuian, and Paldean forms are absent in BDSP
+    # Regional forms absent in BDSP: Alolan, Galarian, Hisuian, and Paldean forms
     *[
         {
             "pokemon_id": pid,
@@ -330,6 +330,62 @@ KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
             *range(10186, 10195),  # Galarian battle/zen forms
             *range(10229, 10245),  # Hisuian forms
             *range(10250, 10254),  # Paldean forms
+        )
+    ],
+    # Regional & other forms absent in Legends: Arceus
+    *[
+        {
+            "pokemon_id": pid,
+            "labels": SPRITE_EXCL_ALL_VIEWS,
+            "games": ["legends-arceus"],
+        }
+        for pid in (
+            # Alolan forms absent in PLA (except Alolan Vulpix 10103 and Alolan Ninetales 10104 which are present in Request 83)
+            *[pid for pid in range(10091, 10116) if pid not in (10103, 10104)],
+            *range(10161, 10181),  # Galarian forms
+            *range(10186, 10195),  # Galarian battle/zen forms
+            *range(10250, 10254),  # Paldean forms
+            10016,                 # Basculin Blue-Striped (only White-Striped 10247 exists in PLA)
+        )
+    ],
+    # Base species whose original form is absent in Legends: Arceus (only Hisuian / White-Striped form exists in PLA)
+    *[
+        {
+            "pokemon_id": pid,
+            "labels": SPRITE_EXCL_ALL_VIEWS,
+            "games": ["legends-arceus"],
+        }
+        for pid in (
+            58,   # Growlithe (only Hisuian form 10229 in PLA)
+            59,   # Arcanine (only Hisuian form 10230 in PLA)
+            100,  # Voltorb (only Hisuian form 10231 in PLA)
+            101,  # Electrode (only Hisuian form 10232 in PLA)
+            157,  # Typhlosion (only Hisuian form 10233 in PLA)
+            211,  # Qwilfish (only Hisuian form 10234 in PLA)
+            503,  # Samurott (only Hisuian form 10236 in PLA)
+            549,  # Lilligant (only Hisuian form 10237 in PLA)
+            550,  # Basculin-Red-Striped (only White-Striped form 10247 in PLA)
+            570,  # Zorua (only Hisuian form 10238 in PLA)
+            571,  # Zoroark (only Hisuian form 10239 in PLA)
+            628,  # Braviary (only Hisuian form 10240 in PLA)
+            705,  # Sliggoo (only Hisuian form 10241 in PLA)
+            706,  # Goodra (only Hisuian form 10242 in PLA)
+            713,  # Avalugg (only Hisuian form 10243 in PLA)
+            724,  # Decidueye (only Hisuian form 10244 in PLA)
+        )
+    ],
+    # Species without distinct female menu icon files in Legends: Arceus
+    *[
+        {
+            "pokemon_id": pid,
+            "labels": ["Menu Icon (Female)", "Menu Icon (Shiny Female)"],
+            "games": ["legends-arceus"],
+        }
+        for pid in (
+            418,   # Buizel (spots difference is on the back, visually identical in 2D icon)
+            419,   # Floatzel (spots difference is on the back, visually identical in 2D icon)
+            460,   # Abomasnow (chest fur difference not differentiated in 2D icon)
+            902,   # Basculegion (female is separate form ID 10248)
         )
     ],
 ]

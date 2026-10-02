@@ -9,9 +9,9 @@ on:
   # Allows manual runs from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to deploy to GitHub Pages without modifying git history
+# Sets permissions of the GITHUB_TOKEN to deploy to GitHub Pages and publish releases
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -25,7 +25,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -43,6 +43,12 @@ jobs:
         run: |
           python scripts/tracker/sprite_audit.py --category all --include-forms --build-index
 
+      - name: Generate Sprite Manifest JSON
+        run: |
+          mkdir -p ./website
+          git ls-files sprites/ | sed 's|^sprites/||' | jq -R -s 'split("\n")[:-1]' > ./website/manifest.json
+          gzip -k -9 -c ./website/manifest.json > ./website/manifest.json.gz
+
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
@@ -55,3 +61,16 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v5
 
+      - name: Publish Manifest to GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: github.ref == 'refs/heads/master'
+        with:
+          tag_name: latest
+          name: "Latest Sprites Index"
+          draft: false
+          prerelease: false
+          files: |
+            ./website/manifest.json
+            ./website/manifest.json.gz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

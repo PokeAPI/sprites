@@ -231,17 +231,18 @@ def get_subcategory(subpath: str) -> str:
     return "Default"
 
 
-def subpath_sort_key(subpath: str) -> tuple[int, int, int, int, str]:
+def subpath_sort_key(subpath: str) -> tuple[int, int, int, int, int, str]:
     """Algorithmic sorting key for perspective subpaths."""
     if not subpath:
-        return (0, 0, 0, 0, "")
+        return (0, 0, 0, 0, 0, "")
     parts = set(subpath.split("/"))
     subcat = get_subcategory(subpath)
     subcat_rank = SUBCATEGORY_ORDER.index(subcat) if subcat in SUBCATEGORY_ORDER else 99
     is_back = 1 if "back" in parts else 0
     is_female = 1 if "female" in parts else 0
     is_shiny = 1 if "shiny" in parts else 0
-    return (subcat_rank, is_back, is_female, is_shiny, subpath)
+    is_version = 1 if "versions" in parts else 0
+    return (subcat_rank, is_version, is_back, is_female, is_shiny, subpath)
 
 
 def get_symmetric_subpaths_for_subcat(subcat: str, gen_num: int, has_female: bool = False) -> list[str]:
@@ -295,11 +296,45 @@ def get_symmetric_subpaths_for_subcat(subcat: str, gen_num: int, has_female: boo
 def format_subpath_label(subpath: str, is_icon: bool = False) -> str:
     """Generates human-readable labels for any variation folder subpath."""
     if is_icon:
-        return {"": "Menu Icon", "female": "Menu Icon (Female)", "animated": "Animated Menu Icon"}.get(
-            subpath, subpath.replace("/", " ").title()
-        )
+        sub_inner = subpath
+        if sub_inner == "icons":
+            sub_inner = ""
+        elif sub_inner.startswith("icons/"):
+            sub_inner = sub_inner[len("icons/"):]
+        return {
+            "": "Menu Icon",
+            "female": "Menu Icon (Female)",
+            "shiny": "Menu Icon (Shiny)",
+            "shiny/female": "Menu Icon (Shiny Female)",
+            "female/shiny": "Menu Icon (Shiny Female)",
+            "animated": "Animated Menu Icon",
+        }.get(sub_inner, sub_inner.replace("/", " ").title())
+
     if not subpath:
         return "Front Default"
+
+    # Handle nested version artwork (e.g. other/official-artwork/versions/generation-i/red-and-blue)
+    if subpath.startswith("versions/"):
+        parts = subpath.split("/")
+        gen_part = parts[1] if len(parts) > 1 else ""
+        game_part = parts[2] if len(parts) > 2 else ""
+        extra_parts = parts[3:] if len(parts) > 3 else []
+
+        gen_num_str = gen_part.replace("generation-", "").upper()
+        game_title = game_part.replace("-and-", " & ").replace("-", " ").title()
+
+        mods = []
+        if "shiny" in extra_parts:
+            mods.append("Shiny")
+        if "female" in extra_parts:
+            mods.append("Female")
+        mod_str = f" ({' '.join(mods)})" if mods else ""
+
+        if game_title and gen_num_str:
+            return f"{game_title} (Gen {gen_num_str}){mod_str}"
+        elif game_title:
+            return f"{game_title}{mod_str}"
+        return subpath.replace("/", " ").title()
 
     parts = set(subpath.split("/"))
     direction = "Back" if "back" in parts else "Front"
@@ -392,6 +427,19 @@ def build_index(output_file: Path | None = None) -> Path:
                 game_poke_sets["brilliant-diamond-shining-pearl"] = bdsp_pks
         except Exception as ex_bdsp:
             print(f"[WARN] Failed to override BDSP pokedex indices ({ex_bdsp})")
+
+        # Override legends-arceus game indices using pokedex_id 30 (hisui)
+        # to fix PokéAPI's faulty pokemon_game_indices.csv (which contains dummy entries 1..898)
+        try:
+            la_pdx_ids = {r["pokedex_id"] for r in pdx_vg_rows if r.get("version_group_id") == "24"}
+            if la_pdx_ids:
+                sp_to_pk = {r["species_id"]: int(r["id"]) for r in df_pk if r.get("is_default") == "1"}
+                la_sp_ids = {r["species_id"] for r in pdx_num_rows if r.get("pokedex_id") in la_pdx_ids}
+                la_pks = {sp_to_pk[sp] for sp in la_sp_ids if sp in sp_to_pk}
+                if la_pks:
+                    game_poke_sets["legends-arceus"] = la_pks
+        except Exception as ex_la:
+            print(f"[WARN] Failed to override Legends Arceus pokedex indices ({ex_la})")
 
         # Expand game indices to include valid 10k+ varieties (Megas, regional forms, battle forms)
         # whose species is present in that game and whose forms were introduced in or before that version group.
@@ -577,8 +625,9 @@ def build_index(output_file: Path | None = None) -> Path:
             # Check root of category
             cat_rel = cat_dir.relative_to(PROJECT_ROOT).as_posix()
             if cat_rel in folder_files and len(folder_files[cat_rel]) > 0:
+                root_label = "Modern (Digital)" if badge == "official-artwork" else "Front Default"
                 views.append({
-                    "label": "Front Default",
+                    "label": root_label,
                     "folder": cat_rel,
                     "ext": folder_exts.get(cat_rel, ".png"),
                     "female": False,
@@ -592,8 +641,11 @@ def build_index(output_file: Path | None = None) -> Path:
                 f_rel = d.relative_to(PROJECT_ROOT).as_posix()
                 subpath = d.relative_to(cat_dir).as_posix()
                 if f_rel in folder_files and len(folder_files[f_rel]) > 0:
+                    lbl = format_subpath_label(subpath)
+                    if badge == "official-artwork" and subpath == "shiny":
+                        lbl = "Modern (Shiny)"
                     views.append({
-                        "label": format_subpath_label(subpath),
+                        "label": lbl,
                         "folder": f_rel,
                         "ext": folder_exts.get(f_rel, ".png"),
                         "female": "female" in subpath.split("/"),
