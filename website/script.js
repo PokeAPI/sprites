@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     let spriteIndex = null;
     let folderSets = {}; // folder -> Set of string IDs for O(1) existence checks
+    let gameIndexSets = {}; // game -> Set of numeric IDs for O(1) game presence checks
 
     // --- 1. Theme Management ---
     const updateThemeUI = (theme) => {
@@ -55,6 +56,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             folderSets = {};
             for (const [folder, items] of Object.entries(spriteIndex.folder_files || {})) {
                 folderSets[folder] = new Set(items.map(String));
+            }
+
+            // Build fast O(1) Sets for game presence checks
+            gameIndexSets = {};
+            for (const [game, ids] of Object.entries(spriteIndex.game_indices || {})) {
+                gameIndexSets[game] = new Set(ids.map(Number));
             }
         } catch (err) {
             console.error('Failed to load sprite index:', err);
@@ -326,9 +333,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Helper: Normalize subtext label (removes "Shiny", "Female" and redundant "Default")
     const cleanCardLabel = (raw) => {
         let t = String(raw || '')
-            .replace(/\((?:Shiny|Female)\)/gi, '')
+            .replace(/\(\s*(?:shiny|female|,\s*|\s)+\s*\)/gi, '')
             .replace(/\bShiny\b/gi, '')
             .replace(/\bFemale\b/gi, '')
+            .replace(/\(\s*\)/g, '')
             .replace(/\s+/g, ' ')
             .trim();
         if (t === 'Front Default') return 'Front';
@@ -387,13 +395,52 @@ document.addEventListener('DOMContentLoaded', async () => {
         grid.appendChild(card);
     };
 
-    // --- 4. Autocomplete ---
+    // --- 4. Autocomplete & Keyboard Navigation ---
+    let currentFocus = -1;
+
     const closeAllLists = () => {
         const list = document.getElementById('autocomplete-list');
         if (list) list.innerHTML = '';
+        currentFocus = -1;
+        if (searchInput) {
+            searchInput.setAttribute('aria-expanded', 'false');
+            searchInput.removeAttribute('aria-activedescendant');
+        }
+    };
+
+    const addActive = (items) => {
+        if (!items || items.length === 0) return;
+        removeActive(items);
+        if (currentFocus >= items.length) currentFocus = 0;
+        if (currentFocus < 0) currentFocus = items.length - 1;
+
+        const activeItem = items[currentFocus];
+        if (activeItem) {
+            activeItem.classList.add('autocomplete-active');
+            activeItem.setAttribute('aria-selected', 'true');
+            activeItem.scrollIntoView({ block: 'nearest' });
+            if (searchInput) {
+                searchInput.setAttribute('aria-activedescendant', activeItem.id);
+            }
+        }
+    };
+
+    const removeActive = (items) => {
+        if (!items) return;
+        for (let i = 0; i < items.length; i++) {
+            items[i].classList.remove('autocomplete-active');
+            items[i].setAttribute('aria-selected', 'false');
+        }
     };
 
     const setupAutocomplete = () => {
+        if (!searchInput) return;
+
+        searchInput.setAttribute('role', 'combobox');
+        searchInput.setAttribute('aria-autocomplete', 'list');
+        searchInput.setAttribute('aria-expanded', 'false');
+        searchInput.setAttribute('aria-controls', 'autocomplete-list');
+
         const handleInput = function () {
             const val = this.value.trim().toLowerCase();
             closeAllLists();
@@ -423,24 +470,118 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             const container = document.getElementById('autocomplete-list');
             container.innerHTML = '';
+            container.setAttribute('role', 'listbox');
+            searchInput.setAttribute('aria-expanded', 'true');
+            currentFocus = -1;
 
-            matches.forEach(item => {
+            matches.forEach((item, index) => {
                 const div = document.createElement('div');
+                div.id = `autocomplete-item-${index}`;
+                div.setAttribute('role', 'option');
+                div.setAttribute('aria-selected', 'false');
+
                 const tag = item.is_form ? `#${item.pokemon_id} (form: ${item.id})` : `#${item.id}`;
                 div.innerHTML = `<span><strong>${item.name}</strong></span> <span style="color:var(--muted-text); font-family:monospace;">${tag}</span>`;
+                
                 div.addEventListener('click', () => {
                     searchInput.value = (searchType === 'type') ? item.name : item.id;
                     closeAllLists();
                     handleSearch();
                 });
+
+                div.addEventListener('mouseenter', () => {
+                    currentFocus = index;
+                    const items = container.getElementsByTagName('div');
+                    addActive(items);
+                });
+
                 container.appendChild(div);
             });
         };
 
         searchInput.addEventListener('input', handleInput);
+
+        searchInput.addEventListener('keydown', (e) => {
+            const container = document.getElementById('autocomplete-list');
+            const items = container ? container.getElementsByTagName('div') : [];
+
+            if (e.key === 'ArrowDown') {
+                if (items && items.length > 0) {
+                    e.preventDefault();
+                    currentFocus++;
+                    addActive(items);
+                }
+            } else if (e.key === 'ArrowUp') {
+                if (items && items.length > 0) {
+                    e.preventDefault();
+                    currentFocus--;
+                    addActive(items);
+                }
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (items && items.length > 0 && currentFocus > -1 && items[currentFocus]) {
+                    items[currentFocus].click();
+                } else {
+                    closeAllLists();
+                    handleSearch();
+                }
+            } else if (e.key === 'Escape') {
+                e.preventDefault();
+                closeAllLists();
+            }
+        });
+
         document.addEventListener('click', (e) => {
             if (e.target !== searchInput) closeAllLists();
         });
+    };
+
+    // Helper: Compile exclusion map for a given game ID and generation number
+    const compileExclusions = (gameId, genNum) => {
+        if (!spriteIndex || !spriteIndex.known_sprite_exclusion_rules) return new Map();
+        const baseGameId = (gameId || '').replace(/-icons$/, '');
+        const map = new Map();
+
+        for (const rule of spriteIndex.known_sprite_exclusion_rules) {
+            const maxGen = rule.max_gen;
+            const minGen = rule.min_gen;
+            const games = rule.games;
+            const excludeGames = rule.exclude_games;
+
+            let applies = true;
+            if (maxGen !== undefined && genNum > maxGen) applies = false;
+            if (minGen !== undefined && genNum < minGen) applies = false;
+            if (games && !games.includes(gameId) && !games.includes(baseGameId)) applies = false;
+            if (excludeGames && (excludeGames.includes(gameId) || excludeGames.includes(baseGameId))) applies = false;
+
+            if (applies) {
+                const pid = rule.pokemon_id;
+                if (!map.has(pid)) map.set(pid, new Set());
+                const s = map.get(pid);
+                for (const l of (rule.labels || [])) {
+                    s.add(l);
+                }
+            }
+        }
+        return map;
+    };
+
+    // Helper: Retrieve all excluded view labels for an entity in a game
+    const getEntityExcludedLabels = (entity, exclusionsMap) => {
+        const labels = new Set();
+        if (!exclusionsMap || exclusionsMap.size === 0) return labels;
+        for (const key of ['id', 'pokemon_id', 'form_id', 'species_id']) {
+            const val = entity[key];
+            if (val !== undefined && val !== null) {
+                const num = parseInt(val, 10);
+                if (!isNaN(num) && exclusionsMap.has(num)) {
+                    for (const l of exclusionsMap.get(num)) {
+                        labels.add(l);
+                    }
+                }
+            }
+        }
+        return labels;
     };
 
     // --- 5. Renderers ---
@@ -532,40 +673,83 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         const introGen = entity.generation_id || 1;
+        const entityBaseId = parseInt(entity.pokemon_id || entity.id, 10);
 
         // 3. Version Sprites - Pre-categorized by Generation & Game Groups
         (spriteIndex.generations || []).forEach(gen => {
             const genNum = gen.gen_num || 1;
             const isDebuted = genNum >= introGen;
 
-            const activeGames = (gen.games || []).filter(game => 
-                isDebuted || (game.views || []).some(v => getMatchingStem(v.folder) !== null)
-            );
+            const renderedGames = [];
 
-            const activeIcons = isDebuted 
-                ? (gen.icons || []) 
-                : (gen.icons || []).filter(icon => getMatchingStem(icon.folder) !== null);
+            (gen.games || []).forEach(game => {
+                const gameKey = game.id || (game.folder ? game.folder.split('/').pop() : '');
+                const gameExclusions = compileExclusions(gameKey, genNum);
+                const excludedLabels = getEntityExcludedLabels(entity, gameExclusions);
 
-            if (activeGames.length === 0 && activeIcons.length === 0) return;
+                const indexedSet = gameIndexSets[gameKey];
+                const hasFiles = (game.views || []).some(v => getMatchingStem(v.folder) !== null);
+
+                // Check game presence (Option A: omit game if entity is excluded by game Pokédex index)
+                if (indexedSet) {
+                    if (!indexedSet.has(entityBaseId) && !hasFiles) {
+                        return;
+                    }
+                } else if (!isDebuted && !hasFiles) {
+                    return;
+                }
+
+                const subcatMap = new Map();
+                let validViewCount = 0;
+
+                (game.views || []).forEach(v => {
+                    const isFemale = v.female || v.label.includes('Female') || (v.subpath && v.subpath.includes('female'));
+                    const stem = getMatchingStem(v.folder);
+                    const hasSprite = stem !== null;
+
+                    // Omit female slot if no gender difference
+                    if (isFemale && !entity.has_gender_diff && !hasSprite) return;
+
+                    // Omit canonically excluded views if not physically on disk
+                    if (excludedLabels.has(v.label) && !hasSprite) return;
+
+                    const subName = v.subcategory || 'Default';
+                    if (!subcatMap.has(subName)) subcatMap.set(subName, []);
+                    subcatMap.get(subName).push({ ...v, hasSprite, stem: stem || defaultStem });
+                    validViewCount++;
+                });
+
+                if (validViewCount === 0) return;
+
+                renderedGames.push({ game, gameKey, subcatMap });
+            });
+
+            // Generational shared icons (e.g. generation-viii/icons)
+            const iconKey = `${gen.id}-icons`;
+            const iconExclusions = compileExclusions(iconKey, genNum);
+            const iconExcludedLabels = getEntityExcludedLabels(entity, iconExclusions);
+            const validIcons = [];
+
+            (gen.icons || []).forEach(ic => {
+                const isFemale = ic.female || ic.label.includes('Female') || (ic.subpath && ic.subpath.includes('female'));
+                const stem = getMatchingStem(ic.folder);
+                const hasSprite = stem !== null;
+
+                if (isFemale && !entity.has_gender_diff && !hasSprite) return;
+                if (iconExcludedLabels.has(ic.label) && !hasSprite) return;
+                if (!isDebuted && !hasSprite) return;
+
+                validIcons.push({ ...ic, hasSprite, stem: stem || defaultStem });
+            });
+
+            if (renderedGames.length === 0 && validIcons.length === 0) return;
 
             const genId = `generation-${gen.id}`;
             const genGroup = createGroup(resultsContainer, gen.title, gen.id, genId);
             genGroup.dataset.generation = gen.id;
 
-            activeGames.forEach(game => {
-                const gameKey = game.id || (game.folder ? game.folder.split('/').pop() : '');
+            renderedGames.forEach(({ game, gameKey, subcatMap }) => {
                 const gameSubgroupId = gameKey ? `game-${gameKey}` : null;
-
-                const subcatMap = new Map();
-                (game.views || []).forEach(v => {
-                    const isFemale = v.female || v.label.includes('Female') || (v.subpath && v.subpath.includes('female'));
-                    const stem = getMatchingStem(v.folder);
-                    const hasSprite = stem !== null;
-                    if (isFemale && !entity.has_gender_diff && !hasSprite) return;
-                    const subName = v.subcategory || 'Default';
-                    if (!subcatMap.has(subName)) subcatMap.set(subName, []);
-                    subcatMap.get(subName).push({ ...v, hasSprite, stem: stem || defaultStem });
-                });
 
                 if (subcatMap.size <= 1) {
                     const grid = createSubgroup(genGroup, game.name, game.folder, gameSubgroupId);
@@ -625,13 +809,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
             });
 
-            if (activeIcons.length > 0) {
+            if (validIcons.length > 0) {
                 const iconId = `game-${gen.id}-icons`;
                 const grid = createSubgroup(genGroup, '🏷️ Box & Party Icons', `versions/${gen.id}/icons`, iconId);
                 grid.parentElement.dataset.game = `${gen.id}-icons`;
-                const availableCount = activeIcons.filter(icon => getMatchingStem(icon.folder) !== null).length;
-                appendCount(grid.previousElementSibling, availableCount, activeIcons.length, true);
-                renderViews(grid, activeIcons);
+                const availableCount = validIcons.filter(icon => icon.hasSprite).length;
+                appendCount(grid.previousElementSibling, availableCount, validIcons.length, true);
+                renderViews(grid, validIcons);
             }
         });
 
@@ -770,9 +954,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
 
     displayBtn.addEventListener('click', handleSearch);
-    searchInput.addEventListener('keyup', (event) => {
-        if (event.key === 'Enter') handleSearch();
-    });
 
     if (clearSearchBtn) {
         clearSearchBtn.addEventListener('click', () => {
