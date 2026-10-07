@@ -86,8 +86,6 @@ def load_pokeapi_game_metadata() -> tuple[
             game_titles[k] = v.replace("\ufffd", "'").replace("’", "'").replace("‘", "'")
 
         # Folder aliases, unified collections, and community models
-        if "omega-ruby-alpha-sapphire" in game_titles:
-            game_titles["omegaruby-alphasapphire"] = game_titles["omega-ruby-alpha-sapphire"]
         game_titles["champions"] = "Champions (Community Models)"
         game_titles["black-white"] = "Black & White / Black 2 & White 2"
         game_titles["ultra-sun-ultra-moon"] = "Sun & Moon / Ultra Sun & Ultra Moon"
@@ -105,8 +103,6 @@ def load_pokeapi_game_metadata() -> tuple[
                 game_order[gident] = []
             if vident == "gold-silver":
                 game_order[gident].extend(["gold", "silver"])
-            elif vident == "omega-ruby-alpha-sapphire":
-                game_order[gident].extend(["omega-ruby-alpha-sapphire", "omegaruby-alphasapphire"])
             else:
                 game_order[gident].append(vident)
     except Exception as e:
