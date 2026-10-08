@@ -81,6 +81,8 @@ def get_candidate_stems(
             if f_id:
                 stems.append(f_id)
             stems.append(p_id)
+        if p_id.isdigit() and int(p_id) >= 10000 and p_id not in stems:
+            stems.append(p_id)
     else:
         stems.append(p_id)
 
