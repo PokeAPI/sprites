@@ -51,6 +51,22 @@ document.querySelectorAll('.res-btn').forEach((btn) => {
     });
 });
 
+const ROMAN_NUMERALS = { i: 1, v: 5, x: 10, l: 50, c: 100, d: 500, m: 1000 };
+function parseRoman(str) {
+    if (!str || !/^[ivxldcm]+$/i.test(str)) return null;
+    const s = str.toLowerCase();
+    let total = 0;
+    let prev = 0;
+    for (let i = s.length - 1; i >= 0; i--) {
+        const curr = ROMAN_NUMERALS[s[i]];
+        if (!curr) return null;
+        if (curr >= prev) total += curr;
+        else total -= curr;
+        prev = curr;
+    }
+    return total > 0 ? total : null;
+}
+
 function numericSort(a, b) {
     const aZero = a === '0';
     const bZero = b === '0';
@@ -70,6 +86,16 @@ function numericSort(a, b) {
             if (!aForm) return -1;
             if (!bForm) return 1;
             return aForm.localeCompare(bForm, undefined, { numeric: true, sensitivity: 'base' });
+        }
+    }
+    // Roman numeral sort for matching prefixes (e.g. generation-i through generation-ix)
+    const aRomanMatch = /^(.*?-)?([ivxldcm]+)$/i.exec(a);
+    const bRomanMatch = /^(.*?-)?([ivxldcm]+)$/i.exec(b);
+    if (aRomanMatch && bRomanMatch && (aRomanMatch[1] || '') === (bRomanMatch[1] || '')) {
+        const valA = parseRoman(aRomanMatch[2]);
+        const valB = parseRoman(bRomanMatch[2]);
+        if (valA !== null && valB !== null && valA !== valB) {
+            return valA - valB;
         }
     }
     return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
@@ -112,6 +138,8 @@ function spriteUrl(path, resolution = state.resolution) {
 }
 
 function handleImageError(image, path) {
+    if (!image.getAttribute('src') || image.dataset.cancelled) return;
+
     // If CDN thumbnail failed, fallback to direct raw URL
     if (image.src.includes('images.weserv.nl')) {
         image.src = spriteUrl(path, 'original');
@@ -214,6 +242,41 @@ function setFolderUrl(folderPath, replace = false) {
     window.history[method]({ folder: folderPath }, '', url);
 }
 
+let spriteObserver = null;
+
+function setupSpriteObserver() {
+    if (spriteObserver) {
+        spriteObserver.disconnect();
+    }
+    spriteObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            const card = entry.target;
+            const img = card.querySelector('img');
+            if (!img) return;
+
+            const targetSrc = card.dataset.src;
+            if (!targetSrc) return;
+
+            if (entry.isIntersecting) {
+                // In viewport (+ buffer rows): load sprite if not already loaded or was cancelled
+                if (!img.src || img.dataset.cancelled) {
+                    delete img.dataset.cancelled;
+                    img.src = targetSrc;
+                }
+            } else {
+                // Out of viewport (+ buffer): cancel in-flight request if not yet complete
+                if (img.src && !img.complete) {
+                    img.dataset.cancelled = 'true';
+                    img.removeAttribute('src'); // Immediately aborts in-flight browser network fetch
+                }
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '600px 0px' // Buffer: ~5-6 rows above and below the visible viewport frame
+    });
+}
+
 function selectFolder(folder, updateUrl = true) {
     state.selected = folder.path;
     expandToFolder(folder.path);
@@ -222,20 +285,25 @@ function selectFolder(folder, updateUrl = true) {
     $('bulkResults').hidden = false;
     $('selectedFolder').textContent = `${folder.path}/`;
     $('selectedCount').textContent = `${folder.files.length.toLocaleString()} files`;
+    
+    setupSpriteObserver();
     grid.replaceChildren();
+    
     const fragment = document.createDocumentFragment();
     folder.files.forEach((stem) => {
         const card = document.createElement('a');
         const path = `${folder.path}/${stem}${getExtension(folder.path)}`;
+        const targetSrc = spriteUrl(path, state.resolution);
         card.className = 'bulk-sprite-card';
         card.href = spriteUrl(path, 'original');
         card.target = '_blank';
         card.rel = 'noopener';
         card.title = `Open ${path}`;
-        card.innerHTML = `<span class="bulk-image"><img src="${spriteUrl(path, state.resolution)}" alt="${stem}" loading="lazy"><span class="placeholder">Not Available</span></span><span class="bulk-file">${stem}</span>`;
+        card.dataset.src = targetSrc;
+        card.innerHTML = `<span class="bulk-image"><img alt="${stem}"><span class="placeholder">Not Available</span></span><span class="bulk-file">${stem}</span>`;
         const image = card.querySelector('img');
-        const placeholder = card.querySelector('.placeholder');
         image.addEventListener('error', () => handleImageError(image, path));
+        spriteObserver.observe(card);
         fragment.appendChild(card);
     });
     grid.appendChild(fragment);

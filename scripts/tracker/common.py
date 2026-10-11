@@ -247,12 +247,17 @@ KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
         }
         for pid in (10080, 10081, 10082, 10083, 10084, 10085)
     ],
-    # Cap Pikachu forms: event gifts in SM / USUM / SwSh / SV, intentionally absent in LGPE, BDSP, PLA
+    # Cap Pikachu forms: event gifts in SM / USUM / SwSh / SV, intentionally absent in LGPE, BDSP, PLA, ZA
     *[
         {
             "pokemon_id": pid,
             "labels": SPRITE_EXCL_ALL_VIEWS,
-            "games": ["lets-go-pikachu-lets-go-eevee", "brilliant-diamond-shining-pearl", "legends-arceus"],
+            "games": [
+                "lets-go-pikachu-lets-go-eevee",
+                "brilliant-diamond-shining-pearl",
+                "legends-arceus",
+                "legends-za",
+            ],
         }
         for pid in (10094, 10095, 10096, 10097, 10098, 10099, 10148, 10160)
     ],
@@ -267,12 +272,13 @@ KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
             10093, 10121, 10122, 10128, 10129, 10144, 10145, 10146, 10149, 10150, 10153, 10154
         )
     ],
-    # Mega Evolutions, Primals, and Ultra Necrozma: only existed in Gen 6-7, removed in Gen 8+
+    # Mega Evolutions, Primals, and Ultra Necrozma: only existed in Gen 6-7, removed in Gen 8+ (re-introduced in Legends: Z-A)
     *[
         {
             "pokemon_id": pid,
             "labels": SPRITE_EXCL_ALL_VIEWS,
             "min_gen": 8,
+            "exclude_games": ["legends-za"],
         }
         for pid in (
             *range(10033, 10061),  # Gen 6 Megas (Venusaur through Abomasnow)
