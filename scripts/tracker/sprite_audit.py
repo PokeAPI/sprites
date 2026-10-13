@@ -432,6 +432,24 @@ def audit_version_sprites(
             except Exception:
                 pass
 
+
+            # Override legends-za game indices using pokedex_id 34 (lumiose-city) and 35 (hyperspace)
+            try:
+                za_pdx_ids = {r["pokedex_id"] for r in pdx_vg_rows if r.get("version_group_id") == "30"}
+                if za_pdx_ids:
+                    sp_to_pk = {r["species_id"]: int(r["id"]) for r in pk_rows if r.get("is_default") == "1"}
+                    za_sp_ids = {r["species_id"] for r in pdx_num_rows if r.get("pokedex_id") in za_pdx_ids}
+                    za_pks = {sp_to_pk[sp] for sp in za_sp_ids if sp in sp_to_pk}
+                    za_disk_folder = BASE_PATH / "versions" / "generation-ix" / "legends-za"
+                    if za_disk_folder.exists():
+                        for f in za_disk_folder.rglob("*.png"):
+                            if f.stem.isdigit():
+                                za_pks.add(int(f.stem))
+                    if za_pks:
+                        game_pokemon_ids["legends-za"] = za_pks
+            except Exception:
+                pass
+
             # Expand game indices to include valid 10k+ varieties (Megas, regional forms, battle forms)
             try:
                 vg_order_map = {r["id"]: int(r.get("order", 0)) for r in vg_rows}

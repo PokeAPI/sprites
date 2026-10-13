@@ -86,8 +86,6 @@ def load_pokeapi_game_metadata() -> tuple[
             game_titles[k] = v.replace("\ufffd", "'").replace("’", "'").replace("‘", "'")
 
         # Folder aliases, unified collections, and community models
-        if "omega-ruby-alpha-sapphire" in game_titles:
-            game_titles["omegaruby-alphasapphire"] = game_titles["omega-ruby-alpha-sapphire"]
         game_titles["champions"] = "Champions (Community Models)"
         game_titles["black-white"] = "Black & White / Black 2 & White 2"
         game_titles["ultra-sun-ultra-moon"] = "Sun & Moon / Ultra Sun & Ultra Moon"
@@ -105,8 +103,6 @@ def load_pokeapi_game_metadata() -> tuple[
                 game_order[gident] = []
             if vident == "gold-silver":
                 game_order[gident].extend(["gold", "silver"])
-            elif vident == "omega-ruby-alpha-sapphire":
-                game_order[gident].extend(["omega-ruby-alpha-sapphire", "omegaruby-alphasapphire"])
             else:
                 game_order[gident].append(vident)
     except Exception as e:
@@ -440,6 +436,24 @@ def build_index(output_file: Path | None = None) -> Path:
                     game_poke_sets["legends-arceus"] = la_pks
         except Exception as ex_la:
             print(f"[WARN] Failed to override Legends Arceus pokedex indices ({ex_la})")
+
+        # Override legends-za game indices using pokedex_id 34 (lumiose-city) and 35 (hyperspace)
+        # to fix PokéAPI's faulty pokemon_game_indices.csv (which contains dummy entries 1..733)
+        try:
+            za_pdx_ids = {r["pokedex_id"] for r in pdx_vg_rows if r.get("version_group_id") == "30"}
+            if za_pdx_ids:
+                sp_to_pk = {r["species_id"]: int(r["id"]) for r in df_pk if r.get("is_default") == "1"}
+                za_sp_ids = {r["species_id"] for r in pdx_num_rows if r.get("pokedex_id") in za_pdx_ids}
+                za_pks = {sp_to_pk[sp] for sp in za_sp_ids if sp in sp_to_pk}
+                za_disk_folder = SPRITES_DIR / "pokemon" / "versions" / "generation-ix" / "legends-za"
+                if za_disk_folder.exists():
+                    for f in za_disk_folder.rglob("*.png"):
+                        if f.stem.isdigit():
+                            za_pks.add(int(f.stem))
+                if za_pks:
+                    game_poke_sets["legends-za"] = za_pks
+        except Exception as ex_za:
+            print(f"[WARN] Failed to override Legends Z-A pokedex indices ({ex_za})")
 
         # Expand game indices to include valid 10k+ varieties (Megas, regional forms, battle forms)
         # whose species is present in that game and whose forms were introduced in or before that version group.
