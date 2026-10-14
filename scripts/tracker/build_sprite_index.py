@@ -447,13 +447,30 @@ def build_index(output_file: Path | None = None) -> Path:
                 za_pks = {sp_to_pk[sp] for sp in za_sp_ids if sp in sp_to_pk}
                 za_disk_folder = SPRITES_DIR / "pokemon" / "versions" / "generation-ix" / "legends-za"
                 if za_disk_folder.exists():
-                    for f in za_disk_folder.rglob("*.png"):
-                        if f.stem.isdigit():
+                    for f in za_disk_folder.rglob("*"):
+                        if f.suffix.lower() in (".png", ".webp") and f.stem.isdigit():
                             za_pks.add(int(f.stem))
                 if za_pks:
                     game_poke_sets["legends-za"] = za_pks
         except Exception as ex_za:
             print(f"[WARN] Failed to override Legends Z-A pokedex indices ({ex_za})")
+
+        # Override champions game indices using pokedex_id 36
+        try:
+            champs_pdx_ids = {r["pokedex_id"] for r in pdx_vg_rows if r.get("version_group_id") == "32"}
+            if champs_pdx_ids:
+                sp_to_pk = {r["species_id"]: int(r["id"]) for r in df_pk if r.get("is_default") == "1"}
+                champs_sp_ids = {r["species_id"] for r in pdx_num_rows if r.get("pokedex_id") in champs_pdx_ids}
+                champs_pks = {sp_to_pk[sp] for sp in champs_sp_ids if sp in sp_to_pk}
+                champs_disk_folder = SPRITES_DIR / "pokemon" / "versions" / "generation-ix" / "champions"
+                if champs_disk_folder.exists():
+                    for f in champs_disk_folder.rglob("*"):
+                        if f.suffix.lower() in (".png", ".webp") and f.stem.isdigit():
+                            champs_pks.add(int(f.stem))
+                if champs_pks:
+                    game_poke_sets["champions"] = champs_pks
+        except Exception as ex_champs:
+            print(f"[WARN] Failed to override Champions pokedex indices ({ex_champs})")
 
         # Expand game indices to include valid 10k+ varieties (Megas, regional forms, battle forms)
         # whose species is present in that game and whose forms were introduced in or before that version group.

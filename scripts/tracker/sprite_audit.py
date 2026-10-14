@@ -442,11 +442,28 @@ def audit_version_sprites(
                     za_pks = {sp_to_pk[sp] for sp in za_sp_ids if sp in sp_to_pk}
                     za_disk_folder = BASE_PATH / "versions" / "generation-ix" / "legends-za"
                     if za_disk_folder.exists():
-                        for f in za_disk_folder.rglob("*.png"):
-                            if f.stem.isdigit():
+                        for f in za_disk_folder.rglob("*"):
+                            if f.suffix.lower() in (".png", ".webp") and f.stem.isdigit():
                                 za_pks.add(int(f.stem))
                     if za_pks:
                         game_pokemon_ids["legends-za"] = za_pks
+            except Exception:
+                pass
+
+            # Override champions game indices using pokedex_id 36
+            try:
+                champs_pdx_ids = {r["pokedex_id"] for r in pdx_vg_rows if r.get("version_group_id") == "32"}
+                if champs_pdx_ids:
+                    sp_to_pk = {r["species_id"]: int(r["id"]) for r in pk_rows if r.get("is_default") == "1"}
+                    champs_sp_ids = {r["species_id"] for r in pdx_num_rows if r.get("pokedex_id") in champs_pdx_ids}
+                    champs_pks = {sp_to_pk[sp] for sp in champs_sp_ids if sp in sp_to_pk}
+                    champs_disk_folder = BASE_PATH / "versions" / "generation-ix" / "champions"
+                    if champs_disk_folder.exists():
+                        for f in champs_disk_folder.rglob("*"):
+                            if f.suffix.lower() in (".png", ".webp") and f.stem.isdigit():
+                                champs_pks.add(int(f.stem))
+                    if champs_pks:
+                        game_pokemon_ids["champions"] = champs_pks
             except Exception:
                 pass
 
