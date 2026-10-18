@@ -247,7 +247,7 @@ KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
         }
         for pid in (10080, 10081, 10082, 10083, 10084, 10085)
     ],
-    # Cap Pikachu forms: event gifts in SM / USUM / SwSh / SV, intentionally absent in LGPE, BDSP, PLA, ZA
+    # Cap Pikachu forms: event gifts in SM / USUM / SwSh / SV, intentionally absent in LGPE, BDSP, PLA, ZA, Champions
     *[
         {
             "pokemon_id": pid,
@@ -257,6 +257,7 @@ KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
                 "brilliant-diamond-shining-pearl",
                 "legends-arceus",
                 "legends-za",
+                "champions",
             ],
         }
         for pid in (10094, 10095, 10096, 10097, 10098, 10099, 10148, 10160)
@@ -272,13 +273,13 @@ KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
             10093, 10121, 10122, 10128, 10129, 10144, 10145, 10146, 10149, 10150, 10153, 10154
         )
     ],
-    # Mega Evolutions, Primals, and Ultra Necrozma: only existed in Gen 6-7, removed in Gen 8+ (re-introduced in Legends: Z-A)
+    # Mega Evolutions, Primals, and Ultra Necrozma: only existed in Gen 6-7, removed in Gen 8+ (re-introduced in Legends: Z-A and Champions)
     *[
         {
             "pokemon_id": pid,
             "labels": SPRITE_EXCL_ALL_VIEWS,
             "min_gen": 8,
-            "exclude_games": ["legends-za"],
+            "exclude_games": ["legends-za", "champions"],
         }
         for pid in (
             *range(10033, 10061),  # Gen 6 Megas (Venusaur through Abomasnow)
@@ -300,10 +301,17 @@ KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
         "labels": SPRITE_EXCL_ALL_VIEWS,
         "exclude_games": ["lets-go-pikachu-lets-go-eevee"],
     },
-    # Floette Eternal (form 10061): unreleased form from Gen VI, completely absent in all official games
+    # Floette Eternal (form 10061): unreleased in main series, but present in Champions
     {
         "pokemon_id": 10061,
         "labels": SPRITE_EXCL_ALL_VIEWS,
+        "exclude_games": ["champions"],
+    },
+    # Regular Floette (670): only Eternal Floette exists in Champions
+    {
+        "pokemon_id": 670,
+        "labels": SPRITE_EXCL_ALL_VIEWS,
+        "games": ["champions"],
     },
     # Ash-Greninja (#10117): only existed in Gen VII (SM / USUM), removed in Gen VIII+ / SV
     {
@@ -412,6 +420,19 @@ KNOWN_SPRITE_EXCLUSION_RULES: list[dict[str, Any]] = [
             460,   # Abomasnow (chest fur difference not differentiated in 2D icon)
             902,   # Basculegion (female is separate form ID 10248)
         )
+    ],
+    # Regional and battle-only forms absent in Champions:
+    # 10116: Greninja Battle Bond (ability form)
+    # 10166: Farfetch'd Galar (only Sirfetch'd 865 and Kanto Farfetch'd 83 exist)
+    # 10168: Mr. Mime Galar (only Mr. Rime 866 and Kanto Mr. Mime 122 exist)
+    # 10234: Qwilfish Hisui (only Overqwil 904 and Johto Qwilfish 211 exist)
+    *[
+        {
+            "pokemon_id": pid,
+            "labels": SPRITE_EXCL_ALL_VIEWS,
+            "games": ["champions"],
+        }
+        for pid in (10116, 10166, 10168, 10234)
     ],
 ]
 
