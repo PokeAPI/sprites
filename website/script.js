@@ -464,6 +464,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             } else if (searchType === 'badge') {
                 const badges = (spriteIndex.badges_list || []).map(b => ({ id: b, name: `Badge #${b}` }));
                 matches = badges.filter(b => String(b.id).startsWith(val) || b.name.toLowerCase().includes(val)).slice(0, 20);
+            } else if (searchType === 'ribbon') {
+                const ribbons = Object.keys(spriteIndex.ribbons_dict || {});
+                matches = ribbons.filter(r => r.includes(val)).slice(0, 20).map(r => ({ id: r, name: r.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) }));
+            } else if (searchType === 'mark') {
+                const marks = Object.keys(spriteIndex.marks_dict || {});
+                matches = marks.filter(m => m.includes(val)).slice(0, 20).map(m => ({ id: m, name: m.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) }));
             }
 
             if (matches.length === 0) return;
@@ -928,6 +934,62 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     };
 
+    // 5.5 Ribbons Renderer
+    const displayRibbon = (query) => {
+        if (!spriteIndex || !spriteIndex.ribbons_dict) return;
+
+        const q = String(query || '').toLowerCase().trim();
+        const ribbons = spriteIndex.ribbons_dict;
+
+        let matchKey = Object.keys(ribbons).find(k => k === q) || Object.keys(ribbons).find(k => k.includes(q));
+
+        if (!matchKey) {
+            resultsContainer.innerHTML = `<div class="sprite-group"><p style="color:var(--muted-text);">Ribbon "${query}" not found in repository index.</p></div>`;
+            return;
+        }
+
+        const ribbonTitle = matchKey.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        searchId.textContent = `Ribbon: ${ribbonTitle}`;
+        const group = createGroup(resultsContainer, `Ribbon: ${ribbonTitle}`, 'sprites/ribbons/');
+        const grid = createSubgroup(group, 'Generation Variants');
+
+        ribbons[matchKey].forEach(relPath => {
+            const genFolder = relPath.includes('/') ? relPath.substring(0, relPath.lastIndexOf('/')) : 'default';
+            const genTitle = (spriteIndex.generations || []).find(g => g.id === genFolder)?.title || genFolder.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+            const raw = getSpriteUrl(`sprites/ribbons/${relPath}`, false);
+            const thumb = getSpriteUrl(`sprites/ribbons/${relPath}`, true);
+            renderCard(grid, thumb, genTitle, false, true, null, null, raw);
+        });
+    };
+
+    // 5.6 Marks Renderer
+    const displayMark = (query) => {
+        if (!spriteIndex || !spriteIndex.marks_dict) return;
+
+        const q = String(query || '').toLowerCase().trim();
+        const marks = spriteIndex.marks_dict;
+
+        let matchKey = Object.keys(marks).find(k => k === q) || Object.keys(marks).find(k => k.includes(q));
+
+        if (!matchKey) {
+            resultsContainer.innerHTML = `<div class="sprite-group"><p style="color:var(--muted-text);">Mark "${query}" not found in repository index.</p></div>`;
+            return;
+        }
+
+        const markTitle = matchKey.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        searchId.textContent = `Mark: ${markTitle}`;
+        const group = createGroup(resultsContainer, `Mark: ${markTitle}`, 'sprites/marks/');
+        const grid = createSubgroup(group, 'Generation Variants');
+
+        marks[matchKey].forEach(relPath => {
+            const genFolder = relPath.includes('/') ? relPath.substring(0, relPath.lastIndexOf('/')) : 'default';
+            const genTitle = (spriteIndex.generations || []).find(g => g.id === genFolder)?.title || genFolder.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+            const raw = getSpriteUrl(`sprites/marks/${relPath}`, false);
+            const thumb = getSpriteUrl(`sprites/marks/${relPath}`, true);
+            renderCard(grid, thumb, genTitle, false, true, null, null, raw);
+        });
+    };
+
     // Helper: Dynamic search placeholder
     const updatePlaceholder = (searchType) => {
         if (searchType === 'badge') {
@@ -939,6 +1001,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             searchInput.placeholder = 'Enter item name (e.g. poke-ball, master-ball)...';
         } else if (searchType === 'type') {
             searchInput.placeholder = 'Enter type name (e.g. grass, fire, water)...';
+        } else if (searchType === 'ribbon') {
+            searchInput.placeholder = 'Enter ribbon name (e.g. champion-ribbon, master-rank-ribbon)...';
+        } else if (searchType === 'mark') {
+            searchInput.placeholder = 'Enter mark name (e.g. lunchtime-mark, rare-mark)...';
         } else {
             searchInput.placeholder = 'Search by name (e.g. pikachu) or ID (#25)...';
         }
@@ -1006,6 +1072,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                 displayItem(query);
             } else if (type === 'type') {
                 displayType(query);
+            } else if (type === 'ribbon') {
+                displayRibbon(query);
+            } else if (type === 'mark') {
+                displayMark(query);
             }
         }
     };

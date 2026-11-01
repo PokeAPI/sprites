@@ -889,6 +889,24 @@ def build_index(output_file: Path | None = None) -> Path:
             if len(parts) >= 3:
                 types_dict[parts[0]][parts[1]].append("/".join(parts[2:]))
 
+    # 9. Ribbons
+    base_ribbons = SPRITES_DIR / "ribbons"
+    ribbons_dict: dict[str, list[str]] = defaultdict(list)
+    if base_ribbons.exists():
+        for p in base_ribbons.rglob("*.png"):
+            ribbons_dict[p.stem].append(p.relative_to(base_ribbons).as_posix())
+        for stem in ribbons_dict:
+            ribbons_dict[stem].sort(key=lambda rel: (parse_gen_num(rel.split("/")[0]), rel))
+
+    # 10. Marks
+    base_marks = SPRITES_DIR / "marks"
+    marks_dict: dict[str, list[str]] = defaultdict(list)
+    if base_marks.exists():
+        for p in base_marks.rglob("*.png"):
+            marks_dict[p.stem].append(p.relative_to(base_marks).as_posix())
+        for stem in marks_dict:
+            marks_dict[stem].sort(key=lambda rel: (parse_gen_num(rel.split("/")[0]), rel))
+
     def get_current_branch() -> str:
         """Detects current Git branch from CI environment or local Git repo."""
         if os.environ.get("GITHUB_REF_NAME"):
@@ -918,6 +936,8 @@ def build_index(output_file: Path | None = None) -> Path:
             "badges": len(badges_list),
             "items": len(items_dict),
             "type_generations": len(types_dict),
+            "ribbons": len(ribbons_dict),
+            "marks": len(marks_dict),
         },
         "pokemon_list": pokemon_list,
         "root_views": root_views,
@@ -929,6 +949,8 @@ def build_index(output_file: Path | None = None) -> Path:
         "items_dict": items_dict,
         "types_dict": types_dict,
         "types_list": types_list,
+        "ribbons_dict": dict(ribbons_dict),
+        "marks_dict": dict(marks_dict),
         "game_indices": game_indices,
         # Rule-based exclusion list — frontend evaluates per-game using max_gen / only_games
         "known_sprite_exclusion_rules": KNOWN_SPRITE_EXCLUSION_RULES,
