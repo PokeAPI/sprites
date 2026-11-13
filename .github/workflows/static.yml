@@ -5,6 +5,11 @@ on:
   # Runs on pushes and PR merges targeting the master branch
   push:
     branches: ["master"]
+    paths:
+      - 'sprites/**'
+      - 'scripts/tracker/**'
+      - 'website/**'
+      - '.github/workflows/static.yml'
 
   # Allows manual runs from the Actions tab
   workflow_dispatch:
@@ -15,10 +20,11 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# Serialize deployments and preserve queued runs so sprite changes are not skipped.
 concurrency:
   group: "pages"
   cancel-in-progress: false
+  queue: max
 
 jobs:
   audit-and-deploy:
@@ -74,3 +80,31 @@ jobs:
             ./website/manifest.json.gz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check for sprite changes
+        id: sprite-changes
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: dorny/paths-filter@v4
+        with:
+          base: ${{ github.ref }}
+          filters: |
+            sprites:
+              - added|deleted: 'sprites/**'
+
+      - name: Trigger API data rebuild
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master' && steps.sprite-changes.outputs.sprites == 'true'
+        env:
+          CIRCLECI_TOKEN: ${{ secrets.NARAMSIM_CIRCLECI_WRITE_TOKEN }}
+        run: |
+          if [ -z "${CIRCLECI_TOKEN}" ]; then
+            echo "::error::Set CIRCLECI_TOKEN to a CircleCI personal API token with write access to PokeAPI/pokeapi."
+            exit 1
+          fi
+
+          curl --fail-with-body --silent --show-error \
+            --connect-timeout 10 --max-time 60 \
+            --request POST \
+            --header "Circle-Token: ${CIRCLECI_TOKEN}" \
+            --header "Content-Type: application/json" \
+            --data '{"branch":"master"}' \
+            https://circleci.com/api/v2/project/gh/PokeAPI/pokeapi/pipeline
