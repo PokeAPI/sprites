@@ -94,10 +94,10 @@ jobs:
       - name: Trigger API data rebuild
         if: github.event_name == 'push' && github.ref == 'refs/heads/master' && steps.sprite-changes.outputs.sprites == 'true'
         env:
-          CIRCLECI_TOKEN: ${{ secrets.POKEAPI_CIRCLECI_TOKEN }}
+          CIRCLECI_TOKEN: ${{ secrets.NARAMSIM_CIRCLECI_WRITE_TOKEN }}
         run: |
           if [ -z "${CIRCLECI_TOKEN}" ]; then
-            echo "::error::Set POKEAPI_CIRCLECI_TOKEN to a CircleCI personal API token with access to PokeAPI/pokeapi."
+            echo "::error::Set CIRCLECI_TOKEN to a CircleCI personal API token with write access to PokeAPI/pokeapi."
             exit 1
           fi
 
